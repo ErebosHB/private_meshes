@@ -1,6 +1,6 @@
 # private_meshes
 
-Reusable AICOR laboratory equipment for CRAM. The four independent models live
+Reusable AICOR laboratory equipment for CRAM. The independent models live
 in [`laboratory_devices`](laboratory_devices/README.md):
 
 | Device | URDF |
@@ -9,6 +9,7 @@ in [`laboratory_devices`](laboratory_devices/README.md):
 | Dual dispenser | [`dual_dispenser/model.urdf`](laboratory_devices/dual_dispenser/model.urdf) |
 | Laboratory scale | [`scale/model.urdf`](laboratory_devices/scale/model.urdf) |
 | Tube rack | [`tube_rack/model.urdf`](laboratory_devices/tube_rack/model.urdf) |
+| Sample refrigerator with articulated glass door | [`refrigerator/model.urdf`](laboratory_devices/refrigerator/model.urdf) |
 
 Each device directory includes its URDF, visual meshes with embedded materials,
 collision geometry, frame metadata and documentation. Copy the complete device
