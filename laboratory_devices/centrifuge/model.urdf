@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<robot name="centrifuge">
+<robot name="centrifuge"><!-- CRAMERA laboratory asset rights:
+Principal author: Vanessa Hassouna
+Institution: AICOR Institute
+Copyright (c) 2026 Vanessa Hassouna. All rights reserved where rights subsist.
+License: LicenseRef-AICOR-Laboratory-Assets
+See LICENSE.txt and NOTICE.md.
+-->
   <link name="laboratory_centrifuge_base">
     <visual>
       <geometry>
@@ -601,12 +607,31 @@
         <box size="0.3 0.3 0.014" />
       </geometry>
     </collision>
+    <collision name="lid_handle">
+      <origin xyz="0 -0.21 0.09" rpy="0 0 0" />
+      <geometry>
+        <box size="0.069 0.019 0.02" />
+      </geometry>
+    </collision>
+    <collision name="lid_handle_mount_0">
+      <origin xyz="-0.026 -0.21 0.047" rpy="0 0 0" />
+      <geometry>
+        <box size="0.014 0.016 0.086" />
+      </geometry>
+    </collision>
+    <collision name="lid_handle_mount_1">
+      <origin xyz="0.026 -0.21 0.047" rpy="0 0 0" />
+      <geometry>
+        <box size="0.014 0.016 0.086" />
+      </geometry>
+    </collision>
     <inertial>
       <origin xyz="0 -0.155 0.007" />
       <mass value="0.55" />
       <inertia ixx="0.004133983333333333" iyy="0.004133983333333333" izz="0.00825" ixy="0" ixz="0" iyz="0" />
     </inertial>
   </link>
+  <link name="laboratory_centrifuge_lid_handle" />
   <joint name="laboratory_centrifuge_rotor_joint" type="continuous">
     <parent link="laboratory_centrifuge_base" />
     <child link="laboratory_centrifuge_rotor" />
@@ -619,7 +644,12 @@
     <child link="laboratory_centrifuge_lid" />
     <origin xyz="0 0.155 0.223" rpy="0 0 0" />
     <axis xyz="-1 0 0" />
-    <limit lower="0" upper="1.85" effort="8" velocity="1" />
+    <limit lower="0" upper="1.35" effort="8" velocity="1" />
     <dynamics damping="0.03" friction="0.002" />
+  </joint>
+  <joint name="laboratory_centrifuge_lid_handle_joint" type="fixed">
+    <parent link="laboratory_centrifuge_lid" />
+    <child link="laboratory_centrifuge_lid_handle" />
+    <origin xyz="0 -0.21 0.09" rpy="0 0 0" />
   </joint>
 </robot>

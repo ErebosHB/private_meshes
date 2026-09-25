@@ -1,7 +1,24 @@
 # private_meshes
 
-Reusable AICOR laboratory equipment for CRAM. The independent models live
-in [`laboratory_devices`](laboratory_devices/README.md):
+**Principal author and design direction:** Vanessa Hassouna.
+**Institution:** AICOR Institute.
+
+Original laboratory assets require prior written permission for reuse, subject
+to the scope, existing permissions and third-party exclusions in
+[LICENSE.txt](LICENSE.txt) and [NOTICE.md](NOTICE.md).
+
+This repository contains the assembled laboratory and its independent equipment:
+
+- [`precision_lab`](precision_lab/README.md): the room, workbench, articulated
+  drawer, instruments, rack and separate sample vessels. `scene.json` describes
+  the assembled scene; `environment.urdf` describes the environment and
+  articulated equipment. Meshes, materials and collision data are included.
+- [`laboratory_devices`](laboratory_devices/README.md): five independently
+  loadable instrument folders, listed below.
+- [`centrifuge_manuals`](centrifuge_manuals/): the two operating-manual editions
+  used by the laboratory knowledge demonstration.
+
+The independent device models are:
 
 | Device | URDF |
 | --- | --- |
@@ -12,8 +29,9 @@ in [`laboratory_devices`](laboratory_devices/README.md):
 | Sample refrigerator with articulated glass door | [`refrigerator/model.urdf`](laboratory_devices/refrigerator/model.urdf) |
 
 Each device directory includes its URDF, visual meshes with embedded materials,
-collision geometry, frame metadata and documentation. Copy the complete device
-directory to another project; its mesh references remain relative. Units are
+collision geometry, frame metadata, documentation and permission notices. For
+authorized reuse, copy the complete device directory, including its notices;
+its mesh references remain relative. Units are
 metres, with Z pointing up.
 
 Load a model directly with CRAM's semantic digital twin:
@@ -34,5 +52,10 @@ laboratory application; loading a URDF supplies the geometry and articulation.
 In the CRAMERA workspace this repository is checked out directly at
 `cramera/src/cramera/resources`. Its `laboratory_devices` catalog can therefore
 also be accessed through `cramera.laboratory_devices.LaboratoryDeviceResource`.
-The neighbouring `precision_lab` and `centrifuge_manuals` directories are managed
-by the surrounding CRAMERA repository and are not part of this device catalog.
+The `precision_lab`, `laboratory_devices` and `centrifuge_manuals` directories
+are all versioned in this resource repository. The surrounding CRAMERA
+repository currently also tracks these resource files for application packaging;
+a commit in one repository does not automatically create a commit in the other.
+
+The PR2 robot description and the CRAM/CRAMERA application source are separate
+dependencies and are not included here.
