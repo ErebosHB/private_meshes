@@ -9,7 +9,7 @@ to the scope, existing permissions and third-party exclusions in
 
 This repository contains the assembled laboratory and its independent equipment:
 
-- [`precision_lab`](precision_lab/README.md): the room, workbench, articulated
+- [`aicor_medical_lab`](aicor_medical_lab/README.md): the room, workbench, articulated
   drawer, instruments, rack and separate sample vessels. `scene.json` describes
   the assembled scene; `environment.urdf` describes the environment and
   articulated equipment. Meshes, materials and collision data are included.
@@ -52,7 +52,7 @@ laboratory application; loading a URDF supplies the geometry and articulation.
 In the CRAMERA workspace this repository is checked out directly at
 `cramera/src/cramera/resources`. Its `laboratory_devices` catalog can therefore
 also be accessed through `cramera.laboratory_devices.LaboratoryDeviceResource`.
-The `precision_lab`, `laboratory_devices` and `centrifuge_manuals` directories
+The `aicor_medical_lab`, `laboratory_devices` and `centrifuge_manuals` directories
 are all versioned in this resource repository. The surrounding CRAMERA
 repository currently also tracks these resource files for application packaging;
 a commit in one repository does not automatically create a commit in the other.
