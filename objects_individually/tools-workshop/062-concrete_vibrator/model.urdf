@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<robot name="concrete_vibrator">
+  <link name="concrete_vibrator_body">
+    <inertial><origin xyz="0.439362 -1.60353e-09 0.136278" rpy="0 0 0"/><mass value="11.616"/><inertia ixx="0.17065" ixy="4.0095e-10" ixz="0.0013421" iyy="0.24403" iyz="6.9949e-11" izz="0.24346"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/concrete_vibrator_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.432 0 0.12" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.075" length="0.2"/></geometry></collision>
+    <collision><origin xyz="0.55 0 0.12" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.075" length="0.036"/></geometry></collision>
+    <collision><origin xyz="0.307 0 0.12" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.04" length="0.05"/></geometry></collision>
+    <collision><origin xyz="0.442 -0.1 0.012" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.3"/></geometry></collision>
+    <collision><origin xyz="0.592 -0.1 0.121" rpy="0 -0 0"/><geometry><cylinder radius="0.012" length="0.218"/></geometry></collision>
+    <collision><origin xyz="0.442 -0.1 0.23" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.012" length="0.3"/></geometry></collision>
+    <collision><origin xyz="0.292 -0.1 0.121" rpy="-3.14159 -6.18172e-08 1.5708"/><geometry><cylinder radius="0.012" length="0.218"/></geometry></collision>
+    <collision><origin xyz="0.442 0.1 0.012" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.3"/></geometry></collision>
+    <collision><origin xyz="0.592 0.1 0.121" rpy="0 -0 0"/><geometry><cylinder radius="0.012" length="0.218"/></geometry></collision>
+    <collision><origin xyz="0.442 0.1 0.23" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.012" length="0.3"/></geometry></collision>
+    <collision><origin xyz="0.292 0.1 0.121" rpy="-3.14159 -6.18172e-08 1.5708"/><geometry><cylinder radius="0.012" length="0.218"/></geometry></collision>
+    <collision><origin xyz="0.292 0 0.23" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.012" length="0.2"/></geometry></collision>
+    <collision><origin xyz="0.592 0 0.23" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.012" length="0.2"/></geometry></collision>
+    <collision><origin xyz="0.442 0 0.23" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.016" length="0.12"/></geometry></collision>
+  </link>
+  <link name="concrete_vibrator_shaft_segment_1">
+    <inertial><origin xyz="-0.073304 0 0" rpy="0 0 0"/><mass value="0.28911"/><inertia ixx="4.9783e-05" ixy="0" ixz="-2.0557e-11" iyy="0.0011698" iyz="0" izz="0.0011698"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/concrete_vibrator_shaft_segment_1.glb"/></geometry></visual>
+    <collision><origin xyz="-0.1 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.017" length="0.19"/></geometry></collision>
+    <collision><origin xyz="-0.00600001 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.022" length="0.02"/></geometry></collision>
+  </link>
+  <link name="concrete_vibrator_shaft_segment_2">
+    <inertial><origin xyz="-0.073304 0 0" rpy="0 0 0"/><mass value="0.28911"/><inertia ixx="4.9783e-05" ixy="0" ixz="-2.0557e-11" iyy="0.0011698" iyz="0" izz="0.0011698"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/concrete_vibrator_shaft_segment_2.glb"/></geometry></visual>
+    <collision><origin xyz="-0.1 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.017" length="0.19"/></geometry></collision>
+    <collision><origin xyz="-0.006 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.022" length="0.02"/></geometry></collision>
+  </link>
+  <link name="concrete_vibrator_shaft_segment_3">
+    <inertial><origin xyz="-0.31462 0 0" rpy="0 0 0"/><mass value="4.9924"/><inertia ixx="0.0016297" ixy="0" ixz="-8.3186e-10" iyy="0.051659" iyz="0" izz="0.051659"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/concrete_vibrator_shaft_segment_3.glb"/></geometry></visual>
+    <collision><origin xyz="-0.1 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.017" length="0.19"/></geometry></collision>
+    <collision><origin xyz="-0.00600001 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.022" length="0.02"/></geometry></collision>
+    <collision><origin xyz="-0.19 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.024" length="0.04"/></geometry></collision>
+    <collision><origin xyz="-0.33 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.026" length="0.26"/></geometry></collision>
+    <collision><origin xyz="-0.473 0 0" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.026" length="0.026"/></geometry></collision>
+  </link>
+  <link name="concrete_vibrator_power_switch">
+    <inertial><origin xyz="0 -0.00300001 0" rpy="0 0 0"/><mass value="0.0024948"/><inertia ixx="1.3056e-07" ixy="0" ixz="0" iyy="2.8773e-07" iyz="0" izz="2.1705e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/concrete_vibrator_power_switch.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00300001 0" rpy="0 -0 0"/><geometry><box size="0.03 0.012 0.022"/></geometry></collision>
+  </link>
+  <joint name="concrete_vibrator_shaft_segment_1_joint" type="revolute">
+    <parent link="concrete_vibrator_body"/><child link="concrete_vibrator_shaft_segment_1"/>
+    <origin xyz="0.282 0 0.12" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-0.8" upper="0.8" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="concrete_vibrator_shaft_segment_2_joint" type="revolute">
+    <parent link="concrete_vibrator_shaft_segment_1"/><child link="concrete_vibrator_shaft_segment_2"/>
+    <origin xyz="-0.2 0 0" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-0.8" upper="0.8" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="concrete_vibrator_shaft_segment_3_joint" type="revolute">
+    <parent link="concrete_vibrator_shaft_segment_2"/><child link="concrete_vibrator_shaft_segment_3"/>
+    <origin xyz="-0.2 0 0" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-0.8" upper="0.8" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="concrete_vibrator_power_switch_joint" type="revolute">
+    <parent link="concrete_vibrator_body"/><child link="concrete_vibrator_power_switch"/>
+    <origin xyz="0.402 -0.072 0.155" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.35" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="concrete_vibrator_carry_grip"/>
+  <joint name="concrete_vibrator_carry_grip_joint" type="fixed"><parent link="concrete_vibrator_body"/><child link="concrete_vibrator_carry_grip"/><origin xyz="0.442 0 0.23" rpy="0 0 1.5708"/></joint>
+  <link name="concrete_vibrator_shaft_grip"/>
+  <joint name="concrete_vibrator_shaft_grip_joint" type="fixed"><parent link="concrete_vibrator_shaft_segment_1"/><child link="concrete_vibrator_shaft_grip"/><origin xyz="-0.1 0 0" rpy="0 1.5708 0"/></joint>
+  <link name="concrete_vibrator_power_switch_contact"/>
+  <joint name="concrete_vibrator_power_switch_contact_joint" type="fixed"><parent link="concrete_vibrator_power_switch"/><child link="concrete_vibrator_power_switch_contact"/><origin xyz="0 -0.01 0" rpy="0 0 0"/></joint>
+  <link name="concrete_vibrator_poker_head"/>
+  <joint name="concrete_vibrator_poker_head_joint" type="fixed"><parent link="concrete_vibrator_shaft_segment_3"/><child link="concrete_vibrator_poker_head"/><origin xyz="-0.48 0 0" rpy="0 -1.5708 0"/></joint>
+</robot>

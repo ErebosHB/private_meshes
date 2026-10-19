@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="folding_partition_screen">
+  <link name="folding_partition_screen_body">
+    <inertial><origin xyz="7.18836e-11 0 0.661238" rpy="0 0 0"/><mass value="25.912"/><inertia ixx="8.5498" ixy="0" ixz="-1.2107e-08" iyy="9.9247" iyz="0" izz="1.5169"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_partition_screen_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.282 0 0.825" rpy="0 0 0"/><geometry><box size="0.03 0.05 1.55"/></geometry></collision>
+    <collision><origin xyz="0.282 0 0.825" rpy="0 0 0"/><geometry><box size="0.03 0.05 1.55"/></geometry></collision>
+    <collision><origin xyz="0 0 1.585" rpy="0 0 0"/><geometry><box size="0.534 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0 0.065" rpy="0 0 0"/><geometry><box size="0.534 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0 0.825" rpy="0 0 0"/><geometry><box size="0.534 0.04 1.49"/></geometry></collision>
+    <collision><origin xyz="-0.22 0 0.01" rpy="0 0 0"/><geometry><box size="0.04 0.4 0.02"/></geometry></collision>
+    <collision><origin xyz="0.22 0 0.01" rpy="0 0 0"/><geometry><box size="0.04 0.4 0.02"/></geometry></collision>
+  </link>
+  <link name="folding_partition_screen_left_panel">
+    <inertial><origin xyz="-0.318672 0 -0.0495932" rpy="0 0 0"/><mass value="22.141"/><inertia ixx="6.6018" ixy="0" ixz="-0.26499" iyy="7.8983" iyz="0" izz="1.313"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_partition_screen_left_panel.glb"/></geometry></visual>
+    <collision><origin xyz="-0.588 0 0" rpy="0 0 0"/><geometry><box size="0.03 0.05 1.55"/></geometry></collision>
+    <collision><origin xyz="-0.018 0 0" rpy="0 0 0"/><geometry><box size="0.03 0.05 1.55"/></geometry></collision>
+    <collision><origin xyz="-0.303 0 0.76" rpy="0 0 0"/><geometry><box size="0.54 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.303 0 -0.76" rpy="0 0 0"/><geometry><box size="0.54 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.303 0 0" rpy="0 0 0"/><geometry><box size="0.54 0.04 1.49"/></geometry></collision>
+    <collision><origin xyz="-0.56 0 -0.815" rpy="0 0 0"/><geometry><box size="0.04 0.2 0.02"/></geometry></collision>
+  </link>
+  <link name="folding_partition_screen_right_panel">
+    <inertial><origin xyz="0.318672 0 -0.0495932" rpy="0 0 0"/><mass value="22.141"/><inertia ixx="6.6018" ixy="0" ixz="0.26499" iyy="7.8983" iyz="0" izz="1.313"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_partition_screen_right_panel.glb"/></geometry></visual>
+    <collision><origin xyz="0.018 0 0" rpy="0 0 0"/><geometry><box size="0.03 0.05 1.55"/></geometry></collision>
+    <collision><origin xyz="0.588 0 0" rpy="0 0 0"/><geometry><box size="0.03 0.05 1.55"/></geometry></collision>
+    <collision><origin xyz="0.303 0 0.76" rpy="0 0 0"/><geometry><box size="0.54 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="0.303 0 -0.76" rpy="0 0 0"/><geometry><box size="0.54 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="0.303 0 0" rpy="0 0 0"/><geometry><box size="0.54 0.04 1.49"/></geometry></collision>
+    <collision><origin xyz="0.56 0 -0.815" rpy="0 0 0"/><geometry><box size="0.04 0.2 0.02"/></geometry></collision>
+  </link>
+  <joint name="folding_partition_screen_left_panel_joint" type="revolute">
+    <parent link="folding_partition_screen_body"/><child link="folding_partition_screen_left_panel"/>
+    <origin xyz="-0.3 0 0.825" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="folding_partition_screen_right_panel_joint" type="revolute">
+    <parent link="folding_partition_screen_body"/><child link="folding_partition_screen_right_panel"/>
+    <origin xyz="0.3 0 0.825" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="-1.57" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="folding_partition_screen_left_panel_grip"/>
+  <joint name="folding_partition_screen_left_panel_grip_joint" type="fixed"><parent link="folding_partition_screen_left_panel"/><child link="folding_partition_screen_left_panel_grip"/><origin xyz="-0.588 0 0.175" rpy="0 -1.5708 0"/></joint>
+  <link name="folding_partition_screen_right_panel_grip"/>
+  <joint name="folding_partition_screen_right_panel_grip_joint" type="fixed"><parent link="folding_partition_screen_right_panel"/><child link="folding_partition_screen_right_panel_grip"/><origin xyz="0.588 0 0.175" rpy="0 -1.5708 0"/></joint>
+  <link name="folding_partition_screen_carry_grip"/>
+  <joint name="folding_partition_screen_carry_grip_joint" type="fixed"><parent link="folding_partition_screen_body"/><child link="folding_partition_screen_carry_grip"/><origin xyz="0 0 1.585" rpy="0 0 0"/></joint>
+  <link name="folding_partition_screen_anti_tip_anchor"/>
+  <joint name="folding_partition_screen_anti_tip_anchor_joint" type="fixed"><parent link="folding_partition_screen_body"/><child link="folding_partition_screen_anti_tip_anchor"/><origin xyz="0 0.025 1.5" rpy="0 0 0"/></joint>
+</robot>

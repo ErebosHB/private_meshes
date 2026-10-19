@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<robot name="kitchen_dresser">
+  <link name="kitchen_dresser_body">
+    <inertial><origin xyz="4.99427e-17 0.0664588 0.87299" rpy="0 0 0"/><mass value="84.4737"/><inertia ixx="31.4013" ixy="-3.67456e-17" ixz="-2.26919e-16" iyy="42.5856" iyz="-2.888" izz="16.1381"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_dresser_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.591 0.023 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="0.591 0.023 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="0 0.023 0.109" rpy="0 0 0"/><geometry><box size="1.164 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="0 -0.217 0.811" rpy="0 0 0"/><geometry><box size="1.164 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.261 0.811" rpy="0 0 0"/><geometry><box size="1.164 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.301 0.469" rpy="0 0 0"/><geometry><box size="1.164 0.004 0.702"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.429" rpy="0 0 0"/><geometry><box size="1.162 0.534 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.021 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.556 0.684"/></geometry></collision>
+    <collision><origin xyz="0 -0.218 0.049" rpy="0 0 0"/><geometry><box size="1.2 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="0 0.021 0.661" rpy="0 0 0"/><geometry><box size="1.164 0.556 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.003 0.84" rpy="0 0 0"/><geometry><box size="1.2 0.6 0.04"/></geometry></collision>
+    <collision><origin xyz="-0.591 0.138 1.11" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.5"/></geometry></collision>
+    <collision><origin xyz="0.591 0.138 1.11" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.5"/></geometry></collision>
+    <collision><origin xyz="0 0.3 1.11" rpy="0 0 0"/><geometry><box size="1.164 0.006 0.5"/></geometry></collision>
+    <collision><origin xyz="-0.591 0.138 1.735" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.75"/></geometry></collision>
+    <collision><origin xyz="0.591 0.138 1.735" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.75"/></geometry></collision>
+    <collision><origin xyz="0 0.138 1.369" rpy="0 0 0"/><geometry><box size="1.164 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.138 2.101" rpy="0 0 0"/><geometry><box size="1.164 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.301 1.744" rpy="0 0 0"/><geometry><box size="1.164 0.004 0.732"/></geometry></collision>
+    <collision><origin xyz="0 0.145 1.735" rpy="0 0 0"/><geometry><box size="1.162 0.304 0.018"/></geometry></collision>
+  </link>
+  <link name="kitchen_dresser_left_drawer">
+    <inertial><origin xyz="2.98978e-17 0.190041 -0.0174414" rpy="0 0 0"/><mass value="3.24922"/><inertia ixx="0.103972" ixy="-4.59431e-18" ixz="-1.07404e-18" iyy="0.112135" iyz="0.00375072" izz="0.208269"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_dresser_left_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.147"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.0445" rpy="0 0 0"/><geometry><box size="0.538 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="0 0.472 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.079"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0285" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_dresser_left_drawer_joint" type="prismatic">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_left_drawer"/>
+    <origin xyz="-0.3 -0.277 0.745" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_dresser_right_drawer">
+    <inertial><origin xyz="7.18785e-17 0.190041 -0.0174414" rpy="0 0 0"/><mass value="3.24922"/><inertia ixx="0.103972" ixy="-2.16298e-17" ixz="2.13622e-18" iyy="0.112135" iyz="0.00375072" izz="0.208269"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_dresser_right_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.147"/></geometry></collision>
+    <collision><origin xyz="1.11022e-16 0.248 -0.0445" rpy="0 0 0"/><geometry><box size="0.538 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="1.11022e-16 0.472 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.079"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0285" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_dresser_right_drawer_joint" type="prismatic">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_right_drawer"/>
+    <origin xyz="0.3 -0.277 0.745" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_dresser_left_door">
+    <inertial><origin xyz="0.29981 0.00880993 0.00165771" rpy="0 0 0"/><mass value="3.98816"/><inertia ixx="0.107798" ixy="0.000141893" ixz="-0.00123755" iyy="0.226342" iyz="0.00017953" izz="0.118801"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_dresser_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2985 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.567"/></geometry></collision>
+    <collision><origin xyz="0.487 -0.02 0.2385" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.422 -0.007 0.2385" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.552 -0.007 0.2385" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_dresser_left_door_joint" type="revolute">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_left_door"/>
+    <origin xyz="-0.5985 -0.277 0.385" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_dresser_right_door">
+    <inertial><origin xyz="-0.29981 0.00880993 0.00165771" rpy="0 0 0"/><mass value="3.98816"/><inertia ixx="0.107798" ixy="-0.000141893" ixz="0.00123755" iyy="0.226342" iyz="0.00017953" izz="0.118801"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_dresser_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2985 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.567"/></geometry></collision>
+    <collision><origin xyz="-0.487 -0.02 0.2385" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.552 -0.007 0.2385" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.422 -0.007 0.2385" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_dresser_right_door_joint" type="revolute">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_right_door"/>
+    <origin xyz="0.5985 -0.277 0.385" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_dresser_top_left_glass_door">
+    <inertial><origin xyz="0.299607 0.00883934 -0.00193003" rpy="0 0 0"/><mass value="4.71807"/><inertia ixx="0.227838" ixy="0.000142047" ixz="0.0017064" iyy="0.373362" iyz="-0.000247545" izz="0.145661"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_dresser_top_left_glass_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2985 0.009 -0.346" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="0.2985 0.009 0.346" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="0.0275 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.637"/></geometry></collision>
+    <collision><origin xyz="0.5695 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.637"/></geometry></collision>
+    <collision><origin xyz="0.2985 0.009 0" rpy="0 0 0"/><geometry><box size="0.487 0.004 0.637"/></geometry></collision>
+    <collision><origin xyz="0.487 -0.02 -0.3285" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.422 -0.007 -0.3285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.552 -0.007 -0.3285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_dresser_top_left_glass_door_joint" type="revolute">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_top_left_glass_door"/>
+    <origin xyz="-0.5985 -0.047 1.735" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_dresser_top_right_glass_door">
+    <inertial><origin xyz="-0.299607 0.00883934 -0.00193003" rpy="0 0 0"/><mass value="4.71807"/><inertia ixx="0.227838" ixy="-0.000142047" ixz="-0.0017064" iyy="0.373362" iyz="-0.000247545" izz="0.145661"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_dresser_top_right_glass_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2985 0.009 -0.346" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="-0.2985 0.009 0.346" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="-0.5695 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.637"/></geometry></collision>
+    <collision><origin xyz="-0.0275 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.637"/></geometry></collision>
+    <collision><origin xyz="-0.2985 0.009 0" rpy="0 0 0"/><geometry><box size="0.487 0.004 0.637"/></geometry></collision>
+    <collision><origin xyz="-0.487 -0.02 -0.3285" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.552 -0.007 -0.3285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.422 -0.007 -0.3285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_dresser_top_right_glass_door_joint" type="revolute">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_top_right_glass_door"/>
+    <origin xyz="0.5985 -0.047 1.735" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_dresser_left_drawer_grip"/>
+  <joint name="kitchen_dresser_left_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_dresser_left_drawer"/><child link="kitchen_dresser_left_drawer_grip"/>
+    <origin xyz="0 -0.02 0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_left_drawer_volume"/>
+  <joint name="kitchen_dresser_left_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_dresser_left_drawer"/><child link="kitchen_dresser_left_drawer_volume"/>
+    <origin xyz="0 0.248 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_right_drawer_grip"/>
+  <joint name="kitchen_dresser_right_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_dresser_right_drawer"/><child link="kitchen_dresser_right_drawer_grip"/>
+    <origin xyz="0 -0.02 0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_right_drawer_volume"/>
+  <joint name="kitchen_dresser_right_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_dresser_right_drawer"/><child link="kitchen_dresser_right_drawer_volume"/>
+    <origin xyz="1.11022e-16 0.248 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_left_door_grip"/>
+  <joint name="kitchen_dresser_left_door_grip_fixed" type="fixed">
+    <parent link="kitchen_dresser_left_door"/><child link="kitchen_dresser_left_door_grip"/>
+    <origin xyz="0.487 -0.02 0.2385" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_right_door_grip"/>
+  <joint name="kitchen_dresser_right_door_grip_fixed" type="fixed">
+    <parent link="kitchen_dresser_right_door"/><child link="kitchen_dresser_right_door_grip"/>
+    <origin xyz="-0.487 -0.02 0.2385" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_worktop_surface"/>
+  <joint name="kitchen_dresser_worktop_surface_fixed" type="fixed">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_worktop_surface"/>
+    <origin xyz="0 0.003 0.86" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_top_left_glass_door_grip"/>
+  <joint name="kitchen_dresser_top_left_glass_door_grip_fixed" type="fixed">
+    <parent link="kitchen_dresser_top_left_glass_door"/><child link="kitchen_dresser_top_left_glass_door_grip"/>
+    <origin xyz="0.487 -0.02 -0.3285" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_top_right_glass_door_grip"/>
+  <joint name="kitchen_dresser_top_right_glass_door_grip_fixed" type="fixed">
+    <parent link="kitchen_dresser_top_right_glass_door"/><child link="kitchen_dresser_top_right_glass_door_grip"/>
+    <origin xyz="-0.487 -0.02 -0.3285" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_top_shelf_surface"/>
+  <joint name="kitchen_dresser_top_shelf_surface_fixed" type="fixed">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_top_shelf_surface"/>
+    <origin xyz="0 0.128 1.735" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_dresser_wall_anchor"/>
+  <joint name="kitchen_dresser_wall_anchor_fixed" type="fixed">
+    <parent link="kitchen_dresser_body"/><child link="kitchen_dresser_wall_anchor"/>
+    <origin xyz="0 0.303 1.9225" rpy="0 0 0"/>
+  </joint>
+</robot>

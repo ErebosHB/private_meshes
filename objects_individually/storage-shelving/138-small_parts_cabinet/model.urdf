@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<robot name="small_parts_cabinet">
+  <link name="small_parts_cabinet_body">
+    <inertial><origin xyz="0 0.0131297 0.2" rpy="0 0 0"/><mass value="6.38884"/><inertia ixx="0.158905" ixy="0" ixz="0" iyy="0.293856" iyz="5.82077e-11" izz="0.195037"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.236 0 0.2" rpy="0 0 0"/><geometry><box size="0.008 0.22 0.4"/></geometry></collision>
+    <collision><origin xyz="0.236 0 0.2" rpy="0 0 0"/><geometry><box size="0.008 0.22 0.4"/></geometry></collision>
+    <collision><origin xyz="0 0 0.395" rpy="0 0 0"/><geometry><box size="0.48 0.22 0.01"/></geometry></collision>
+    <collision><origin xyz="0 0 0.005" rpy="0 0 0"/><geometry><box size="0.48 0.22 0.01"/></geometry></collision>
+    <collision><origin xyz="0 0.108 0.2" rpy="0 0 0"/><geometry><box size="0.464 0.004 0.38"/></geometry></collision>
+    <collision><origin xyz="-0.0773333 0.002 0.2" rpy="0 0 0"/><geometry><box size="0.004 0.216 0.38"/></geometry></collision>
+    <collision><origin xyz="0.0773333 0.002 0.2" rpy="0 0 0"/><geometry><box size="0.004 0.216 0.38"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.105" rpy="0 0 0"/><geometry><box size="0.464 0.216 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.2" rpy="0 0 0"/><geometry><box size="0.464 0.216 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.295" rpy="0 0 0"/><geometry><box size="0.464 0.216 0.004"/></geometry></collision>
+  </link>
+  <link name="small_parts_cabinet_drawer_r4c1">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r4c1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r4c1_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r4c1"/>
+    <origin xyz="-0.154667 -0.11 0.014" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c2">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r4c2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r4c2_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r4c2"/>
+    <origin xyz="0 -0.11 0.014" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c3">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r4c3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r4c3_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r4c3"/>
+    <origin xyz="0.154667 -0.11 0.014" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c1">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r3c1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r3c1_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r3c1"/>
+    <origin xyz="-0.154667 -0.11 0.109" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c2">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r3c2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r3c2_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r3c2"/>
+    <origin xyz="0 -0.11 0.109" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c3">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r3c3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r3c3_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r3c3"/>
+    <origin xyz="0.154667 -0.11 0.109" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c1">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r2c1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r2c1_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r2c1"/>
+    <origin xyz="-0.154667 -0.11 0.204" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c2">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r2c2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r2c2_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r2c2"/>
+    <origin xyz="0 -0.11 0.204" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c3">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r2c3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r2c3_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r2c3"/>
+    <origin xyz="0.154667 -0.11 0.204" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c1">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r1c1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r1c1_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r1c1"/>
+    <origin xyz="-0.154667 -0.11 0.299" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c2">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r1c2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r1c2_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r1c2"/>
+    <origin xyz="0 -0.11 0.299" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c3">
+    <inertial><origin xyz="0 0.0817723 0.0276179" rpy="0 0 0"/><mass value="0.322224"/><inertia ixx="0.00190094" ixy="0" ixz="0" iyy="0.00104186" iyz="0.000126822" izz="0.00252477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/small_parts_cabinet_drawer_r1c3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.003 0.0425" rpy="0 0 0"/><geometry><box size="0.146667 0.006 0.085"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.0015" rpy="0 0 0"/><geometry><box size="0.140667 0.19 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0.0688333 0.1 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.19 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.195 0.035" rpy="0 0 0"/><geometry><box size="0.140667 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.069" rpy="0 0 0"/><geometry><box size="0.05 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="small_parts_cabinet_drawer_r1c3_joint" type="prismatic">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_drawer_r1c3"/>
+    <origin xyz="0.154667 -0.11 0.299" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.142" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="small_parts_cabinet_top_surface"/>
+  <joint name="small_parts_cabinet_top_surface_fixed" type="fixed">
+    <parent link="small_parts_cabinet_body"/><child link="small_parts_cabinet_top_surface"/>
+    <origin xyz="0 0 0.4" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c1_grip"/>
+  <joint name="small_parts_cabinet_drawer_r4c1_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r4c1"/><child link="small_parts_cabinet_drawer_r4c1_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c1_volume"/>
+  <joint name="small_parts_cabinet_drawer_r4c1_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r4c1"/><child link="small_parts_cabinet_drawer_r4c1_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c2_grip"/>
+  <joint name="small_parts_cabinet_drawer_r4c2_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r4c2"/><child link="small_parts_cabinet_drawer_r4c2_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c2_volume"/>
+  <joint name="small_parts_cabinet_drawer_r4c2_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r4c2"/><child link="small_parts_cabinet_drawer_r4c2_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c3_grip"/>
+  <joint name="small_parts_cabinet_drawer_r4c3_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r4c3"/><child link="small_parts_cabinet_drawer_r4c3_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r4c3_volume"/>
+  <joint name="small_parts_cabinet_drawer_r4c3_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r4c3"/><child link="small_parts_cabinet_drawer_r4c3_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c1_grip"/>
+  <joint name="small_parts_cabinet_drawer_r3c1_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r3c1"/><child link="small_parts_cabinet_drawer_r3c1_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c1_volume"/>
+  <joint name="small_parts_cabinet_drawer_r3c1_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r3c1"/><child link="small_parts_cabinet_drawer_r3c1_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c2_grip"/>
+  <joint name="small_parts_cabinet_drawer_r3c2_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r3c2"/><child link="small_parts_cabinet_drawer_r3c2_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c2_volume"/>
+  <joint name="small_parts_cabinet_drawer_r3c2_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r3c2"/><child link="small_parts_cabinet_drawer_r3c2_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c3_grip"/>
+  <joint name="small_parts_cabinet_drawer_r3c3_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r3c3"/><child link="small_parts_cabinet_drawer_r3c3_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r3c3_volume"/>
+  <joint name="small_parts_cabinet_drawer_r3c3_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r3c3"/><child link="small_parts_cabinet_drawer_r3c3_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c1_grip"/>
+  <joint name="small_parts_cabinet_drawer_r2c1_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r2c1"/><child link="small_parts_cabinet_drawer_r2c1_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c1_volume"/>
+  <joint name="small_parts_cabinet_drawer_r2c1_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r2c1"/><child link="small_parts_cabinet_drawer_r2c1_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c2_grip"/>
+  <joint name="small_parts_cabinet_drawer_r2c2_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r2c2"/><child link="small_parts_cabinet_drawer_r2c2_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c2_volume"/>
+  <joint name="small_parts_cabinet_drawer_r2c2_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r2c2"/><child link="small_parts_cabinet_drawer_r2c2_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c3_grip"/>
+  <joint name="small_parts_cabinet_drawer_r2c3_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r2c3"/><child link="small_parts_cabinet_drawer_r2c3_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r2c3_volume"/>
+  <joint name="small_parts_cabinet_drawer_r2c3_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r2c3"/><child link="small_parts_cabinet_drawer_r2c3_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c1_grip"/>
+  <joint name="small_parts_cabinet_drawer_r1c1_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r1c1"/><child link="small_parts_cabinet_drawer_r1c1_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c1_volume"/>
+  <joint name="small_parts_cabinet_drawer_r1c1_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r1c1"/><child link="small_parts_cabinet_drawer_r1c1_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c2_grip"/>
+  <joint name="small_parts_cabinet_drawer_r1c2_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r1c2"/><child link="small_parts_cabinet_drawer_r1c2_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c2_volume"/>
+  <joint name="small_parts_cabinet_drawer_r1c2_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r1c2"/><child link="small_parts_cabinet_drawer_r1c2_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c3_grip"/>
+  <joint name="small_parts_cabinet_drawer_r1c3_grip_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r1c3"/><child link="small_parts_cabinet_drawer_r1c3_grip"/>
+    <origin xyz="0 -0.006 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="small_parts_cabinet_drawer_r1c3_volume"/>
+  <joint name="small_parts_cabinet_drawer_r1c3_volume_fixed" type="fixed">
+    <parent link="small_parts_cabinet_drawer_r1c3"/><child link="small_parts_cabinet_drawer_r1c3_volume"/>
+    <origin xyz="0 0.1 0.035" rpy="0 0 0"/>
+  </joint>
+</robot>

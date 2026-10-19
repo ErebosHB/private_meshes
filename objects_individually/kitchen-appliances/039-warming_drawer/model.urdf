@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<robot name="warming_drawer">
+  <link name="warming_drawer_body">
+    <inertial><origin xyz="0 0.0219957 0.0673394" rpy="0 0 0"/><mass value="12.038"/><inertia ixx="0.38156" ixy="2.7378e-11" ixz="2.1413e-10" iyy="0.58344" iyz="-0.0005059" izz="0.88133"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/warming_drawer_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.29675 0 0.06925" rpy="0 0 0"/><geometry><box size="0.0015 0.55 0.1385"/></geometry></collision>
+    <collision><origin xyz="0.29675 0 0.06925" rpy="0 0 0"/><geometry><box size="0.0015 0.55 0.1385"/></geometry></collision>
+    <collision><origin xyz="0 0 0.13925" rpy="0 0 0"/><geometry><box size="0.595 0.55 0.0015"/></geometry></collision>
+    <collision><origin xyz="0 0.27425 0.06925" rpy="0 0 0"/><geometry><box size="0.592 0.0015 0.1385"/></geometry></collision>
+    <collision><origin xyz="0 0 0.00075" rpy="0 0 0"/><geometry><box size="0.592 0.5485 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.285 0 0.05" rpy="0 0 0"/><geometry><box size="0.01 0.51 0.02"/></geometry></collision>
+    <collision><origin xyz="0.285 0 0.05" rpy="0 0 0"/><geometry><box size="0.01 0.51 0.02"/></geometry></collision>
+  </link>
+  <link name="warming_drawer_drawer">
+    <inertial><origin xyz="0 0.165424 -0.0243092" rpy="0 0 0"/><mass value="13.158"/><inertia ixx="0.47185" ixy="4.7864e-11" ixz="9.3181e-11" iyy="0.45458" iyz="0.033724" izz="0.88764"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/warming_drawer_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.012 0" rpy="0 0 0"/><geometry><box size="0.592 0.024 0.136"/></geometry></collision>
+    <collision><origin xyz="0 -0.055 0.02" rpy="0 1.5708 0"/><geometry><cylinder radius="0.007" length="0.4"/></geometry></collision>
+    <collision><origin xyz="0 0.2575 -0.05725" rpy="0 0 0"/><geometry><box size="0.54 0.515 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.26925 0.2575 -0.00575" rpy="0 0 0"/><geometry><box size="0.0015 0.515 0.1015"/></geometry></collision>
+    <collision><origin xyz="0.26925 0.2575 -0.00575" rpy="0 0 0"/><geometry><box size="0.0015 0.515 0.1015"/></geometry></collision>
+    <collision><origin xyz="0 0.51425 -0.00575" rpy="0 0 0"/><geometry><box size="0.537 0.0015 0.1015"/></geometry></collision>
+    <collision><origin xyz="-0.282 0.2575 -0.02" rpy="0 0 0"/><geometry><box size="0.006 0.48 0.016"/></geometry></collision>
+    <collision><origin xyz="0.282 0.2575 -0.02" rpy="0 0 0"/><geometry><box size="0.006 0.48 0.016"/></geometry></collision>
+  </link>
+  <link name="warming_drawer_power_button">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0008064"/><inertia ixx="1.0752e-08" ixy="0" ixz="0" iyy="1.8278e-08" iyz="0" izz="2.688e-08"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/warming_drawer_power_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.016 0.012 0.004"/></geometry></collision>
+  </link>
+  <joint name="warming_drawer_drawer_joint" type="prismatic">
+    <parent link="warming_drawer_body"/><child link="warming_drawer_drawer"/>
+    <origin xyz="0 -0.275 0.07" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.386" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="warming_drawer_power_button_joint" type="prismatic">
+    <parent link="warming_drawer_drawer"/><child link="warming_drawer_power_button"/>
+    <origin xyz="0.22 0.01 0.0685" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.002" effort="50" velocity="0.2"/>
+  </joint>
+  <link name="warming_drawer_power_button_contact"/>
+  <joint name="warming_drawer_power_button_contact_joint" type="fixed"><parent link="warming_drawer_power_button"/><child link="warming_drawer_power_button_contact"/><origin xyz="0 0 0.00199999" rpy="0 0 0"/></joint>
+  <link name="warming_drawer_drawer_grip"/>
+  <joint name="warming_drawer_drawer_grip_joint" type="fixed"><parent link="warming_drawer_drawer"/><child link="warming_drawer_drawer_grip"/><origin xyz="0 -0.055 0.02" rpy="0 0 0"/></joint>
+  <link name="warming_drawer_drawer_volume"/>
+  <joint name="warming_drawer_drawer_volume_joint" type="fixed"><parent link="warming_drawer_drawer"/><child link="warming_drawer_drawer_volume"/><origin xyz="0 0.2575 -0.005" rpy="0 0 0"/></joint>
+  <link name="warming_drawer_drawer_base_surface"/>
+  <joint name="warming_drawer_drawer_base_surface_joint" type="fixed"><parent link="warming_drawer_drawer"/><child link="warming_drawer_drawer_base_surface"/><origin xyz="0 0.2575 -0.052" rpy="0 0 0"/></joint>
+</robot>

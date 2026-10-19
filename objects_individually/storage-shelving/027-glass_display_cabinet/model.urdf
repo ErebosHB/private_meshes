@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<robot name="glass_display_cabinet">
+  <link name="glass_display_cabinet_body">
+    <inertial><origin xyz="0 0.0159944 0.707867" rpy="0 0 0"/><mass value="234.64"/><inertia ixx="136.74" ixy="0" ixz="0" iyy="142.22" iyz="-0.3054" izz="13.45"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/glass_display_cabinet_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2875 -0.1775 0.9" rpy="0 0 0"/><geometry><box size="0.025 0.025 1.78"/></geometry></collision>
+    <collision><origin xyz="-0.2875 0.1975 0.9" rpy="0 0 0"/><geometry><box size="0.025 0.025 1.78"/></geometry></collision>
+    <collision><origin xyz="0.2875 -0.1775 0.9" rpy="0 0 0"/><geometry><box size="0.025 0.025 1.78"/></geometry></collision>
+    <collision><origin xyz="0.2875 0.1975 0.9" rpy="0 0 0"/><geometry><box size="0.025 0.025 1.78"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.05" rpy="0 0 0"/><geometry><box size="0.6 0.4 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.01 1.785" rpy="0 0 0"/><geometry><box size="0.6 0.4 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.27 -0.16 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0.27 -0.16 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="-0.27 0.18 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0.27 0.18 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="-0.296 0.01 0.925" rpy="0 0 0"/><geometry><box size="0.004 0.35 1.69"/></geometry></collision>
+    <collision><origin xyz="0.296 0.01 0.925" rpy="0 0 0"/><geometry><box size="0.004 0.35 1.69"/></geometry></collision>
+    <collision><origin xyz="0 0.204 0.925" rpy="0 0 0"/><geometry><box size="0.55 0.012 1.69"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.44" rpy="0 0 0"/><geometry><box size="0.54 0.34 0.006"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.78" rpy="0 0 0"/><geometry><box size="0.54 0.34 0.006"/></geometry></collision>
+    <collision><origin xyz="0 0.01 1.12" rpy="0 0 0"/><geometry><box size="0.54 0.34 0.006"/></geometry></collision>
+    <collision><origin xyz="0 0.01 1.46" rpy="0 0 0"/><geometry><box size="0.54 0.34 0.006"/></geometry></collision>
+  </link>
+  <link name="glass_display_cabinet_door">
+    <inertial><origin xyz="-0.29925 0.00897564 7.3734e-05" rpy="0 0 0"/><mass value="23.069"/><inertia ixx="6.9339" ixy="-0.0001426" ixz="0.00043163" iyy="8.1269" iyz="4.2106e-05" izz="1.1938"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/glass_display_cabinet_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.299 0.009 0" rpy="0 0 0"/><geometry><box size="0.554 0.004 1.644"/></geometry></collision>
+    <collision><origin xyz="-0.587 0.009 0" rpy="0 0 0"/><geometry><box size="0.022 0.018 1.688"/></geometry></collision>
+    <collision><origin xyz="-0.011 0.009 0" rpy="0 0 0"/><geometry><box size="0.022 0.018 1.688"/></geometry></collision>
+    <collision><origin xyz="-0.299 0.009 -0.833" rpy="0 0 0"/><geometry><box size="0.554 0.018 0.022"/></geometry></collision>
+    <collision><origin xyz="-0.299 0.009 0.833" rpy="0 0 0"/><geometry><box size="0.554 0.018 0.022"/></geometry></collision>
+    <collision><origin xyz="-0.553 -0.017 0.075" rpy="0 0 0"/><geometry><box size="0.012 0.01 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.553 -0.006 0.00699997" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.553 -0.006 0.143" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <joint name="glass_display_cabinet_door_joint" type="revolute">
+    <parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_door"/>
+    <origin xyz="0.299 -0.209 0.925" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="glass_display_cabinet_door_grip"/>
+  <joint name="glass_display_cabinet_door_grip_joint" type="fixed"><parent link="glass_display_cabinet_door"/><child link="glass_display_cabinet_door_grip"/><origin xyz="-0.553 -0.017 0.075" rpy="0 -1.5708 0"/></joint>
+  <link name="glass_display_cabinet_base_surface"/>
+  <joint name="glass_display_cabinet_base_surface_joint" type="fixed"><parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_base_surface"/><origin xyz="0 0.01 0.08" rpy="0 0 0"/></joint>
+  <link name="glass_display_cabinet_shelf_1_surface"/>
+  <joint name="glass_display_cabinet_shelf_1_surface_joint" type="fixed"><parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_shelf_1_surface"/><origin xyz="0 0.01 0.443" rpy="0 0 0"/></joint>
+  <link name="glass_display_cabinet_shelf_2_surface"/>
+  <joint name="glass_display_cabinet_shelf_2_surface_joint" type="fixed"><parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_shelf_2_surface"/><origin xyz="0 0.01 0.783" rpy="0 0 0"/></joint>
+  <link name="glass_display_cabinet_shelf_3_surface"/>
+  <joint name="glass_display_cabinet_shelf_3_surface_joint" type="fixed"><parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_shelf_3_surface"/><origin xyz="0 0.01 1.123" rpy="0 0 0"/></joint>
+  <link name="glass_display_cabinet_shelf_4_surface"/>
+  <joint name="glass_display_cabinet_shelf_4_surface_joint" type="fixed"><parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_shelf_4_surface"/><origin xyz="0 0.01 1.463" rpy="0 0 0"/></joint>
+  <link name="glass_display_cabinet_top_surface"/>
+  <joint name="glass_display_cabinet_top_surface_joint" type="fixed"><parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_top_surface"/><origin xyz="0 0.01 1.8" rpy="0 0 0"/></joint>
+  <link name="glass_display_cabinet_wall_anchor"/>
+  <joint name="glass_display_cabinet_wall_anchor_joint" type="fixed"><parent link="glass_display_cabinet_body"/><child link="glass_display_cabinet_wall_anchor"/><origin xyz="0 0.21 1.75" rpy="0 0 0"/></joint>
+</robot>

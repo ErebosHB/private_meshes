@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<robot name="mobile_shelving_run">
+  <link name="mobile_shelving_run_body">
+    <inertial><origin xyz="0.889848 0.07 0.687726" rpy="0 0 0"/><mass value="275.043"/><inertia ixx="170.893" ixy="-1.19209e-07" ixz="-15.9664" iyy="182.819" iyz="0" izz="71.0021"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_shelving_run_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.28 0.006" rpy="0 0 0"/><geometry><box size="2.55 0.05 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.42 0.006" rpy="0 0 0"/><geometry><box size="2.55 0.05 0.012"/></geometry></collision>
+    <collision><origin xyz="0.975 0.07 0.052" rpy="0 0 0"/><geometry><box size="0.58 0.96 0.08"/></geometry></collision>
+    <collision><origin xyz="0.695 -0.4 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0.695 0.54 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="1.255 -0.4 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="1.255 0.54 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0.975 0.07 0.15" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0.975 0.07 0.55" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0.975 0.07 0.95" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0.975 0.07 1.35" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0.975 0.07 1.75" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0.975 0.07 1.99" rpy="0 0 0"/><geometry><box size="0.6 1 0.02"/></geometry></collision>
+    <collision><origin xyz="0.975 -0.44 1" rpy="0 0 0"/><geometry><box size="0.6 0.02 1.96"/></geometry></collision>
+    <collision><origin xyz="0.975 0.58 1" rpy="0 0 0"/><geometry><box size="0.6 0.02 1.96"/></geometry></collision>
+  </link>
+  <link name="mobile_shelving_run_outer_carriage">
+    <inertial><origin xyz="0 0.07 0.752963" rpy="0 0 0"/><mass value="251.022"/><inertia ixx="155.713" ixy="0" ixz="0" iyy="136.73" iyz="1.19209e-07" izz="34.1975"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_shelving_run_outer_carriage.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.07 0.052" rpy="0 0 0"/><geometry><box size="0.58 0.96 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.28 -0.4 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="-0.28 0.54 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0.28 -0.4 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0.28 0.54 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0 0.07 0.15" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 0.55" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 0.95" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 1.35" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 1.75" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 1.99" rpy="0 0 0"/><geometry><box size="0.6 1 0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.44 1" rpy="0 0 0"/><geometry><box size="0.6 0.02 1.96"/></geometry></collision>
+    <collision><origin xyz="0 0.58 1" rpy="0 0 0"/><geometry><box size="0.6 0.02 1.96"/></geometry></collision>
+  </link>
+  <joint name="mobile_shelving_run_outer_carriage_joint" type="prismatic">
+    <parent link="mobile_shelving_run_body"/><child link="mobile_shelving_run_outer_carriage"/>
+    <origin xyz="-0.225 0 0" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.75" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="mobile_shelving_run_outer_carriage_crank">
+    <inertial><origin xyz="0.000585147 -0.0331154 0" rpy="0 0 0"/><mass value="11.6016"/><inertia ixx="0.0735032" ixy="0.000284341" ixz="0" iyy="0.146464" iyz="-3.16178e-09" izz="0.0745175"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_shelving_run_outer_carriage_crank.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.02 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.04" length="0.04"/></geometry></collision>
+    <collision><origin xyz="0 -0.035 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.17" length="0.014"/></geometry></collision>
+    <collision><origin xyz="0.15 -0.075 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.014" length="0.07"/></geometry></collision>
+  </link>
+  <joint name="mobile_shelving_run_outer_carriage_crank_joint" type="continuous">
+    <parent link="mobile_shelving_run_outer_carriage"/><child link="mobile_shelving_run_outer_carriage_crank"/>
+    <origin xyz="0 -0.45 1.1" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="mobile_shelving_run_inner_carriage">
+    <inertial><origin xyz="0 0.07 0.752963" rpy="0 0 0"/><mass value="251.022"/><inertia ixx="155.713" ixy="0" ixz="0" iyy="136.73" iyz="1.19209e-07" izz="34.1975"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_shelving_run_inner_carriage.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.07 0.052" rpy="0 0 0"/><geometry><box size="0.58 0.96 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.28 -0.4 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="-0.28 0.54 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0.28 -0.4 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0.28 0.54 1.05" rpy="0 0 0"/><geometry><box size="0.03 0.03 1.9"/></geometry></collision>
+    <collision><origin xyz="0 0.07 0.15" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 0.55" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 0.95" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 1.35" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 1.75" rpy="0 0 0"/><geometry><box size="0.56 0.94 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.07 1.99" rpy="0 0 0"/><geometry><box size="0.6 1 0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.44 1" rpy="0 0 0"/><geometry><box size="0.6 0.02 1.96"/></geometry></collision>
+    <collision><origin xyz="0 0.58 1" rpy="0 0 0"/><geometry><box size="0.6 0.02 1.96"/></geometry></collision>
+  </link>
+  <joint name="mobile_shelving_run_inner_carriage_joint" type="prismatic">
+    <parent link="mobile_shelving_run_body"/><child link="mobile_shelving_run_inner_carriage"/>
+    <origin xyz="0.375 0 0" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.75" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="mobile_shelving_run_inner_carriage_crank">
+    <inertial><origin xyz="0.000585147 -0.0331154 0" rpy="0 0 0"/><mass value="11.6016"/><inertia ixx="0.0735032" ixy="0.000284341" ixz="0" iyy="0.146464" iyz="-3.16178e-09" izz="0.0745175"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_shelving_run_inner_carriage_crank.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.02 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.04" length="0.04"/></geometry></collision>
+    <collision><origin xyz="0 -0.035 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.17" length="0.014"/></geometry></collision>
+    <collision><origin xyz="0.15 -0.075 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.014" length="0.07"/></geometry></collision>
+  </link>
+  <joint name="mobile_shelving_run_inner_carriage_crank_joint" type="continuous">
+    <parent link="mobile_shelving_run_inner_carriage"/><child link="mobile_shelving_run_inner_carriage_crank"/>
+    <origin xyz="0 -0.45 1.1" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="mobile_shelving_run_fixed_unit_shelf_surface"/>
+  <joint name="mobile_shelving_run_fixed_unit_shelf_surface_fixed" type="fixed">
+    <parent link="mobile_shelving_run_body"/><child link="mobile_shelving_run_fixed_unit_shelf_surface"/>
+    <origin xyz="0.825 0.07 0.96" rpy="0 0 0"/>
+  </joint>
+  <link name="mobile_shelving_run_wall_anchor"/>
+  <joint name="mobile_shelving_run_wall_anchor_fixed" type="fixed">
+    <parent link="mobile_shelving_run_body"/><child link="mobile_shelving_run_wall_anchor"/>
+    <origin xyz="0.975 0.59 1.95" rpy="0 0 0"/>
+  </joint>
+  <link name="mobile_shelving_run_outer_carriage_shelf_surface"/>
+  <joint name="mobile_shelving_run_outer_carriage_shelf_surface_fixed" type="fixed">
+    <parent link="mobile_shelving_run_outer_carriage"/><child link="mobile_shelving_run_outer_carriage_shelf_surface"/>
+    <origin xyz="-0.15 0.07 0.96" rpy="0 0 0"/>
+  </joint>
+  <link name="mobile_shelving_run_outer_carriage_crank_grip"/>
+  <joint name="mobile_shelving_run_outer_carriage_crank_grip_fixed" type="fixed">
+    <parent link="mobile_shelving_run_outer_carriage_crank"/><child link="mobile_shelving_run_outer_carriage_crank_grip"/>
+    <origin xyz="0.15 -0.09 0" rpy="0 0 0"/>
+  </joint>
+  <link name="mobile_shelving_run_inner_carriage_shelf_surface"/>
+  <joint name="mobile_shelving_run_inner_carriage_shelf_surface_fixed" type="fixed">
+    <parent link="mobile_shelving_run_inner_carriage"/><child link="mobile_shelving_run_inner_carriage_shelf_surface"/>
+    <origin xyz="-0.15 0.07 0.96" rpy="0 0 0"/>
+  </joint>
+  <link name="mobile_shelving_run_inner_carriage_crank_grip"/>
+  <joint name="mobile_shelving_run_inner_carriage_crank_grip_fixed" type="fixed">
+    <parent link="mobile_shelving_run_inner_carriage_crank"/><child link="mobile_shelving_run_inner_carriage_crank_grip"/>
+    <origin xyz="0.15 -0.09 0" rpy="0 0 0"/>
+  </joint>
+</robot>

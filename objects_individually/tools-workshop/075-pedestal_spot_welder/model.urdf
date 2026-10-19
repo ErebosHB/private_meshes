@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot name="pedestal_spot_welder">
+  <link name="pedestal_spot_welder_body">
+    <inertial><origin xyz="0.0389306 0.072133 0.595864" rpy="0 0 0"/><mass value="180"/><inertia ixx="32.6742" ixy="-0.169516" ixz="-0.335979" iyy="25.0224" iyz="0.471299" izz="10.618"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pedestal_spot_welder_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.025" rpy="0 0 0"/><geometry><box size="0.42 0.62 0.05"/></geometry></collision>
+    <collision><origin xyz="0.06 0.1 0.6" rpy="0 0 0"/><geometry><box size="0.28 0.6 1.1"/></geometry></collision>
+    <collision><origin xyz="-0.14 0.1 0.056" rpy="0 0 0"/><geometry><box size="0.12 0.6 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.14 0.1 1.144" rpy="0 0 0"/><geometry><box size="0.12 0.6 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.14 -0.194 0.6" rpy="0 0 0"/><geometry><box size="0.12 0.012 1.1"/></geometry></collision>
+    <collision><origin xyz="-0.14 0.394 0.6" rpy="0 0 0"/><geometry><box size="0.12 0.012 1.1"/></geometry></collision>
+    <collision><origin xyz="-0.12 0.12 0.25" rpy="0 0 0"/><geometry><box size="0.08 0.3 0.34"/></geometry></collision>
+    <collision><origin xyz="-0.12 0.12 0.17" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.05" length="0.09"/></geometry></collision>
+    <collision><origin xyz="-0.12 0.12 0.33" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.05" length="0.09"/></geometry></collision>
+    <collision><origin xyz="0.06 -0.206 0.76" rpy="0 0 0"/><geometry><box size="0.22 0.012 0.22"/></geometry></collision>
+    <collision><origin xyz="-0.06 0.05 1.22" rpy="0 0 0"/><geometry><box size="0.02 0.12 0.14"/></geometry></collision>
+    <collision><origin xyz="0.06 0.05 1.22" rpy="0 0 0"/><geometry><box size="0.02 0.12 0.14"/></geometry></collision>
+    <collision><origin xyz="0 0.33 1.25" rpy="0 0 0"/><geometry><cylinder radius="0.045" length="0.2"/></geometry></collision>
+    <collision><origin xyz="0 -0.47 0.9" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.032" length="0.54"/></geometry></collision>
+    <collision><origin xyz="0 -0.215 0.9" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.04" length="0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.7 0.9375" rpy="0 0 0"/><geometry><cylinder radius="0.018" length="0.075"/></geometry></collision>
+    <collision><origin xyz="0 -0.7 0.9865" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.023"/></geometry></collision>
+    <collision><origin xyz="0 -0.4 0.0175" rpy="0 0 0"/><geometry><box size="0.16 0.3 0.035"/></geometry></collision>
+    <collision><origin xyz="-0.066 -0.3 0.045" rpy="0 0 0"/><geometry><box size="0.012 0.03 0.03"/></geometry></collision>
+    <collision><origin xyz="0.066 -0.3 0.045" rpy="0 0 0"/><geometry><box size="0.012 0.03 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.2325 0.035" rpy="-0.86217 0 0"/><geometry><cylinder radius="0.007" length="0.0460977"/></geometry></collision>
+    <collision><origin xyz="0.02 -0.21 0.095" rpy="-0.110657 0.415952 -0.0233745"/><geometry><cylinder radius="0.007" length="0.098995"/></geometry></collision>
+    <collision><origin xyz="0.05 -0.2025 0.22" rpy="-0.0312398 0.124295 -0.00194414"/><geometry><cylinder radius="0.007" length="0.161323"/></geometry></collision>
+  </link>
+  <link name="pedestal_spot_welder_rocker_arm">
+    <inertial><origin xyz="0 -0.341276 -0.00797" rpy="0 0 0"/><mass value="15"/><inertia ixx="1.16761" ixy="0" ixz="0" iyy="0.0257309" iyz="-0.048863" izz="1.15538"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pedestal_spot_welder_rocker_arm.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.03 0" rpy="0 0 0"/><geometry><box size="0.09 0.46 0.09"/></geometry></collision>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.03" length="0.12"/></geometry></collision>
+    <collision><origin xyz="0 -0.49 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.03" length="0.46"/></geometry></collision>
+    <collision><origin xyz="0 -0.265 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.04" length="0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.75 -0.095" rpy="0 0 0"/><geometry><cylinder radius="0.018" length="0.19"/></geometry></collision>
+    <collision><origin xyz="0 -0.75 -0.2015" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.023"/></geometry></collision>
+  </link>
+  <link name="pedestal_spot_welder_service_door">
+    <inertial><origin xyz="0 0.26 0" rpy="0 0 0"/><mass value="4"/><inertia ixx="0.303467" ixy="0" ixz="0" iyy="0.213381" iyz="0" izz="0.0901813"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pedestal_spot_welder_service_door.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.26 0" rpy="0 0 0"/><geometry><box size="0.012 0.52 0.8"/></geometry></collision>
+  </link>
+  <link name="pedestal_spot_welder_foot_pedal">
+    <inertial><origin xyz="0 -0.0749804 0.0224241" rpy="0 0 0"/><mass value="0.8"/><inertia ixx="0.00437317" ixy="0" ixz="0" iyy="0.00127921" iyz="0.00110236" izz="0.00501396"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pedestal_spot_welder_foot_pedal.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.107 0.032" rpy="-0.244346 0 0"/><geometry><box size="0.12 0.22 0.016"/></geometry></collision>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.008" length="0.12"/></geometry></collision>
+  </link>
+  <link name="pedestal_spot_welder_heat_knob">
+    <inertial><origin xyz="0 -0.011 0" rpy="0 0 0"/><mass value="0.03"/><inertia ixx="5.53e-06" ixy="0" ixz="0" iyy="8.64e-06" iyz="0" izz="5.53e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pedestal_spot_welder_heat_knob.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.011 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.024" length="0.022"/></geometry></collision>
+  </link>
+  <joint name="pedestal_spot_welder_rocker_arm_joint" type="revolute">
+    <parent link="pedestal_spot_welder_body"/><child link="pedestal_spot_welder_rocker_arm"/>
+    <origin xyz="0 0.05 1.22" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.25" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="pedestal_spot_welder_service_door_joint" type="revolute">
+    <parent link="pedestal_spot_welder_body"/><child link="pedestal_spot_welder_service_door"/>
+    <origin xyz="-0.206 -0.16 0.6" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="pedestal_spot_welder_foot_pedal_joint" type="revolute">
+    <parent link="pedestal_spot_welder_body"/><child link="pedestal_spot_welder_foot_pedal"/>
+    <origin xyz="0 -0.3 0.045" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.3" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="pedestal_spot_welder_heat_knob_joint" type="revolute">
+    <parent link="pedestal_spot_welder_body"/><child link="pedestal_spot_welder_heat_knob"/>
+    <origin xyz="0.1 -0.212 0.72" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="4.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="pedestal_spot_welder_foot_pedal_contact"/>
+  <joint name="pedestal_spot_welder_foot_pedal_contact_joint" type="fixed"><parent link="pedestal_spot_welder_foot_pedal"/><child link="pedestal_spot_welder_foot_pedal_contact"/><origin xyz="0 -0.14 0.049" rpy="0 0 0"/></joint>
+  <link name="pedestal_spot_welder_heat_knob_contact"/>
+  <joint name="pedestal_spot_welder_heat_knob_contact_joint" type="fixed"><parent link="pedestal_spot_welder_heat_knob"/><child link="pedestal_spot_welder_heat_knob_contact"/><origin xyz="0 -0.022 0" rpy="0 0 0"/></joint>
+  <link name="pedestal_spot_welder_service_door_grip"/>
+  <joint name="pedestal_spot_welder_service_door_grip_joint" type="fixed"><parent link="pedestal_spot_welder_service_door"/><child link="pedestal_spot_welder_service_door_grip"/><origin xyz="-0.008 0.48 0.02" rpy="0 1.5708 0"/></joint>
+  <link name="pedestal_spot_welder_upper_electrode_tip"/>
+  <joint name="pedestal_spot_welder_upper_electrode_tip_joint" type="fixed"><parent link="pedestal_spot_welder_rocker_arm"/><child link="pedestal_spot_welder_upper_electrode_tip"/><origin xyz="0 -0.75 -0.213" rpy="3.14159 0 0"/></joint>
+  <link name="pedestal_spot_welder_lower_electrode_tip"/>
+  <joint name="pedestal_spot_welder_lower_electrode_tip_joint" type="fixed"><parent link="pedestal_spot_welder_body"/><child link="pedestal_spot_welder_lower_electrode_tip"/><origin xyz="0 -0.7 0.998" rpy="0 0 0"/></joint>
+  <link name="pedestal_spot_welder_rear_anchor"/>
+  <joint name="pedestal_spot_welder_rear_anchor_joint" type="fixed"><parent link="pedestal_spot_welder_body"/><child link="pedestal_spot_welder_rear_anchor"/><origin xyz="0.06 0.4 1" rpy="0 0 0"/></joint>
+</robot>

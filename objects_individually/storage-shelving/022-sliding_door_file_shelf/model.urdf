@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot name="sliding_door_file_shelf">
+  <link name="sliding_door_file_shelf_body">
+    <inertial><origin xyz="0 0.0402116 0.616347" rpy="0 0 0"/><mass value="39.881"/><inertia ixx="7.2864" ixy="0" ixz="0" iyy="13.609" iyz="0.065357" izz="7.6903"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sliding_door_file_shelf_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.591 0.02 0.61" rpy="0 0 0"/><geometry><box size="0.018 0.38 1.18"/></geometry></collision>
+    <collision><origin xyz="0.591 0.02 0.61" rpy="0 0 0"/><geometry><box size="0.018 0.38 1.18"/></geometry></collision>
+    <collision><origin xyz="0 0.02 1.191" rpy="0 0 0"/><geometry><box size="1.164 0.38 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.02 0.029" rpy="0 0 0"/><geometry><box size="1.164 0.38 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.206 0.61" rpy="0 0 0"/><geometry><box size="1.164 0.008 1.144"/></geometry></collision>
+    <collision><origin xyz="-0.57 -0.14 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="-0.57 0.18 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0.57 -0.14 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0.57 0.18 0.01" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.02 0.419333" rpy="0 0 0"/><geometry><box size="1.162 0.36 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.02 0.800667" rpy="0 0 0"/><geometry><box size="1.162 0.36 0.018"/></geometry></collision>
+    <collision><origin xyz="0 -0.192 0.028" rpy="0 0 0"/><geometry><box size="1.2 0.044 0.016"/></geometry></collision>
+    <collision><origin xyz="0 -0.192 1.1875" rpy="0 0 0"/><geometry><box size="1.2 0.044 0.025"/></geometry></collision>
+  </link>
+  <link name="sliding_door_file_shelf_front_door">
+    <inertial><origin xyz="-0.000731086 0.00892896 4.15716e-05" rpy="0 0 0"/><mass value="7.9107"/><inertia ixx="0.84708" ixy="-0.00014289" ixz="8.3619e-05" iyy="1.0803" iyz="8.1251e-06" izz="0.23363"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sliding_door_file_shelf_front_door.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.594 0.018 1.135"/></geometry></collision>
+    <collision><origin xyz="-0.255 -0.017 0.0145" rpy="0 0 0"/><geometry><box size="0.012 0.01 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.255 -0.006 -0.0535" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.255 -0.006 0.0825" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="sliding_door_file_shelf_rear_door">
+    <inertial><origin xyz="0.000227899 0.00899062 1.2959e-05" rpy="0 0 0"/><mass value="7.8951"/><inertia ixx="0.84703" ixy="1.8876e-05" ixz="-2.6066e-05" iyy="1.0792" iyz="1.0733e-06" izz="0.2326"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sliding_door_file_shelf_rear_door.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.594 0.018 1.135"/></geometry></collision>
+    <collision><origin xyz="0.255 -0.0015 0.0145" rpy="0 0 0"/><geometry><box size="0.014 0.003 0.16"/></geometry></collision>
+  </link>
+  <joint name="sliding_door_file_shelf_front_door_joint" type="prismatic">
+    <parent link="sliding_door_file_shelf_body"/><child link="sliding_door_file_shelf_front_door"/>
+    <origin xyz="-0.285 -0.212 0.6055" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.57" effort="200" velocity="0.1"/>
+  </joint>
+  <joint name="sliding_door_file_shelf_rear_door_joint" type="prismatic">
+    <parent link="sliding_door_file_shelf_body"/><child link="sliding_door_file_shelf_rear_door"/>
+    <origin xyz="0.285 -0.19 0.6055" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.57" effort="200" velocity="0.1"/>
+  </joint>
+  <link name="sliding_door_file_shelf_front_door_grip"/>
+  <joint name="sliding_door_file_shelf_front_door_grip_joint" type="fixed"><parent link="sliding_door_file_shelf_front_door"/><child link="sliding_door_file_shelf_front_door_grip"/><origin xyz="-0.255 -0.017 0.0145" rpy="0 -1.5708 0"/></joint>
+  <link name="sliding_door_file_shelf_rear_door_grip"/>
+  <joint name="sliding_door_file_shelf_rear_door_grip_joint" type="fixed"><parent link="sliding_door_file_shelf_rear_door"/><child link="sliding_door_file_shelf_rear_door_grip"/><origin xyz="0.255 -0.00300001 0.0145" rpy="0 -1.5708 0"/></joint>
+  <link name="sliding_door_file_shelf_bottom_surface"/>
+  <joint name="sliding_door_file_shelf_bottom_surface_joint" type="fixed"><parent link="sliding_door_file_shelf_body"/><child link="sliding_door_file_shelf_bottom_surface"/><origin xyz="0 0.02 0.038" rpy="0 0 0"/></joint>
+  <link name="sliding_door_file_shelf_shelf_1_surface"/>
+  <joint name="sliding_door_file_shelf_shelf_1_surface_joint" type="fixed"><parent link="sliding_door_file_shelf_body"/><child link="sliding_door_file_shelf_shelf_1_surface"/><origin xyz="0 0.02 0.428333" rpy="0 0 0"/></joint>
+  <link name="sliding_door_file_shelf_shelf_2_surface"/>
+  <joint name="sliding_door_file_shelf_shelf_2_surface_joint" type="fixed"><parent link="sliding_door_file_shelf_body"/><child link="sliding_door_file_shelf_shelf_2_surface"/><origin xyz="0 0.02 0.809667" rpy="0 0 0"/></joint>
+  <link name="sliding_door_file_shelf_top_surface"/>
+  <joint name="sliding_door_file_shelf_top_surface_joint" type="fixed"><parent link="sliding_door_file_shelf_body"/><child link="sliding_door_file_shelf_top_surface"/><origin xyz="0 0.02 1.2" rpy="0 0 0"/></joint>
+  <link name="sliding_door_file_shelf_wall_anchor"/>
+  <joint name="sliding_door_file_shelf_wall_anchor_joint" type="fixed"><parent link="sliding_door_file_shelf_body"/><child link="sliding_door_file_shelf_wall_anchor"/><origin xyz="0 0.21 1.15" rpy="0 0 0"/></joint>
+</robot>

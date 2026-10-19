@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot name="manual_spot_welding_gun">
+  <link name="manual_spot_welding_gun_body">
+    <inertial><origin xyz="0.0238508 0.152139 0.0458556" rpy="0 0 0"/><mass value="6"/><inertia ixx="0.213582" ixy="-0.00549228" ixz="-0.0002632" iyy="0.00660571" iyz="-0.00157393" izz="0.214385"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/manual_spot_welding_gun_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.03 0.28 0.05" rpy="0 0 0"/><geometry><box size="0.11 0.16 0.1"/></geometry></collision>
+    <collision><origin xyz="0.03 0.43 0.045" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.018" length="0.14"/></geometry></collision>
+    <collision><origin xyz="0.02 -0.04 0.045" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.012" length="0.42"/></geometry></collision>
+    <collision><origin xyz="0.011 -0.25 0.045" rpy="0 -1.5708 0"/><geometry><cylinder radius="0.009" length="0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.12 0.016" rpy="0 0 0"/><geometry><box size="0.07 0.2 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.02 0.06 0.045" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.05"/></geometry></collision>
+    <collision><origin xyz="0.03 0.52 0.035" rpy="-2.03444 0 0"/><geometry><cylinder radius="0.012" length="0.0447214"/></geometry></collision>
+    <collision><origin xyz="0.04 0.56 0.0185" rpy="-1.88503 0.44387 -0.60232"/><geometry><cylinder radius="0.012" length="0.0465725"/></geometry></collision>
+  </link>
+  <link name="manual_spot_welding_gun_upper_arm">
+    <inertial><origin xyz="-0.0220713 0.00854627 0" rpy="0 0 0"/><mass value="0.8"/><inertia ixx="0.0280996" ixy="0.00357865" ixz="0" iyy="0.000595289" iyz="0" izz="0.0286369"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/manual_spot_welding_gun_upper_arm.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.155 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.012" length="0.31"/></geometry></collision>
+    <collision><origin xyz="0.009 -0.31 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.009" length="0.018"/></geometry></collision>
+    <collision><origin xyz="-0.015 0.045 0" rpy="-1.5708 -0.321751 0.321751"/><geometry><cylinder radius="0.011" length="0.0948683"/></geometry></collision>
+    <collision><origin xyz="-0.0425 0.14 0" rpy="-1.5708 -0.244979 0.244979"/><geometry><cylinder radius="0.011" length="0.103078"/></geometry></collision>
+    <collision><origin xyz="-0.06 0.255 0" rpy="-1.5708 -0.0767719 0.0767719"/><geometry><cylinder radius="0.011" length="0.130384"/></geometry></collision>
+    <collision><origin xyz="-0.061 0.26 0" rpy="-1.5708 -0.07983 0.07983"/><geometry><cylinder radius="0.018" length="0.13"/></geometry></collision>
+  </link>
+  <link name="manual_spot_welding_gun_trigger">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.005"/><inertia ixx="4.56667e-07" ixy="0" ixz="0" iyy="1.08333e-07" iyz="0" izz="4.01667e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/manual_spot_welding_gun_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.008 0.03 0.014"/></geometry></collision>
+  </link>
+  <joint name="manual_spot_welding_gun_upper_arm_joint" type="revolute">
+    <parent link="manual_spot_welding_gun_body"/><child link="manual_spot_welding_gun_upper_arm"/>
+    <origin xyz="-0.02 0.06 0.045" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.35" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="manual_spot_welding_gun_trigger_joint" type="prismatic">
+    <parent link="manual_spot_welding_gun_body"/><child link="manual_spot_welding_gun_trigger"/>
+    <origin xyz="0.0115 0.41 0.045" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.004" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="manual_spot_welding_gun_fixed_handle_grip"/>
+  <joint name="manual_spot_welding_gun_fixed_handle_grip_joint" type="fixed"><parent link="manual_spot_welding_gun_body"/><child link="manual_spot_welding_gun_fixed_handle_grip"/><origin xyz="0.03 0.43 0.045" rpy="0 0 1.5708"/></joint>
+  <link name="manual_spot_welding_gun_lever_grip"/>
+  <joint name="manual_spot_welding_gun_lever_grip_joint" type="fixed"><parent link="manual_spot_welding_gun_upper_arm"/><child link="manual_spot_welding_gun_lever_grip"/><origin xyz="-0.061 0.26 0" rpy="0 0 1.65108"/></joint>
+  <link name="manual_spot_welding_gun_trigger_contact"/>
+  <joint name="manual_spot_welding_gun_trigger_contact_joint" type="fixed"><parent link="manual_spot_welding_gun_trigger"/><child link="manual_spot_welding_gun_trigger_contact"/><origin xyz="-0.0035 0 0" rpy="0 0 0"/></joint>
+  <link name="manual_spot_welding_gun_upper_electrode_tip"/>
+  <joint name="manual_spot_welding_gun_upper_electrode_tip_joint" type="fixed"><parent link="manual_spot_welding_gun_upper_arm"/><child link="manual_spot_welding_gun_upper_electrode_tip"/><origin xyz="0.018 -0.31 0" rpy="0 1.5708 0"/></joint>
+  <link name="manual_spot_welding_gun_lower_electrode_tip"/>
+  <joint name="manual_spot_welding_gun_lower_electrode_tip_joint" type="fixed"><parent link="manual_spot_welding_gun_body"/><child link="manual_spot_welding_gun_lower_electrode_tip"/><origin xyz="0.002 -0.25 0.045" rpy="0 -1.5708 0"/></joint>
+</robot>

@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<robot name="low_cabinet_two_drawers">
+  <link name="low_cabinet_two_drawers_body">
+    <inertial>
+      <origin xyz="0 0.0297475 0.201596" rpy="0 0 0"/>
+      <mass value="9.8699"/>
+      <inertia ixx="0.23763" ixy="0" ixz="0" iyy="0.64658" iyz="-0.00069712" izz="0.62551"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/low_cabinet_two_drawers_body.glb"/></geometry>
+    </visual>
+    <collision name="low_cabinet_two_drawers_body_c00">
+      <origin xyz="-0.3 -0.107 0.03" rpy="0 0 0"/>
+      <geometry><box size="0.04 0.04 0.06"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c01">
+      <origin xyz="-0.3 0.125 0.03" rpy="0 0 0"/>
+      <geometry><box size="0.04 0.04 0.06"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c02">
+      <origin xyz="0.3 -0.107 0.03" rpy="0 0 0"/>
+      <geometry><box size="0.04 0.04 0.06"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c03">
+      <origin xyz="0.3 0.125 0.03" rpy="0 0 0"/>
+      <geometry><box size="0.04 0.04 0.06"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c04">
+      <origin xyz="-0.341 0.009 0.205" rpy="0 0 0"/>
+      <geometry><box size="0.018 0.332 0.29"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c05">
+      <origin xyz="0.341 0.009 0.205" rpy="0 0 0"/>
+      <geometry><box size="0.018 0.332 0.29"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c06">
+      <origin xyz="0 0.009 0.341" rpy="0 0 0"/>
+      <geometry><box size="0.664 0.332 0.018"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c07">
+      <origin xyz="0 0.009 0.069" rpy="0 0 0"/>
+      <geometry><box size="0.664 0.332 0.018"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c08">
+      <origin xyz="0 0.169 0.205" rpy="0 0 0"/>
+      <geometry><box size="0.664 0.012 0.254"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_body_c09">
+      <origin xyz="0 0.003 0.205" rpy="0 0 0"/>
+      <geometry><box size="0.018 0.32 0.254"/></geometry>
+    </collision>
+  </link>
+  <link name="low_cabinet_two_drawers_left_drawer">
+    <inertial>
+      <origin xyz="0.00314948 0.109228 0.112951" rpy="0 0 0"/>
+      <mass value="3.2248"/>
+      <inertia ixx="0.070431" ixy="-0.00081301" ixz="0.00015542" iyy="0.058742" iyz="0.0043512" izz="0.089517"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/low_cabinet_two_drawers_left_drawer.glb"/></geometry>
+    </visual>
+    <collision name="low_cabinet_two_drawers_left_drawer_c00">
+      <origin xyz="0 -0.009 0.127" rpy="0 0 0"/>
+      <geometry><box size="0.3485 0.018 0.288"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_left_drawer_c01">
+      <origin xyz="-0.13725 0.155 0.1205" rpy="0 0 0"/>
+      <geometry><box size="0.012 0.31 0.217"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_left_drawer_c02">
+      <origin xyz="0.14775 0.155 0.1205" rpy="0 0 0"/>
+      <geometry><box size="0.012 0.31 0.217"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_left_drawer_c03">
+      <origin xyz="0.00524999 0.304 0.1205" rpy="0 0 0"/>
+      <geometry><box size="0.273 0.012 0.217"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_left_drawer_c04">
+      <origin xyz="0.00524999 0.149 0.016" rpy="0 0 0"/>
+      <geometry><box size="0.273 0.298 0.00799999"/></geometry>
+    </collision>
+  </link>
+  <link name="low_cabinet_two_drawers_right_drawer">
+    <inertial>
+      <origin xyz="-0.00314948 0.109228 0.112951" rpy="0 0 0"/>
+      <mass value="3.2248"/>
+      <inertia ixx="0.070431" ixy="0.00081301" ixz="-0.00015542" iyy="0.058742" iyz="0.0043512" izz="0.089517"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/low_cabinet_two_drawers_right_drawer.glb"/></geometry>
+    </visual>
+    <collision name="low_cabinet_two_drawers_right_drawer_c00">
+      <origin xyz="0 -0.009 0.127" rpy="0 0 0"/>
+      <geometry><box size="0.3485 0.018 0.288"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_right_drawer_c01">
+      <origin xyz="-0.14775 0.155 0.1205" rpy="0 0 0"/>
+      <geometry><box size="0.012 0.31 0.217"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_right_drawer_c02">
+      <origin xyz="0.13725 0.155 0.1205" rpy="0 0 0"/>
+      <geometry><box size="0.012 0.31 0.217"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_right_drawer_c03">
+      <origin xyz="-0.00524999 0.304 0.1205" rpy="0 0 0"/>
+      <geometry><box size="0.273 0.012 0.217"/></geometry>
+    </collision>
+    <collision name="low_cabinet_two_drawers_right_drawer_c04">
+      <origin xyz="-0.00524999 0.149 0.016" rpy="0 0 0"/>
+      <geometry><box size="0.273 0.298 0.00799999"/></geometry>
+    </collision>
+  </link>
+  <joint name="low_cabinet_two_drawers_left_drawer_joint" type="prismatic">
+    <parent link="low_cabinet_two_drawers_body"/>
+    <child link="low_cabinet_two_drawers_left_drawer"/>
+    <origin xyz="-0.17575 -0.157 0.078" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.2235" effort="60" velocity="0.5"/>
+  </joint>
+  <joint name="low_cabinet_two_drawers_right_drawer_joint" type="prismatic">
+    <parent link="low_cabinet_two_drawers_body"/>
+    <child link="low_cabinet_two_drawers_right_drawer"/>
+    <origin xyz="0.17575 -0.157 0.078" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.2235" effort="60" velocity="0.5"/>
+  </joint>
+  <link name="low_cabinet_two_drawers_left_drawer_grip"/>
+  <joint name="low_cabinet_two_drawers_left_drawer_grip_fixed" type="fixed">
+    <parent link="low_cabinet_two_drawers_left_drawer"/>
+    <child link="low_cabinet_two_drawers_left_drawer_grip"/>
+    <origin xyz="0 -0.029 0.226" rpy="0 0 0"/>
+  </joint>
+  <link name="low_cabinet_two_drawers_left_drawer_volume"/>
+  <joint name="low_cabinet_two_drawers_left_drawer_volume_fixed" type="fixed">
+    <parent link="low_cabinet_two_drawers_left_drawer"/>
+    <child link="low_cabinet_two_drawers_left_drawer_volume"/>
+    <origin xyz="0.00525001 0.149 0.1245" rpy="0 0 0"/>
+  </joint>
+  <link name="low_cabinet_two_drawers_right_drawer_grip"/>
+  <joint name="low_cabinet_two_drawers_right_drawer_grip_fixed" type="fixed">
+    <parent link="low_cabinet_two_drawers_right_drawer"/>
+    <child link="low_cabinet_two_drawers_right_drawer_grip"/>
+    <origin xyz="0 -0.029 0.226" rpy="0 0 0"/>
+  </joint>
+  <link name="low_cabinet_two_drawers_right_drawer_volume"/>
+  <joint name="low_cabinet_two_drawers_right_drawer_volume_fixed" type="fixed">
+    <parent link="low_cabinet_two_drawers_right_drawer"/>
+    <child link="low_cabinet_two_drawers_right_drawer_volume"/>
+    <origin xyz="-0.00525001 0.149 0.1245" rpy="0 0 0"/>
+  </joint>
+  <link name="low_cabinet_two_drawers_top_surface"/>
+  <joint name="low_cabinet_two_drawers_top_surface_fixed" type="fixed">
+    <parent link="low_cabinet_two_drawers_body"/>
+    <child link="low_cabinet_two_drawers_top_surface"/>
+    <origin xyz="0 0.009 0.35" rpy="0 0 0"/>
+  </joint>
+</robot>

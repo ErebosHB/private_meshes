@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<robot name="metal_shelving_rollout_crate">
+  <link name="metal_shelving_rollout_crate_body">
+    <inertial>
+      <origin xyz="1.60008e-09 4.0002e-10 1.03378" rpy="0 0 0"/>
+      <mass value="18.626"/>
+      <inertia ixx="5.5733" ixy="-1.4096e-17" ixz="1.0517e-09" iyy="7.1638" iyz="2.4894e-10" izz="2.4076"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/metal_shelving_rollout_crate_body.glb"/></geometry>
+    </visual>
+    <collision name="metal_shelving_rollout_crate_body_c00">
+      <origin xyz="-0.435 -0.185 0.005" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.03 0.01"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c01">
+      <origin xyz="-0.435 -0.19925 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.0015 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c02">
+      <origin xyz="-0.44925 -0.185 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.00149998 0.03 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c03">
+      <origin xyz="-0.435 0.185 0.005" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.03 0.01"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c04">
+      <origin xyz="-0.435 0.19925 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.0015 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c05">
+      <origin xyz="-0.44925 0.185 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.00149998 0.03 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c06">
+      <origin xyz="0.435 -0.185 0.005" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.03 0.01"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c07">
+      <origin xyz="0.435 -0.19925 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.0015 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c08">
+      <origin xyz="0.44925 -0.185 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.00149998 0.03 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c09">
+      <origin xyz="0.435 0.185 0.005" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.03 0.01"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c10">
+      <origin xyz="0.435 0.19925 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.0015 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c11">
+      <origin xyz="0.44925 0.185 0.905" rpy="0 0 0"/>
+      <geometry><box size="0.00149998 0.03 1.79"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c12">
+      <origin xyz="0 0 0.3995" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.397 0.00100002"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c13">
+      <origin xyz="0 -0.198 0.3845" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c14">
+      <origin xyz="0 0.198 0.3845" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c15">
+      <origin xyz="-0.448 0 0.3845" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c16">
+      <origin xyz="0.448 0 0.3845" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c17">
+      <origin xyz="0 0 0.8495" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.397 0.00100005"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c18">
+      <origin xyz="0 -0.198 0.8345" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c19">
+      <origin xyz="0 0.198 0.8345" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c20">
+      <origin xyz="-0.448 0 0.8345" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c21">
+      <origin xyz="0.448 0 0.8345" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c22">
+      <origin xyz="0 0 1.2995" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.397 0.000999928"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c23">
+      <origin xyz="0 -0.198 1.2845" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c24">
+      <origin xyz="0 0.198 1.2845" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c25">
+      <origin xyz="-0.448 0 1.2845" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c26">
+      <origin xyz="0.448 0 1.2845" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c27">
+      <origin xyz="0 0 1.7995" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.397 0.000999928"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c28">
+      <origin xyz="0 -0.198 1.7845" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c29">
+      <origin xyz="0 0.198 1.7845" rpy="0 0 0"/>
+      <geometry><box size="0.897 0.001 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c30">
+      <origin xyz="-0.448 0 1.7845" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_body_c31">
+      <origin xyz="0.448 0 1.7845" rpy="0 0 0"/>
+      <geometry><box size="0.00100002 0.395 0.029"/></geometry>
+    </collision>
+  </link>
+  <link name="metal_shelving_rollout_crate_crate">
+    <inertial>
+      <origin xyz="0 0.165808 0.130027" rpy="0 0 0"/>
+      <mass value="4.648"/>
+      <inertia ixx="0.12954" ixy="0" ixz="1.7347e-18" iyy="0.40574" iyz="0.0031173" izz="0.44761"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/metal_shelving_rollout_crate_crate.glb"/></geometry>
+    </visual>
+    <collision name="metal_shelving_rollout_crate_crate_c00">
+      <origin xyz="-0.345 0.05 0.02" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.04 0.04"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c01">
+      <origin xyz="-0.345 0.29 0.02" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.04 0.04"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c02">
+      <origin xyz="0.345 0.05 0.02" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.04 0.04"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c03">
+      <origin xyz="0.345 0.29 0.02" rpy="0 0 0"/>
+      <geometry><box size="0.03 0.04 0.04"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c04">
+      <origin xyz="0 0.17 0.0425" rpy="0 0 0"/>
+      <geometry><box size="0.8 0.34 0.005"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c05">
+      <origin xyz="0 0.0025 0.1825" rpy="0 0 0"/>
+      <geometry><box size="0.8 0.005 0.275"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c06">
+      <origin xyz="0 0.3375 0.1825" rpy="0 0 0"/>
+      <geometry><box size="0.8 0.005 0.275"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c07">
+      <origin xyz="-0.3975 0.17 0.1825" rpy="0 0 0"/>
+      <geometry><box size="0.005 0.33 0.275"/></geometry>
+    </collision>
+    <collision name="metal_shelving_rollout_crate_crate_c08">
+      <origin xyz="0.3975 0.17 0.1825" rpy="0 0 0"/>
+      <geometry><box size="0.005 0.33 0.275"/></geometry>
+    </collision>
+  </link>
+  <joint name="metal_shelving_rollout_crate_crate_joint" type="prismatic">
+    <parent link="metal_shelving_rollout_crate_body"/>
+    <child link="metal_shelving_rollout_crate_crate"/>
+    <origin xyz="0 -0.188 0" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.2475" effort="60" velocity="0.5"/>
+  </joint>
+  <link name="metal_shelving_rollout_crate_crate_grip"/>
+  <joint name="metal_shelving_rollout_crate_crate_grip_fixed" type="fixed">
+    <parent link="metal_shelving_rollout_crate_crate"/>
+    <child link="metal_shelving_rollout_crate_crate_grip"/>
+    <origin xyz="0 -0.009 0.29" rpy="0 0 0"/>
+  </joint>
+  <link name="metal_shelving_rollout_crate_crate_volume"/>
+  <joint name="metal_shelving_rollout_crate_crate_volume_fixed" type="fixed">
+    <parent link="metal_shelving_rollout_crate_crate"/>
+    <child link="metal_shelving_rollout_crate_crate_volume"/>
+    <origin xyz="0 0.17 0.1825" rpy="0 0 0"/>
+  </joint>
+  <link name="metal_shelving_rollout_crate_lower_shelf_surface"/>
+  <joint name="metal_shelving_rollout_crate_lower_shelf_surface_fixed" type="fixed">
+    <parent link="metal_shelving_rollout_crate_body"/>
+    <child link="metal_shelving_rollout_crate_lower_shelf_surface"/>
+    <origin xyz="0 0 0.4" rpy="0 0 0"/>
+  </joint>
+  <link name="metal_shelving_rollout_crate_middle_shelf_surface"/>
+  <joint name="metal_shelving_rollout_crate_middle_shelf_surface_fixed" type="fixed">
+    <parent link="metal_shelving_rollout_crate_body"/>
+    <child link="metal_shelving_rollout_crate_middle_shelf_surface"/>
+    <origin xyz="0 0 0.85" rpy="0 0 0"/>
+  </joint>
+  <link name="metal_shelving_rollout_crate_upper_shelf_surface"/>
+  <joint name="metal_shelving_rollout_crate_upper_shelf_surface_fixed" type="fixed">
+    <parent link="metal_shelving_rollout_crate_body"/>
+    <child link="metal_shelving_rollout_crate_upper_shelf_surface"/>
+    <origin xyz="0 0 1.3" rpy="0 0 0"/>
+  </joint>
+  <link name="metal_shelving_rollout_crate_top_surface"/>
+  <joint name="metal_shelving_rollout_crate_top_surface_fixed" type="fixed">
+    <parent link="metal_shelving_rollout_crate_body"/>
+    <child link="metal_shelving_rollout_crate_top_surface"/>
+    <origin xyz="0 0 1.8" rpy="0 0 0"/>
+  </joint>
+  <link name="metal_shelving_rollout_crate_wall_anchor"/>
+  <joint name="metal_shelving_rollout_crate_wall_anchor_fixed" type="fixed">
+    <parent link="metal_shelving_rollout_crate_body"/>
+    <child link="metal_shelving_rollout_crate_wall_anchor"/>
+    <origin xyz="0 0.2 1.75" rpy="0 0 0"/>
+  </joint>
+</robot>

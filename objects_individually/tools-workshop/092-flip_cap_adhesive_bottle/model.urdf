@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<robot name="flip_cap_adhesive_bottle">
+  <link name="flip_cap_adhesive_bottle_body">
+    <inertial><origin xyz="0 0 0.0477635" rpy="0 0 0"/><mass value="0.06"/><inertia ixx="5.1919e-05" ixy="0" ixz="0" iyy="5.1919e-05" iyz="0" izz="1.06158e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/flip_cap_adhesive_bottle_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.0465" rpy="0 0 0"/><geometry><cylinder radius="0.019" length="0.093"/></geometry></collision>
+    <collision><origin xyz="0 0 0.104" rpy="0 0 0"/><geometry><cylinder radius="0.006" length="0.022"/></geometry></collision>
+  </link>
+  <link name="flip_cap_adhesive_bottle_flip_cap">
+    <inertial><origin xyz="0 -0.0113968 0.0133827" rpy="0 0 0"/><mass value="0.004"/><inertia ixx="4.31857e-07" ixy="0" ixz="0" iyy="4.27461e-07" iyz="5.11309e-09" izz="2.53228e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/flip_cap_adhesive_bottle_flip_cap.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.0115 0.0135" rpy="0 0 0"/><geometry><cylinder radius="0.0112" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.0005 0.001" rpy="0 0 0"/><geometry><box size="0.007 0.004 0.004"/></geometry></collision>
+  </link>
+  <joint name="flip_cap_adhesive_bottle_flip_cap_joint" type="revolute">
+    <parent link="flip_cap_adhesive_bottle_body"/><child link="flip_cap_adhesive_bottle_flip_cap"/>
+    <origin xyz="0 0.0115 0.095" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="flip_cap_adhesive_bottle_bottle_grip"/>
+  <joint name="flip_cap_adhesive_bottle_bottle_grip_joint" type="fixed"><parent link="flip_cap_adhesive_bottle_body"/><child link="flip_cap_adhesive_bottle_bottle_grip"/><origin xyz="0 0 0.045" rpy="0 -1.5708 0"/></joint>
+  <link name="flip_cap_adhesive_bottle_flip_cap_lip"/>
+  <joint name="flip_cap_adhesive_bottle_flip_cap_lip_joint" type="fixed"><parent link="flip_cap_adhesive_bottle_flip_cap"/><child link="flip_cap_adhesive_bottle_flip_cap_lip"/><origin xyz="0 -0.024 0.002" rpy="0 0 0"/></joint>
+  <link name="flip_cap_adhesive_bottle_bottle_volume"/>
+  <joint name="flip_cap_adhesive_bottle_bottle_volume_joint" type="fixed"><parent link="flip_cap_adhesive_bottle_body"/><child link="flip_cap_adhesive_bottle_bottle_volume"/><origin xyz="0 0 0.045" rpy="0 0 0"/></joint>
+</robot>

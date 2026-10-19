@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<robot name="mobile_fume_extractor">
+  <link name="mobile_fume_extractor_body">
+    <inertial><origin xyz="0.000156752 0.0196874 0.594443" rpy="0 0 0"/><mass value="45"/><inertia ixx="3.64521" ixy="0.00226208" ixz="-0.00116781" iyy="3.43148" iyz="0.107089" izz="2.19731"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.115" rpy="0 0 0"/><geometry><box size="0.5 0.6 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.244 0 0.39" rpy="0 0 0"/><geometry><box size="0.012 0.6 0.52"/></geometry></collision>
+    <collision><origin xyz="0.244 0 0.39" rpy="0 0 0"/><geometry><box size="0.012 0.6 0.52"/></geometry></collision>
+    <collision><origin xyz="0 0.294 0.39" rpy="0 0 0"/><geometry><box size="0.5 0.012 0.52"/></geometry></collision>
+    <collision><origin xyz="0 0 0.75" rpy="0 0 0"/><geometry><box size="0.5 0.6 0.2"/></geometry></collision>
+    <collision><origin xyz="0 -0.294 0.645" rpy="0 0 0"/><geometry><box size="0.476 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.11 0.04 0.42" rpy="0 0 0"/><geometry><cylinder radius="0.09" length="0.4"/></geometry></collision>
+    <collision><origin xyz="0.11 0.04 0.42" rpy="0 0 0"/><geometry><cylinder radius="0.09" length="0.4"/></geometry></collision>
+    <collision><origin xyz="0.08 -0.301 0.76" rpy="0 0 0"/><geometry><box size="0.2 0.01 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.88" rpy="0 0 0"/><geometry><cylinder radius="0.08" length="0.06"/></geometry></collision>
+    <collision><origin xyz="0.065 0.1 0.92" rpy="0 0 0"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="0.0459619 0.145962 0.92" rpy="0 0 0.785398"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="-2.84124e-09 0.165 0.92" rpy="0 0 1.5708"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="-0.0459619 0.145962 0.92" rpy="0 0 2.35619"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="-0.065 0.1 0.92" rpy="0 0 -3.14159"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="-0.0459619 0.0540381 0.92" rpy="0 0 -2.35619"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.035 0.92" rpy="0 0 -1.5708"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="0.0459619 0.0540381 0.92" rpy="0 0 -0.785398"/><geometry><box size="0.01 0.0579899 0.02"/></geometry></collision>
+    <collision><origin xyz="-0.2 0.33 0.74" rpy="-0.982794 0 0"/><geometry><cylinder radius="0.012" length="0.072111"/></geometry></collision>
+    <collision><origin xyz="0.2 0.33 0.74" rpy="-0.982794 0 0"/><geometry><cylinder radius="0.012" length="0.072111"/></geometry></collision>
+    <collision><origin xyz="0 0.36 0.76" rpy="0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.4"/></geometry></collision>
+    <collision><origin xyz="0 0.36 0.76" rpy="0 1.5708 0"/><geometry><cylinder radius="0.018" length="0.3"/></geometry></collision>
+    <collision><origin xyz="-0.2 -0.24 0.085" rpy="0 0 0"/><geometry><box size="0.04 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.22 -0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.18 -0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.2 0.24 0.085" rpy="0 0 0"/><geometry><box size="0.04 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.22 0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.18 0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="0.2 -0.24 0.085" rpy="0 0 0"/><geometry><box size="0.04 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="0.18 -0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="0.22 -0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="0.2 0.24 0.085" rpy="0 0 0"/><geometry><box size="0.04 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="0.18 0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="0.22 0.24 0.05" rpy="0 0 0"/><geometry><box size="0.006 0.03 0.06"/></geometry></collision>
+  </link>
+  <link name="mobile_fume_extractor_filter_door">
+    <inertial><origin xyz="0.25 0 0" rpy="0 0 0"/><mass value="2.5"/><inertia ixx="0.0542175" ixy="0" ixz="0" iyy="0.106271" iyz="0" izz="0.0521133"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_filter_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.25 0 0" rpy="0 0 0"/><geometry><box size="0.5 0.012 0.51"/></geometry></collision>
+  </link>
+  <link name="mobile_fume_extractor_dust_tray">
+    <inertial><origin xyz="0 0.170928 -0.0157398" rpy="0 0 0"/><mass value="1.5"/><inertia ixx="0.0317966" ixy="0" ixz="0" iyy="0.0278155" iyz="0.00102103" izz="0.0587173"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_dust_tray.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.00599998 0" rpy="0 0 0"/><geometry><box size="0.42 0.012 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.21 -0.028" rpy="0 0 0"/><geometry><box size="0.42 0.4 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.208 0.21 -0.00299999" rpy="0 0 0"/><geometry><box size="0.004 0.4 0.05"/></geometry></collision>
+    <collision><origin xyz="0.208 0.21 -0.00299999" rpy="0 0 0"/><geometry><box size="0.004 0.4 0.05"/></geometry></collision>
+    <collision><origin xyz="0 0.408 -0.00299999" rpy="0 0 0"/><geometry><box size="0.42 0.004 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.00600001 0.01" rpy="0 0 0"/><geometry><box size="0.1 0.012 0.012"/></geometry></collision>
+  </link>
+  <link name="mobile_fume_extractor_power_switch">
+    <inertial><origin xyz="0 -0.002 0" rpy="0 0 0"/><mass value="0.01"/><inertia ixx="1.45333e-06" ixy="0" ixz="0" iyy="1.81333e-06" iyz="0" izz="6e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_power_switch.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.002 0" rpy="0 0 0"/><geometry><box size="0.024 0.012 0.04"/></geometry></collision>
+  </link>
+  <link name="mobile_fume_extractor_castor_1">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.3"/><inertia ixx="0.000375" ixy="0" ixz="0" iyy="0.00021" iyz="0" izz="0.00021"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_castor_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.05" length="0.03"/></geometry></collision>
+  </link>
+  <link name="mobile_fume_extractor_castor_2">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.3"/><inertia ixx="0.000375" ixy="0" ixz="0" iyy="0.00021" iyz="0" izz="0.00021"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_castor_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.05" length="0.03"/></geometry></collision>
+  </link>
+  <link name="mobile_fume_extractor_castor_3">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.3"/><inertia ixx="0.000375" ixy="0" ixz="0" iyy="0.00021" iyz="0" izz="0.00021"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_castor_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.05" length="0.03"/></geometry></collision>
+  </link>
+  <link name="mobile_fume_extractor_castor_4">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.3"/><inertia ixx="0.000375" ixy="0" ixz="0" iyy="0.00021" iyz="0" izz="0.00021"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_fume_extractor_castor_4.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.05" length="0.03"/></geometry></collision>
+  </link>
+  <joint name="mobile_fume_extractor_filter_door_joint" type="revolute">
+    <parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_filter_door"/>
+    <origin xyz="-0.25 -0.306 0.39" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mobile_fume_extractor_dust_tray_joint" type="prismatic">
+    <parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_dust_tray"/>
+    <origin xyz="0 -0.29 0.16" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mobile_fume_extractor_power_switch_joint" type="revolute">
+    <parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_power_switch"/>
+    <origin xyz="0.15 -0.306 0.76" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.35" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mobile_fume_extractor_castor_1_joint" type="continuous">
+    <parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_castor_1"/>
+    <origin xyz="-0.2 -0.24 0.05" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mobile_fume_extractor_castor_2_joint" type="continuous">
+    <parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_castor_2"/>
+    <origin xyz="0.2 -0.24 0.05" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mobile_fume_extractor_castor_3_joint" type="continuous">
+    <parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_castor_3"/>
+    <origin xyz="-0.2 0.24 0.05" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mobile_fume_extractor_castor_4_joint" type="continuous">
+    <parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_castor_4"/>
+    <origin xyz="0.2 0.24 0.05" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="mobile_fume_extractor_push_handle_grip"/>
+  <joint name="mobile_fume_extractor_push_handle_grip_joint" type="fixed"><parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_push_handle_grip"/><origin xyz="0 0.36 0.76" rpy="0 0 0"/></joint>
+  <link name="mobile_fume_extractor_filter_door_grip"/>
+  <joint name="mobile_fume_extractor_filter_door_grip_joint" type="fixed"><parent link="mobile_fume_extractor_filter_door"/><child link="mobile_fume_extractor_filter_door_grip"/><origin xyz="0.7 -0.01 0.03" rpy="0 1.5708 0"/></joint>
+  <link name="mobile_fume_extractor_dust_tray_grip"/>
+  <joint name="mobile_fume_extractor_dust_tray_grip_joint" type="fixed"><parent link="mobile_fume_extractor_dust_tray"/><child link="mobile_fume_extractor_dust_tray_grip"/><origin xyz="0 -0.014 0.01" rpy="0 0 0"/></joint>
+  <link name="mobile_fume_extractor_dust_tray_volume"/>
+  <joint name="mobile_fume_extractor_dust_tray_volume_joint" type="fixed"><parent link="mobile_fume_extractor_dust_tray"/><child link="mobile_fume_extractor_dust_tray_volume"/><origin xyz="0 0.21 0" rpy="0 0 0"/></joint>
+  <link name="mobile_fume_extractor_power_switch_contact"/>
+  <joint name="mobile_fume_extractor_power_switch_contact_joint" type="fixed"><parent link="mobile_fume_extractor_power_switch"/><child link="mobile_fume_extractor_power_switch_contact"/><origin xyz="0 -0.009 0.00999999" rpy="0 0 0"/></joint>
+  <link name="mobile_fume_extractor_hose_collar"/>
+  <joint name="mobile_fume_extractor_hose_collar_joint" type="fixed"><parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_hose_collar"/><origin xyz="0 0.1 0.93" rpy="0 0 0"/></joint>
+  <link name="mobile_fume_extractor_rear_anchor"/>
+  <joint name="mobile_fume_extractor_rear_anchor_joint" type="fixed"><parent link="mobile_fume_extractor_body"/><child link="mobile_fume_extractor_rear_anchor"/><origin xyz="0 0.3 0.6" rpy="0 0 0"/></joint>
+</robot>

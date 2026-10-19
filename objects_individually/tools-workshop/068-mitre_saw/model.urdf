@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<robot name="mitre_saw">
+  <link name="mitre_saw_body">
+    <inertial><origin xyz="7.01373e-10 0.0623383 0.0414722" rpy="0 0 0"/><mass value="12.615"/><inertia ixx="0.15456" ixy="-1.1642e-10" ixz="-2.5466e-10" iyy="0.30375" iyz="-0.0021777" izz="0.43942"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mitre_saw_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.061 0.03" rpy="0 -0 0"/><geometry><box size="0.5 0.4 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.13 0.126 0.09" rpy="0 -0 0"/><geometry><box size="0.2 0.024 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.21 -0.00900001 0.07" rpy="0 -0 0"/><geometry><box size="0.1 0.12 0.02"/></geometry></collision>
+    <collision><origin xyz="0.13 0.126 0.09" rpy="0 -0 0"/><geometry><box size="0.2 0.024 0.06"/></geometry></collision>
+    <collision><origin xyz="0.21 -0.00900001 0.07" rpy="0 -0 0"/><geometry><box size="0.1 0.12 0.02"/></geometry></collision>
+  </link>
+  <link name="mitre_saw_turntable">
+    <inertial><origin xyz="0 0.0717416 0.0502469" rpy="0 0 0"/><mass value="3.9392"/><inertia ixx="0.072503" ixy="0" ixz="-6.5962e-12" iyy="0.020223" iyz="-0.015545" izz="0.071447"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mitre_saw_turntable.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.01" rpy="0 -0 0"/><geometry><cylinder radius="0.15" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.19 0.01" rpy="0 -0 0"/><geometry><box size="0.05 0.12 0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.276 0.01" rpy="1.5708 -0 0"/><geometry><cylinder radius="0.016" length="0.052"/></geometry></collision>
+    <collision><origin xyz="0 0.17 0.06" rpy="0 -0 0"/><geometry><box size="0.07 0.06 0.12"/></geometry></collision>
+    <collision><origin xyz="0 0.17 0.14" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.032" length="0.08"/></geometry></collision>
+  </link>
+  <link name="mitre_saw_saw_arm">
+    <inertial><origin xyz="0.0290797 -0.153421 0.109616" rpy="0 0 0"/><mass value="2.7298"/><inertia ixx="0.02753" ixy="0.0013161" ixz="-0.00082427" iyy="0.017945" iyz="0.0070349" izz="0.027183"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mitre_saw_saw_arm.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.09 0.06" rpy="0.48 -0 0"/><geometry><box size="0.05 0.17 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.19 0.1525" rpy="0 -0 0"/><geometry><box size="0.034 0.27 0.165"/></geometry></collision>
+    <collision><origin xyz="0.1 -0.17 0.12" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.055" length="0.15"/></geometry></collision>
+    <collision><origin xyz="0.188 -0.17 0.12" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.055" length="0.026"/></geometry></collision>
+    <collision><origin xyz="0 -0.3 0.19" rpy="0 -0 0"/><geometry><box size="0.034 0.18 0.12"/></geometry></collision>
+    <collision><origin xyz="0 -0.29 0.245" rpy="-0.1 -0 0"/><geometry><box size="0.036 0.09 0.03"/></geometry></collision>
+  </link>
+  <link name="mitre_saw_blade">
+    <inertial><origin xyz="-6.50321e-05 0 0" rpy="0 0 0"/><mass value="0.9739"/><inertia ixx="0.0075282" ixy="0" ixz="1.2882e-10" iyy="0.003765" iyz="0" izz="0.003765"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mitre_saw_blade.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.125" length="0.0025"/></geometry></collision>
+    <collision><origin xyz="-0.006 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.02" length="0.008"/></geometry></collision>
+  </link>
+  <link name="mitre_saw_lower_guard">
+    <inertial><origin xyz="-0.004 0 -0.065" rpy="0 0 0"/><mass value="0.093694"/><inertia ixx="0.00065976" ixy="0" ixz="0" iyy="0.00013573" iyz="0" izz="0.00053159"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mitre_saw_lower_guard.glb"/></geometry></visual>
+    <collision><origin xyz="-0.004 0 -0.065" rpy="0 -0 0"/><geometry><box size="0.022 0.26 0.13"/></geometry></collision>
+  </link>
+  <joint name="mitre_saw_turntable_joint" type="revolute">
+    <parent link="mitre_saw_body"/><child link="mitre_saw_turntable"/>
+    <origin xyz="0 0.041 0.06" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-0.8" upper="0.8" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mitre_saw_saw_arm_joint" type="revolute">
+    <parent link="mitre_saw_turntable"/><child link="mitre_saw_saw_arm"/>
+    <origin xyz="0 0.17 0.14" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.55" effort="60" velocity="1.5"/>
+  </joint>
+  <joint name="mitre_saw_blade_joint" type="continuous">
+    <parent link="mitre_saw_saw_arm"/><child link="mitre_saw_blade"/>
+    <origin xyz="0 -0.19 0.1" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mitre_saw_lower_guard_joint" type="revolute">
+    <parent link="mitre_saw_saw_arm"/><child link="mitre_saw_lower_guard"/>
+    <origin xyz="0 -0.19 0.1" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.8" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="mitre_saw_d_handle_grip"/>
+  <joint name="mitre_saw_d_handle_grip_joint" type="fixed"><parent link="mitre_saw_saw_arm"/><child link="mitre_saw_d_handle_grip"/><origin xyz="0 -0.29 0.245" rpy="0 0 1.5708"/></joint>
+  <link name="mitre_saw_lock_handle_grip"/>
+  <joint name="mitre_saw_lock_handle_grip_joint" type="fixed"><parent link="mitre_saw_turntable"/><child link="mitre_saw_lock_handle_grip"/><origin xyz="0 -0.28 0.01" rpy="1.5708 0 0"/></joint>
+  <link name="mitre_saw_left_table_surface"/>
+  <joint name="mitre_saw_left_table_surface_joint" type="fixed"><parent link="mitre_saw_body"/><child link="mitre_saw_left_table_surface"/><origin xyz="-0.21 -0.00900001 0.08" rpy="0 0 0"/></joint>
+  <link name="mitre_saw_right_table_surface"/>
+  <joint name="mitre_saw_right_table_surface_joint" type="fixed"><parent link="mitre_saw_body"/><child link="mitre_saw_right_table_surface"/><origin xyz="0.21 -0.00900001 0.08" rpy="0 0 0"/></joint>
+  <link name="mitre_saw_blade_edge"/>
+  <joint name="mitre_saw_blade_edge_joint" type="fixed"><parent link="mitre_saw_blade"/><child link="mitre_saw_blade_edge"/><origin xyz="0 0 -0.125" rpy="3.14159 0 0"/></joint>
+</robot>

@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<robot name="attached_lid_container">
+  <link name="attached_lid_container_body">
+    <inertial><origin xyz="0 0 0.125057" rpy="0 0 0"/><mass value="5.95399"/><inertia ixx="0.205954" ixy="0" ixz="0" iyy="0.373237" iyz="0" izz="0.417228"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/attached_lid_container_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.004" rpy="0 0 0"/><geometry><box size="0.59 0.39 0.008"/></geometry></collision>
+    <collision><origin xyz="0 -0.1975 0.1675" rpy="0 0 0"/><geometry><box size="0.6 0.005 0.335"/></geometry></collision>
+    <collision><origin xyz="0 0.1975 0.1675" rpy="0 0 0"/><geometry><box size="0.6 0.005 0.335"/></geometry></collision>
+    <collision><origin xyz="-0.2975 0 0.1675" rpy="0 0 0"/><geometry><box size="0.005 0.39 0.335"/></geometry></collision>
+    <collision><origin xyz="0.2975 0 0.1675" rpy="0 0 0"/><geometry><box size="0.005 0.39 0.335"/></geometry></collision>
+    <collision><origin xyz="-0.309 0 0.285" rpy="0 0 0"/><geometry><box size="0.012 0.13 0.022"/></geometry></collision>
+    <collision><origin xyz="0.309 0 0.285" rpy="0 0 0"/><geometry><box size="0.012 0.13 0.022"/></geometry></collision>
+  </link>
+  <link name="attached_lid_container_front_lid">
+    <inertial><origin xyz="0 0.101368 0.00643089" rpy="0 0 0"/><mass value="1.09637"/><inertia ixx="0.00375578" ixy="0" ixz="0" iyy="0.0370358" iyz="-9.85303e-06" izz="0.0407569"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/attached_lid_container_front_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.007" rpy="0 0 0"/><geometry><box size="0.604 0.2 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.306 0.1 -0.004" rpy="0 0 0"/><geometry><box size="0.006 0.2 0.026"/></geometry></collision>
+    <collision><origin xyz="0.306 0.1 -0.004" rpy="0 0 0"/><geometry><box size="0.006 0.2 0.026"/></geometry></collision>
+    <collision><origin xyz="0 0.193 0.013" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="attached_lid_container_front_lid_joint" type="revolute">
+    <parent link="attached_lid_container_body"/><child link="attached_lid_container_front_lid"/>
+    <origin xyz="0 -0.2 0.335" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="attached_lid_container_back_lid">
+    <inertial><origin xyz="0 -0.101368 0.00643089" rpy="0 0 0"/><mass value="1.09637"/><inertia ixx="0.00375578" ixy="0" ixz="0" iyy="0.0370358" iyz="9.85303e-06" izz="0.0407569"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/attached_lid_container_back_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.1 0.007" rpy="0 0 0"/><geometry><box size="0.604 0.2 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.306 -0.1 -0.004" rpy="0 0 0"/><geometry><box size="0.006 0.2 0.026"/></geometry></collision>
+    <collision><origin xyz="0.306 -0.1 -0.004" rpy="0 0 0"/><geometry><box size="0.006 0.2 0.026"/></geometry></collision>
+    <collision><origin xyz="0 -0.193 0.013" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="attached_lid_container_back_lid_joint" type="revolute">
+    <parent link="attached_lid_container_body"/><child link="attached_lid_container_back_lid"/>
+    <origin xyz="0 0.2 0.335" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="attached_lid_container_tote_volume"/>
+  <joint name="attached_lid_container_tote_volume_fixed" type="fixed">
+    <parent link="attached_lid_container_body"/><child link="attached_lid_container_tote_volume"/>
+    <origin xyz="0 0 0.17" rpy="0 0 0"/>
+  </joint>
+  <link name="attached_lid_container_left_handle_grip"/>
+  <joint name="attached_lid_container_left_handle_grip_fixed" type="fixed">
+    <parent link="attached_lid_container_body"/><child link="attached_lid_container_left_handle_grip"/>
+    <origin xyz="-0.309 0 0.285" rpy="0 0 0"/>
+  </joint>
+  <link name="attached_lid_container_right_handle_grip"/>
+  <joint name="attached_lid_container_right_handle_grip_fixed" type="fixed">
+    <parent link="attached_lid_container_body"/><child link="attached_lid_container_right_handle_grip"/>
+    <origin xyz="0.309 0 0.285" rpy="0 0 0"/>
+  </joint>
+  <link name="attached_lid_container_front_lid_grip"/>
+  <joint name="attached_lid_container_front_lid_grip_fixed" type="fixed">
+    <parent link="attached_lid_container_front_lid"/><child link="attached_lid_container_front_lid_grip"/>
+    <origin xyz="0 0.193 0.013" rpy="0 0 0"/>
+  </joint>
+  <link name="attached_lid_container_back_lid_grip"/>
+  <joint name="attached_lid_container_back_lid_grip_fixed" type="fixed">
+    <parent link="attached_lid_container_back_lid"/><child link="attached_lid_container_back_lid_grip"/>
+    <origin xyz="0 -0.193 0.013" rpy="0 0 0"/>
+  </joint>
+</robot>

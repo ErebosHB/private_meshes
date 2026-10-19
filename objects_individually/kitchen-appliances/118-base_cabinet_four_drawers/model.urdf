@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<robot name="base_cabinet_four_drawers">
+  <link name="base_cabinet_four_drawers_body">
+    <inertial><origin xyz="6.03755e-17 0.0242224 0.428027" rpy="0 0 0"/><mass value="14.7109"/><inertia ixx="1.45566" ixy="9.41397e-19" ixz="-1.9535e-17" iyy="1.9992" iyz="-0.0784716" izz="1.06551"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_four_drawers_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.291 0.023 0.45" rpy="0 0 0"/><geometry><box size="0.018 0.42 0.7"/></geometry></collision>
+    <collision><origin xyz="0.291 0.023 0.45" rpy="0 0 0"/><geometry><box size="0.018 0.42 0.7"/></geometry></collision>
+    <collision><origin xyz="0 0.023 0.109" rpy="0 0 0"/><geometry><box size="0.564 0.42 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.231 0.459" rpy="0 0 0"/><geometry><box size="0.564 0.004 0.682"/></geometry></collision>
+    <collision><origin xyz="0 -0.148 0.049" rpy="0 0 0"/><geometry><box size="0.6 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="0 0.023 0.809" rpy="0 0 0"/><geometry><box size="0.6 0.42 0.018"/></geometry></collision>
+  </link>
+  <link name="base_cabinet_four_drawers_drawer_1">
+    <inertial><origin xyz="1.92353e-17 0.126775 -0.0137666" rpy="0 0 0"/><mass value="2.52516"/><inertia ixx="0.0425875" ixy="-2.96123e-18" ixz="-7.60636e-19" iyy="0.0831177" iyz="0.00206381" izz="0.120313"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_four_drawers_drawer_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.137"/></geometry></collision>
+    <collision><origin xyz="0 0.178 -0.0395" rpy="0 0 0"/><geometry><box size="0.538 0.32 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.069"/></geometry></collision>
+    <collision><origin xyz="0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.069"/></geometry></collision>
+    <collision><origin xyz="0 0.332 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.069"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0235" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.0235" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.0235" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="base_cabinet_four_drawers_drawer_1_joint" type="prismatic">
+    <parent link="base_cabinet_four_drawers_body"/><child link="base_cabinet_four_drawers_drawer_1"/>
+    <origin xyz="0 -0.207 0.73" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.24" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_2">
+    <inertial><origin xyz="1.64874e-17 0.126775 -0.0137666" rpy="0 0 0"/><mass value="2.52516"/><inertia ixx="0.0425875" ixy="-2.66307e-18" ixz="-5.59042e-19" iyy="0.0831177" iyz="0.00206381" izz="0.120313"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_four_drawers_drawer_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.137"/></geometry></collision>
+    <collision><origin xyz="0 0.178 -0.0395" rpy="0 0 0"/><geometry><box size="0.538 0.32 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.069"/></geometry></collision>
+    <collision><origin xyz="0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.069"/></geometry></collision>
+    <collision><origin xyz="0 0.332 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.069"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0235" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.0235" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.0235" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="base_cabinet_four_drawers_drawer_2_joint" type="prismatic">
+    <parent link="base_cabinet_four_drawers_body"/><child link="base_cabinet_four_drawers_drawer_2"/>
+    <origin xyz="0 -0.207 0.59" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.24" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_3">
+    <inertial><origin xyz="1.67785e-17 0.130564 -0.0168855" rpy="0 0 0"/><mass value="3.30848"/><inertia ixx="0.0634338" ixy="-2.87314e-18" ixz="-1.1147e-18" iyy="0.119662" iyz="0.00321405" izz="0.167441"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_four_drawers_drawer_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.186"/></geometry></collision>
+    <collision><origin xyz="0 0.178 -0.064" rpy="0 0 0"/><geometry><box size="0.538 0.32 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.118"/></geometry></collision>
+    <collision><origin xyz="0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.118"/></geometry></collision>
+    <collision><origin xyz="0 0.332 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.118"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.048" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.048" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.048" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="base_cabinet_four_drawers_drawer_3_joint" type="prismatic">
+    <parent link="base_cabinet_four_drawers_body"/><child link="base_cabinet_four_drawers_drawer_3"/>
+    <origin xyz="0 -0.207 0.4255" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.24" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_4">
+    <inertial><origin xyz="2.78958e-17 0.132625 -0.0185817" rpy="0 0 0"/><mass value="3.97989"/><inertia ixx="0.0843472" ixy="-3.59142e-18" ixz="-1.50772e-18" iyy="0.154079" iyz="0.00416047" izz="0.207788"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_four_drawers_drawer_4.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.228"/></geometry></collision>
+    <collision><origin xyz="0 0.178 -0.085" rpy="0 0 0"/><geometry><box size="0.538 0.32 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.16"/></geometry></collision>
+    <collision><origin xyz="0.263 0.178 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.32 0.16"/></geometry></collision>
+    <collision><origin xyz="0 0.332 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.069" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.069" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.069" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="base_cabinet_four_drawers_drawer_4_joint" type="prismatic">
+    <parent link="base_cabinet_four_drawers_body"/><child link="base_cabinet_four_drawers_drawer_4"/>
+    <origin xyz="0 -0.207 0.2155" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.24" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_1_grip"/>
+  <joint name="base_cabinet_four_drawers_drawer_1_grip_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_1"/><child link="base_cabinet_four_drawers_drawer_1_grip"/>
+    <origin xyz="0 -0.02 0.0235" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_1_volume"/>
+  <joint name="base_cabinet_four_drawers_drawer_1_volume_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_1"/><child link="base_cabinet_four_drawers_drawer_1_volume"/>
+    <origin xyz="0 0.178 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_2_grip"/>
+  <joint name="base_cabinet_four_drawers_drawer_2_grip_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_2"/><child link="base_cabinet_four_drawers_drawer_2_grip"/>
+    <origin xyz="0 -0.02 0.0235" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_2_volume"/>
+  <joint name="base_cabinet_four_drawers_drawer_2_volume_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_2"/><child link="base_cabinet_four_drawers_drawer_2_volume"/>
+    <origin xyz="0 0.178 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_3_grip"/>
+  <joint name="base_cabinet_four_drawers_drawer_3_grip_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_3"/><child link="base_cabinet_four_drawers_drawer_3_grip"/>
+    <origin xyz="0 -0.02 0.048" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_3_volume"/>
+  <joint name="base_cabinet_four_drawers_drawer_3_volume_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_3"/><child link="base_cabinet_four_drawers_drawer_3_volume"/>
+    <origin xyz="0 0.178 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_4_grip"/>
+  <joint name="base_cabinet_four_drawers_drawer_4_grip_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_4"/><child link="base_cabinet_four_drawers_drawer_4_grip"/>
+    <origin xyz="0 -0.02 0.069" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_drawer_4_volume"/>
+  <joint name="base_cabinet_four_drawers_drawer_4_volume_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_drawer_4"/><child link="base_cabinet_four_drawers_drawer_4_volume"/>
+    <origin xyz="0 0.178 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_top_surface"/>
+  <joint name="base_cabinet_four_drawers_top_surface_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_body"/><child link="base_cabinet_four_drawers_top_surface"/>
+    <origin xyz="0 0.023 0.818" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_four_drawers_wall_anchor"/>
+  <joint name="base_cabinet_four_drawers_wall_anchor_fixed" type="fixed">
+    <parent link="base_cabinet_four_drawers_body"/><child link="base_cabinet_four_drawers_wall_anchor"/>
+    <origin xyz="0 0.233 0.758" rpy="0 0 0"/>
+  </joint>
+</robot>

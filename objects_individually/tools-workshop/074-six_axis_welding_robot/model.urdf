@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<robot name="six_axis_welding_robot">
+  <link name="six_axis_welding_robot_body">
+    <inertial><origin xyz="0 0 0.0898551" rpy="0 0 0"/><mass value="40"/><inertia ixx="0.395624" ixy="0" ixz="0" iyy="0.395624" iyz="0" izz="0.470978"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/six_axis_welding_robot_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.0125" rpy="0 0 0"/><geometry><box size="0.36 0.36 0.025"/></geometry></collision>
+    <collision><origin xyz="0 0 0.11" rpy="0 0 0"/><geometry><cylinder radius="0.13" length="0.17"/></geometry></collision>
+    <collision><origin xyz="0 0 0.19" rpy="0 0 0"/><geometry><cylinder radius="0.135" length="0.012"/></geometry></collision>
+  </link>
+  <link name="six_axis_welding_robot_turret">
+    <inertial><origin xyz="0.00438372 0.0305881 0.113896" rpy="0 0 0"/><mass value="28"/><inertia ixx="0.272372" ixy="0.0037545" ixz="-0.0135146" iyy="0.231825" iyz="-0.0172186" izz="0.275274"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/six_axis_welding_robot_turret.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.03" rpy="0 0 0"/><geometry><cylinder radius="0.125" length="0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.134" rpy="0 0 0"/><geometry><box size="0.22 0.24 0.17"/></geometry></collision>
+    <collision><origin xyz="0.125 0 0.224" rpy="0 1.5708 0"/><geometry><cylinder radius="0.07" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.17 0.134" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.05" length="0.1"/></geometry></collision>
+  </link>
+  <link name="six_axis_welding_robot_lower_arm">
+    <inertial><origin xyz="0.02 0 0.260084" rpy="0 0 0"/><mass value="16"/><inertia ixx="0.760847" ixy="0" ixz="0" iyy="0.756904" iyz="0" izz="0.0405605"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/six_axis_welding_robot_lower_arm.glb"/></geometry></visual>
+    <collision><origin xyz="0.02 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.085" length="0.13"/></geometry></collision>
+    <collision><origin xyz="0.02 0 0.28" rpy="0 0 0"/><geometry><box size="0.11 0.12 0.5"/></geometry></collision>
+    <collision><origin xyz="0.02 0 0.56" rpy="0 1.5708 0"/><geometry><cylinder radius="0.075" length="0.12"/></geometry></collision>
+  </link>
+  <link name="six_axis_welding_robot_upper_arm">
+    <inertial><origin xyz="-0.065429 0.0383423 0.0107931" rpy="0 0 0"/><mass value="8"/><inertia ixx="0.0553839" ixy="-0.00166528" ixz="-0.000468764" iyy="0.0296962" iyz="-0.00154403" izz="0.0585039"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/six_axis_welding_robot_upper_arm.glb"/></geometry></visual>
+    <collision><origin xyz="-0.06 0.02 0.00999999" rpy="0 0 0"/><geometry><box size="0.15 0.2 0.15"/></geometry></collision>
+    <collision><origin xyz="-0.15 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.06" length="0.03"/></geometry></collision>
+    <collision><origin xyz="-0.06 0.16 0.02" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.05" length="0.1"/></geometry></collision>
+  </link>
+  <link name="six_axis_welding_robot_forearm">
+    <inertial><origin xyz="0 -0.235834 0" rpy="0 0 0"/><mass value="5"/><inertia ixx="0.103229" ixy="0" ixz="0" iyy="0.00700111" iyz="0" izz="0.103469"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/six_axis_welding_robot_forearm.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.03 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.055" length="0.06"/></geometry></collision>
+    <collision><origin xyz="0 -0.26 0" rpy="0 0 0"/><geometry><box size="0.09 0.4 0.09"/></geometry></collision>
+    <collision><origin xyz="-0.04 -0.485 0" rpy="0 0 0"/><geometry><box size="0.016 0.07 0.07"/></geometry></collision>
+    <collision><origin xyz="0.04 -0.485 0" rpy="0 0 0"/><geometry><box size="0.016 0.07 0.07"/></geometry></collision>
+  </link>
+  <link name="six_axis_welding_robot_wrist">
+    <inertial><origin xyz="0 -0.0145783 0" rpy="0 0 0"/><mass value="1.5"/><inertia ixx="0.00103453" ixy="0" ixz="0" iyy="0.000833585" iyz="0" izz="0.00112423"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/six_axis_welding_robot_wrist.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.03" length="0.064"/></geometry></collision>
+    <collision><origin xyz="0 -0.03 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.033" length="0.05"/></geometry></collision>
+  </link>
+  <link name="six_axis_welding_robot_flange">
+    <inertial><origin xyz="0 -0.113004 -0.0678996" rpy="0 0 0"/><mass value="2"/><inertia ixx="0.0181684" ixy="0" ixz="0" iyy="0.0090189" iyz="-0.00804115" izz="0.00953333"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/six_axis_welding_robot_flange.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00600004 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.036" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 -0.042 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.022" length="0.06"/></geometry></collision>
+    <collision><origin xyz="0 -0.0965 -0.005" rpy="1.75065 0 0"/><geometry><cylinder radius="0.012" length="0.0559017"/></geometry></collision>
+    <collision><origin xyz="0 -0.144 -0.035" rpy="2.46685 0 0"/><geometry><cylinder radius="0.012" length="0.0640313"/></geometry></collision>
+    <collision><origin xyz="0 -0.169 -0.09" rpy="2.97644 0 0"/><geometry><cylinder radius="0.012" length="0.0608276"/></geometry></collision>
+    <collision><origin xyz="0 -0.174 -0.14" rpy="0 0 0"/><geometry><cylinder radius="0.013" length="0.04"/></geometry></collision>
+  </link>
+  <joint name="six_axis_welding_robot_turret_joint" type="revolute">
+    <parent link="six_axis_welding_robot_body"/><child link="six_axis_welding_robot_turret"/>
+    <origin xyz="0 0 0.196" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-2.9" upper="2.9" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="six_axis_welding_robot_lower_arm_joint" type="revolute">
+    <parent link="six_axis_welding_robot_turret"/><child link="six_axis_welding_robot_lower_arm"/>
+    <origin xyz="0 0 0.224" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="-1.2" upper="1.6" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="six_axis_welding_robot_upper_arm_joint" type="revolute">
+    <parent link="six_axis_welding_robot_lower_arm"/><child link="six_axis_welding_robot_upper_arm"/>
+    <origin xyz="0 0 0.56" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="-1.4" upper="1.4" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="six_axis_welding_robot_forearm_joint" type="revolute">
+    <parent link="six_axis_welding_robot_upper_arm"/><child link="six_axis_welding_robot_forearm"/>
+    <origin xyz="-0.06 -0.08 0.02" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="-3" upper="3" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="six_axis_welding_robot_wrist_joint" type="revolute">
+    <parent link="six_axis_welding_robot_forearm"/><child link="six_axis_welding_robot_wrist"/>
+    <origin xyz="0 -0.5 0" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="-2" upper="2" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="six_axis_welding_robot_flange_joint" type="revolute">
+    <parent link="six_axis_welding_robot_wrist"/><child link="six_axis_welding_robot_flange"/>
+    <origin xyz="0 -0.056 0" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="-3" upper="3" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="six_axis_welding_robot_flange_mount"/>
+  <joint name="six_axis_welding_robot_flange_mount_joint" type="fixed"><parent link="six_axis_welding_robot_flange"/><child link="six_axis_welding_robot_flange_mount"/><origin xyz="0 -0.012 0" rpy="1.5708 0 0"/></joint>
+  <link name="six_axis_welding_robot_torch_tip"/>
+  <joint name="six_axis_welding_robot_torch_tip_joint" type="fixed"><parent link="six_axis_welding_robot_flange"/><child link="six_axis_welding_robot_torch_tip"/><origin xyz="0 -0.174 -0.16" rpy="3.14159 0 0"/></joint>
+  <link name="six_axis_welding_robot_forearm_teach_grip"/>
+  <joint name="six_axis_welding_robot_forearm_teach_grip_joint" type="fixed"><parent link="six_axis_welding_robot_forearm"/><child link="six_axis_welding_robot_forearm_teach_grip"/><origin xyz="0 -0.26 0.05" rpy="0 0 1.5708"/></joint>
+  <link name="six_axis_welding_robot_base_anchor"/>
+  <joint name="six_axis_welding_robot_base_anchor_joint" type="fixed"><parent link="six_axis_welding_robot_body"/><child link="six_axis_welding_robot_base_anchor"/><origin xyz="0 0 0" rpy="0 0 0"/></joint>
+</robot>

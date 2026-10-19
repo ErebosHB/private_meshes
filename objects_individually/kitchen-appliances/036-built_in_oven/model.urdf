@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot name="built_in_oven">
+  <link name="built_in_oven_body">
+    <inertial><origin xyz="0 -0.0959801 0.273514" rpy="0 0 0"/><mass value="48.073"/><inertia ixx="3.9761" ixy="-5.1395e-09" ixz="5.3584e-10" iyy="4.153" iyz="-0.13058" izz="4.2553"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/built_in_oven_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.29675 0 0.29675" rpy="0 0 0"/><geometry><box size="0.0015 0.55 0.5935"/></geometry></collision>
+    <collision><origin xyz="0.29675 0 0.29675" rpy="0 0 0"/><geometry><box size="0.0015 0.55 0.5935"/></geometry></collision>
+    <collision><origin xyz="0 0 0.59425" rpy="0 0 0"/><geometry><box size="0.595 0.55 0.0015"/></geometry></collision>
+    <collision><origin xyz="0 0.27425 0.29675" rpy="0 0 0"/><geometry><box size="0.592 0.0015 0.5935"/></geometry></collision>
+    <collision><origin xyz="0 0 0.00075" rpy="0 0 0"/><geometry><box size="0.592 0.5485 0.0015"/></geometry></collision>
+    <collision><origin xyz="0 -0.015 0.06075" rpy="0 0 0"/><geometry><box size="0.47 0.47 0.0015"/></geometry></collision>
+    <collision><origin xyz="0 -0.015 0.43925" rpy="0 0 0"/><geometry><box size="0.47 0.47 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.23425 -0.015 0.25" rpy="0 0 0"/><geometry><box size="0.0015 0.47 0.377"/></geometry></collision>
+    <collision><origin xyz="0.23425 -0.015 0.25" rpy="0 0 0"/><geometry><box size="0.0015 0.47 0.377"/></geometry></collision>
+    <collision><origin xyz="0 0.21925 0.25" rpy="0 0 0"/><geometry><box size="0.467 0.0015 0.377"/></geometry></collision>
+    <collision><origin xyz="0 -0.2625 0.03" rpy="0 0 0"/><geometry><box size="0.595 0.025 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.26625 -0.2625 0.25" rpy="0 0 0"/><geometry><box size="0.0625 0.025 0.38"/></geometry></collision>
+    <collision><origin xyz="0.26625 -0.2625 0.25" rpy="0 0 0"/><geometry><box size="0.0625 0.025 0.38"/></geometry></collision>
+    <collision><origin xyz="0 -0.2625 0.465" rpy="0 0 0"/><geometry><box size="0.595 0.025 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.265 0.5425" rpy="0 0 0"/><geometry><box size="0.595 0.02 0.105"/></geometry></collision>
+    <collision><origin xyz="0 -0.015 0.3455" rpy="0 0 0"/><geometry><box size="0.446 0.43 0.005"/></geometry></collision>
+    <collision><origin xyz="-0.2205 -0.015 0.3515" rpy="0 0 0"/><geometry><box size="0.005 0.43 0.017"/></geometry></collision>
+    <collision><origin xyz="0.2205 -0.015 0.3515" rpy="0 0 0"/><geometry><box size="0.005 0.43 0.017"/></geometry></collision>
+    <collision><origin xyz="0 -0.2275 0.3515" rpy="0 0 0"/><geometry><box size="0.446 0.005 0.017"/></geometry></collision>
+    <collision><origin xyz="0 0.1975 0.3515" rpy="0 0 0"/><geometry><box size="0.446 0.005 0.017"/></geometry></collision>
+  </link>
+  <link name="built_in_oven_function_dial">
+    <inertial><origin xyz="0 -0.0143012 0" rpy="0 0 0"/><mass value="0.057215"/><inertia ixx="1.2664e-05" ixy="0" ixz="0" iyy="1.6743e-05" iyz="0" izz="1.2884e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/built_in_oven_function_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00299999 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.02592" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.024" length="0.022"/></geometry></collision>
+    <collision><origin xyz="0 -0.032 0" rpy="0 0 0"/><geometry><box size="0.036 0.008 0.007"/></geometry></collision>
+  </link>
+  <link name="built_in_oven_temperature_dial">
+    <inertial><origin xyz="0 -0.0143012 0" rpy="0 0 0"/><mass value="0.057215"/><inertia ixx="1.2664e-05" ixy="0" ixz="0" iyy="1.6743e-05" iyz="0" izz="1.2884e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/built_in_oven_temperature_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00299999 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.02592" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.024" length="0.022"/></geometry></collision>
+    <collision><origin xyz="0 -0.032 0" rpy="0 0 0"/><geometry><box size="0.036 0.008 0.007"/></geometry></collision>
+  </link>
+  <link name="built_in_oven_baking_tray">
+    <inertial><origin xyz="0 0.225 -0.000666348" rpy="0 0 0"/><mass value="1.9104"/><inertia ixx="0.033456" ixy="0" ixz="4.8486e-12" iyy="0.057919" iyz="-1.8517e-11" izz="0.091226"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/built_in_oven_baking_tray.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.225 0" rpy="0 0 0"/><geometry><box size="0.44 0.43 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.219 0.225 0.012" rpy="0 0 0"/><geometry><box size="0.002 0.43 0.024"/></geometry></collision>
+    <collision><origin xyz="0.219 0.225 0.012" rpy="0 0 0"/><geometry><box size="0.002 0.43 0.024"/></geometry></collision>
+    <collision><origin xyz="0 0.011 0.012" rpy="0 0 0"/><geometry><box size="0.44 0.002 0.024"/></geometry></collision>
+    <collision><origin xyz="0 0.439 0.012" rpy="0 0 0"/><geometry><box size="0.44 0.002 0.024"/></geometry></collision>
+    <collision><origin xyz="-0.227 0.225 -0.006" rpy="0 0 0"/><geometry><box size="0.008 0.44 0.012"/></geometry></collision>
+    <collision><origin xyz="0.227 0.225 -0.006" rpy="0 0 0"/><geometry><box size="0.008 0.44 0.012"/></geometry></collision>
+  </link>
+  <link name="built_in_oven_door">
+    <inertial><origin xyz="0 -0.0216666 0.244715" rpy="0 0 0"/><mass value="33.271"/><inertia ixx="0.64726" ixy="1.7962e-12" ixz="5.1548e-13" iyy="1.5931" iyz="0.0041732" izz="0.95878"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/built_in_oven_door.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.022 0.24" rpy="0 0 0"/><geometry><box size="0.592 0.044 0.48"/></geometry></collision>
+    <collision><origin xyz="0 -0.08 0.445" rpy="0 1.5708 0"/><geometry><cylinder radius="0.008" length="0.44"/></geometry></collision>
+  </link>
+  <joint name="built_in_oven_function_dial_joint" type="revolute">
+    <parent link="built_in_oven_body"/><child link="built_in_oven_function_dial"/>
+    <origin xyz="-0.2 -0.275 0.5425" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="4.71" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="built_in_oven_temperature_dial_joint" type="revolute">
+    <parent link="built_in_oven_body"/><child link="built_in_oven_temperature_dial"/>
+    <origin xyz="0.2 -0.275 0.5425" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="4.71" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="built_in_oven_baking_tray_joint" type="prismatic">
+    <parent link="built_in_oven_body"/><child link="built_in_oven_baking_tray"/>
+    <origin xyz="0 -0.25 0.235" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.352" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="built_in_oven_door_joint" type="revolute">
+    <parent link="built_in_oven_body"/><child link="built_in_oven_door"/>
+    <origin xyz="0 -0.277 0.008" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50" velocity="1.5"/>
+  </joint>
+  <link name="built_in_oven_function_dial_contact"/>
+  <joint name="built_in_oven_function_dial_contact_joint" type="fixed"><parent link="built_in_oven_function_dial"/><child link="built_in_oven_function_dial_contact"/><origin xyz="0 -0.036 0" rpy="0 0 0"/></joint>
+  <link name="built_in_oven_temperature_dial_contact"/>
+  <joint name="built_in_oven_temperature_dial_contact_joint" type="fixed"><parent link="built_in_oven_temperature_dial"/><child link="built_in_oven_temperature_dial_contact"/><origin xyz="0 -0.036 0" rpy="0 0 0"/></joint>
+  <link name="built_in_oven_baking_tray_grip"/>
+  <joint name="built_in_oven_baking_tray_grip_joint" type="fixed"><parent link="built_in_oven_baking_tray"/><child link="built_in_oven_baking_tray_grip"/><origin xyz="0 0.011 0.024" rpy="0 0 0"/></joint>
+  <link name="built_in_oven_baking_tray_surface"/>
+  <joint name="built_in_oven_baking_tray_surface_joint" type="fixed"><parent link="built_in_oven_baking_tray"/><child link="built_in_oven_baking_tray_surface"/><origin xyz="0 0.225 0.001" rpy="0 0 0"/></joint>
+  <link name="built_in_oven_door_grip"/>
+  <joint name="built_in_oven_door_grip_joint" type="fixed"><parent link="built_in_oven_door"/><child link="built_in_oven_door_grip"/><origin xyz="0 -0.08 0.445" rpy="0 0 0"/></joint>
+  <link name="built_in_oven_cavity_volume"/>
+  <joint name="built_in_oven_cavity_volume_joint" type="fixed"><parent link="built_in_oven_body"/><child link="built_in_oven_cavity_volume"/><origin xyz="0 -0.015 0.25" rpy="0 0 0"/></joint>
+  <link name="built_in_oven_wire_shelf_surface"/>
+  <joint name="built_in_oven_wire_shelf_surface_joint" type="fixed"><parent link="built_in_oven_body"/><child link="built_in_oven_wire_shelf_surface"/><origin xyz="0 -0.015 0.36" rpy="0 0 0"/></joint>
+</robot>

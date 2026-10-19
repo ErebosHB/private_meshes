@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<robot name="soldering_station">
+  <link name="soldering_station_body">
+    <inertial><origin xyz="0.0544209 -0.00251024 0.0452579" rpy="0 0 0"/><mass value="2.2"/><inertia ixx="0.00655947" ixy="-6.32216e-05" ixz="-0.00126592" iyy="0.00850403" iyz="-1.53903e-05" izz="0.0116582"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/soldering_station_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.07 0 0.05" rpy="0 0 0"/><geometry><box size="0.12 0.16 0.09"/></geometry></collision>
+    <collision><origin xyz="0.07 -0.081 0.05" rpy="0 0 0"/><geometry><box size="0.11 0.006 0.076"/></geometry></collision>
+    <collision><origin xyz="0.03 -0.06 0.0025" rpy="0 0 0"/><geometry><cylinder radius="0.008" length="0.005"/></geometry></collision>
+    <collision><origin xyz="0.03 0.06 0.0025" rpy="0 0 0"/><geometry><cylinder radius="0.008" length="0.005"/></geometry></collision>
+    <collision><origin xyz="0.11 -0.06 0.0025" rpy="0 0 0"/><geometry><cylinder radius="0.008" length="0.005"/></geometry></collision>
+    <collision><origin xyz="0.11 0.06 0.0025" rpy="0 0 0"/><geometry><cylinder radius="0.008" length="0.005"/></geometry></collision>
+    <collision><origin xyz="-0.07 0 0.006" rpy="0 0 0"/><geometry><box size="0.1 0.15 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.07 -0.04 0.015" rpy="0 0 0"/><geometry><box size="0.09 0.06 0.006"/></geometry></collision>
+    <collision><origin xyz="-0.1 0.03 0.027" rpy="0 0 0"/><geometry><box size="0.01 0.018 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.04 0.03 0.027" rpy="0 0 0"/><geometry><box size="0.01 0.018 0.03"/></geometry></collision>
+  </link>
+  <link name="soldering_station_iron_cradle">
+    <inertial><origin xyz="0 0.000576575 0.00793173" rpy="0 0 0"/><mass value="0.12"/><inertia ixx="0.000277845" ixy="0" ixz="0" iyy="2.69239e-05" iyz="-7.39178e-08" izz="0.00027997"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/soldering_station_iron_cradle.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.004" length="0.07"/></geometry></collision>
+    <collision><origin xyz="0.01525 0.02 0.009" rpy="-1.5708 0 0"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="0.0107834 0.02 -0.00178337" rpy="-1.5708 0.785398 -4.37114e-08"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="0 0.02 -0.00625" rpy="-1.5708 1.5708 0"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="-0.0107834 0.02 -0.00178337" rpy="-1.5708 2.35619 4.37114e-08"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="-0.01525 0.02 0.009" rpy="1.5708 -8.74228e-08 3.14159"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="-0.0107834 0.02 0.0197834" rpy="-1.5708 -2.35619 -4.37114e-08"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="0 0.02 0.02425" rpy="-1.5708 -1.5708 0"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="0.0107834 0.02 0.0197834" rpy="-1.5708 -0.785398 4.37114e-08"/><geometry><box size="0.0035 0.0140833 0.09"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.003" rpy="0 0 0"/><geometry><box size="0.008 0.02 0.012"/></geometry></collision>
+    <collision><origin xyz="0 -0.09 0.009" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0125" length="0.12"/></geometry></collision>
+    <collision><origin xyz="0 0.012 0.009" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.003" length="0.085"/></geometry></collision>
+  </link>
+  <link name="soldering_station_sponge_tray">
+    <inertial><origin xyz="0 0.0253527 -0.00211203" rpy="0 0 0"/><mass value="0.05"/><inertia ixx="1.98307e-05" ixy="0" ixz="0" iyy="3.32925e-05" iyz="7.23128e-07" izz="5.18359e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/soldering_station_sponge_tray.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.03 -0.004" rpy="0 0 0"/><geometry><box size="0.075 0.06 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.0355 0.03 0.001" rpy="0 0 0"/><geometry><box size="0.004 0.06 0.014"/></geometry></collision>
+    <collision><origin xyz="0.0355 0.03 0.001" rpy="0 0 0"/><geometry><box size="0.004 0.06 0.014"/></geometry></collision>
+    <collision><origin xyz="0 -0.002 0.001" rpy="0 0 0"/><geometry><box size="0.075 0.004 0.014"/></geometry></collision>
+  </link>
+  <link name="soldering_station_temperature_knob">
+    <inertial><origin xyz="0 -0.007 0" rpy="0 0 0"/><mass value="0.01"/><inertia ixx="6.53333e-07" ixy="0" ixz="0" iyy="9.8e-07" iyz="0" izz="6.53333e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/soldering_station_temperature_knob.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.007 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.014" length="0.014"/></geometry></collision>
+  </link>
+  <link name="soldering_station_power_switch">
+    <inertial><origin xyz="0 -0.002 0" rpy="0 0 0"/><mass value="0.005"/><inertia ixx="2.28333e-07" ixy="0" ixz="0" iyy="2.83333e-07" iyz="0" izz="1.08333e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/soldering_station_power_switch.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.002 0" rpy="0 0 0"/><geometry><box size="0.014 0.008 0.022"/></geometry></collision>
+  </link>
+  <joint name="soldering_station_iron_cradle_joint" type="revolute">
+    <parent link="soldering_station_body"/><child link="soldering_station_iron_cradle"/>
+    <origin xyz="-0.07 0.03 0.036" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="soldering_station_sponge_tray_joint" type="prismatic">
+    <parent link="soldering_station_body"/><child link="soldering_station_sponge_tray"/>
+    <origin xyz="-0.07 -0.07 0.024" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.06" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="soldering_station_temperature_knob_joint" type="revolute">
+    <parent link="soldering_station_body"/><child link="soldering_station_temperature_knob"/>
+    <origin xyz="0.09 -0.084 0.04" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="4.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="soldering_station_power_switch_joint" type="revolute">
+    <parent link="soldering_station_body"/><child link="soldering_station_power_switch"/>
+    <origin xyz="0.04 -0.084 0.04" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.35" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="soldering_station_iron_handle_grip"/>
+  <joint name="soldering_station_iron_handle_grip_joint" type="fixed"><parent link="soldering_station_iron_cradle"/><child link="soldering_station_iron_handle_grip"/><origin xyz="0 -0.09 0.009" rpy="0 0 1.5708"/></joint>
+  <link name="soldering_station_temperature_knob_contact"/>
+  <joint name="soldering_station_temperature_knob_contact_joint" type="fixed"><parent link="soldering_station_temperature_knob"/><child link="soldering_station_temperature_knob_contact"/><origin xyz="0 -0.014 0" rpy="0 0 0"/></joint>
+  <link name="soldering_station_power_switch_contact"/>
+  <joint name="soldering_station_power_switch_contact_joint" type="fixed"><parent link="soldering_station_power_switch"/><child link="soldering_station_power_switch_contact"/><origin xyz="0 -0.006 0.005" rpy="0 0 0"/></joint>
+  <link name="soldering_station_sponge_tray_grip"/>
+  <joint name="soldering_station_sponge_tray_grip_joint" type="fixed"><parent link="soldering_station_sponge_tray"/><child link="soldering_station_sponge_tray_grip"/><origin xyz="0 -0.004 0.001" rpy="0 0 0"/></joint>
+  <link name="soldering_station_sponge_tray_volume"/>
+  <joint name="soldering_station_sponge_tray_volume_joint" type="fixed"><parent link="soldering_station_sponge_tray"/><child link="soldering_station_sponge_tray_volume"/><origin xyz="0 0.03 0.003" rpy="0 0 0"/></joint>
+</robot>

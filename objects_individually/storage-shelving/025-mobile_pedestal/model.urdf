@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<robot name="mobile_pedestal">
+  <link name="mobile_pedestal_body">
+    <inertial><origin xyz="-2.31699e-11 0.0234485 0.382521" rpy="0 0 0"/><mass value="16.957"/><inertia ixx="1.2049" ixy="9.0949e-12" ixz="-2.9104e-11" iyy="1.1341" iyz="0.025249" izz="0.92673"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.206 0.01 0.32" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.51"/></geometry></collision>
+    <collision><origin xyz="0.206 0.01 0.32" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.51"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.566" rpy="0 0 0"/><geometry><box size="0.394 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.074" rpy="0 0 0"/><geometry><box size="0.394 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.286 0.32" rpy="0 0 0"/><geometry><box size="0.394 0.008 0.474"/></geometry></collision>
+    <collision><origin xyz="0 0 0.5875" rpy="0 0 0"/><geometry><box size="0.43 0.58 0.025"/></geometry></collision>
+    <collision><origin xyz="-0.165 -0.20375 0.054" rpy="0 0 0"/><geometry><box size="0.034 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="0.165 -0.20375 0.054" rpy="0 0 0"/><geometry><box size="0.034 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.165 0.23625 0.054" rpy="0 0 0"/><geometry><box size="0.034 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="0.165 0.23625 0.054" rpy="0 0 0"/><geometry><box size="0.034 0.045 0.008"/></geometry></collision>
+  </link>
+  <link name="mobile_pedestal_castor_1">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.056549"/><inertia ixx="1.7671e-05" ixy="0" ixz="0" iyy="1.155e-05" iyz="0" izz="1.155e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_castor_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.024"/></geometry></collision>
+  </link>
+  <link name="mobile_pedestal_castor_2">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.056549"/><inertia ixx="1.7671e-05" ixy="0" ixz="0" iyy="1.155e-05" iyz="0" izz="1.155e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_castor_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.024"/></geometry></collision>
+  </link>
+  <link name="mobile_pedestal_castor_3">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.056549"/><inertia ixx="1.7671e-05" ixy="0" ixz="0" iyy="1.155e-05" iyz="0" izz="1.155e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_castor_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.024"/></geometry></collision>
+  </link>
+  <link name="mobile_pedestal_castor_4">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.056549"/><inertia ixx="1.7671e-05" ixy="0" ixz="0" iyy="1.155e-05" iyz="0" izz="1.155e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_castor_4.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.024"/></geometry></collision>
+  </link>
+  <link name="mobile_pedestal_drawer_1">
+    <inertial><origin xyz="0 0.245492 0.0356863" rpy="0 0 0"/><mass value="3.8149"/><inertia ixx="0.11946" ixy="0" ixz="0" iyy="0.063923" iyz="0.002392" izz="0.17907"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_drawer_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0.058" rpy="0 0 0"/><geometry><box size="0.426 0.018 0.116"/></geometry></collision>
+    <collision><origin xyz="0 0.268 0.02075" rpy="0 0 0"/><geometry><box size="0.366 0.5 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.18225 0.268 0.053" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.066"/></geometry></collision>
+    <collision><origin xyz="0.18225 0.268 0.053" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.066"/></geometry></collision>
+    <collision><origin xyz="0 0.51725 0.053" rpy="0 0 0"/><geometry><box size="0.363 0.0015 0.066"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.0773334" rpy="0 0 0"/><geometry><box size="0.16 0.01 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.068 -0.00600001 0.0773334" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.068 -0.00600001 0.0773334" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="mobile_pedestal_drawer_2">
+    <inertial><origin xyz="0 0.248907 0.0633119" rpy="0 0 0"/><mass value="5.3714"/><inertia ixx="0.19294" ixy="0" ixz="0" iyy="0.11286" iyz="0.0042852" izz="0.27959"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_drawer_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0.095" rpy="0 0 0"/><geometry><box size="0.426 0.018 0.19"/></geometry></collision>
+    <collision><origin xyz="0 0.268 0.02075" rpy="0 0 0"/><geometry><box size="0.366 0.5 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.18225 0.268 0.09" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.14"/></geometry></collision>
+    <collision><origin xyz="0.18225 0.268 0.09" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.14"/></geometry></collision>
+    <collision><origin xyz="0 0.51725 0.09" rpy="0 0 0"/><geometry><box size="0.363 0.0015 0.14"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.14" rpy="0 0 0"/><geometry><box size="0.16 0.01 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.068 -0.00600001 0.14" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.068 -0.00600001 0.14" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="mobile_pedestal_drawer_3">
+    <inertial><origin xyz="0 0.249004 0.064547" rpy="0 0 0"/><mass value="5.4345"/><inertia ixx="0.19619" ixy="0" ixz="0" iyy="0.11512" iyz="0.0043596" izz="0.28366"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mobile_pedestal_drawer_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0.0965" rpy="0 0 0"/><geometry><box size="0.426 0.018 0.193"/></geometry></collision>
+    <collision><origin xyz="0 0.268 0.02075" rpy="0 0 0"/><geometry><box size="0.366 0.5 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.18225 0.268 0.0915" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.143"/></geometry></collision>
+    <collision><origin xyz="0.18225 0.268 0.0915" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.143"/></geometry></collision>
+    <collision><origin xyz="0 0.51725 0.0915" rpy="0 0 0"/><geometry><box size="0.363 0.0015 0.143"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.143" rpy="0 0 0"/><geometry><box size="0.16 0.01 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.068 -0.00600001 0.143" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.068 -0.00600001 0.143" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <joint name="mobile_pedestal_castor_1_joint" type="continuous">
+    <parent link="mobile_pedestal_body"/><child link="mobile_pedestal_castor_1"/>
+    <origin xyz="-0.165 -0.21 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="mobile_pedestal_castor_2_joint" type="continuous">
+    <parent link="mobile_pedestal_body"/><child link="mobile_pedestal_castor_2"/>
+    <origin xyz="0.165 -0.21 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="mobile_pedestal_castor_3_joint" type="continuous">
+    <parent link="mobile_pedestal_body"/><child link="mobile_pedestal_castor_3"/>
+    <origin xyz="-0.165 0.23 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="mobile_pedestal_castor_4_joint" type="continuous">
+    <parent link="mobile_pedestal_body"/><child link="mobile_pedestal_castor_4"/>
+    <origin xyz="0.165 0.23 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="mobile_pedestal_drawer_1_joint" type="prismatic">
+    <parent link="mobile_pedestal_body"/><child link="mobile_pedestal_drawer_1"/>
+    <origin xyz="0 -0.29 0.457" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.375" effort="200" velocity="0.1"/>
+  </joint>
+  <joint name="mobile_pedestal_drawer_2_joint" type="prismatic">
+    <parent link="mobile_pedestal_body"/><child link="mobile_pedestal_drawer_2"/>
+    <origin xyz="0 -0.29 0.264" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.375" effort="200" velocity="0.1"/>
+  </joint>
+  <joint name="mobile_pedestal_drawer_3_joint" type="prismatic">
+    <parent link="mobile_pedestal_body"/><child link="mobile_pedestal_drawer_3"/>
+    <origin xyz="0 -0.29 0.068" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.375" effort="200" velocity="0.1"/>
+  </joint>
+  <link name="mobile_pedestal_drawer_1_grip"/>
+  <joint name="mobile_pedestal_drawer_1_grip_joint" type="fixed"><parent link="mobile_pedestal_drawer_1"/><child link="mobile_pedestal_drawer_1_grip"/><origin xyz="0 -0.017 0.0773334" rpy="0 0 0"/></joint>
+  <link name="mobile_pedestal_drawer_1_volume"/>
+  <joint name="mobile_pedestal_drawer_1_volume_joint" type="fixed"><parent link="mobile_pedestal_drawer_1"/><child link="mobile_pedestal_drawer_1_volume"/><origin xyz="0 0.268 0.053" rpy="0 0 0"/></joint>
+  <link name="mobile_pedestal_drawer_2_grip"/>
+  <joint name="mobile_pedestal_drawer_2_grip_joint" type="fixed"><parent link="mobile_pedestal_drawer_2"/><child link="mobile_pedestal_drawer_2_grip"/><origin xyz="0 -0.017 0.14" rpy="0 0 0"/></joint>
+  <link name="mobile_pedestal_drawer_2_volume"/>
+  <joint name="mobile_pedestal_drawer_2_volume_joint" type="fixed"><parent link="mobile_pedestal_drawer_2"/><child link="mobile_pedestal_drawer_2_volume"/><origin xyz="0 0.268 0.09" rpy="0 0 0"/></joint>
+  <link name="mobile_pedestal_drawer_3_grip"/>
+  <joint name="mobile_pedestal_drawer_3_grip_joint" type="fixed"><parent link="mobile_pedestal_drawer_3"/><child link="mobile_pedestal_drawer_3_grip"/><origin xyz="0 -0.017 0.143" rpy="0 0 0"/></joint>
+  <link name="mobile_pedestal_drawer_3_volume"/>
+  <joint name="mobile_pedestal_drawer_3_volume_joint" type="fixed"><parent link="mobile_pedestal_drawer_3"/><child link="mobile_pedestal_drawer_3_volume"/><origin xyz="0 0.268 0.0915" rpy="0 0 0"/></joint>
+  <link name="mobile_pedestal_top_surface"/>
+  <joint name="mobile_pedestal_top_surface_joint" type="fixed"><parent link="mobile_pedestal_body"/><child link="mobile_pedestal_top_surface"/><origin xyz="0 0 0.6" rpy="0 0 0"/></joint>
+</robot>

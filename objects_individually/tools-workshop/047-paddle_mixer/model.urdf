@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<robot name="paddle_mixer">
+  <link name="paddle_mixer_body">
+    <inertial><origin xyz="8.76771e-10 -1.0207e-19 0.761276" rpy="0 0 0"/><mass value="2.1244"/><inertia ixx="0.018426" ixy="1.5618e-11" ixz="7.276e-12" iyy="0.032188" iyz="1.3867e-11" izz="0.016622"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/paddle_mixer_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.652387" rpy="0 -0 0"/><geometry><cylinder radius="0.046" length="0.08"/></geometry></collision>
+    <collision><origin xyz="0 0 0.698387" rpy="0 -0 0"/><geometry><cylinder radius="0.05" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 0 0.802387" rpy="0 -0 0"/><geometry><box size="0.11 0.12 0.2"/></geometry></collision>
+    <collision><origin xyz="0 0 0.911387" rpy="0 -0 0"/><geometry><cylinder radius="0.05" length="0.022"/></geometry></collision>
+    <collision><origin xyz="-0.1225 0 0.867387" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.011" length="0.135"/></geometry></collision>
+    <collision><origin xyz="-0.19 0 0.792387" rpy="-3.14159 -6.18172e-08 1.5708"/><geometry><cylinder radius="0.011" length="0.15"/></geometry></collision>
+    <collision><origin xyz="-0.1225 0 0.717387" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.011" length="0.135"/></geometry></collision>
+    <collision><origin xyz="-0.19 0 0.792387" rpy="0 -0 0"/><geometry><cylinder radius="0.017" length="0.11"/></geometry></collision>
+    <collision><origin xyz="0.1225 0 0.867387" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.011" length="0.135"/></geometry></collision>
+    <collision><origin xyz="0.19 0 0.792387" rpy="-3.14159 -6.18172e-08 1.5708"/><geometry><cylinder radius="0.011" length="0.15"/></geometry></collision>
+    <collision><origin xyz="0.1225 0 0.717387" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.011" length="0.135"/></geometry></collision>
+    <collision><origin xyz="0.19 0 0.792387" rpy="0 -0 0"/><geometry><cylinder radius="0.017" length="0.11"/></geometry></collision>
+    <collision><origin xyz="0.0138564 2.73828e-10 0.934387" rpy="-1.5708 0.523599 1.97619e-08"/><geometry><box size="0.008 0.0184307 0.008"/></geometry></collision>
+    <collision><origin xyz="9.79717e-19 5.47657e-10 0.926387" rpy="-1.5708 1.5708 0"/><geometry><box size="0.008 0.0184307 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.0138564 2.73828e-10 0.934387" rpy="-1.5708 2.61799 -1.97619e-08"/><geometry><box size="0.008 0.0184307 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.0138564 -2.73828e-10 0.950387" rpy="-1.5708 -2.61799 1.97618e-08"/><geometry><box size="0.008 0.0184307 0.008"/></geometry></collision>
+    <collision><origin xyz="-2.93915e-18 -5.47657e-10 0.958387" rpy="-1.5708 -1.5708 0"/><geometry><box size="0.008 0.0184307 0.008"/></geometry></collision>
+    <collision><origin xyz="0.0138564 -2.73828e-10 0.950387" rpy="-1.5708 -0.523599 -1.97619e-08"/><geometry><box size="0.008 0.0184307 0.008"/></geometry></collision>
+  </link>
+  <link name="paddle_mixer_spindle">
+    <inertial><origin xyz="0 -2.16024e-05 -0.388775" rpy="0 0 0"/><mass value="1.5748"/><inertia ixx="0.070344" ixy="2.2737e-11" ixz="1.0914e-11" iyy="0.070343" iyz="1.2716e-05" izz="0.0025474"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/paddle_mixer_spindle.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.015" rpy="0 -0 0"/><geometry><cylinder radius="0.016" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.265" rpy="0 -0 0"/><geometry><cylinder radius="0.0065" length="0.5"/></geometry></collision>
+    <collision><origin xyz="0.0646718 0.0210132 -0.608" rpy="0 -0 0.314159"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="0.0399694 0.0550132 -0.608" rpy="0 -0 0.942478"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="4.1638e-18 0.068 -0.608" rpy="0 -0 1.5708"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.0399694 0.0550132 -0.608" rpy="0 -0 2.19912"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.0646718 0.0210132 -0.608" rpy="0 -0 2.82743"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.0646718 -0.0210132 -0.608" rpy="0 -0 -2.82743"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.0399694 -0.0550132 -0.608" rpy="0 -0 -2.19912"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="-1.24914e-17 -0.068 -0.608" rpy="0 -0 -1.5708"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="0.0399694 -0.0550132 -0.608" rpy="0 -0 -0.942478"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="0.0646718 -0.0210132 -0.608" rpy="0 -0 -0.31416"/><geometry><box size="0.009 0.0469982 0.009"/></geometry></collision>
+    <collision><origin xyz="0.046194 0.0191342 -0.49" rpy="0 -0 0.392699"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="0.0191342 0.046194 -0.49" rpy="0 -0 1.1781"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.0191342 0.046194 -0.49" rpy="0 -0 1.9635"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.046194 0.0191342 -0.49" rpy="0 -0 2.74889"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.046194 -0.0191342 -0.49" rpy="0 -0 -2.74889"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="-0.0191342 -0.046194 -0.49" rpy="0 -0 -1.9635"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="0.0191342 -0.046194 -0.49" rpy="0 -0 -1.1781"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="0.046194 -0.0191342 -0.49" rpy="0 -0 -0.392699"/><geometry><box size="0.009 0.0431969 0.009"/></geometry></collision>
+    <collision><origin xyz="0.0505634 0.00698321 -0.499833" rpy="-2.52408 0.0466756 -0.146105"/><geometry><cylinder radius="0.004" length="0.0241476"/></geometry></collision>
+    <collision><origin xyz="0.0496746 0.0212186 -0.5195" rpy="-2.50613 -0.118288 0.356282"/><geometry><cylinder radius="0.004" length="0.0246087"/></geometry></collision>
+    <collision><origin xyz="0.0446641 0.0353974 -0.539167" rpy="-2.52792 -0.287641 0.85744"/><geometry><cylinder radius="0.004" length="0.0250866"/></geometry></collision>
+    <collision><origin xyz="0.0355273 0.0483055 -0.558833" rpy="-2.59511 -0.451312 1.3726"/><geometry><cylinder radius="0.004" length="0.0255805"/></geometry></collision>
+    <collision><origin xyz="0.0226196 0.0587314 -0.5785" rpy="0.424504 -2.54497 -1.22258"/><geometry><cylinder radius="0.004" length="0.0260895"/></geometry></collision>
+    <collision><origin xyz="0.00665244 0.0655735 -0.598167" rpy="0.23915 -2.4351 -0.630022"/><geometry><cylinder radius="0.004" length="0.0266126"/></geometry></collision>
+    <collision><origin xyz="0.0209012 0.0215207 -0.55" rpy="0.5 -0 0.8"/><geometry><box size="0.05 0.005 0.022"/></geometry></collision>
+    <collision><origin xyz="-0.0313293 0.0402975 -0.499833" rpy="-0.296462 -2.5898 0.970706"/><geometry><cylinder radius="0.004" length="0.0241476"/></geometry></collision>
+    <collision><origin xyz="-0.0432132 0.0324102 -0.5195" rpy="-0.460955 -2.67323 1.55426"/><geometry><cylinder radius="0.004" length="0.0246087"/></geometry></collision>
+    <collision><origin xyz="-0.0529871 0.0209816 -0.539167" rpy="2.55433 -0.343078 -1.04058"/><geometry><cylinder radius="0.004" length="0.0250866"/></geometry></collision>
+    <collision><origin xyz="-0.0595974 0.00661478 -0.558833" rpy="2.46964 -0.188035 -0.527461"/><geometry><cylinder radius="0.004" length="0.0255805"/></geometry></collision>
+    <collision><origin xyz="-0.0621727 -0.00977654 -0.5785" rpy="2.42476 -0.0141426 -0.0377504"/><geometry><cylinder radius="0.004" length="0.0260895"/></geometry></collision>
+    <collision><origin xyz="-0.0601145 -0.0270256 -0.598167" rpy="2.41844 0.169352 0.441537"/><geometry><cylinder radius="0.004" length="0.0266126"/></geometry></collision>
+    <collision><origin xyz="-0.0290881 0.00734063 -0.55" rpy="0.5 -0 2.8944"/><geometry><box size="0.05 0.005 0.022"/></geometry></collision>
+    <collision><origin xyz="-0.019234 -0.0472808 -0.499833" rpy="-0.384545 2.64372 -1.30709"/><geometry><cylinder radius="0.004" length="0.0241476"/></geometry></collision>
+    <collision><origin xyz="-0.00646147 -0.0536288 -0.5195" rpy="-0.236368 2.53577 -0.726157"/><geometry><cylinder radius="0.004" length="0.0246087"/></geometry></collision>
+    <collision><origin xyz="0.00832297 -0.056379 -0.539167" rpy="-0.0387892 2.47275 -0.111531"/><geometry><cylinder radius="0.004" length="0.0250866"/></geometry></collision>
+    <collision><origin xyz="0.0240701 -0.0549202 -0.558833" rpy="0.185013 2.46892 0.518747"/><geometry><cylinder radius="0.004" length="0.0255805"/></geometry></collision>
+    <collision><origin xyz="0.0395531 -0.0489549 -0.5785" rpy="0.397196 2.52778 1.13154"/><geometry><cylinder radius="0.004" length="0.0260895"/></geometry></collision>
+    <collision><origin xyz="0.0534621 -0.0385479 -0.598167" rpy="-2.5731 0.501365 -1.43933"/><geometry><cylinder radius="0.004" length="0.0266126"/></geometry></collision>
+    <collision><origin xyz="0.00818686 -0.0288613 -0.55" rpy="0.5 -0 -1.2944"/><geometry><box size="0.05 0.005 0.022"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.49" rpy="0 -0 0"/><geometry><cylinder radius="0.012" length="0.03"/></geometry></collision>
+  </link>
+  <link name="paddle_mixer_trigger">
+    <inertial><origin xyz="-0.001 0 0" rpy="0 0 0"/><mass value="0.01008"/><inertia ixx="2.315e-06" ixy="0" ixz="0" iyy="2.221e-06" iyz="0" izz="3.36e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/paddle_mixer_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="-0.001 0 0" rpy="0 -0 0"/><geometry><box size="0.012 0.016 0.05"/></geometry></collision>
+  </link>
+  <link name="paddle_mixer_lock_button">
+    <inertial><origin xyz="0 -0.004 0" rpy="0 0 0"/><mass value="0.0011875"/><inertia ixx="1e-07" ixy="0" ixz="0" iyy="1e-07" iyz="2.7098e-17" izz="1e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/paddle_mixer_lock_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.004 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.006" length="0.01"/></geometry></collision>
+  </link>
+  <link name="paddle_mixer_speed_dial">
+    <inertial><origin xyz="0 -0.000231815 0.00420285" rpy="0 0 0"/><mass value="0.010436"/><inertia ixx="8.119e-07" ixy="0" ixz="0" iyy="7.8534e-07" iyz="1.6444e-08" izz="1.3245e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/paddle_mixer_speed_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.00400001" rpy="0 -0 0"/><geometry><cylinder radius="0.016" length="0.012"/></geometry></collision>
+  </link>
+  <joint name="paddle_mixer_spindle_joint" type="continuous">
+    <parent link="paddle_mixer_body"/><child link="paddle_mixer_spindle"/>
+    <origin xyz="0 0 0.612387" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="paddle_mixer_trigger_joint" type="prismatic">
+    <parent link="paddle_mixer_body"/><child link="paddle_mixer_trigger"/>
+    <origin xyz="0.165 0 0.812387" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.009" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="paddle_mixer_lock_button_joint" type="prismatic">
+    <parent link="paddle_mixer_body"/><child link="paddle_mixer_lock_button"/>
+    <origin xyz="0.19 -0.012 0.852387" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.004" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="paddle_mixer_speed_dial_joint" type="revolute">
+    <parent link="paddle_mixer_body"/><child link="paddle_mixer_speed_dial"/>
+    <origin xyz="0 -0.02 0.922387" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="4.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="paddle_mixer_left_grip"/>
+  <joint name="paddle_mixer_left_grip_joint" type="fixed"><parent link="paddle_mixer_body"/><child link="paddle_mixer_left_grip"/><origin xyz="-0.19 0 0.792387" rpy="0 1.5708 0"/></joint>
+  <link name="paddle_mixer_right_grip"/>
+  <joint name="paddle_mixer_right_grip_joint" type="fixed"><parent link="paddle_mixer_body"/><child link="paddle_mixer_right_grip"/><origin xyz="0.19 0 0.792387" rpy="0 1.5708 0"/></joint>
+  <link name="paddle_mixer_trigger_contact"/>
+  <joint name="paddle_mixer_trigger_contact_joint" type="fixed"><parent link="paddle_mixer_trigger"/><child link="paddle_mixer_trigger_contact"/><origin xyz="-0.007 0 0" rpy="0 0 0"/></joint>
+  <link name="paddle_mixer_lock_button_contact"/>
+  <joint name="paddle_mixer_lock_button_contact_joint" type="fixed"><parent link="paddle_mixer_lock_button"/><child link="paddle_mixer_lock_button_contact"/><origin xyz="0 -0.01 0" rpy="0 0 0"/></joint>
+  <link name="paddle_mixer_speed_dial_contact"/>
+  <joint name="paddle_mixer_speed_dial_contact_joint" type="fixed"><parent link="paddle_mixer_speed_dial"/><child link="paddle_mixer_speed_dial_contact"/><origin xyz="0 0 0.00999999" rpy="0 0 0"/></joint>
+  <link name="paddle_mixer_paddle_head"/>
+  <joint name="paddle_mixer_paddle_head_joint" type="fixed"><parent link="paddle_mixer_spindle"/><child link="paddle_mixer_paddle_head"/><origin xyz="0 0 -0.55" rpy="0 0 0"/></joint>
+  <link name="paddle_mixer_hanging_eye"/>
+  <joint name="paddle_mixer_hanging_eye_joint" type="fixed"><parent link="paddle_mixer_body"/><child link="paddle_mixer_hanging_eye"/><origin xyz="0 0 0.947387" rpy="0 0 0"/></joint>
+</robot>

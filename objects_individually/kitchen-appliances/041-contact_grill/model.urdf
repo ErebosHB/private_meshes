@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot name="contact_grill">
+  <link name="contact_grill_body">
+    <inertial><origin xyz="0 0.0103088 0.0455118" rpy="0 0 0"/><mass value="56.743"/><inertia ixx="0.45155" ixy="3.9689e-12" ixz="8.2683e-13" iyy="0.56799" iyz="-0.0015925" izz="0.97059"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/contact_grill_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.01 0.045" rpy="0 0 0"/><geometry><box size="0.34 0.3 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0 0.0825" rpy="0 0 0"/><geometry><box size="0.29 0.25 0.005"/></geometry></collision>
+    <collision><origin xyz="0 0.14 0.11" rpy="0 0 0"/><geometry><box size="0.08 0.04 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.13 -0.11 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="-0.13 0.11 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.13 -0.11 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.13 0.11 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0 -0.156 0.03" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+  </link>
+  <link name="contact_grill_temperature_dial">
+    <inertial><origin xyz="0.0114868 0 0" rpy="0 0 0"/><mass value="0.025157"/><inertia ixx="3.9687e-06" ixy="0" ixz="0" iyy="3.2883e-06" iyz="0" izz="3.3783e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/contact_grill_temperature_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0.00299999 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.01944" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0.014 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.018" length="0.016"/></geometry></collision>
+    <collision><origin xyz="0.026 0 0" rpy="0 0 0"/><geometry><box size="0.008 0.027 0.007"/></geometry></collision>
+  </link>
+  <link name="contact_grill_upper_plate">
+    <inertial><origin xyz="0 -0.135398 -0.0102836" rpy="0 0 0"/><mass value="38.124"/><inertia ixx="0.27596" ixy="-1.2243e-12" ixz="3.719e-14" iyy="0.35257" iyz="1.2589e-05" izz="0.61212"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/contact_grill_upper_plate.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.135 -0.01" rpy="0 0 0"/><geometry><box size="0.33 0.29 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.14 -0.0375" rpy="0 0 0"/><geometry><box size="0.29 0.25 0.005"/></geometry></collision>
+    <collision><origin xyz="0 -0.312 -0.005" rpy="0 1.5708 0"/><geometry><cylinder radius="0.009" length="0.24"/></geometry></collision>
+  </link>
+  <joint name="contact_grill_temperature_dial_joint" type="revolute">
+    <parent link="contact_grill_body"/><child link="contact_grill_temperature_dial"/>
+    <origin xyz="0.17 0.02 0.045" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="4.71" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="contact_grill_upper_plate_joint" type="revolute">
+    <parent link="contact_grill_body"/><child link="contact_grill_upper_plate"/>
+    <origin xyz="0 0.14 0.13" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50" velocity="1.5"/>
+  </joint>
+  <link name="contact_grill_temperature_dial_contact"/>
+  <joint name="contact_grill_temperature_dial_contact_joint" type="fixed"><parent link="contact_grill_temperature_dial"/><child link="contact_grill_temperature_dial_contact"/><origin xyz="0.03 0 0" rpy="0 0 0"/></joint>
+  <link name="contact_grill_upper_plate_grip"/>
+  <joint name="contact_grill_upper_plate_grip_joint" type="fixed"><parent link="contact_grill_upper_plate"/><child link="contact_grill_upper_plate_grip"/><origin xyz="0 -0.312 -0.005" rpy="0 0 0"/></joint>
+  <link name="contact_grill_lower_plate_surface"/>
+  <joint name="contact_grill_lower_plate_surface_joint" type="fixed"><parent link="contact_grill_body"/><child link="contact_grill_lower_plate_surface"/><origin xyz="0 0 0.0885" rpy="0 0 0"/></joint>
+  <link name="contact_grill_carry_grip"/>
+  <joint name="contact_grill_carry_grip_joint" type="fixed"><parent link="contact_grill_body"/><child link="contact_grill_carry_grip"/><origin xyz="0 -0.156 0.03" rpy="0 0 0"/></joint>
+</robot>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot name="plunge_router">
+  <link name="plunge_router_body">
+    <inertial><origin xyz="1.23991e-09 -0.00055092 0.0542899" rpy="0 0 0"/><mass value="1.4084"/><inertia ixx="0.0059828" ixy="-6.1209e-13" ixz="-1.5038e-11" iyy="0.0083718" iyz="-2.35e-05" izz="0.0045384"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/plunge_router_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.052 -2.98023e-08 0.006" rpy="0 -0 0"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="0.0450333 0.026 0.006" rpy="0 -0 0.523599"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="0.026 0.0450333 0.006" rpy="0 -0 1.0472"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="3.18408e-18 0.052 0.006" rpy="0 -0 1.5708"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.026 0.0450333 0.006" rpy="0 -0 2.09439"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.0450333 0.026 0.006" rpy="0 -0 2.61799"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.052 -2.98023e-08 0.006" rpy="0 -0 3.14159"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.0450333 -0.026 0.006" rpy="0 -0 -2.61799"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.026 -0.0450334 0.006" rpy="0 -0 -2.09439"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="-9.55225e-18 -0.052 0.006" rpy="0 -0 -1.5708"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="0.026 -0.0450334 0.006" rpy="0 -0 -1.0472"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="0.0450333 -0.026 0.006" rpy="0 -0 -0.523599"/><geometry><box size="0.052 0.0294053 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.058 -2.98023e-08 0.1" rpy="0 -0 0"/><geometry><cylinder radius="0.009" length="0.17"/></geometry></collision>
+    <collision><origin xyz="-0.058 -2.98023e-08 0.191" rpy="0 -0 0"/><geometry><cylinder radius="0.014" length="0.012"/></geometry></collision>
+    <collision><origin xyz="-0.058 -2.98023e-08 0.02" rpy="0 -0 0"/><geometry><box size="0.03 0.03 0.02"/></geometry></collision>
+    <collision><origin xyz="0.058 -2.98023e-08 0.1" rpy="0 -0 0"/><geometry><cylinder radius="0.009" length="0.17"/></geometry></collision>
+    <collision><origin xyz="0.058 -2.98023e-08 0.191" rpy="0 -0 0"/><geometry><cylinder radius="0.014" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.058 -2.98023e-08 0.02" rpy="0 -0 0"/><geometry><box size="0.03 0.03 0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.06 0.024" rpy="0 -0 0"/><geometry><cylinder radius="0.014" length="0.02"/></geometry></collision>
+  </link>
+  <link name="plunge_router_carriage">
+    <inertial><origin xyz="-6.43409e-10 -0.000738662 -8.17541e-05" rpy="0 0 0"/><mass value="0.72374"/><inertia ixx="0.0019691" ixy="3.2856e-13" ixz="-1.3438e-11" iyy="0.0049884" iyz="-1.0648e-05" izz="0.0035302"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/plunge_router_carriage.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.01" rpy="0 -0 0"/><geometry><cylinder radius="0.043" length="0.15"/></geometry></collision>
+    <collision><origin xyz="0 0 0.0975" rpy="0 -0 0"/><geometry><cylinder radius="0.043" length="0.025"/></geometry></collision>
+    <collision><origin xyz="-0.058 0 -0.03" rpy="0 -0 0"/><geometry><box size="0.032 0.032 0.065"/></geometry></collision>
+    <collision><origin xyz="-0.09 0 -0.03" rpy="0 -0 0"/><geometry><box size="0.05 0.026 0.024"/></geometry></collision>
+    <collision><origin xyz="-0.146 0 -0.03" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.026" length="0.052"/></geometry></collision>
+    <collision><origin xyz="0.058 0 -0.03" rpy="0 -0 0"/><geometry><box size="0.032 0.032 0.065"/></geometry></collision>
+    <collision><origin xyz="0.09 0 -0.03" rpy="0 -0 0"/><geometry><box size="0.05 0.026 0.024"/></geometry></collision>
+    <collision><origin xyz="0.146 0 -0.03" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.026" length="0.052"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.07" rpy="0 -0 0"/><geometry><cylinder radius="0.016" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0 -0.05 -0.02" rpy="0 -0 0"/><geometry><box size="0.02 0.022 0.03"/></geometry></collision>
+  </link>
+  <link name="plunge_router_collet">
+    <inertial><origin xyz="0.000260866 0 -0.0234943" rpy="0 0 0"/><mass value="0.057777"/><inertia ixx="1.6348e-05" ixy="0" ixz="4.1457e-07" iyy="1.6448e-05" iyz="0" izz="2.8909e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/plunge_router_collet.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.0125" rpy="0 -0 0"/><geometry><cylinder radius="0.012" length="0.025"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.039" rpy="0 -0 0"/><geometry><cylinder radius="0.005" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0.004 0 -0.051" rpy="0 -0 0"/><geometry><box size="0.012 0.002 0.02"/></geometry></collision>
+  </link>
+  <link name="plunge_router_depth_rod">
+    <inertial><origin xyz="0 0 -0.0449082" rpy="0 0 0"/><mass value="0.051308"/><inertia ixx="7.3069e-05" ixy="0" ixz="0" iyy="7.3069e-05" iyz="0" izz="5.7672e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/plunge_router_depth_rod.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.05" rpy="0 -0 0"/><geometry><cylinder radius="0.004" length="0.12"/></geometry></collision>
+    <collision><origin xyz="0 0 0.016" rpy="0 -0 0"/><geometry><cylinder radius="0.01" length="0.012"/></geometry></collision>
+  </link>
+  <link name="plunge_router_plunge_lock">
+    <inertial><origin xyz="0.014 -0.001 0.01" rpy="0 0 0"/><mass value="0.000882"/><inertia ixx="1e-07" ixy="0" ixz="-3.8534e-08" iyy="1e-07" iyz="0" izz="1e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/plunge_router_plunge_lock.glb"/></geometry></visual>
+    <collision><origin xyz="0.014 -0.001 0.01" rpy="0 -0.6 0"/><geometry><box size="0.035 0.008 0.01"/></geometry></collision>
+  </link>
+  <joint name="plunge_router_carriage_joint" type="prismatic">
+    <parent link="plunge_router_body"/><child link="plunge_router_carriage"/>
+    <origin xyz="0 -2.98023e-08 0.17" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.05" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="plunge_router_collet_joint" type="continuous">
+    <parent link="plunge_router_carriage"/><child link="plunge_router_collet"/>
+    <origin xyz="0 0 -0.075" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="plunge_router_depth_rod_joint" type="prismatic">
+    <parent link="plunge_router_carriage"/><child link="plunge_router_depth_rod"/>
+    <origin xyz="0 -0.06 -0.02" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.045" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="plunge_router_plunge_lock_joint" type="revolute">
+    <parent link="plunge_router_carriage"/><child link="plunge_router_plunge_lock"/>
+    <origin xyz="0.09 -0.016 -0.018" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.6" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="plunge_router_left_knob"/>
+  <joint name="plunge_router_left_knob_joint" type="fixed"><parent link="plunge_router_carriage"/><child link="plunge_router_left_knob"/><origin xyz="-0.135 0 -0.03" rpy="0 1.5708 0"/></joint>
+  <link name="plunge_router_right_knob"/>
+  <joint name="plunge_router_right_knob_joint" type="fixed"><parent link="plunge_router_carriage"/><child link="plunge_router_right_knob"/><origin xyz="0.135 0 -0.03" rpy="0 1.5708 0"/></joint>
+  <link name="plunge_router_plunge_lock_contact"/>
+  <joint name="plunge_router_plunge_lock_contact_joint" type="fixed"><parent link="plunge_router_plunge_lock"/><child link="plunge_router_plunge_lock_contact"/><origin xyz="0.028 -0.004 0.02" rpy="0 0 0"/></joint>
+  <link name="plunge_router_depth_rod_knob"/>
+  <joint name="plunge_router_depth_rod_knob_joint" type="fixed"><parent link="plunge_router_depth_rod"/><child link="plunge_router_depth_rod_knob"/><origin xyz="0 0 0.022" rpy="0 0 0"/></joint>
+  <link name="plunge_router_bit_tip"/>
+  <joint name="plunge_router_bit_tip_joint" type="fixed"><parent link="plunge_router_collet"/><child link="plunge_router_bit_tip"/><origin xyz="0 0 -0.061" rpy="3.14159 0 0"/></joint>
+</robot>

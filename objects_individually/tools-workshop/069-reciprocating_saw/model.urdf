@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<robot name="reciprocating_saw">
+  <link name="reciprocating_saw_body">
+    <inertial><origin xyz="0.0392692 -0.0098503 0.042" rpy="0 0 0"/><mass value="1.0027"/><inertia ixx="0.0010977" ixy="-0.00050579" ixz="-6.106e-14" iyy="0.015286" iyz="0" izz="0.015457"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/reciprocating_saw_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.0275 -0.0125 0.042" rpy="0 -0 0"/><geometry><box size="0.22 0.075 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.0625 -0.0125 0.042" rpy="0 -0 0"/><geometry><box size="0.1 0.08 0.084"/></geometry></collision>
+    <collision><origin xyz="0.2025 -0.0405 0.042" rpy="0 -0 0"/><geometry><box size="0.15 0.02 0.058"/></geometry></collision>
+    <collision><origin xyz="0.2025 0.0425 0.042" rpy="0 -0 0"/><geometry><box size="0.15 0.02 0.058"/></geometry></collision>
+    <collision><origin xyz="0.2645 0.001 0.042" rpy="0 -0 0"/><geometry><box size="0.03 0.103 0.058"/></geometry></collision>
+    <collision><origin xyz="0.2625 -0.000499999 0.042" rpy="0 -0 0"/><geometry><box size="0.05 0.03 0.064"/></geometry></collision>
+    <collision><origin xyz="0.2975 -0.0125 0.042" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.01" length="0.04"/></geometry></collision>
+    <collision><origin xyz="-0.1225 -0.0125 0.042" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.016" length="0.03"/></geometry></collision>
+  </link>
+  <link name="reciprocating_saw_plunger">
+    <inertial><origin xyz="-0.0457602 -0.00165754 0" rpy="0 0 0"/><mass value="0.079655"/><inertia ixx="3.0649e-06" ixy="-7.7455e-06" ixz="-9.5623e-14" iyy="0.00022463" iyz="0" izz="0.00022614"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/reciprocating_saw_plunger.glb"/></geometry></visual>
+    <collision><origin xyz="-0.00999999 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.008" length="0.03"/></geometry></collision>
+    <collision><origin xyz="-0.025 0 0" rpy="0 -0 0"/><geometry><box size="0.016 0.02 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.105 -0.004 0" rpy="0 -0 0"/><geometry><box size="0.15 0.02 0.0012"/></geometry></collision>
+  </link>
+  <link name="reciprocating_saw_shoe">
+    <inertial><origin xyz="-0.0101887 0.00271698 0" rpy="0 0 0"/><mass value="0.05724"/><inertia ixx="1.6481e-05" ixy="-1.5845e-06" ixz="0" iyy="5.8606e-06" iyz="0" izz="1.4475e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/reciprocating_saw_shoe.glb"/></geometry></visual>
+    <collision><origin xyz="-0.012 0 0" rpy="0 -0 0"/><geometry><box size="0.012 0.05 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.018 0" rpy="0 -0 0"/><geometry><box size="0.02 0.008 0.02"/></geometry></collision>
+  </link>
+  <link name="reciprocating_saw_trigger">
+    <inertial><origin xyz="0 0.01 0" rpy="0 0 0"/><mass value="0.0024696"/><inertia ixx="2.4367e-07" ixy="0" ixz="0" iyy="1.2266e-07" iyz="0" izz="2.0168e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/reciprocating_saw_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.01 0" rpy="0 -0 0"/><geometry><box size="0.014 0.028 0.02"/></geometry></collision>
+  </link>
+  <joint name="reciprocating_saw_plunger_joint" type="prismatic">
+    <parent link="reciprocating_saw_body"/><child link="reciprocating_saw_plunger"/>
+    <origin xyz="-0.1375 -0.0125 0.042" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.03" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="reciprocating_saw_shoe_joint" type="revolute">
+    <parent link="reciprocating_saw_body"/><child link="reciprocating_saw_shoe"/>
+    <origin xyz="-0.1325 -0.0125 0.042" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-0.5" upper="0.5" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="reciprocating_saw_trigger_joint" type="prismatic">
+    <parent link="reciprocating_saw_body"/><child link="reciprocating_saw_trigger"/>
+    <origin xyz="0.1775 -0.0345 0.042" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.008" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="reciprocating_saw_rear_grip"/>
+  <joint name="reciprocating_saw_rear_grip_joint" type="fixed"><parent link="reciprocating_saw_body"/><child link="reciprocating_saw_rear_grip"/><origin xyz="0.2625 -0.0125 0.042" rpy="1.5708 0 0"/></joint>
+  <link name="reciprocating_saw_front_boot_grip"/>
+  <joint name="reciprocating_saw_front_boot_grip_joint" type="fixed"><parent link="reciprocating_saw_body"/><child link="reciprocating_saw_front_boot_grip"/><origin xyz="-0.0625 -0.0125 0.042" rpy="0 1.5708 0"/></joint>
+  <link name="reciprocating_saw_trigger_contact"/>
+  <joint name="reciprocating_saw_trigger_contact_joint" type="fixed"><parent link="reciprocating_saw_trigger"/><child link="reciprocating_saw_trigger_contact"/><origin xyz="-0.007 0.01 0" rpy="0 0 0"/></joint>
+  <link name="reciprocating_saw_blade_tip"/>
+  <joint name="reciprocating_saw_blade_tip_joint" type="fixed"><parent link="reciprocating_saw_plunger"/><child link="reciprocating_saw_blade_tip"/><origin xyz="-0.18 -0.004 0" rpy="0 -1.5708 0"/></joint>
+</robot>

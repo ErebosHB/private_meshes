@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<robot name="fridge_freezer">
+  <link name="fridge_freezer_body">
+    <inertial><origin xyz="0 -0.0667996 0.955074" rpy="0 0 0"/><mass value="123.37"/><inertia ixx="50.656" ixy="-4.9735e-08" ixz="-6.1698e-09" iyy="50.47" iyz="-0.7709" izz="14.222"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/fridge_freezer_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.29925 0 0.931" rpy="0 0 0"/><geometry><box size="0.0015 0.65 1.832"/></geometry></collision>
+    <collision><origin xyz="0.29925 0 0.931" rpy="0 0 0"/><geometry><box size="0.0015 0.65 1.832"/></geometry></collision>
+    <collision><origin xyz="0 0 1.8485" rpy="0 0 0"/><geometry><box size="0.6 0.65 0.003"/></geometry></collision>
+    <collision><origin xyz="0 0.32425 0.931" rpy="0 0 0"/><geometry><box size="0.597 0.0015 1.832"/></geometry></collision>
+    <collision><origin xyz="0 0 0.01575" rpy="0 0 0"/><geometry><box size="0.597 0.6485 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.25 -0.275 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="-0.25 0.275 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 -0.275 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 0.275 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.0125 0.6415" rpy="0 0 0"/><geometry><box size="0.53 0.565 0.003"/></geometry></collision>
+    <collision><origin xyz="0 -0.0125 1.7985" rpy="0 0 0"/><geometry><box size="0.53 0.565 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.2635 -0.0125 1.22" rpy="0 0 0"/><geometry><box size="0.003 0.565 1.154"/></geometry></collision>
+    <collision><origin xyz="0.2635 -0.0125 1.22" rpy="0 0 0"/><geometry><box size="0.003 0.565 1.154"/></geometry></collision>
+    <collision><origin xyz="0 0.2685 1.22" rpy="0 0 0"/><geometry><box size="0.524 0.003 1.154"/></geometry></collision>
+    <collision><origin xyz="0 -0.0125 0.0415" rpy="0 0 0"/><geometry><box size="0.53 0.565 0.003"/></geometry></collision>
+    <collision><origin xyz="0 -0.0125 0.6085" rpy="0 0 0"/><geometry><box size="0.53 0.565 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.2635 -0.0125 0.325" rpy="0 0 0"/><geometry><box size="0.003 0.565 0.564"/></geometry></collision>
+    <collision><origin xyz="0.2635 -0.0125 0.325" rpy="0 0 0"/><geometry><box size="0.003 0.565 0.564"/></geometry></collision>
+    <collision><origin xyz="0 0.2685 0.325" rpy="0 0 0"/><geometry><box size="0.524 0.003 0.564"/></geometry></collision>
+    <collision><origin xyz="0 -0.31 0.625" rpy="0 0 0"/><geometry><box size="0.6 0.03 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.31 1.815" rpy="0 0 0"/><geometry><box size="0.6 0.03 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.31 0.025" rpy="0 0 0"/><geometry><box size="0.6 0.03 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.2825 -0.31 0.92" rpy="0 0 0"/><geometry><box size="0.035 0.03 1.8"/></geometry></collision>
+    <collision><origin xyz="0.2825 -0.31 0.92" rpy="0 0 0"/><geometry><box size="0.035 0.03 1.8"/></geometry></collision>
+    <collision><origin xyz="0 0.0075 0.96" rpy="0 0 0"/><geometry><box size="0.524 0.515 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.0075 1.2" rpy="0 0 0"/><geometry><box size="0.524 0.515 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.0075 1.46" rpy="0 0 0"/><geometry><box size="0.524 0.515 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0 0.6465" rpy="0 0 0"/><geometry><box size="0.52 0.52 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.2585 0 0.754" rpy="0 0 0"/><geometry><box size="0.003 0.52 0.212"/></geometry></collision>
+    <collision><origin xyz="0.2585 0 0.754" rpy="0 0 0"/><geometry><box size="0.003 0.52 0.212"/></geometry></collision>
+    <collision><origin xyz="0 -0.2585 0.754" rpy="0 0 0"/><geometry><box size="0.514 0.003 0.212"/></geometry></collision>
+    <collision><origin xyz="0 0.2585 0.754" rpy="0 0 0"/><geometry><box size="0.514 0.003 0.212"/></geometry></collision>
+  </link>
+  <link name="fridge_freezer_upper_freezer_drawer">
+    <inertial><origin xyz="0 -0.00228996 -0.00396256" rpy="0 0 0"/><mass value="67.948"/><inertia ixx="1.0723" ixy="1.6195e-09" ixz="-1.1194e-10" iyy="2.4686" iyz="0.078556" izz="2.6927"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/fridge_freezer_upper_freezer_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.025 0" rpy="0 0 0"/><geometry><box size="0.596 0.05 0.271"/></geometry></collision>
+    <collision><origin xyz="0 -0.072 0.0975" rpy="0 1.5708 0"/><geometry><cylinder radius="0.007" length="0.3"/></geometry></collision>
+    <collision><origin xyz="0 0.2725 -0.116" rpy="0 0 0"/><geometry><box size="0.51 0.545 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.2535 0.2725 -0.0135" rpy="0 0 0"/><geometry><box size="0.003 0.545 0.202"/></geometry></collision>
+    <collision><origin xyz="0.2535 0.2725 -0.0135" rpy="0 0 0"/><geometry><box size="0.003 0.545 0.202"/></geometry></collision>
+    <collision><origin xyz="0 0.5435 -0.0135" rpy="0 0 0"/><geometry><box size="0.504 0.003 0.202"/></geometry></collision>
+  </link>
+  <link name="fridge_freezer_lower_freezer_drawer">
+    <inertial><origin xyz="0 -0.00243243 -0.00399137" rpy="0 0 0"/><mass value="70.406"/><inertia ixx="1.1418" ixy="1.0774e-10" ixz="1.0575e-10" iyy="2.5922" iyz="0.082061" izz="2.7891"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/fridge_freezer_lower_freezer_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.025 0" rpy="0 0 0"/><geometry><box size="0.596 0.05 0.281"/></geometry></collision>
+    <collision><origin xyz="0 -0.072 0.1025" rpy="0 1.5708 0"/><geometry><cylinder radius="0.007" length="0.3"/></geometry></collision>
+    <collision><origin xyz="0 0.2725 -0.121" rpy="0 0 0"/><geometry><box size="0.51 0.545 0.003"/></geometry></collision>
+    <collision><origin xyz="-0.2535 0.2725 -0.0135" rpy="0 0 0"/><geometry><box size="0.003 0.545 0.212"/></geometry></collision>
+    <collision><origin xyz="0.2535 0.2725 -0.0135" rpy="0 0 0"/><geometry><box size="0.003 0.545 0.212"/></geometry></collision>
+    <collision><origin xyz="0 0.5435 -0.0135" rpy="0 0 0"/><geometry><box size="0.504 0.003 0.212"/></geometry></collision>
+  </link>
+  <link name="fridge_freezer_fridge_door">
+    <inertial><origin xyz="0.300075 -0.0287825 -0.00516958" rpy="0 0 0"/><mass value="337.89"/><inertia ixx="38.502" ixy="0.0013493" ixz="0.0010825" iyy="48.324" iyz="0.0034647" izz="10.062"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/fridge_freezer_fridge_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.3 -0.03 -0.005" rpy="0 0 0"/><geometry><box size="0.596 0.06 1.17"/></geometry></collision>
+    <collision><origin xyz="0.3 0.033 -0.4585" rpy="0 0 0"/><geometry><box size="0.48 0.054 0.003"/></geometry></collision>
+    <collision><origin xyz="0.0615 0.033 -0.4185" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.5385 0.033 -0.4185" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.00749999 -0.4185" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.0585 -0.4185" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.033 -0.1885" rpy="0 0 0"/><geometry><box size="0.48 0.054 0.003"/></geometry></collision>
+    <collision><origin xyz="0.0615 0.033 -0.1485" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.5385 0.033 -0.1485" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.00749999 -0.1485" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.0585 -0.1485" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.033 0.0915" rpy="0 0 0"/><geometry><box size="0.48 0.054 0.003"/></geometry></collision>
+    <collision><origin xyz="0.0615 0.033 0.1315" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.5385 0.033 0.1315" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.00749999 0.1315" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.0585 0.1315" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.033 0.3415" rpy="0 0 0"/><geometry><box size="0.48 0.054 0.003"/></geometry></collision>
+    <collision><origin xyz="0.0615 0.033 0.3815" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.5385 0.033 0.3815" rpy="0 0 0"/><geometry><box size="0.003 0.054 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.00749999 0.3815" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.3 0.0585 0.3815" rpy="0 0 0"/><geometry><box size="0.474 0.003 0.077"/></geometry></collision>
+    <collision><origin xyz="0.555 -0.085 -0.09" rpy="0 0 0"/><geometry><cylinder radius="0.008" length="0.4"/></geometry></collision>
+  </link>
+  <joint name="fridge_freezer_upper_freezer_drawer_joint" type="prismatic">
+    <parent link="fridge_freezer_body"/><child link="fridge_freezer_upper_freezer_drawer"/>
+    <origin xyz="0 -0.325 0.4675" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.409" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="fridge_freezer_lower_freezer_drawer_joint" type="prismatic">
+    <parent link="fridge_freezer_body"/><child link="fridge_freezer_lower_freezer_drawer"/>
+    <origin xyz="0 -0.325 0.1775" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.409" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="fridge_freezer_fridge_door_joint" type="revolute">
+    <parent link="fridge_freezer_body"/><child link="fridge_freezer_fridge_door"/>
+    <origin xyz="-0.3 -0.327 1.24" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.5"/>
+  </joint>
+  <link name="fridge_freezer_upper_freezer_drawer_grip"/>
+  <joint name="fridge_freezer_upper_freezer_drawer_grip_joint" type="fixed"><parent link="fridge_freezer_upper_freezer_drawer"/><child link="fridge_freezer_upper_freezer_drawer_grip"/><origin xyz="0 -0.072 0.0975" rpy="0 0 0"/></joint>
+  <link name="fridge_freezer_upper_freezer_drawer_volume"/>
+  <joint name="fridge_freezer_upper_freezer_drawer_volume_joint" type="fixed"><parent link="fridge_freezer_upper_freezer_drawer"/><child link="fridge_freezer_upper_freezer_drawer_volume"/><origin xyz="0 0.2725 -0.02" rpy="0 0 0"/></joint>
+  <link name="fridge_freezer_lower_freezer_drawer_grip"/>
+  <joint name="fridge_freezer_lower_freezer_drawer_grip_joint" type="fixed"><parent link="fridge_freezer_lower_freezer_drawer"/><child link="fridge_freezer_lower_freezer_drawer_grip"/><origin xyz="0 -0.072 0.1025" rpy="0 0 0"/></joint>
+  <link name="fridge_freezer_lower_freezer_drawer_volume"/>
+  <joint name="fridge_freezer_lower_freezer_drawer_volume_joint" type="fixed"><parent link="fridge_freezer_lower_freezer_drawer"/><child link="fridge_freezer_lower_freezer_drawer_volume"/><origin xyz="0 0.2725 -0.02" rpy="0 0 0"/></joint>
+  <link name="fridge_freezer_fridge_door_grip"/>
+  <joint name="fridge_freezer_fridge_door_grip_joint" type="fixed"><parent link="fridge_freezer_fridge_door"/><child link="fridge_freezer_fridge_door_grip"/><origin xyz="0.555 -0.085 -0.09" rpy="0 -1.5708 0"/></joint>
+  <link name="fridge_freezer_fridge_volume"/>
+  <joint name="fridge_freezer_fridge_volume_joint" type="fixed"><parent link="fridge_freezer_body"/><child link="fridge_freezer_fridge_volume"/><origin xyz="0 -0.0125 1.22" rpy="0 0 0"/></joint>
+  <link name="fridge_freezer_middle_shelf_surface"/>
+  <joint name="fridge_freezer_middle_shelf_surface_joint" type="fixed"><parent link="fridge_freezer_body"/><child link="fridge_freezer_middle_shelf_surface"/><origin xyz="0 0.0075 1.202" rpy="0 0 0"/></joint>
+  <link name="fridge_freezer_wall_anchor"/>
+  <joint name="fridge_freezer_wall_anchor_joint" type="fixed"><parent link="fridge_freezer_body"/><child link="fridge_freezer_wall_anchor"/><origin xyz="0 0.325 1.8" rpy="0 0 0"/></joint>
+</robot>

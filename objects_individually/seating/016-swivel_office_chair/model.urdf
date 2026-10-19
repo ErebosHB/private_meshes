@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<robot name="swivel_office_chair">
+  <link name="swivel_office_chair_body">
+    <inertial><origin xyz="1.77245e-11 0.000111775 0.176633" rpy="0 0 0"/><mass value="6.5681"/><inertia ixx="0.082707" ixy="4.4383e-10" ixz="6.1688e-11" iyy="0.082702" iyz="9.3459e-05" izz="0.084641"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.105" rpy="0 0 0"/><geometry><cylinder radius="0.042" length="0.06"/></geometry></collision>
+    <collision><origin xyz="1.04095e-17 0.17 0.1" rpy="0 0 1.5708"/><geometry><box size="0.27 0.048 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.16168 0.0525329 0.1" rpy="0 0 2.82743"/><geometry><box size="0.27 0.048 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0999235 -0.137533 0.1" rpy="0 0 4.08407"/><geometry><box size="0.27 0.048 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0999235 -0.137533 0.1" rpy="0 0 5.34071"/><geometry><box size="0.27 0.048 0.03"/></geometry></collision>
+    <collision><origin xyz="0.16168 0.0525329 0.1" rpy="0 0 6.59734"/><geometry><box size="0.27 0.048 0.03"/></geometry></collision>
+    <collision><origin xyz="1.86759e-17 0.31125 0.054" rpy="0 0 0"/><geometry><box size="0.032 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.290072 0.1005 0.054" rpy="0 0 0"/><geometry><box size="0.032 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.179274 -0.2405 0.054" rpy="0 0 0"/><geometry><box size="0.032 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="0.179274 -0.2405 0.054" rpy="0 0 0"/><geometry><box size="0.032 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="0.290072 0.1005 0.054" rpy="0 0 0"/><geometry><box size="0.032 0.045 0.008"/></geometry></collision>
+    <collision><origin xyz="0 0 0.225" rpy="0 0 0"/><geometry><cylinder radius="0.028" length="0.21"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_castor_1">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.051836"/><inertia ixx="1.6199e-05" ixy="0" ixz="0" iyy="1.019e-05" iyz="0" izz="1.019e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_castor_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.022"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_castor_2">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.051836"/><inertia ixx="1.6199e-05" ixy="0" ixz="0" iyy="1.019e-05" iyz="0" izz="1.019e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_castor_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.022"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_castor_3">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.051836"/><inertia ixx="1.6199e-05" ixy="0" ixz="0" iyy="1.019e-05" iyz="0" izz="1.019e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_castor_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.022"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_castor_4">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.051836"/><inertia ixx="1.6199e-05" ixy="0" ixz="0" iyy="1.019e-05" iyz="0" izz="1.019e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_castor_4.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.022"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_castor_5">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.051836"/><inertia ixx="1.6199e-05" ixy="0" ixz="0" iyy="1.019e-05" iyz="0" izz="1.019e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_castor_5.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.025" length="0.022"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_lift">
+    <inertial><origin xyz="0 0 -0.03" rpy="0 0 0"/><mass value="0.45804"/><inertia ixx="0.0022244" ixy="0" ixz="0" iyy="0.0022244" iyz="0" izz="5.153e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_lift.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.03" rpy="0 0 0"/><geometry><cylinder radius="0.015" length="0.24"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_seat">
+    <inertial><origin xyz="0 0.0165775 0.0649291" rpy="0 0 0"/><mass value="20.739"/><inertia ixx="0.2935" ixy="0" ixz="-1.8626e-09" iyy="0.66348" iyz="0.0036113" izz="0.72957"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_seat.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.01 0.0125" rpy="0 0 0"/><geometry><box size="0.2 0.22 0.025"/></geometry></collision>
+    <collision><origin xyz="0 0 0.0325" rpy="0 0 0"/><geometry><box size="0.48 0.46 0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.005 0.075" rpy="0 0 0"/><geometry><box size="0.5 0.48 0.07"/></geometry></collision>
+    <collision><origin xyz="-0.265 0.02 0.14" rpy="0 0 0"/><geometry><box size="0.025 0.06 0.2"/></geometry></collision>
+    <collision><origin xyz="-0.265 0 0.255" rpy="0 0 0"/><geometry><box size="0.07 0.26 0.03"/></geometry></collision>
+    <collision><origin xyz="0.265 0.02 0.14" rpy="0 0 0"/><geometry><box size="0.025 0.06 0.2"/></geometry></collision>
+    <collision><origin xyz="0.265 0 0.255" rpy="0 0 0"/><geometry><box size="0.07 0.26 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.23 0.03" rpy="0 0 0"/><geometry><box size="0.06 0.04 0.04"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_height_lever">
+    <inertial><origin xyz="0.115764 0 0" rpy="0 0 0"/><mass value="0.038472"/><inertia ixx="2.0457e-06" ixy="0" ixz="0" iyy="9.0498e-05" iyz="0" izz="9.1282e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_height_lever.glb"/></geometry></visual>
+    <collision><origin xyz="0.08 0 0" rpy="0 0 0"/><geometry><box size="0.16 0.014 0.008"/></geometry></collision>
+    <collision><origin xyz="0.15 0 0" rpy="0 0 0"/><geometry><box size="0.04 0.026 0.018"/></geometry></collision>
+  </link>
+  <link name="swivel_office_chair_backrest">
+    <inertial><origin xyz="0 0.013308 0.30187" rpy="0 0 0"/><mass value="8.9128"/><inertia ixx="0.22743" ixy="0" ixz="0" iyy="0.33909" iyz="-0.0006777" izz="0.11622"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/swivel_office_chair_backrest.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.012 0.14" rpy="0 0 0"/><geometry><box size="0.05 0.02 0.3"/></geometry></collision>
+    <collision><origin xyz="0 0.022 0.36" rpy="0 0 0"/><geometry><box size="0.46 0.022 0.48"/></geometry></collision>
+    <collision><origin xyz="0 -0.015 0.36" rpy="0 0 0"/><geometry><box size="0.44 0.06 0.46"/></geometry></collision>
+  </link>
+  <joint name="swivel_office_chair_castor_1_joint" type="continuous">
+    <parent link="swivel_office_chair_body"/><child link="swivel_office_chair_castor_1"/>
+    <origin xyz="1.86759e-17 0.305 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="swivel_office_chair_castor_2_joint" type="continuous">
+    <parent link="swivel_office_chair_body"/><child link="swivel_office_chair_castor_2"/>
+    <origin xyz="-0.290072 0.0942502 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="swivel_office_chair_castor_3_joint" type="continuous">
+    <parent link="swivel_office_chair_body"/><child link="swivel_office_chair_castor_3"/>
+    <origin xyz="-0.179274 -0.24675 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="swivel_office_chair_castor_4_joint" type="continuous">
+    <parent link="swivel_office_chair_body"/><child link="swivel_office_chair_castor_4"/>
+    <origin xyz="0.179274 -0.24675 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="swivel_office_chair_castor_5_joint" type="continuous">
+    <parent link="swivel_office_chair_body"/><child link="swivel_office_chair_castor_5"/>
+    <origin xyz="0.290072 0.0942502 0.025" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="swivel_office_chair_lift_joint" type="prismatic">
+    <parent link="swivel_office_chair_body"/><child link="swivel_office_chair_lift"/>
+    <origin xyz="0 0 0.33" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.12" effort="200" velocity="0.1"/>
+  </joint>
+  <joint name="swivel_office_chair_seat_joint" type="continuous">
+    <parent link="swivel_office_chair_lift"/><child link="swivel_office_chair_seat"/>
+    <origin xyz="0 0 0.09" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="swivel_office_chair_height_lever_joint" type="revolute">
+    <parent link="swivel_office_chair_seat"/><child link="swivel_office_chair_height_lever"/>
+    <origin xyz="0.11 -0.04 0.015" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="swivel_office_chair_backrest_joint" type="revolute">
+    <parent link="swivel_office_chair_seat"/><child link="swivel_office_chair_backrest"/>
+    <origin xyz="0 0.25 0.04" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.35" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="swivel_office_chair_left_armrest_grip"/>
+  <joint name="swivel_office_chair_left_armrest_grip_joint" type="fixed"><parent link="swivel_office_chair_seat"/><child link="swivel_office_chair_left_armrest_grip"/><origin xyz="-0.265 0 0.27" rpy="0 0 1.5708"/></joint>
+  <link name="swivel_office_chair_right_armrest_grip"/>
+  <joint name="swivel_office_chair_right_armrest_grip_joint" type="fixed"><parent link="swivel_office_chair_seat"/><child link="swivel_office_chair_right_armrest_grip"/><origin xyz="0.265 0 0.27" rpy="0 0 1.5708"/></joint>
+  <link name="swivel_office_chair_height_lever_tip"/>
+  <joint name="swivel_office_chair_height_lever_tip_joint" type="fixed"><parent link="swivel_office_chair_height_lever"/><child link="swivel_office_chair_height_lever_tip"/><origin xyz="0.16 0 0" rpy="0 0 0"/></joint>
+  <link name="swivel_office_chair_seat_surface"/>
+  <joint name="swivel_office_chair_seat_surface_joint" type="fixed"><parent link="swivel_office_chair_seat"/><child link="swivel_office_chair_seat_surface"/><origin xyz="0 -0.005 0.11" rpy="0 0 0"/></joint>
+  <link name="swivel_office_chair_backrest_top_grip"/>
+  <joint name="swivel_office_chair_backrest_top_grip_joint" type="fixed"><parent link="swivel_office_chair_backrest"/><child link="swivel_office_chair_backrest_top_grip"/><origin xyz="0 0.02 0.6" rpy="0 0 0"/></joint>
+  <link name="swivel_office_chair_tether_anchor"/>
+  <joint name="swivel_office_chair_tether_anchor_joint" type="fixed"><parent link="swivel_office_chair_body"/><child link="swivel_office_chair_tether_anchor"/><origin xyz="0 0 0.14" rpy="0 0 0"/></joint>
+</robot>

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot name="screwdriving_unit">
+  <link name="screwdriving_unit_body">
+    <inertial><origin xyz="0.000919353 0.0289639 0.191767" rpy="0 0 0"/><mass value="22"/><inertia ixx="1.59812" ixy="-0.00351629" ixz="-0.00260479" iyy="1.46153" iyz="-0.335555" izz="0.299027"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/screwdriving_unit_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.015" rpy="0 0 0"/><geometry><box size="0.3 0.36 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.04 0.04" rpy="0 0 0"/><geometry><box size="0.24 0.22 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.13 0.43" rpy="0 0 0"/><geometry><box size="0.08 0.08 0.8"/></geometry></collision>
+    <collision><origin xyz="0 0.084 0.48" rpy="0 0 0"/><geometry><box size="0.02 0.012 0.6"/></geometry></collision>
+    <collision><origin xyz="0 0.13 0.845" rpy="0 0 0"/><geometry><box size="0.1 0.1 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.05 0.07" rpy="0 0 0"/><geometry><box size="0.08 0.06 0.04"/></geometry></collision>
+    <collision><origin xyz="0 -0.01 0.105" rpy="0 0 0"/><geometry><box size="0.03 0.02 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.205 0.85" rpy="-1.8491 0 0"/><geometry><cylinder radius="0.009" length="0.0728011"/></geometry></collision>
+    <collision><origin xyz="0.025 0.25 0.72" rpy="0.0831412 2.93689 0.769557"/><geometry><cylinder radius="0.009" length="0.245967"/></geometry></collision>
+    <collision><origin xyz="0.075 0.23 0.45" rpy="2.9442 0.161998 1.3734"/><geometry><cylinder radius="0.009" length="0.31"/></geometry></collision>
+    <collision><origin xyz="0.11 0.175 0.165" rpy="2.95848 0.0727073 0.754334"/><geometry><cylinder radius="0.009" length="0.275318"/></geometry></collision>
+  </link>
+  <link name="screwdriving_unit_spindle_carriage">
+    <inertial><origin xyz="0 -0.0508732 -0.047913" rpy="0 0 0"/><mass value="3.5"/><inertia ixx="0.0305319" ixy="0" ixz="0" iyy="0.026208" iyz="-0.00478349" izz="0.00735936"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/screwdriving_unit_spindle_carriage.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.1 0.06 0.14"/></geometry></collision>
+    <collision><origin xyz="0 -0.08 -0.02" rpy="0 0 0"/><geometry><cylinder radius="0.035" length="0.24"/></geometry></collision>
+    <collision><origin xyz="0 -0.045 -0.02" rpy="0 0 0"/><geometry><box size="0.04 0.05 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.08 -0.17" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.06"/></geometry></collision>
+  </link>
+  <link name="screwdriving_unit_spindle">
+    <inertial><origin xyz="0 0 -0.0176087" rpy="0 0 0"/><mass value="0.1"/><inertia ixx="2.96126e-05" ixy="0" ixz="0" iyy="2.96126e-05" iyz="0" izz="3.26739e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/screwdriving_unit_spindle.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.00999999" rpy="0 0 0"/><geometry><cylinder radius="0.009" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.045" rpy="0 0 0"/><geometry><cylinder radius="0.003" length="0.05"/></geometry></collision>
+  </link>
+  <link name="screwdriving_unit_clamp_lever">
+    <inertial><origin xyz="0 -0.0551796 0" rpy="0 0 0"/><mass value="0.08"/><inertia ixx="0.000145364" ixy="0" ixz="0" iyy="2.91465e-06" iyz="0" izz="0.000146507"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/screwdriving_unit_clamp_lever.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.055 0" rpy="0 0 0"/><geometry><box size="0.014 0.11 0.01"/></geometry></collision>
+    <collision><origin xyz="0 -0.125 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.011" length="0.05"/></geometry></collision>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.006" length="0.028"/></geometry></collision>
+  </link>
+  <joint name="screwdriving_unit_spindle_carriage_joint" type="prismatic">
+    <parent link="screwdriving_unit_body"/><child link="screwdriving_unit_spindle_carriage"/>
+    <origin xyz="0 0.06 0.62" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.26" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="screwdriving_unit_spindle_joint" type="continuous">
+    <parent link="screwdriving_unit_spindle_carriage"/><child link="screwdriving_unit_spindle"/>
+    <origin xyz="0 -0.08 -0.2" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="screwdriving_unit_clamp_lever_joint" type="revolute">
+    <parent link="screwdriving_unit_body"/><child link="screwdriving_unit_clamp_lever"/>
+    <origin xyz="0 -0.01 0.12" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.4" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="screwdriving_unit_bit_tip"/>
+  <joint name="screwdriving_unit_bit_tip_joint" type="fixed"><parent link="screwdriving_unit_spindle"/><child link="screwdriving_unit_bit_tip"/><origin xyz="0 0 -0.07" rpy="3.14159 0 0"/></joint>
+  <link name="screwdriving_unit_work_table_surface"/>
+  <joint name="screwdriving_unit_work_table_surface_joint" type="fixed"><parent link="screwdriving_unit_body"/><child link="screwdriving_unit_work_table_surface"/><origin xyz="0.07 -0.04 0.05" rpy="0 0 0"/></joint>
+  <link name="screwdriving_unit_clamp_lever_grip"/>
+  <joint name="screwdriving_unit_clamp_lever_grip_joint" type="fixed"><parent link="screwdriving_unit_clamp_lever"/><child link="screwdriving_unit_clamp_lever_grip"/><origin xyz="0 -0.125 0" rpy="0 0 0"/></joint>
+  <link name="screwdriving_unit_column_anchor"/>
+  <joint name="screwdriving_unit_column_anchor_joint" type="fixed"><parent link="screwdriving_unit_body"/><child link="screwdriving_unit_column_anchor"/><origin xyz="0 0.17 0.7" rpy="0 0 0"/></joint>
+</robot>

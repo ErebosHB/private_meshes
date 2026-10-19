@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="single_kitchen_bin">
+  <link name="single_kitchen_bin_body">
+    <inertial><origin xyz="2.38698e-18 -0.00541077 0.264112" rpy="0 0 0"/><mass value="11.0186"/><inertia ixx="0.60182" ixy="1.10652e-18" ixz="-2.20271e-17" iyy="0.619319" iyz="-0.0137979" izz="0.283042"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/single_kitchen_bin_body.glb"/></geometry></visual>
+    <collision><origin xyz="-2.77556e-17 -0.009 0.01" rpy="0 0 0"/><geometry><box size="0.31 0.28 0.02"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 -0.14825 0.324" rpy="0 0 0"/><geometry><box size="0.31 0.0015 0.608"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.13025 0.324" rpy="0 0 0"/><geometry><box size="0.31 0.0015 0.608"/></geometry></collision>
+    <collision><origin xyz="-0.15425 -0.009 0.324" rpy="0 0 0"/><geometry><box size="0.0015 0.277 0.608"/></geometry></collision>
+    <collision><origin xyz="0.15425 -0.009 0.324" rpy="0 0 0"/><geometry><box size="0.0015 0.277 0.608"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 -0.009 0.023" rpy="0 0 0"/><geometry><box size="0.307 0.277 0.006"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.146 0.613" rpy="0 0 0"/><geometry><box size="0.27 0.03 0.03"/></geometry></collision>
+  </link>
+  <link name="single_kitchen_bin_lid">
+    <inertial><origin xyz="2.79444e-18 -0.145163 0.010246" rpy="0 0 0"/><mass value="1.24155"/><inertia ixx="0.0102779" ixy="2.53168e-20" ixz="1.92159e-20" iyy="0.010485" iyz="3.60422e-05" izz="0.020747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/single_kitchen_bin_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.152 0.01125" rpy="0 0 0"/><geometry><box size="0.31 0.28 0.0015"/></geometry></collision>
+    <collision><origin xyz="0 -0.287 0.00525" rpy="0 0 0"/><geometry><box size="0.31 0.01 0.0105"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.00525" rpy="0 0 0"/><geometry><box size="0.31 0.01 0.0105"/></geometry></collision>
+    <collision><origin xyz="-0.15 -0.152 0.00525" rpy="0 0 0"/><geometry><box size="0.01 0.26 0.0105"/></geometry></collision>
+    <collision><origin xyz="0.15 -0.152 0.00525" rpy="0 0 0"/><geometry><box size="0.01 0.26 0.0105"/></geometry></collision>
+    <collision><origin xyz="0 0 0.006" rpy="0 1.5708 0"/><geometry><cylinder radius="0.006" length="0.25"/></geometry></collision>
+    <collision><origin xyz="0 -0.004 0.006" rpy="0 0 0"/><geometry><box size="0.27 0.02 0.008"/></geometry></collision>
+    <collision><origin xyz="0 -0.298 0.006" rpy="0 0 0"/><geometry><box size="0.124 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="single_kitchen_bin_lid_joint" type="revolute">
+    <parent link="single_kitchen_bin_body"/><child link="single_kitchen_bin_lid"/>
+    <origin xyz="-2.77556e-17 0.143 0.628" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="single_kitchen_bin_bucket">
+    <inertial><origin xyz="1.27896e-17 0.114855 -0.32628" rpy="0 0 0"/><mass value="2.17017"/><inertia ixx="0.092705" ixy="-1.58324e-20" ixz="-1.21246e-18" iyy="0.100657" iyz="0.000276129" izz="0.0449773"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/single_kitchen_bin_bucket.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.11525 -0.581" rpy="0 0 0"/><geometry><box size="0.291 0.2305 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.144 0.11525 -0.2895" rpy="0 0 0"/><geometry><box size="0.003 0.2305 0.579"/></geometry></collision>
+    <collision><origin xyz="0.144 0.11525 -0.2895" rpy="0 0 0"/><geometry><box size="0.003 0.2305 0.579"/></geometry></collision>
+    <collision><origin xyz="0 0.0015 -0.2895" rpy="0 0 0"/><geometry><box size="0.285 0.003 0.579"/></geometry></collision>
+    <collision><origin xyz="0 0.229 -0.2895" rpy="0 0 0"/><geometry><box size="0.285 0.003 0.579"/></geometry></collision>
+    <collision><origin xyz="0 0.009 -0.004" rpy="0 0 0"/><geometry><box size="0.08 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="single_kitchen_bin_bucket_joint" type="prismatic">
+    <parent link="single_kitchen_bin_body"/><child link="single_kitchen_bin_bucket"/>
+    <origin xyz="-2.77556e-17 -0.1395 0.613" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.437" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="single_kitchen_bin_lid_grip"/>
+  <joint name="single_kitchen_bin_lid_grip_fixed" type="fixed">
+    <parent link="single_kitchen_bin_lid"/><child link="single_kitchen_bin_lid_grip"/>
+    <origin xyz="0 -0.298 0.006" rpy="0 0 0"/>
+  </joint>
+  <link name="single_kitchen_bin_bucket_grip"/>
+  <joint name="single_kitchen_bin_bucket_grip_fixed" type="fixed">
+    <parent link="single_kitchen_bin_bucket"/><child link="single_kitchen_bin_bucket_grip"/>
+    <origin xyz="0 0.009 -0.004" rpy="0 0 0"/>
+  </joint>
+  <link name="single_kitchen_bin_bucket_volume"/>
+  <joint name="single_kitchen_bin_bucket_volume_fixed" type="fixed">
+    <parent link="single_kitchen_bin_bucket"/><child link="single_kitchen_bin_bucket_volume"/>
+    <origin xyz="0 0.11525 -0.2915" rpy="0 0 0"/>
+  </joint>
+</robot>

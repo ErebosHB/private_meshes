@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot name="tumble_dryer">
+  <link name="tumble_dryer_body">
+    <inertial><origin xyz="-0.000419055 0.0381961 0.448464" rpy="0 0 0"/><mass value="72.359"/><inertia ixx="7.0787" ixy="0.0096355" ixz="0.0097498" iyy="7.124" iyz="0.073357" izz="5.4746"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tumble_dryer_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.29925 0 0.4225" rpy="0 0 0"/><geometry><box size="0.0015 0.6 0.815"/></geometry></collision>
+    <collision><origin xyz="0.29925 0 0.4225" rpy="0 0 0"/><geometry><box size="0.0015 0.6 0.815"/></geometry></collision>
+    <collision><origin xyz="0 0 0.84" rpy="0 0 0"/><geometry><box size="0.6 0.6 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.29925 0.4225" rpy="0 0 0"/><geometry><box size="0.597 0.0015 0.815"/></geometry></collision>
+    <collision><origin xyz="0 0 0.01575" rpy="0 0 0"/><geometry><box size="0.597 0.5985 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.25 -0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="-0.25 0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 -0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.299 0.6625" rpy="0 0 0"/><geometry><box size="0.6 0.002 0.095"/></geometry></collision>
+    <collision><origin xyz="0 -0.299 0.1625" rpy="0 0 0"/><geometry><box size="0.6 0.002 0.165"/></geometry></collision>
+    <collision><origin xyz="-0.2425 -0.299 0.43" rpy="0 0 0"/><geometry><box size="0.115 0.002 0.37"/></geometry></collision>
+    <collision><origin xyz="0.2425 -0.299 0.43" rpy="0 0 0"/><geometry><box size="0.115 0.002 0.37"/></geometry></collision>
+    <collision><origin xyz="0 -0.292 0.0475" rpy="0 0 0"/><geometry><box size="0.596 0.002 0.065"/></geometry></collision>
+    <collision><origin xyz="0.2525 0.03 0.43" rpy="1.5708 0 0"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="0.218671 0.03 0.55625" rpy="1.5708 -0.523599 4.35887e-08"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="0.12625 0.03 0.648671" rpy="1.5708 -1.0472 1.30766e-07"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.6825" rpy="1.5708 -1.5708 0"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.12625 0.03 0.648671" rpy="1.5708 -2.09439 -1.30766e-07"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.218671 0.03 0.55625" rpy="1.5708 -2.61799 -4.35888e-08"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.2525 0.03 0.43" rpy="-1.5708 -8.74228e-08 3.14159"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.218671 0.03 0.30375" rpy="1.5708 2.61799 4.35887e-08"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.12625 0.03 0.211329" rpy="1.5708 2.09439 1.30766e-07"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.1775" rpy="1.5708 1.5708 0"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="0.12625 0.03 0.211329" rpy="1.5708 1.0472 -1.30766e-07"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="0.218671 0.03 0.30375" rpy="1.5708 0.523599 -4.35887e-08"/><geometry><box size="0.005 0.136654 0.42"/></geometry></collision>
+    <collision><origin xyz="0 0.245 0.43" rpy="1.5708 0 0"/><geometry><cylinder radius="0.255" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0.07 -0.291 0.77" rpy="0 0 0"/><geometry><box size="0.46 0.018 0.12"/></geometry></collision>
+    <collision><origin xyz="-0.295 -0.291 0.77" rpy="0 0 0"/><geometry><box size="0.01 0.018 0.12"/></geometry></collision>
+    <collision><origin xyz="-0.215 -0.291 0.7175" rpy="0 0 0"/><geometry><box size="0.15 0.018 0.015"/></geometry></collision>
+    <collision><origin xyz="-0.215 -0.291 0.8225" rpy="0 0 0"/><geometry><box size="0.15 0.018 0.015"/></geometry></collision>
+    <collision><origin xyz="-0.215 -0.056 0.72275" rpy="0 0 0"/><geometry><box size="0.15 0.452 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.215 -0.056 0.81725" rpy="0 0 0"/><geometry><box size="0.15 0.452 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.28925 -0.056 0.77" rpy="0 0 0"/><geometry><box size="0.0015 0.452 0.093"/></geometry></collision>
+    <collision><origin xyz="-0.14075 -0.056 0.77" rpy="0 0 0"/><geometry><box size="0.0015 0.452 0.093"/></geometry></collision>
+    <collision><origin xyz="-0.215 0.16925 0.77" rpy="0 0 0"/><geometry><box size="0.147 0.0015 0.093"/></geometry></collision>
+  </link>
+  <link name="tumble_dryer_water_tank">
+    <inertial><origin xyz="0 0.157366 -0.00142054" rpy="0 0 0"/><mass value="0.67114"/><inertia ixx="0.01675" ixy="-9.3251e-13" ixz="-7.6509e-15" iyy="0.0022552" iyz="5.7166e-05" izz="0.017651"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tumble_dryer_water_tank.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.00800002 0" rpy="0 0 0"/><geometry><box size="0.146 0.018 0.088"/></geometry></collision>
+    <collision><origin xyz="0 -0.00149998 -0.02" rpy="0 0 0"/><geometry><box size="0.08 0.004 0.016"/></geometry></collision>
+    <collision><origin xyz="0 0.2335 -0.043" rpy="0 0 0"/><geometry><box size="0.14 0.433 0.002"/></geometry></collision>
+    <collision><origin xyz="0 0.2335 0.039" rpy="0 0 0"/><geometry><box size="0.14 0.433 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.069 0.2335 -0.00199997" rpy="0 0 0"/><geometry><box size="0.002 0.433 0.08"/></geometry></collision>
+    <collision><origin xyz="0.069 0.2335 -0.00199997" rpy="0 0 0"/><geometry><box size="0.002 0.433 0.08"/></geometry></collision>
+    <collision><origin xyz="0 0.449 -0.00199997" rpy="0 0 0"/><geometry><box size="0.136 0.002 0.08"/></geometry></collision>
+  </link>
+  <link name="tumble_dryer_program_dial">
+    <inertial><origin xyz="0 -0.0151223 0" rpy="0 0 0"/><mass value="0.10753"/><inertia ixx="3.6952e-05" ixy="0" ixz="0" iyy="5.6178e-05" iyz="0" izz="3.7482e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tumble_dryer_program_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00299999 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.03456" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.018 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.032" length="0.024"/></geometry></collision>
+    <collision><origin xyz="0 -0.034 0" rpy="0 0 0"/><geometry><box size="0.048 0.008 0.007"/></geometry></collision>
+  </link>
+  <link name="tumble_dryer_start_button">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0016632"/><inertia ixx="2.4948e-08" ixy="0" ixz="0" iyy="8.7041e-08" iyz="0" izz="7.2072e-08"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tumble_dryer_start_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.022 0.006 0.012"/></geometry></collision>
+  </link>
+  <link name="tumble_dryer_door">
+    <inertial><origin xyz="0.244366 0.00398711 0" rpy="0 0 0"/><mass value="34.934"/><inertia ixx="0.6631" ixy="0.00037162" ixz="0" iyy="1.3212" iyz="0" izz="0.67162"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tumble_dryer_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.46 -0.022 0" rpy="0 0 0"/><geometry><box size="0.025 0.012 0.11"/></geometry></collision>
+    <collision><origin xyz="0.245 0 0.205" rpy="0 0 0"/><geometry><box size="0.32 0.036 0.08"/></geometry></collision>
+    <collision><origin xyz="0.245 0 -0.205" rpy="0 0 0"/><geometry><box size="0.32 0.036 0.08"/></geometry></collision>
+    <collision><origin xyz="0.04 0 0" rpy="0 0 0"/><geometry><box size="0.08 0.036 0.33"/></geometry></collision>
+    <collision><origin xyz="0.45 0 0" rpy="0 0 0"/><geometry><box size="0.08 0.036 0.33"/></geometry></collision>
+    <collision><origin xyz="0.245 0.015 0" rpy="0 0 0"/><geometry><box size="0.25 0.04 0.25"/></geometry></collision>
+  </link>
+  <joint name="tumble_dryer_water_tank_joint" type="prismatic">
+    <parent link="tumble_dryer_body"/><child link="tumble_dryer_water_tank"/>
+    <origin xyz="-0.215 -0.3 0.77" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.32" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="tumble_dryer_program_dial_joint" type="revolute">
+    <parent link="tumble_dryer_body"/><child link="tumble_dryer_program_dial"/>
+    <origin xyz="0.215 -0.3 0.77" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="5.5" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="tumble_dryer_start_button_joint" type="prismatic">
+    <parent link="tumble_dryer_body"/><child link="tumble_dryer_start_button"/>
+    <origin xyz="0.27 -0.302 0.74" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.003" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="tumble_dryer_door_joint" type="revolute">
+    <parent link="tumble_dryer_body"/><child link="tumble_dryer_door"/>
+    <origin xyz="-0.245 -0.326 0.43" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.5"/>
+  </joint>
+  <link name="tumble_dryer_water_tank_grip"/>
+  <joint name="tumble_dryer_water_tank_grip_joint" type="fixed"><parent link="tumble_dryer_water_tank"/><child link="tumble_dryer_water_tank_grip"/><origin xyz="0 -0.00399998 -0.02" rpy="0 0 0"/></joint>
+  <link name="tumble_dryer_water_tank_volume"/>
+  <joint name="tumble_dryer_water_tank_volume_joint" type="fixed"><parent link="tumble_dryer_water_tank"/><child link="tumble_dryer_water_tank_volume"/><origin xyz="0 0.23 -0.00199997" rpy="0 0 0"/></joint>
+  <link name="tumble_dryer_program_dial_contact"/>
+  <joint name="tumble_dryer_program_dial_contact_joint" type="fixed"><parent link="tumble_dryer_program_dial"/><child link="tumble_dryer_program_dial_contact"/><origin xyz="0 -0.038 0" rpy="0 0 0"/></joint>
+  <link name="tumble_dryer_start_button_contact"/>
+  <joint name="tumble_dryer_start_button_contact_joint" type="fixed"><parent link="tumble_dryer_start_button"/><child link="tumble_dryer_start_button_contact"/><origin xyz="0 -0.00300002 0" rpy="0 0 0"/></joint>
+  <link name="tumble_dryer_door_grip"/>
+  <joint name="tumble_dryer_door_grip_joint" type="fixed"><parent link="tumble_dryer_door"/><child link="tumble_dryer_door_grip"/><origin xyz="0.46 -0.028 0" rpy="0 -1.5708 0"/></joint>
+  <link name="tumble_dryer_drum_volume"/>
+  <joint name="tumble_dryer_drum_volume_joint" type="fixed"><parent link="tumble_dryer_body"/><child link="tumble_dryer_drum_volume"/><origin xyz="0 0.03 0.43" rpy="0 0 0"/></joint>
+  <link name="tumble_dryer_top_surface"/>
+  <joint name="tumble_dryer_top_surface_joint" type="fixed"><parent link="tumble_dryer_body"/><child link="tumble_dryer_top_surface"/><origin xyz="0 0 0.85" rpy="0 0 0"/></joint>
+  <link name="tumble_dryer_wall_anchor"/>
+  <joint name="tumble_dryer_wall_anchor_joint" type="fixed"><parent link="tumble_dryer_body"/><child link="tumble_dryer_wall_anchor"/><origin xyz="0 0.3 0.8" rpy="0 0 0"/></joint>
+</robot>

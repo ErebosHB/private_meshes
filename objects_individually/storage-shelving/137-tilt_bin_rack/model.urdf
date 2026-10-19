@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+<robot name="tilt_bin_rack">
+  <link name="tilt_bin_rack_body">
+    <inertial><origin xyz="0 0.0174256 0.299988" rpy="0 0 0"/><mass value="188.958"/><inertia ixx="16.2534" ixy="0" ixz="0" iyy="32.2757" iyz="-0.168548" izz="18.3986"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.449 0 0.39" rpy="0 0 0"/><geometry><box size="0.012 0.26 0.78"/></geometry></collision>
+    <collision><origin xyz="0.449 0 0.39" rpy="0 0 0"/><geometry><box size="0.012 0.26 0.78"/></geometry></collision>
+    <collision><origin xyz="0 0.128 0.39" rpy="0 0 0"/><geometry><box size="0.886 0.004 0.76"/></geometry></collision>
+    <collision><origin xyz="0 0 0.774" rpy="0 0 0"/><geometry><box size="0.91 0.26 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.005 0.02" rpy="0 0 0"/><geometry><box size="0.886 0.25 0.04"/></geometry></collision>
+    <collision><origin xyz="-0.1475 0.01 0.15" rpy="0 0 0"/><geometry><box size="0.004 0.24 0.22"/></geometry></collision>
+    <collision><origin xyz="0.1475 0.01 0.15" rpy="0 0 0"/><geometry><box size="0.004 0.24 0.22"/></geometry></collision>
+    <collision><origin xyz="0 0.005 0.276" rpy="0 0 0"/><geometry><box size="0.886 0.25 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.1475 0.01 0.39" rpy="0 0 0"/><geometry><box size="0.004 0.24 0.22"/></geometry></collision>
+    <collision><origin xyz="0.1475 0.01 0.39" rpy="0 0 0"/><geometry><box size="0.004 0.24 0.22"/></geometry></collision>
+    <collision><origin xyz="0 0.005 0.516" rpy="0 0 0"/><geometry><box size="0.886 0.25 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.1475 0.01 0.63" rpy="0 0 0"/><geometry><box size="0.004 0.24 0.22"/></geometry></collision>
+    <collision><origin xyz="0.1475 0.01 0.63" rpy="0 0 0"/><geometry><box size="0.004 0.24 0.22"/></geometry></collision>
+  </link>
+  <link name="tilt_bin_rack_bin_r1c1">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r1c1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r1c1_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r1c1"/>
+    <origin xyz="-0.295 -0.12 0.046" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c2">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r1c2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r1c2_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r1c2"/>
+    <origin xyz="0 -0.12 0.046" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c3">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r1c3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r1c3_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r1c3"/>
+    <origin xyz="0.295 -0.12 0.046" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c1">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r2c1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r2c1_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r2c1"/>
+    <origin xyz="-0.295 -0.12 0.286" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c2">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r2c2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r2c2_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r2c2"/>
+    <origin xyz="0 -0.12 0.286" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c3">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r2c3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r2c3_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r2c3"/>
+    <origin xyz="0.295 -0.12 0.286" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c1">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r3c1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r3c1_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r3c1"/>
+    <origin xyz="-0.295 -0.12 0.526" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c2">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r3c2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r3c2_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r3c2"/>
+    <origin xyz="0 -0.12 0.526" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c3">
+    <inertial><origin xyz="0 0.0957834 0.0633032" rpy="0 0 0"/><mass value="0.895272"/><inertia ixx="0.00822652" ixy="0" ixz="0" iyy="0.0113815" iyz="0.000345827" izz="0.0141747"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_bin_rack_bin_r3c3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.1 0.002" rpy="0 0 0"/><geometry><box size="0.27 0.2 0.004"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.085" rpy="0 0 0"/><geometry><box size="0.276 0.004 0.17"/></geometry></collision>
+    <collision><origin xyz="0 0.198 0.08" rpy="0 0 0"/><geometry><box size="0.27 0.004 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0.135 0.1 0.08" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.006 0.163" rpy="0 0 0"/><geometry><box size="0.14 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="tilt_bin_rack_bin_r3c3_joint" type="revolute">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_bin_r3c3"/>
+    <origin xyz="0.295 -0.12 0.526" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.45" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="tilt_bin_rack_top_surface"/>
+  <joint name="tilt_bin_rack_top_surface_fixed" type="fixed">
+    <parent link="tilt_bin_rack_body"/><child link="tilt_bin_rack_top_surface"/>
+    <origin xyz="0 0 0.78" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c1_grip"/>
+  <joint name="tilt_bin_rack_bin_r1c1_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r1c1"/><child link="tilt_bin_rack_bin_r1c1_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c1_volume"/>
+  <joint name="tilt_bin_rack_bin_r1c1_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r1c1"/><child link="tilt_bin_rack_bin_r1c1_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c2_grip"/>
+  <joint name="tilt_bin_rack_bin_r1c2_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r1c2"/><child link="tilt_bin_rack_bin_r1c2_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c2_volume"/>
+  <joint name="tilt_bin_rack_bin_r1c2_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r1c2"/><child link="tilt_bin_rack_bin_r1c2_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c3_grip"/>
+  <joint name="tilt_bin_rack_bin_r1c3_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r1c3"/><child link="tilt_bin_rack_bin_r1c3_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r1c3_volume"/>
+  <joint name="tilt_bin_rack_bin_r1c3_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r1c3"/><child link="tilt_bin_rack_bin_r1c3_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c1_grip"/>
+  <joint name="tilt_bin_rack_bin_r2c1_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r2c1"/><child link="tilt_bin_rack_bin_r2c1_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c1_volume"/>
+  <joint name="tilt_bin_rack_bin_r2c1_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r2c1"/><child link="tilt_bin_rack_bin_r2c1_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c2_grip"/>
+  <joint name="tilt_bin_rack_bin_r2c2_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r2c2"/><child link="tilt_bin_rack_bin_r2c2_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c2_volume"/>
+  <joint name="tilt_bin_rack_bin_r2c2_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r2c2"/><child link="tilt_bin_rack_bin_r2c2_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c3_grip"/>
+  <joint name="tilt_bin_rack_bin_r2c3_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r2c3"/><child link="tilt_bin_rack_bin_r2c3_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r2c3_volume"/>
+  <joint name="tilt_bin_rack_bin_r2c3_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r2c3"/><child link="tilt_bin_rack_bin_r2c3_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c1_grip"/>
+  <joint name="tilt_bin_rack_bin_r3c1_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r3c1"/><child link="tilt_bin_rack_bin_r3c1_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c1_volume"/>
+  <joint name="tilt_bin_rack_bin_r3c1_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r3c1"/><child link="tilt_bin_rack_bin_r3c1_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c2_grip"/>
+  <joint name="tilt_bin_rack_bin_r3c2_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r3c2"/><child link="tilt_bin_rack_bin_r3c2_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c2_volume"/>
+  <joint name="tilt_bin_rack_bin_r3c2_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r3c2"/><child link="tilt_bin_rack_bin_r3c2_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c3_grip"/>
+  <joint name="tilt_bin_rack_bin_r3c3_grip_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r3c3"/><child link="tilt_bin_rack_bin_r3c3_grip"/>
+    <origin xyz="0 -0.006 0.163" rpy="0 0 0"/>
+  </joint>
+  <link name="tilt_bin_rack_bin_r3c3_volume"/>
+  <joint name="tilt_bin_rack_bin_r3c3_volume_fixed" type="fixed">
+    <parent link="tilt_bin_rack_bin_r3c3"/><child link="tilt_bin_rack_bin_r3c3_volume"/>
+    <origin xyz="0 0.1 0.08" rpy="0 0 0"/>
+  </joint>
+</robot>
