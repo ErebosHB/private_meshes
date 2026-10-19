@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot name="rotary_hammer">
+  <link name="rotary_hammer_body">
+    <inertial><origin xyz="0.0482737 1.86265e-09 0.16516" rpy="0 0 0"/><mass value="1.7026"/><inertia ixx="0.0076363" ixy="-2.5849e-25" ixz="0.0055642" iyy="0.025239" iyz="-2.8434e-25" izz="0.018767"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/rotary_hammer_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.002 1.86265e-09 0.2" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.036" length="0.11"/></geometry></collision>
+    <collision><origin xyz="-0.078 1.86265e-09 0.2" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.027" length="0.05"/></geometry></collision>
+    <collision><origin xyz="-0.109 1.86265e-09 0.2" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.022" length="0.012"/></geometry></collision>
+    <collision><origin xyz="-0.18 1.86265e-09 0.2" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.0055" length="0.13"/></geometry></collision>
+    <collision><origin xyz="-0.251 1.86265e-09 0.2" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.0055" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.127 1.86265e-09 0.203" rpy="0 -0 0"/><geometry><box size="0.15 0.078 0.095"/></geometry></collision>
+    <collision><origin xyz="0.097 1.86265e-09 0.1" rpy="0 -0 0"/><geometry><box size="0.075 0.074 0.13"/></geometry></collision>
+    <collision><origin xyz="0.192 1.86265e-09 0.1" rpy="0 -0.174533 0"/><geometry><box size="0.05 0.05 0.14"/></geometry></collision>
+    <collision><origin xyz="0.147 1.86265e-09 0.0175" rpy="0 -0 0"/><geometry><box size="0.16 0.07 0.035"/></geometry></collision>
+    <collision><origin xyz="0.237 1.86265e-09 0.02" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.04"/></geometry></collision>
+  </link>
+  <link name="rotary_hammer_side_handle">
+    <inertial><origin xyz="0 1.57531e-10 -0.0504027" rpy="0 0 0"/><mass value="0.18475"/><inertia ixx="0.00079223" ixy="-3.3881e-21" ixz="-5.9876e-14" iyy="0.00073016" iyz="2.9086e-13" izz="8.4267e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/rotary_hammer_side_handle.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.0405" rpy="-0 1.5708 0"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.0286378 -0.0286378" rpy="1.5708 0.785398 1.5708"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.0405 0" rpy="1.5708 7.54979e-08 1.5708"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.0286378 0.0286378" rpy="1.5708 -0.785398 1.5708"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0 0.0405" rpy="-3.14159 -1.5708 0"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.0286378 0.0286378" rpy="-1.5708 -0.785398 -1.5708"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.0405 0" rpy="-1.5708 7.54979e-08 -1.5708"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.0286378 -0.0286378" rpy="-1.5708 0.785398 -1.5708"/><geometry><box size="0.009 0.0343533 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.06" rpy="0 -0 0"/><geometry><cylinder radius="0.008" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0 0 -0.129" rpy="0 -0 0"/><geometry><cylinder radius="0.018" length="0.108"/></geometry></collision>
+    <collision><origin xyz="0 0 0.05" rpy="0 -0 0"/><geometry><box size="0.02 0.016 0.02"/></geometry></collision>
+  </link>
+  <link name="rotary_hammer_depth_rod">
+    <inertial><origin xyz="-0.031341 0 -7.88795e-05" rpy="0 0 0"/><mass value="0.038337"/><inertia ixx="1.9516e-07" ixy="0" ixz="-2.5299e-07" iyy="9.5281e-05" iyz="0" izz="9.5262e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/rotary_hammer_depth_rod.glb"/></geometry></visual>
+    <collision><origin xyz="-0.03 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.003" length="0.17"/></geometry></collision>
+    <collision><origin xyz="-0.115 0 -0.005" rpy="0 -0 0"/><geometry><box size="0.006 0.008 0.012"/></geometry></collision>
+  </link>
+  <link name="rotary_hammer_mode_selector">
+    <inertial><origin xyz="0 0 0.00506031" rpy="0 0 0"/><mass value="0.018253"/><inertia ixx="1.9335e-06" ixy="0" ixz="0" iyy="2.1818e-06" iyz="0" izz="3.4409e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/rotary_hammer_mode_selector.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.00400001" rpy="0 -0 0"/><geometry><cylinder radius="0.02" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 0 0.012" rpy="0 -0 0"/><geometry><box size="0.036 0.008 0.008"/></geometry></collision>
+  </link>
+  <link name="rotary_hammer_trigger">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.003087"/><inertia ixx="4.1803e-07" ixy="0" ixz="0" iyy="3.6555e-07" iyz="0" izz="1.5332e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/rotary_hammer_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 -0 0"/><geometry><box size="0.014 0.02 0.035"/></geometry></collision>
+  </link>
+  <joint name="rotary_hammer_side_handle_joint" type="revolute">
+    <parent link="rotary_hammer_body"/><child link="rotary_hammer_side_handle"/>
+    <origin xyz="-0.013 1.86265e-09 0.2" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="-3.14" upper="3.14" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="rotary_hammer_depth_rod_joint" type="prismatic">
+    <parent link="rotary_hammer_side_handle"/><child link="rotary_hammer_depth_rod"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.12" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="rotary_hammer_mode_selector_joint" type="revolute">
+    <parent link="rotary_hammer_body"/><child link="rotary_hammer_mode_selector"/>
+    <origin xyz="0.087 1.86265e-09 0.25" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.57" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="rotary_hammer_trigger_joint" type="prismatic">
+    <parent link="rotary_hammer_body"/><child link="rotary_hammer_trigger"/>
+    <origin xyz="0.162 1.86265e-09 0.14" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.008" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="rotary_hammer_rear_grip"/>
+  <joint name="rotary_hammer_rear_grip_joint" type="fixed"><parent link="rotary_hammer_body"/><child link="rotary_hammer_rear_grip"/><origin xyz="0.195 1.86265e-09 0.1" rpy="0 -1.74533 0"/></joint>
+  <link name="rotary_hammer_side_handle_grip"/>
+  <joint name="rotary_hammer_side_handle_grip_joint" type="fixed"><parent link="rotary_hammer_side_handle"/><child link="rotary_hammer_side_handle_grip"/><origin xyz="0 0 -0.13" rpy="0 0 0"/></joint>
+  <link name="rotary_hammer_trigger_contact"/>
+  <joint name="rotary_hammer_trigger_contact_joint" type="fixed"><parent link="rotary_hammer_trigger"/><child link="rotary_hammer_trigger_contact"/><origin xyz="-0.00799999 0 0" rpy="0 0 0"/></joint>
+  <link name="rotary_hammer_mode_selector_contact"/>
+  <joint name="rotary_hammer_mode_selector_contact_joint" type="fixed"><parent link="rotary_hammer_mode_selector"/><child link="rotary_hammer_mode_selector_contact"/><origin xyz="0 0 0.016" rpy="0 0 0"/></joint>
+  <link name="rotary_hammer_bit_tip"/>
+  <joint name="rotary_hammer_bit_tip_joint" type="fixed"><parent link="rotary_hammer_body"/><child link="rotary_hammer_bit_tip"/><origin xyz="-0.257 1.86265e-09 0.2" rpy="0 -1.5708 0"/></joint>
+</robot>

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot name="chest_freezer">
+  <link name="chest_freezer_body">
+    <inertial><origin xyz="3.79272e-06 0.00311639 0.317009" rpy="0 0 0"/><mass value="1330.5"/><inertia ixx="156.34" ixy="-0.0007412" ixz="0.00084224" iyy="176.7" iyz="0.57777" izz="181.95"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chest_freezer_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.37 0 0.3975" rpy="0 0 0"/><geometry><box size="0.06 0.7 0.765"/></geometry></collision>
+    <collision><origin xyz="0.37 0 0.3975" rpy="0 0 0"/><geometry><box size="0.06 0.7 0.765"/></geometry></collision>
+    <collision><origin xyz="0 -0.32 0.3975" rpy="0 0 0"/><geometry><box size="0.68 0.06 0.765"/></geometry></collision>
+    <collision><origin xyz="0 0.32 0.3975" rpy="0 0 0"/><geometry><box size="0.68 0.06 0.765"/></geometry></collision>
+    <collision><origin xyz="0 0 0.065" rpy="0 0 0"/><geometry><box size="0.68 0.58 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0 0.116" rpy="0 0 0"/><geometry><box size="0.68 0.58 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.339 0 0.4485" rpy="0 0 0"/><geometry><box size="0.002 0.58 0.663"/></geometry></collision>
+    <collision><origin xyz="0.339 0 0.4485" rpy="0 0 0"/><geometry><box size="0.002 0.58 0.663"/></geometry></collision>
+    <collision><origin xyz="0 -0.289 0.4485" rpy="0 0 0"/><geometry><box size="0.676 0.002 0.663"/></geometry></collision>
+    <collision><origin xyz="0 0.289 0.4485" rpy="0 0 0"/><geometry><box size="0.676 0.002 0.663"/></geometry></collision>
+    <collision><origin xyz="0 0.2 0.2" rpy="0 0 0"/><geometry><box size="0.67 0.18 0.17"/></geometry></collision>
+    <collision><origin xyz="-0.35 -0.3 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="-0.35 0.3 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.35 -0.3 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.35 0.3 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+  </link>
+  <link name="chest_freezer_thermostat_dial">
+    <inertial><origin xyz="0 -0.011423 0" rpy="0 0 0"/><mass value="0.038659"/><inertia ixx="6.6393e-06" ixy="0" ixz="0" iyy="9.5198e-06" iyz="0" izz="6.8075e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chest_freezer_thermostat_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00299999 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.02376" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.014 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.022" length="0.016"/></geometry></collision>
+    <collision><origin xyz="0 -0.026 0" rpy="0 0 0"/><geometry><box size="0.033 0.008 0.007"/></geometry></collision>
+  </link>
+  <link name="chest_freezer_basket">
+    <inertial><origin xyz="0.1575 -0.00276921 -0.131886" rpy="0 0 0"/><mass value="1.621"/><inertia ixx="0.075509" ixy="6.5685e-11" ixz="3.2775e-10" iyy="0.039497" iyz="0.00065935" izz="0.085383"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chest_freezer_basket.glb"/></geometry></visual>
+    <collision><origin xyz="0.1575 0 -0.2275" rpy="0 0 0"/><geometry><box size="0.315 0.54 0.005"/></geometry></collision>
+    <collision><origin xyz="0.0025 0 -0.11" rpy="0 0 0"/><geometry><box size="0.005 0.54 0.24"/></geometry></collision>
+    <collision><origin xyz="0.3125 0 -0.11" rpy="0 0 0"/><geometry><box size="0.005 0.54 0.24"/></geometry></collision>
+    <collision><origin xyz="0.1575 -0.2675 -0.11" rpy="0 0 0"/><geometry><box size="0.315 0.005 0.24"/></geometry></collision>
+    <collision><origin xyz="0.1575 0.2675 -0.11" rpy="0 0 0"/><geometry><box size="0.315 0.005 0.24"/></geometry></collision>
+  </link>
+  <link name="chest_freezer_lid">
+    <inertial><origin xyz="0 -0.350199 0.0348263" rpy="0 0 0"/><mass value="309.49"/><inertia ixx="12.758" ixy="0" ixz="0" iyy="16.6" iyz="-0.00029762" izz="29.104"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chest_freezer_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.35 0.035" rpy="0 0 0"/><geometry><box size="0.8 0.7 0.07"/></geometry></collision>
+    <collision><origin xyz="0 -0.712 0.03" rpy="0 0 0"/><geometry><box size="0.26 0.026 0.024"/></geometry></collision>
+  </link>
+  <joint name="chest_freezer_thermostat_dial_joint" type="revolute">
+    <parent link="chest_freezer_body"/><child link="chest_freezer_thermostat_dial"/>
+    <origin xyz="0.3 -0.35 0.12" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="4.71" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="chest_freezer_basket_joint" type="prismatic">
+    <parent link="chest_freezer_body"/><child link="chest_freezer_basket"/>
+    <origin xyz="-0.335 0 0.76" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.3" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="chest_freezer_lid_joint" type="revolute">
+    <parent link="chest_freezer_body"/><child link="chest_freezer_lid"/>
+    <origin xyz="0 0.35 0.78" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50" velocity="1.5"/>
+  </joint>
+  <link name="chest_freezer_thermostat_dial_contact"/>
+  <joint name="chest_freezer_thermostat_dial_contact_joint" type="fixed"><parent link="chest_freezer_thermostat_dial"/><child link="chest_freezer_thermostat_dial_contact"/><origin xyz="0 -0.03 0" rpy="0 0 0"/></joint>
+  <link name="chest_freezer_basket_grip"/>
+  <joint name="chest_freezer_basket_grip_joint" type="fixed"><parent link="chest_freezer_basket"/><child link="chest_freezer_basket_grip"/><origin xyz="0.1575 -0.27 0.015" rpy="0 0 0"/></joint>
+  <link name="chest_freezer_basket_volume"/>
+  <joint name="chest_freezer_basket_volume_joint" type="fixed"><parent link="chest_freezer_basket"/><child link="chest_freezer_basket_volume"/><origin xyz="0.1575 0 -0.11" rpy="0 0 0"/></joint>
+  <link name="chest_freezer_lid_grip"/>
+  <joint name="chest_freezer_lid_grip_joint" type="fixed"><parent link="chest_freezer_lid"/><child link="chest_freezer_lid_grip"/><origin xyz="0 -0.72 0.03" rpy="0 0 0"/></joint>
+  <link name="chest_freezer_lid_top_surface"/>
+  <joint name="chest_freezer_lid_top_surface_joint" type="fixed"><parent link="chest_freezer_lid"/><child link="chest_freezer_lid_top_surface"/><origin xyz="0 -0.35 0.0700001" rpy="0 0 0"/></joint>
+  <link name="chest_freezer_freezer_volume"/>
+  <joint name="chest_freezer_freezer_volume_joint" type="fixed"><parent link="chest_freezer_body"/><child link="chest_freezer_freezer_volume"/><origin xyz="0.15 0 0.45" rpy="0 0 0"/></joint>
+  <link name="chest_freezer_wall_anchor"/>
+  <joint name="chest_freezer_wall_anchor_joint" type="fixed"><parent link="chest_freezer_body"/><child link="chest_freezer_wall_anchor"/><origin xyz="0 0.35 0.7" rpy="0 0 0"/></joint>
+</robot>

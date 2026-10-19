@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot name="oscillating_multi_tool">
+  <link name="oscillating_multi_tool_body">
+    <inertial><origin xyz="0.00227198 0 0.0346079" rpy="0 0 0"/><mass value="0.73978"/><inertia ixx="0.00046475" ixy="0" ixz="-4.5086e-05" iyy="0.0055513" iyz="0" izz="0.0055295"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/oscillating_multi_tool_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.0365607 0 0.035" rpy="0 -0 0"/><geometry><box size="0.17 0.064 0.068"/></geometry></collision>
+    <collision><origin xyz="0.106561 0 0.035" rpy="0 -0 0"/><geometry><box size="0.08 0.068 0.07"/></geometry></collision>
+    <collision><origin xyz="0.161561 0 0.035" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.013" length="0.04"/></geometry></collision>
+    <collision><origin xyz="-0.0784393 0 0.038" rpy="0 -0 0"/><geometry><box size="0.07 0.056 0.05"/></geometry></collision>
+    <collision><origin xyz="-0.0984393 0 0.013" rpy="0 -0 0"/><geometry><cylinder radius="0.022" length="0.012"/></geometry></collision>
+  </link>
+  <link name="oscillating_multi_tool_blade_holder">
+    <inertial><origin xyz="-0.0207256 -3.50868e-12 0.00255773" rpy="0 0 0"/><mass value="0.064803"/><inertia ixx="5.5289e-06" ixy="2.8345e-18" ixz="-1.5502e-06" iyy="4.946e-05" iyz="1.1113e-16" izz="5.4689e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/oscillating_multi_tool_blade_holder.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.0035" rpy="0 -0 0"/><geometry><cylinder radius="0.017" length="0.005"/></geometry></collision>
+    <collision><origin xyz="-0.045 0 0.0014" rpy="0 -0 0"/><geometry><box size="0.07 0.034 0.0015"/></geometry></collision>
+  </link>
+  <link name="oscillating_multi_tool_release_lever">
+    <inertial><origin xyz="-0.00533683 0 0.000533684" rpy="0 0 0"/><mass value="0.025498"/><inertia ixx="2.5483e-06" ixy="0" ixz="3.3562e-07" iyy="5.0367e-06" iyz="-6.4636e-14" izz="7.2075e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/oscillating_multi_tool_release_lever.glb"/></geometry></visual>
+    <collision><origin xyz="-0.03 0 0.00300001" rpy="0 -0 0"/><geometry><box size="0.06 0.03 0.008"/></geometry></collision>
+    <collision><origin xyz="0 0 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.005" length="0.034"/></geometry></collision>
+  </link>
+  <link name="oscillating_multi_tool_slide_switch">
+    <inertial><origin xyz="0 0 0.00199999" rpy="0 0 0"/><mass value="0.0012096"/><inertia ixx="1e-07" ixy="0" ixz="0" iyy="1e-07" iyz="0" izz="1.1652e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/oscillating_multi_tool_slide_switch.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.00199999" rpy="0 -0 0"/><geometry><box size="0.03 0.016 0.008"/></geometry></collision>
+  </link>
+  <link name="oscillating_multi_tool_speed_wheel">
+    <inertial><origin xyz="0 0 0.00199999" rpy="0 0 0"/><mass value="0.0057001"/><inertia ixx="2.7361e-07" ixy="0" ixz="0" iyy="4.1041e-07" iyz="4.6826e-15" izz="2.7361e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/oscillating_multi_tool_speed_wheel.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.00199999" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.012" length="0.012"/></geometry></collision>
+  </link>
+  <joint name="oscillating_multi_tool_blade_holder_joint" type="revolute">
+    <parent link="oscillating_multi_tool_body"/><child link="oscillating_multi_tool_blade_holder"/>
+    <origin xyz="-0.0984393 0 0.000999998" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-0.035" upper="0.035" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="oscillating_multi_tool_release_lever_joint" type="revolute">
+    <parent link="oscillating_multi_tool_body"/><child link="oscillating_multi_tool_release_lever"/>
+    <origin xyz="-0.0534393 0 0.065" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="1.5" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="oscillating_multi_tool_slide_switch_joint" type="prismatic">
+    <parent link="oscillating_multi_tool_body"/><child link="oscillating_multi_tool_slide_switch"/>
+    <origin xyz="0.0265607 0 0.069" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.01" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="oscillating_multi_tool_speed_wheel_joint" type="revolute">
+    <parent link="oscillating_multi_tool_body"/><child link="oscillating_multi_tool_speed_wheel"/>
+    <origin xyz="0.0815607 0 0.069" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="4" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="oscillating_multi_tool_body_grip"/>
+  <joint name="oscillating_multi_tool_body_grip_joint" type="fixed"><parent link="oscillating_multi_tool_body"/><child link="oscillating_multi_tool_body_grip"/><origin xyz="0.106561 0 0.035" rpy="0 1.5708 0"/></joint>
+  <link name="oscillating_multi_tool_release_lever_tip"/>
+  <joint name="oscillating_multi_tool_release_lever_tip_joint" type="fixed"><parent link="oscillating_multi_tool_release_lever"/><child link="oscillating_multi_tool_release_lever_tip"/><origin xyz="-0.058 0 0.007" rpy="0 0 0"/></joint>
+  <link name="oscillating_multi_tool_slide_switch_contact"/>
+  <joint name="oscillating_multi_tool_slide_switch_contact_joint" type="fixed"><parent link="oscillating_multi_tool_slide_switch"/><child link="oscillating_multi_tool_slide_switch_contact"/><origin xyz="0 0 0.007" rpy="0 0 0"/></joint>
+  <link name="oscillating_multi_tool_speed_wheel_contact"/>
+  <joint name="oscillating_multi_tool_speed_wheel_contact_joint" type="fixed"><parent link="oscillating_multi_tool_speed_wheel"/><child link="oscillating_multi_tool_speed_wheel_contact"/><origin xyz="0 0 0.014" rpy="0 0 0"/></joint>
+  <link name="oscillating_multi_tool_blade_edge"/>
+  <joint name="oscillating_multi_tool_blade_edge_joint" type="fixed"><parent link="oscillating_multi_tool_blade_holder"/><child link="oscillating_multi_tool_blade_edge"/><origin xyz="-0.082 0 0.0014" rpy="0 -1.5708 0"/></joint>
+</robot>

@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot name="desktop_dispensing_robot">
+  <link name="desktop_dispensing_robot_body">
+    <inertial><origin xyz="0.000376021 0.0275762 0.129226" rpy="0 0 0"/><mass value="18"/><inertia ixx="0.771415" ixy="0.00167569" ixz="0.000570073" iyy="0.812" iyz="-0.151914" izz="0.564507"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desktop_dispensing_robot_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.04" rpy="0 0 0"/><geometry><box size="0.42 0.42 0.08"/></geometry></collision>
+    <collision><origin xyz="0 -0.211 0.04" rpy="0 0 0"/><geometry><box size="0.4 0.006 0.06"/></geometry></collision>
+    <collision><origin xyz="0.15 -0.22 0.045" rpy="0 0 0"/><geometry><box size="0.05 0.02 0.05"/></geometry></collision>
+    <collision><origin xyz="-0.07 -0.03 0.086" rpy="0 0 0"/><geometry><box size="0.012 0.36 0.012"/></geometry></collision>
+    <collision><origin xyz="0.07 -0.03 0.086" rpy="0 0 0"/><geometry><box size="0.012 0.36 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.19 0.13 0.29" rpy="0 0 0"/><geometry><box size="0.04 0.07 0.42"/></geometry></collision>
+    <collision><origin xyz="0.19 0.13 0.29" rpy="0 0 0"/><geometry><box size="0.04 0.07 0.42"/></geometry></collision>
+    <collision><origin xyz="0 0.13 0.5" rpy="0 0 0"/><geometry><box size="0.42 0.07 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.091 0.5" rpy="0 0 0"/><geometry><box size="0.38 0.008 0.02"/></geometry></collision>
+  </link>
+  <link name="desktop_dispensing_robot_y_table">
+    <inertial><origin xyz="-0.000757098 -0.000378549 0.0052082" rpy="0 0 0"/><mass value="1.5"/><inertia ixx="0.00719198" ixy="-4.4996e-05" ixz="2.47478e-05" iyy="0.00983724" iyz="1.23739e-05" izz="0.0169578"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desktop_dispensing_robot_y_table.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.005" rpy="0 0 0"/><geometry><box size="0.28 0.24 0.015"/></geometry></collision>
+    <collision><origin xyz="-0.08 -0.04 0.027" rpy="0 0 0"/><geometry><box size="0.06 0.04 0.03"/></geometry></collision>
+  </link>
+  <link name="desktop_dispensing_robot_x_carriage">
+    <inertial><origin xyz="0 -0.00300001 0" rpy="0 0 0"/><mass value="1.2"/><inertia ixx="0.00116" ixy="0" ixz="0" iyy="0.00164" iyz="0" izz="0.0008"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desktop_dispensing_robot_x_carriage.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00300001 0" rpy="0 0 0"/><geometry><box size="0.08 0.04 0.1"/></geometry></collision>
+  </link>
+  <link name="desktop_dispensing_robot_z_head">
+    <inertial><origin xyz="0 -0.00661933 -0.00880558" rpy="0 0 0"/><mass value="0.6"/><inertia ixx="0.00175807" ixy="0" ixz="0" iyy="0.00176543" iyz="-0.000200115" izz="0.000188109"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desktop_dispensing_robot_z_head.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.01" rpy="0 0 0"/><geometry><box size="0.05 0.02 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 -0.02" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.025 -0.07" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.1"/></geometry></collision>
+    <collision><origin xyz="0 -0.025 -0.125" rpy="0 0 0"/><geometry><cylinder radius="0.006" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0 -0.025 -0.14" rpy="0 0 0"/><geometry><cylinder radius="0.0008" length="0.02"/></geometry></collision>
+  </link>
+  <link name="desktop_dispensing_robot_emergency_stop">
+    <inertial><origin xyz="0 -0.0150678 0" rpy="0 0 0"/><mass value="0.01"/><inertia ixx="9.59728e-07" ixy="0" ixz="0" iyy="1.49797e-06" iyz="0" izz="9.59728e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desktop_dispensing_robot_emergency_stop.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.005 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.006" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0 -0.016 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.018" length="0.012"/></geometry></collision>
+  </link>
+  <joint name="desktop_dispensing_robot_y_table_joint" type="prismatic">
+    <parent link="desktop_dispensing_robot_body"/><child link="desktop_dispensing_robot_y_table"/>
+    <origin xyz="0 -0.02 0.095" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.15" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="desktop_dispensing_robot_x_carriage_joint" type="prismatic">
+    <parent link="desktop_dispensing_robot_body"/><child link="desktop_dispensing_robot_x_carriage"/>
+    <origin xyz="0 0.075 0.48" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="-0.12" upper="0.12" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="desktop_dispensing_robot_z_head_joint" type="prismatic">
+    <parent link="desktop_dispensing_robot_x_carriage"/><child link="desktop_dispensing_robot_z_head"/>
+    <origin xyz="0 -0.03 -0.06" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.08" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="desktop_dispensing_robot_emergency_stop_joint" type="prismatic">
+    <parent link="desktop_dispensing_robot_body"/><child link="desktop_dispensing_robot_emergency_stop"/>
+    <origin xyz="0.15 -0.23 0.045" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.006" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="desktop_dispensing_robot_table_surface"/>
+  <joint name="desktop_dispensing_robot_table_surface_joint" type="fixed"><parent link="desktop_dispensing_robot_y_table"/><child link="desktop_dispensing_robot_table_surface"/><origin xyz="0.05 0 0.013" rpy="0 0 0"/></joint>
+  <link name="desktop_dispensing_robot_needle_tip"/>
+  <joint name="desktop_dispensing_robot_needle_tip_joint" type="fixed"><parent link="desktop_dispensing_robot_z_head"/><child link="desktop_dispensing_robot_needle_tip"/><origin xyz="0 -0.025 -0.15" rpy="3.14159 0 0"/></joint>
+  <link name="desktop_dispensing_robot_emergency_stop_contact"/>
+  <joint name="desktop_dispensing_robot_emergency_stop_contact_joint" type="fixed"><parent link="desktop_dispensing_robot_emergency_stop"/><child link="desktop_dispensing_robot_emergency_stop_contact"/><origin xyz="0 -0.022 0" rpy="0 0 0"/></joint>
+</robot>

@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<robot name="wall_cabinet_combination">
+  <link name="wall_cabinet_combination_body">
+    <inertial>
+      <origin xyz="0 -0.168859 0.320149" rpy="0 0 0"/>
+      <mass value="32.849"/>
+      <inertia ixx="2.1283" ixy="0" ixz="0" iyy="6.341" iyz="0.00013744" izz="5.2708"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/wall_cabinet_combination_body.glb"/></geometry>
+    </visual>
+    <collision name="wall_cabinet_combination_body_c00">
+      <origin xyz="-0.591 -0.201 0.32" rpy="0 0 0"/>
+      <geometry><box size="0.018 0.402 0.64"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c01">
+      <origin xyz="0.591 -0.201 0.32" rpy="0 0 0"/>
+      <geometry><box size="0.018 0.402 0.64"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c02">
+      <origin xyz="0 -0.201 0.631" rpy="0 0 0"/>
+      <geometry><box size="1.164 0.402 0.018"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c03">
+      <origin xyz="0 -0.201 0.009" rpy="0 0 0"/>
+      <geometry><box size="1.164 0.402 0.018"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c04">
+      <origin xyz="0 -0.006 0.32" rpy="0 0 0"/>
+      <geometry><box size="1.164 0.012 0.604"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c05">
+      <origin xyz="-0.2 -0.207 0.32" rpy="0 0 0"/>
+      <geometry><box size="0.018 0.39 0.604"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c06">
+      <origin xyz="0.2 -0.207 0.32" rpy="0 0 0"/>
+      <geometry><box size="0.018 0.39 0.604"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c07">
+      <origin xyz="-0.3955 -0.197 0.321" rpy="0 0 0"/>
+      <geometry><box size="0.373 0.37 0.018"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c08">
+      <origin xyz="0 -0.197 0.321" rpy="0 0 0"/>
+      <geometry><box size="0.382 0.37 0.018"/></geometry>
+    </collision>
+    <collision name="wall_cabinet_combination_body_c09">
+      <origin xyz="0.3955 -0.197 0.321" rpy="0 0 0"/>
+      <geometry><box size="0.373 0.37 0.018"/></geometry>
+    </collision>
+  </link>
+  <link name="wall_cabinet_combination_left_door">
+    <inertial>
+      <origin xyz="0.205874 -0.00985888 0.309411" rpy="0 0 0"/>
+      <mass value="3.0984"/>
+      <inertia ixx="0.10547" ixy="0.00039285" ixz="0.0039285" iyy="0.14761" iyz="-0.00050937" izz="0.04241"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/wall_cabinet_combination_left_door.glb"/></geometry>
+    </visual>
+    <collision name="wall_cabinet_combination_left_door_c00">
+      <origin xyz="0.19925 -0.009 0.318" rpy="0 0 0"/>
+      <geometry><box size="0.3985 0.018 0.636"/></geometry>
+    </collision>
+  </link>
+  <link name="wall_cabinet_combination_middle_door">
+    <inertial>
+      <origin xyz="0.205116 -0.00986199 0.30938" rpy="0 0 0"/>
+      <mass value="3.0872"/>
+      <inertia ixx="0.10509" ixy="0.00039088" ixz="0.0039088" iyy="0.14676" iyz="-0.00050929" izz="0.041938"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/wall_cabinet_combination_middle_door.glb"/></geometry>
+    </visual>
+    <collision name="wall_cabinet_combination_middle_door_c00">
+      <origin xyz="0.1985 -0.009 0.318" rpy="0 0 0"/>
+      <geometry><box size="0.397 0.018 0.636"/></geometry>
+    </collision>
+  </link>
+  <link name="wall_cabinet_combination_right_door">
+    <inertial>
+      <origin xyz="-0.205874 -0.00985888 0.309411" rpy="0 0 0"/>
+      <mass value="3.0984"/>
+      <inertia ixx="0.10547" ixy="-0.00039285" ixz="-0.0039285" iyy="0.14761" iyz="-0.00050937" izz="0.04241"/>
+    </inertial>
+    <visual>
+      <!-- glTF is Y-up; this rotation maps it onto the Z-up link frame -->
+      <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+      <geometry><mesh filename="assets/wall_cabinet_combination_right_door.glb"/></geometry>
+    </visual>
+    <collision name="wall_cabinet_combination_right_door_c00">
+      <origin xyz="-0.19925 -0.009 0.318" rpy="0 0 0"/>
+      <geometry><box size="0.3985 0.018 0.636"/></geometry>
+    </collision>
+  </link>
+  <joint name="wall_cabinet_combination_left_door_joint" type="revolute">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_left_door"/>
+    <origin xyz="-0.6 -0.402 0.002" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="15" velocity="1.5"/>
+  </joint>
+  <joint name="wall_cabinet_combination_middle_door_joint" type="revolute">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_middle_door"/>
+    <origin xyz="-0.1985 -0.402 0.002" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="15" velocity="1.5"/>
+  </joint>
+  <joint name="wall_cabinet_combination_right_door_joint" type="revolute">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_right_door"/>
+    <origin xyz="0.6 -0.402 0.002" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="15" velocity="1.5"/>
+  </joint>
+  <link name="wall_cabinet_combination_left_door_grip"/>
+  <joint name="wall_cabinet_combination_left_door_grip_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_left_door"/>
+    <child link="wall_cabinet_combination_left_door_grip"/>
+    <origin xyz="0.3535 -0.029 0.118" rpy="0 -1.5708 0"/>
+  </joint>
+  <link name="wall_cabinet_combination_middle_door_grip"/>
+  <joint name="wall_cabinet_combination_middle_door_grip_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_middle_door"/>
+    <child link="wall_cabinet_combination_middle_door_grip"/>
+    <origin xyz="0.352 -0.029 0.118" rpy="0 -1.5708 0"/>
+  </joint>
+  <link name="wall_cabinet_combination_right_door_grip"/>
+  <joint name="wall_cabinet_combination_right_door_grip_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_right_door"/>
+    <child link="wall_cabinet_combination_right_door_grip"/>
+    <origin xyz="-0.3535 -0.029 0.118" rpy="0 -1.5708 0"/>
+  </joint>
+  <link name="wall_cabinet_combination_left_bay_shelf_surface"/>
+  <joint name="wall_cabinet_combination_left_bay_shelf_surface_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_left_bay_shelf_surface"/>
+    <origin xyz="-0.3955 -0.207 0.33" rpy="0 0 0"/>
+  </joint>
+  <link name="wall_cabinet_combination_middle_bay_shelf_surface"/>
+  <joint name="wall_cabinet_combination_middle_bay_shelf_surface_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_middle_bay_shelf_surface"/>
+    <origin xyz="0 -0.207 0.33" rpy="0 0 0"/>
+  </joint>
+  <link name="wall_cabinet_combination_right_bay_shelf_surface"/>
+  <joint name="wall_cabinet_combination_right_bay_shelf_surface_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_right_bay_shelf_surface"/>
+    <origin xyz="0.3955 -0.207 0.33" rpy="0 0 0"/>
+  </joint>
+  <link name="wall_cabinet_combination_top_surface"/>
+  <joint name="wall_cabinet_combination_top_surface_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_top_surface"/>
+    <origin xyz="0 -0.201 0.64" rpy="0 0 0"/>
+  </joint>
+  <link name="wall_cabinet_combination_wall_anchor"/>
+  <joint name="wall_cabinet_combination_wall_anchor_fixed" type="fixed">
+    <parent link="wall_cabinet_combination_body"/>
+    <child link="wall_cabinet_combination_wall_anchor"/>
+    <origin xyz="0 0 0.59" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot name="tall_office_cabinet">
+  <link name="tall_office_cabinet_body">
+    <inertial><origin xyz="0 0.043773 0.981672" rpy="0 0 0"/><mass value="45.684"/><inertia ixx="17.555" ixy="0" ixz="0" iyy="20.951" iyz="-0.0012774" izz="4.8254"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tall_office_cabinet_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.391 0.01 0.9825" rpy="0 0 0"/><geometry><box size="0.018 0.4 1.935"/></geometry></collision>
+    <collision><origin xyz="0.391 0.01 0.9825" rpy="0 0 0"/><geometry><box size="0.018 0.4 1.935"/></geometry></collision>
+    <collision><origin xyz="0 0.01 1.941" rpy="0 0 0"/><geometry><box size="0.764 0.4 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.024" rpy="0 0 0"/><geometry><box size="0.764 0.4 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.206 0.9825" rpy="0 0 0"/><geometry><box size="0.764 0.008 1.899"/></geometry></collision>
+    <collision><origin xyz="-0.37 -0.16 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.015"/></geometry></collision>
+    <collision><origin xyz="-0.37 0.18 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.37 -0.16 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.37 0.18 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.014" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0 0.015 0.4128" rpy="0 0 0"/><geometry><box size="0.762 0.36 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.015 0.7926" rpy="0 0 0"/><geometry><box size="0.762 0.36 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.015 1.1724" rpy="0 0 0"/><geometry><box size="0.762 0.36 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.015 1.5522" rpy="0 0 0"/><geometry><box size="0.762 0.36 0.018"/></geometry></collision>
+  </link>
+  <link name="tall_office_cabinet_left_door">
+    <inertial><origin xyz="0.199182 0.00893011 0.000189465" rpy="0 0 0"/><mass value="8.9779"/><inertia ixx="2.7651" ixy="9.6204e-05" ixz="-0.00026079" iyy="2.8833" iyz="4.2236e-05" izz="0.11873"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tall_office_cabinet_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.19875 0.009 0" rpy="0 0 0"/><geometry><box size="0.3975 0.018 1.925"/></geometry></collision>
+    <collision><origin xyz="0.3525 -0.017 0.0674999" rpy="0 0 0"/><geometry><box size="0.012 0.01 0.18"/></geometry></collision>
+    <collision><origin xyz="0.3525 -0.006 -0.0105" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.3525 -0.006 0.1455" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="tall_office_cabinet_right_door">
+    <inertial><origin xyz="-0.199182 0.00893011 0.000189465" rpy="0 0 0"/><mass value="8.9779"/><inertia ixx="2.7651" ixy="-9.6204e-05" ixz="0.00026079" iyy="2.8833" iyz="4.2236e-05" izz="0.11873"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tall_office_cabinet_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.19875 0.009 0" rpy="0 0 0"/><geometry><box size="0.3975 0.018 1.925"/></geometry></collision>
+    <collision><origin xyz="-0.3525 -0.017 0.0674999" rpy="0 0 0"/><geometry><box size="0.012 0.01 0.18"/></geometry></collision>
+    <collision><origin xyz="-0.3525 -0.006 -0.0105" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.3525 -0.006 0.1455" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <joint name="tall_office_cabinet_left_door_joint" type="revolute">
+    <parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_left_door"/>
+    <origin xyz="-0.399 -0.209 0.9825" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="tall_office_cabinet_right_door_joint" type="revolute">
+    <parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_right_door"/>
+    <origin xyz="0.399 -0.209 0.9825" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="tall_office_cabinet_left_door_grip"/>
+  <joint name="tall_office_cabinet_left_door_grip_joint" type="fixed"><parent link="tall_office_cabinet_left_door"/><child link="tall_office_cabinet_left_door_grip"/><origin xyz="0.3525 -0.017 0.0674999" rpy="0 -1.5708 0"/></joint>
+  <link name="tall_office_cabinet_right_door_grip"/>
+  <joint name="tall_office_cabinet_right_door_grip_joint" type="fixed"><parent link="tall_office_cabinet_right_door"/><child link="tall_office_cabinet_right_door_grip"/><origin xyz="-0.3525 -0.017 0.0674999" rpy="0 -1.5708 0"/></joint>
+  <link name="tall_office_cabinet_bottom_surface"/>
+  <joint name="tall_office_cabinet_bottom_surface_joint" type="fixed"><parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_bottom_surface"/><origin xyz="0 0 0.033" rpy="0 0 0"/></joint>
+  <link name="tall_office_cabinet_shelf_1_surface"/>
+  <joint name="tall_office_cabinet_shelf_1_surface_joint" type="fixed"><parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_shelf_1_surface"/><origin xyz="0 0.015 0.4218" rpy="0 0 0"/></joint>
+  <link name="tall_office_cabinet_shelf_2_surface"/>
+  <joint name="tall_office_cabinet_shelf_2_surface_joint" type="fixed"><parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_shelf_2_surface"/><origin xyz="0 0.015 0.8016" rpy="0 0 0"/></joint>
+  <link name="tall_office_cabinet_shelf_3_surface"/>
+  <joint name="tall_office_cabinet_shelf_3_surface_joint" type="fixed"><parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_shelf_3_surface"/><origin xyz="0 0.015 1.1814" rpy="0 0 0"/></joint>
+  <link name="tall_office_cabinet_shelf_4_surface"/>
+  <joint name="tall_office_cabinet_shelf_4_surface_joint" type="fixed"><parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_shelf_4_surface"/><origin xyz="0 0.015 1.5612" rpy="0 0 0"/></joint>
+  <link name="tall_office_cabinet_top_surface"/>
+  <joint name="tall_office_cabinet_top_surface_joint" type="fixed"><parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_top_surface"/><origin xyz="0 0.01 1.95" rpy="0 0 0"/></joint>
+  <link name="tall_office_cabinet_wall_anchor"/>
+  <joint name="tall_office_cabinet_wall_anchor_joint" type="fixed"><parent link="tall_office_cabinet_body"/><child link="tall_office_cabinet_wall_anchor"/><origin xyz="0 0.21 1.9" rpy="0 0 0"/></joint>
+</robot>

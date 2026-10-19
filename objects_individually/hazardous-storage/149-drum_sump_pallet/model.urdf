@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="drum_sump_pallet">
+  <link name="drum_sump_pallet_body">
+    <inertial><origin xyz="3.12693e-09 0 0.130903" rpy="0 0 0"/><mass value="76.2467"/><inertia ixx="6.40738" ixy="0" ixz="0" iyy="12.596" iyz="0" izz="18.1813"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/drum_sump_pallet_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.35 0 0.098" rpy="0 0 0"/><geometry><box size="0.2 0.8 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.448 0 0.05" rpy="0 0 0"/><geometry><box size="0.004 0.8 0.1"/></geometry></collision>
+    <collision><origin xyz="-0.252 0 0.05" rpy="0 0 0"/><geometry><box size="0.004 0.8 0.1"/></geometry></collision>
+    <collision><origin xyz="0.35 0 0.098" rpy="0 0 0"/><geometry><box size="0.2 0.8 0.004"/></geometry></collision>
+    <collision><origin xyz="0.252 0 0.05" rpy="0 0 0"/><geometry><box size="0.004 0.8 0.1"/></geometry></collision>
+    <collision><origin xyz="0.448 0 0.05" rpy="0 0 0"/><geometry><box size="0.004 0.8 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0 0.102" rpy="0 0 0"/><geometry><box size="1.24 0.84 0.004"/></geometry></collision>
+    <collision><origin xyz="0 -0.4185 0.22" rpy="0 0 0"/><geometry><box size="1.24 0.003 0.24"/></geometry></collision>
+    <collision><origin xyz="0 0.4185 0.22" rpy="0 0 0"/><geometry><box size="1.24 0.003 0.24"/></geometry></collision>
+    <collision><origin xyz="-0.6185 0 0.22" rpy="0 0 0"/><geometry><box size="0.003 0.834 0.24"/></geometry></collision>
+    <collision><origin xyz="0.6185 0 0.22" rpy="0 0 0"/><geometry><box size="0.003 0.834 0.24"/></geometry></collision>
+  </link>
+  <link name="drum_sump_pallet_grating">
+    <inertial><origin xyz="0 -0.39 0.015" rpy="0 0 0"/><mass value="41.418"/><inertia ixx="2.103" ixy="0" ixz="0" iyy="4.80897" iyz="0" izz="6.90576"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/drum_sump_pallet_grating.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.39 0.015" rpy="0 0 0"/><geometry><box size="1.18 0.78 0.03"/></geometry></collision>
+  </link>
+  <joint name="drum_sump_pallet_grating_joint" type="revolute">
+    <parent link="drum_sump_pallet_body"/><child link="drum_sump_pallet_grating"/>
+    <origin xyz="0 0.39 0.34" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="drum_sump_pallet_sump_volume"/>
+  <joint name="drum_sump_pallet_sump_volume_fixed" type="fixed">
+    <parent link="drum_sump_pallet_body"/><child link="drum_sump_pallet_sump_volume"/>
+    <origin xyz="0 0 0.22" rpy="0 0 0"/>
+  </joint>
+  <link name="drum_sump_pallet_grating_front_grip"/>
+  <joint name="drum_sump_pallet_grating_front_grip_fixed" type="fixed">
+    <parent link="drum_sump_pallet_grating"/><child link="drum_sump_pallet_grating_front_grip"/>
+    <origin xyz="0 -0.778 0.03" rpy="0 0 0"/>
+  </joint>
+  <link name="drum_sump_pallet_grating_surface"/>
+  <joint name="drum_sump_pallet_grating_surface_fixed" type="fixed">
+    <parent link="drum_sump_pallet_grating"/><child link="drum_sump_pallet_grating_surface"/>
+    <origin xyz="0 -0.39 0.03" rpy="0 0 0"/>
+  </joint>
+</robot>

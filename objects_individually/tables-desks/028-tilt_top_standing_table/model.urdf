@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot name="tilt_top_standing_table">
+  <link name="tilt_top_standing_table_body">
+    <inertial><origin xyz="0 0 0.371764" rpy="0 0 0"/><mass value="43.917"/><inertia ixx="6.6638" ixy="1.3374e-08" ixz="0" iyy="6.6603" iyz="0" izz="0.64725"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_top_standing_table_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.027" rpy="0 0 0"/><geometry><box size="0.64 0.06 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0 0.027" rpy="0 0 1.5708"/><geometry><box size="0.64 0.06 0.03"/></geometry></collision>
+    <collision><origin xyz="0.3 0 0.006" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.012"/></geometry></collision>
+    <collision><origin xyz="-0.3 0 0.006" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.3 0.006" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 -0.3 0.006" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 0 0.54" rpy="0 0 0"/><geometry><cylinder radius="0.03" length="0.995"/></geometry></collision>
+    <collision><origin xyz="0 0 1.0525" rpy="0 0 0"/><geometry><box size="0.1 0.16 0.025"/></geometry></collision>
+  </link>
+  <link name="tilt_top_standing_table_table_top">
+    <inertial><origin xyz="0 0 0.0109936" rpy="0 0 0"/><mass value="8.9374"/><inertia ixx="0.32863" ixy="0" ixz="0" iyy="0.32769" iyz="0" izz="0.65502"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_top_standing_table_table_top.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.005" rpy="0 0 0"/><geometry><box size="0.07 0.14 0.01"/></geometry></collision>
+    <collision><origin xyz="0 0 0.0124999" rpy="0 0 0"/><geometry><cylinder radius="0.4" length="0.025"/></geometry></collision>
+  </link>
+  <link name="tilt_top_standing_table_tilt_release">
+    <inertial><origin xyz="0 -0.0566394 0" rpy="0 0 0"/><mass value="0.020496"/><inertia ixx="1.2719e-05" ixy="0" ixz="0" iyy="1.319e-06" iyz="0" izz="1.3464e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tilt_top_standing_table_tilt_release.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.035 0" rpy="0 0 0"/><geometry><box size="0.016 0.07 0.008"/></geometry></collision>
+    <collision><origin xyz="0 -0.075 0" rpy="0 0 0"/><geometry><box size="0.03 0.022 0.016"/></geometry></collision>
+  </link>
+  <joint name="tilt_top_standing_table_table_top_joint" type="revolute">
+    <parent link="tilt_top_standing_table_body"/><child link="tilt_top_standing_table_table_top"/>
+    <origin xyz="0 0 1.075" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="tilt_top_standing_table_tilt_release_joint" type="revolute">
+    <parent link="tilt_top_standing_table_body"/><child link="tilt_top_standing_table_tilt_release"/>
+    <origin xyz="0 -0.08 1.055" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.6" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="tilt_top_standing_table_tilt_release_tip"/>
+  <joint name="tilt_top_standing_table_tilt_release_tip_joint" type="fixed"><parent link="tilt_top_standing_table_tilt_release"/><child link="tilt_top_standing_table_tilt_release_tip"/><origin xyz="0 -0.085 0" rpy="0 0 0"/></joint>
+  <link name="tilt_top_standing_table_table_top_surface"/>
+  <joint name="tilt_top_standing_table_table_top_surface_joint" type="fixed"><parent link="tilt_top_standing_table_table_top"/><child link="tilt_top_standing_table_table_top_surface"/><origin xyz="0 0 0.025" rpy="0 0 0"/></joint>
+  <link name="tilt_top_standing_table_table_top_edge_grip"/>
+  <joint name="tilt_top_standing_table_table_top_edge_grip_joint" type="fixed"><parent link="tilt_top_standing_table_table_top"/><child link="tilt_top_standing_table_table_top_edge_grip"/><origin xyz="0 -0.39 0.0124999" rpy="0 0 0"/></joint>
+  <link name="tilt_top_standing_table_anti_tip_anchor"/>
+  <joint name="tilt_top_standing_table_anti_tip_anchor_joint" type="fixed"><parent link="tilt_top_standing_table_body"/><child link="tilt_top_standing_table_anti_tip_anchor"/><origin xyz="0 0 0.04" rpy="0 0 0"/></joint>
+</robot>

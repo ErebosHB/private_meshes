@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<robot name="toaster">
+  <link name="toaster_body">
+    <inertial><origin xyz="1.08246e-05 -8.41364e-06 0.116095" rpy="0 0 0"/><mass value="18.78"/><inertia ixx="0.14922" ixy="1.7379e-05" ixz="-7.9369e-07" iyy="0.27653" iyz="6.165e-07" izz="0.29158"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/toaster_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.079 0.105" rpy="0 0 0"/><geometry><box size="0.3 0.012 0.19"/></geometry></collision>
+    <collision><origin xyz="0 0.079 0.105" rpy="0 0 0"/><geometry><box size="0.3 0.012 0.19"/></geometry></collision>
+    <collision><origin xyz="-0.144 0 0.105" rpy="0 0 0"/><geometry><box size="0.012 0.146 0.19"/></geometry></collision>
+    <collision><origin xyz="0.144 0 0.105" rpy="0 0 0"/><geometry><box size="0.012 0.146 0.19"/></geometry></collision>
+    <collision><origin xyz="0 -0.055 0.195" rpy="0 0 0"/><geometry><box size="0.276 0.036 0.01"/></geometry></collision>
+    <collision><origin xyz="0 0 0.195" rpy="0 0 0"/><geometry><box size="0.276 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0 0.055 0.195" rpy="0 0 0"/><geometry><box size="0.276 0.036 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.1065 -0.022 0.195" rpy="0 0 0"/><geometry><box size="0.063 0.03 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.1065 0.022 0.195" rpy="0 0 0"/><geometry><box size="0.063 0.03 0.01"/></geometry></collision>
+    <collision><origin xyz="0.1065 -0.022 0.195" rpy="0 0 0"/><geometry><box size="0.063 0.03 0.01"/></geometry></collision>
+    <collision><origin xyz="0.1065 0.022 0.195" rpy="0 0 0"/><geometry><box size="0.063 0.03 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.07425 -0.022 0.1125" rpy="0 0 0"/><geometry><box size="0.0015 0.03 0.155"/></geometry></collision>
+    <collision><origin xyz="0.07425 -0.022 0.1125" rpy="0 0 0"/><geometry><box size="0.0015 0.03 0.155"/></geometry></collision>
+    <collision><origin xyz="0 -0.03625 0.1125" rpy="0 0 0"/><geometry><box size="0.147 0.0015 0.155"/></geometry></collision>
+    <collision><origin xyz="0 -0.00775 0.1125" rpy="0 0 0"/><geometry><box size="0.147 0.0015 0.155"/></geometry></collision>
+    <collision><origin xyz="-0.07425 0.022 0.1125" rpy="0 0 0"/><geometry><box size="0.0015 0.03 0.155"/></geometry></collision>
+    <collision><origin xyz="0.07425 0.022 0.1125" rpy="0 0 0"/><geometry><box size="0.0015 0.03 0.155"/></geometry></collision>
+    <collision><origin xyz="0 0.00775 0.1125" rpy="0 0 0"/><geometry><box size="0.147 0.0015 0.155"/></geometry></collision>
+    <collision><origin xyz="0 0.03625 0.1125" rpy="0 0 0"/><geometry><box size="0.147 0.0015 0.155"/></geometry></collision>
+    <collision><origin xyz="0 0 0.03" rpy="0 0 0"/><geometry><box size="0.276 0.146 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.12 -0.06 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.01" length="0.01"/></geometry></collision>
+    <collision><origin xyz="-0.12 0.06 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.01" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.12 -0.06 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.01" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.12 0.06 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.01" length="0.01"/></geometry></collision>
+  </link>
+  <link name="toaster_browning_dial">
+    <inertial><origin xyz="0 -0.0106659 0" rpy="0 0 0"/><mass value="0.021518"/><inertia ixx="2.51e-06" ixy="0" ixz="0" iyy="3.1404e-06" iyz="0" izz="2.5851e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/toaster_browning_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.003 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.01836" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.013 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.017" length="0.014"/></geometry></collision>
+    <collision><origin xyz="0 -0.024 0" rpy="0 0 0"/><geometry><box size="0.0255 0.008 0.007"/></geometry></collision>
+  </link>
+  <link name="toaster_carriage_lever">
+    <inertial><origin xyz="-0.013615 0.00666198 9.85903e-05" rpy="0 0 0"/><mass value="0.035784"/><inertia ixx="8.1037e-05" ixy="3.8166e-05" ixz="-4.8033e-08" iyy="5.685e-05" iyz="-2.7637e-07" izz="0.00013638"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/toaster_carriage_lever.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.018 0" rpy="0 0 0"/><geometry><box size="0.04 0.036 0.018"/></geometry></collision>
+  </link>
+  <link name="toaster_crumb_tray">
+    <inertial><origin xyz="0 0.0509061 -0.00404144" rpy="0 0 0"/><mass value="0.07602"/><inertia ixx="0.00016899" ixy="0" ixz="0" iyy="0.00023614" iyz="5.8662e-06" izz="0.00040334"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/toaster_crumb_tray.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.002 0" rpy="0 0 0"/><geometry><box size="0.2 0.006 0.016"/></geometry></collision>
+    <collision><origin xyz="0 0.07 -0.0055" rpy="0 0 0"/><geometry><box size="0.19 0.14 0.002"/></geometry></collision>
+  </link>
+  <joint name="toaster_browning_dial_joint" type="revolute">
+    <parent link="toaster_body"/><child link="toaster_browning_dial"/>
+    <origin xyz="-0.1 -0.085 0.08" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="4.71" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="toaster_carriage_lever_joint" type="prismatic">
+    <parent link="toaster_body"/><child link="toaster_carriage_lever"/>
+    <origin xyz="0.11 -0.085 0.165" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.085" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="toaster_crumb_tray_joint" type="prismatic">
+    <parent link="toaster_body"/><child link="toaster_crumb_tray"/>
+    <origin xyz="0 -0.085 0.018" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.105" effort="50" velocity="0.2"/>
+  </joint>
+  <link name="toaster_browning_dial_contact"/>
+  <joint name="toaster_browning_dial_contact_joint" type="fixed"><parent link="toaster_browning_dial"/><child link="toaster_browning_dial_contact"/><origin xyz="0 -0.028 0" rpy="0 0 0"/></joint>
+  <link name="toaster_carriage_lever_contact"/>
+  <joint name="toaster_carriage_lever_contact_joint" type="fixed"><parent link="toaster_carriage_lever"/><child link="toaster_carriage_lever_contact"/><origin xyz="0 -0.03 0.00899999" rpy="0 0 0"/></joint>
+  <link name="toaster_crumb_tray_grip"/>
+  <joint name="toaster_crumb_tray_grip_joint" type="fixed"><parent link="toaster_crumb_tray"/><child link="toaster_crumb_tray_grip"/><origin xyz="0 -0.005 0" rpy="0 0 0"/></joint>
+  <link name="toaster_front_slot_volume"/>
+  <joint name="toaster_front_slot_volume_joint" type="fixed"><parent link="toaster_body"/><child link="toaster_front_slot_volume"/><origin xyz="0 -0.022 0.12" rpy="0 0 0"/></joint>
+  <link name="toaster_rear_slot_volume"/>
+  <joint name="toaster_rear_slot_volume_joint" type="fixed"><parent link="toaster_body"/><child link="toaster_rear_slot_volume"/><origin xyz="0 0.022 0.12" rpy="0 0 0"/></joint>
+  <link name="toaster_carry_grip"/>
+  <joint name="toaster_carry_grip_joint" type="fixed"><parent link="toaster_body"/><child link="toaster_carry_grip"/><origin xyz="-0.15 0 0.12" rpy="0 0 1.5708"/></joint>
+</robot>

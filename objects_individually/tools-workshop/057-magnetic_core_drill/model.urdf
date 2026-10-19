@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<robot name="magnetic_core_drill">
+  <link name="magnetic_core_drill_body">
+    <inertial><origin xyz="0.000149699 -0.0101582 0.0935466" rpy="0 0 0"/><mass value="9.7395"/><inertia ixx="0.1322" ixy="-1.9011e-05" ixz="-0.00030101" iyy="0.14397" iyz="-0.0031384" izz="0.02477"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/magnetic_core_drill_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.012119 0.03" rpy="0 -0 0"/><geometry><box size="0.17 0.095 0.06"/></geometry></collision>
+    <collision><origin xyz="0 -0.012119 0.066" rpy="0 -0 0"/><geometry><box size="0.175 0.1 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.00288104 0.24" rpy="0 -0 0"/><geometry><box size="0.09 0.06 0.34"/></geometry></collision>
+    <collision><origin xyz="0 -0.030119 0.24" rpy="0 -0 0"/><geometry><box size="0.05 0.006 0.3"/></geometry></collision>
+    <collision><origin xyz="0 0.00288104 0.42" rpy="0 -0 0"/><geometry><box size="0.07 0.07 0.05"/></geometry></collision>
+    <collision><origin xyz="-0.03 0.00288104 0.4575" rpy="0 -0 0"/><geometry><cylinder radius="0.008" length="0.025"/></geometry></collision>
+    <collision><origin xyz="0 0.00288104 0.47" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.008" length="0.06"/></geometry></collision>
+    <collision><origin xyz="0.03 0.00288104 0.4575" rpy="-3.14159 -6.18172e-08 1.5708"/><geometry><cylinder radius="0.008" length="0.025"/></geometry></collision>
+    <collision><origin xyz="0.05 0.00288104 0.3" rpy="0 -0 0"/><geometry><box size="0.012 0.03 0.03"/></geometry></collision>
+  </link>
+  <link name="magnetic_core_drill_motor_slide">
+    <inertial><origin xyz="0 -0.0436959 -0.000780617" rpy="0 0 0"/><mass value="0.91146"/><inertia ixx="0.0051943" ixy="0" ixz="0" iyy="0.0048517" iyz="-8.0429e-06" izz="0.001093"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/magnetic_core_drill_motor_slide.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.002 0" rpy="0 -0 0"/><geometry><box size="0.075 0.016 0.2"/></geometry></collision>
+    <collision><origin xyz="0 -0.055 0.035" rpy="0 -0 0"/><geometry><cylinder radius="0.042" length="0.17"/></geometry></collision>
+    <collision><origin xyz="0 -0.055 0.13" rpy="0 -0 0"/><geometry><cylinder radius="0.042" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.055 -0.075" rpy="0 -0 0"/><geometry><cylinder radius="0.036" length="0.05"/></geometry></collision>
+  </link>
+  <link name="magnetic_core_drill_motor_switch">
+    <inertial><origin xyz="0 -0.000999987 0" rpy="0 0 0"/><mass value="0.00099792"/><inertia ixx="1e-07" ixy="0" ixz="0" iyy="1e-07" iyz="0" izz="1e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/magnetic_core_drill_motor_switch.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.000999987 0" rpy="0 -0 0"/><geometry><box size="0.022 0.008 0.018"/></geometry></collision>
+  </link>
+  <link name="magnetic_core_drill_arbor">
+    <inertial><origin xyz="0 -1.67611e-10 -0.044207" rpy="0 0 0"/><mass value="0.35949"/><inertia ixx="0.00028535" ixy="2.2737e-13" ixz="-7.1054e-15" iyy="0.00028535" iyz="-1.0658e-13" izz="8.0531e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/magnetic_core_drill_arbor.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.02" rpy="0 -0 0"/><geometry><cylinder radius="0.013" length="0.04"/></geometry></collision>
+    <collision><origin xyz="0.018 0 -0.065" rpy="0 -0 0"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+    <collision><origin xyz="0.0127279 0.0127279 -0.065" rpy="0 -0 0.785398"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+    <collision><origin xyz="1.10218e-18 0.018 -0.065" rpy="0 -0 1.5708"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+    <collision><origin xyz="-0.0127279 0.0127279 -0.065" rpy="0 -0 2.35619"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+    <collision><origin xyz="-0.018 0 -0.065" rpy="0 -0 3.14159"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+    <collision><origin xyz="-0.0127279 -0.0127279 -0.065" rpy="0 -0 -2.35619"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+    <collision><origin xyz="-3.30655e-18 -0.018 -0.065" rpy="0 -0 -1.5708"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+    <collision><origin xyz="0.0127279 -0.0127279 -0.065" rpy="0 -0 -0.785399"/><geometry><box size="0.004 0.0152681 0.05"/></geometry></collision>
+  </link>
+  <link name="magnetic_core_drill_feed_handle">
+    <inertial><origin xyz="0.0132819 1.24091e-09 -2.54546e-09" rpy="0 0 0"/><mass value="0.45734"/><inertia ixx="0.0024654" ixy="-9.6634e-13" ixz="1.2506e-12" iyy="0.0012406" iyz="9.2768e-11" izz="0.0012406"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/magnetic_core_drill_feed_handle.glb"/></geometry></visual>
+    <collision><origin xyz="0.01 0 0" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.022" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0.014 0.059869 0.0253122" rpy="-1.1708 -0 0"/><geometry><cylinder radius="0.006" length="0.13"/></geometry></collision>
+    <collision><origin xyz="0.014 0.119738 0.0506244" rpy="0 -0 0"/><geometry><sphere radius="0.013"/></geometry></collision>
+    <collision><origin xyz="0.014 -0.0518555 0.039192" rpy="0.923599 -0 0"/><geometry><cylinder radius="0.006" length="0.13"/></geometry></collision>
+    <collision><origin xyz="0.014 -0.103711 0.0783839" rpy="0 -0 0"/><geometry><sphere radius="0.013"/></geometry></collision>
+    <collision><origin xyz="0.014 -0.00801348 -0.0645041" rpy="3.01799 -0 0"/><geometry><cylinder radius="0.006" length="0.13"/></geometry></collision>
+    <collision><origin xyz="0.014 -0.016027 -0.129008" rpy="0 -0 0"/><geometry><sphere radius="0.013"/></geometry></collision>
+  </link>
+  <link name="magnetic_core_drill_magnet_switch">
+    <inertial><origin xyz="0 -0.00470259 0" rpy="0 0 0"/><mass value="0.0053801"/><inertia ixx="2.3381e-07" ixy="0" ixz="0" iyy="3.6432e-07" iyz="4.4983e-15" izz="2.535e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/magnetic_core_drill_magnet_switch.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.004 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0 -0.01 0" rpy="0 -0 0"/><geometry><box size="0.02 0.006 0.005"/></geometry></collision>
+  </link>
+  <joint name="magnetic_core_drill_motor_slide_joint" type="prismatic">
+    <parent link="magnetic_core_drill_body"/><child link="magnetic_core_drill_motor_slide"/>
+    <origin xyz="0 -0.037119 0.3" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.08" effort="200" velocity="1.5"/>
+  </joint>
+  <joint name="magnetic_core_drill_motor_switch_joint" type="revolute">
+    <parent link="magnetic_core_drill_motor_slide"/><child link="magnetic_core_drill_motor_switch"/>
+    <origin xyz="0 -0.093 -0.075" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.4" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="magnetic_core_drill_arbor_joint" type="continuous">
+    <parent link="magnetic_core_drill_motor_slide"/><child link="magnetic_core_drill_arbor"/>
+    <origin xyz="0 -0.055 -0.1" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="magnetic_core_drill_feed_handle_joint" type="revolute">
+    <parent link="magnetic_core_drill_body"/><child link="magnetic_core_drill_feed_handle"/>
+    <origin xyz="0.056 0.00288104 0.3" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="6" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="magnetic_core_drill_magnet_switch_joint" type="revolute">
+    <parent link="magnetic_core_drill_body"/><child link="magnetic_core_drill_magnet_switch"/>
+    <origin xyz="0.05 -0.060119 0.035" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="1.57" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="magnetic_core_drill_carry_handle_grip"/>
+  <joint name="magnetic_core_drill_carry_handle_grip_joint" type="fixed"><parent link="magnetic_core_drill_body"/><child link="magnetic_core_drill_carry_handle_grip"/><origin xyz="0 0.00288104 0.47" rpy="0 0 0"/></joint>
+  <link name="magnetic_core_drill_feed_handle_knob"/>
+  <joint name="magnetic_core_drill_feed_handle_knob_joint" type="fixed"><parent link="magnetic_core_drill_feed_handle"/><child link="magnetic_core_drill_feed_handle_knob"/><origin xyz="0.014 0.119738 0.0506244" rpy="0 0 0"/></joint>
+  <link name="magnetic_core_drill_magnet_switch_contact"/>
+  <joint name="magnetic_core_drill_magnet_switch_contact_joint" type="fixed"><parent link="magnetic_core_drill_magnet_switch"/><child link="magnetic_core_drill_magnet_switch_contact"/><origin xyz="0 -0.013 0" rpy="0 0 0"/></joint>
+  <link name="magnetic_core_drill_motor_switch_contact"/>
+  <joint name="magnetic_core_drill_motor_switch_contact_joint" type="fixed"><parent link="magnetic_core_drill_motor_switch"/><child link="magnetic_core_drill_motor_switch_contact"/><origin xyz="0 -0.006 0" rpy="0 0 0"/></joint>
+  <link name="magnetic_core_drill_cutter_teeth"/>
+  <joint name="magnetic_core_drill_cutter_teeth_joint" type="fixed"><parent link="magnetic_core_drill_arbor"/><child link="magnetic_core_drill_cutter_teeth"/><origin xyz="0 0 -0.095" rpy="3.14159 0 0"/></joint>
+</robot>

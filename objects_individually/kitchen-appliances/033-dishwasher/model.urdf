@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<robot name="dishwasher">
+  <link name="dishwasher_body">
+    <inertial><origin xyz="0 0.0486717 0.457596" rpy="0 0 0"/><mass value="46.682"/><inertia ixx="5.9447" ixy="-3.1824e-09" ixz="-7.5417e-12" iyy="6.5309" iyz="-0.047171" izz="4.1506"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dishwasher_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.29925 0 0.4225" rpy="0 0 0"/><geometry><box size="0.0015 0.6 0.815"/></geometry></collision>
+    <collision><origin xyz="0.29925 0 0.4225" rpy="0 0 0"/><geometry><box size="0.0015 0.6 0.815"/></geometry></collision>
+    <collision><origin xyz="0 0 0.84" rpy="0 0 0"/><geometry><box size="0.6 0.6 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.29925 0.4225" rpy="0 0 0"/><geometry><box size="0.597 0.0015 0.815"/></geometry></collision>
+    <collision><origin xyz="0 0 0.01575" rpy="0 0 0"/><geometry><box size="0.597 0.5985 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.25 -0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="-0.25 0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 -0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.009 0.1156" rpy="0 0 0"/><geometry><box size="0.55 0.558 0.0012"/></geometry></collision>
+    <collision><origin xyz="0 -0.009 0.7994" rpy="0 0 0"/><geometry><box size="0.55 0.558 0.0012"/></geometry></collision>
+    <collision><origin xyz="-0.2744 -0.009 0.4575" rpy="0 0 0"/><geometry><box size="0.0012 0.558 0.6826"/></geometry></collision>
+    <collision><origin xyz="0.2744 -0.009 0.4575" rpy="0 0 0"/><geometry><box size="0.0012 0.558 0.6826"/></geometry></collision>
+    <collision><origin xyz="0 0.2694 0.4575" rpy="0 0 0"/><geometry><box size="0.5476 0.0012 0.6826"/></geometry></collision>
+    <collision><origin xyz="0 -0.294 0.065" rpy="0 0 0"/><geometry><box size="0.596 0.002 0.1"/></geometry></collision>
+    <collision><origin xyz="-0.271 -0.009 0.45" rpy="0 0 0"/><geometry><box size="0.008 0.558 0.012"/></geometry></collision>
+    <collision><origin xyz="0.271 -0.009 0.45" rpy="0 0 0"/><geometry><box size="0.008 0.558 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.127" rpy="0 0 0"/><geometry><cylinder radius="0.03" length="0.02"/></geometry></collision>
+  </link>
+  <link name="dishwasher_spray_arm">
+    <inertial><origin xyz="0 0 0.00500001" rpy="0 0 0"/><mass value="0.14513"/><inertia ixx="1.2218e-05" ixy="0" ixz="0" iyy="0.0019471" iyz="0" izz="0.0019568"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dishwasher_spray_arm.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.00500001" rpy="0 0 0"/><geometry><cylinder radius="0.018" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 0 0.00500001" rpy="0 0 0"/><geometry><box size="0.42 0.03 0.01"/></geometry></collision>
+  </link>
+  <link name="dishwasher_lower_rack">
+    <inertial><origin xyz="0 0.270488 0.0768239" rpy="0 0 0"/><mass value="2.0471"/><inertia ixx="0.089347" ixy="-9.2538e-11" ixz="-8.9606e-11" iyy="0.086033" iyz="-0.00011473" izz="0.14819"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dishwasher_lower_rack.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.274 0.0025" rpy="0 0 0"/><geometry><box size="0.52 0.528 0.005"/></geometry></collision>
+    <collision><origin xyz="-0.2575 0.274 0.105" rpy="0 0 0"/><geometry><box size="0.005 0.528 0.21"/></geometry></collision>
+    <collision><origin xyz="0.2575 0.274 0.105" rpy="0 0 0"/><geometry><box size="0.005 0.528 0.21"/></geometry></collision>
+    <collision><origin xyz="0 0.0125 0.105" rpy="0 0 0"/><geometry><box size="0.52 0.005 0.21"/></geometry></collision>
+    <collision><origin xyz="0 0.5355 0.105" rpy="0 0 0"/><geometry><box size="0.52 0.005 0.21"/></geometry></collision>
+  </link>
+  <link name="dishwasher_upper_rack">
+    <inertial><origin xyz="0.0561241 0.255058 0.0528388" rpy="0 0 0"/><mass value="2.5378"/><inertia ixx="0.077933" ixy="0.0049933" ixz="0.00040433" iyy="0.082743" iyz="-0.00013646" izz="0.14713"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dishwasher_upper_rack.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.274 0.0025" rpy="0 0 0"/><geometry><box size="0.52 0.528 0.005"/></geometry></collision>
+    <collision><origin xyz="-0.2575 0.274 0.075" rpy="0 0 0"/><geometry><box size="0.005 0.528 0.15"/></geometry></collision>
+    <collision><origin xyz="0.2575 0.274 0.075" rpy="0 0 0"/><geometry><box size="0.005 0.528 0.15"/></geometry></collision>
+    <collision><origin xyz="0 0.0125 0.075" rpy="0 0 0"/><geometry><box size="0.52 0.005 0.15"/></geometry></collision>
+    <collision><origin xyz="0 0.5355 0.075" rpy="0 0 0"/><geometry><box size="0.52 0.005 0.15"/></geometry></collision>
+  </link>
+  <link name="dishwasher_door">
+    <inertial><origin xyz="0 -0.0208556 0.364263" rpy="0 0 0"/><mass value="158.63"/><inertia ixx="6.983" ixy="3.5442e-13" ixz="1.6543e-12" iyy="11.601" iyz="0.0047313" izz="4.6749"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dishwasher_door.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.022 0.365" rpy="0 0 0"/><geometry><box size="0.596 0.044 0.73"/></geometry></collision>
+    <collision><origin xyz="0 -0.069 0.64" rpy="0 1.5708 0"/><geometry><cylinder radius="0.007" length="0.34"/></geometry></collision>
+  </link>
+  <link name="dishwasher_power_button">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.001764"/><inertia ixx="3.4104e-08" ixy="0" ixz="0" iyy="8.7612e-08" iyz="0" izz="6.4092e-08"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dishwasher_power_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.02 0.006 0.014"/></geometry></collision>
+  </link>
+  <joint name="dishwasher_spray_arm_joint" type="continuous">
+    <parent link="dishwasher_body"/><child link="dishwasher_spray_arm"/>
+    <origin xyz="0 0.03 0.137" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit effort="20" velocity="1.5"/>
+  </joint>
+  <joint name="dishwasher_lower_rack_joint" type="prismatic">
+    <parent link="dishwasher_body"/><child link="dishwasher_lower_rack"/>
+    <origin xyz="0 -0.288 0.15" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.396" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="dishwasher_upper_rack_joint" type="prismatic">
+    <parent link="dishwasher_body"/><child link="dishwasher_upper_rack"/>
+    <origin xyz="0 -0.288 0.47" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.396" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="dishwasher_door_joint" type="revolute">
+    <parent link="dishwasher_body"/><child link="dishwasher_door"/>
+    <origin xyz="0 -0.302 0.105" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="dishwasher_power_button_joint" type="prismatic">
+    <parent link="dishwasher_door"/><child link="dishwasher_power_button"/>
+    <origin xyz="-0.22 -0.047 0.695" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.003" effort="50" velocity="0.2"/>
+  </joint>
+  <link name="dishwasher_lower_rack_grip"/>
+  <joint name="dishwasher_lower_rack_grip_joint" type="fixed"><parent link="dishwasher_lower_rack"/><child link="dishwasher_lower_rack_grip"/><origin xyz="0 0.012 0.208" rpy="0 0 0"/></joint>
+  <link name="dishwasher_lower_rack_volume"/>
+  <joint name="dishwasher_lower_rack_volume_joint" type="fixed"><parent link="dishwasher_lower_rack"/><child link="dishwasher_lower_rack_volume"/><origin xyz="0 0.279 0.105" rpy="0 0 0"/></joint>
+  <link name="dishwasher_upper_rack_grip"/>
+  <joint name="dishwasher_upper_rack_grip_joint" type="fixed"><parent link="dishwasher_upper_rack"/><child link="dishwasher_upper_rack_grip"/><origin xyz="0 0.012 0.148" rpy="0 0 0"/></joint>
+  <link name="dishwasher_upper_rack_volume"/>
+  <joint name="dishwasher_upper_rack_volume_joint" type="fixed"><parent link="dishwasher_upper_rack"/><child link="dishwasher_upper_rack_volume"/><origin xyz="0 0.279 0.075" rpy="0 0 0"/></joint>
+  <link name="dishwasher_power_button_contact"/>
+  <joint name="dishwasher_power_button_contact_joint" type="fixed"><parent link="dishwasher_power_button"/><child link="dishwasher_power_button_contact"/><origin xyz="0 -0.00299999 0" rpy="0 0 0"/></joint>
+  <link name="dishwasher_door_grip"/>
+  <joint name="dishwasher_door_grip_joint" type="fixed"><parent link="dishwasher_door"/><child link="dishwasher_door_grip"/><origin xyz="0 -0.069 0.64" rpy="0 0 0"/></joint>
+  <link name="dishwasher_tub_volume"/>
+  <joint name="dishwasher_tub_volume_joint" type="fixed"><parent link="dishwasher_body"/><child link="dishwasher_tub_volume"/><origin xyz="0 -0.009 0.46" rpy="0 0 0"/></joint>
+  <link name="dishwasher_top_surface"/>
+  <joint name="dishwasher_top_surface_joint" type="fixed"><parent link="dishwasher_body"/><child link="dishwasher_top_surface"/><origin xyz="0 0 0.85" rpy="0 0 0"/></joint>
+  <link name="dishwasher_wall_anchor"/>
+  <joint name="dishwasher_wall_anchor_joint" type="fixed"><parent link="dishwasher_body"/><child link="dishwasher_wall_anchor"/><origin xyz="0 0.3 0.8" rpy="0 0 0"/></joint>
+</robot>

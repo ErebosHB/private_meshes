@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<robot name="tape_gun">
+  <link name="tape_gun_body">
+    <inertial><origin xyz="0.0164563 0.0464792 0.128722" rpy="0 0 0"/><mass value="0.5"/><inertia ixx="0.00521414" ixy="-0.00012565" ixz="-6.66898e-05" iyy="0.00228187" iyz="-0.00209374" izz="0.00315314"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tape_gun_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.033 0 0.07" rpy="0 0 0"/><geometry><box size="0.004 0.2 0.1"/></geometry></collision>
+    <collision><origin xyz="0.033 0.05 0.15" rpy="0.436332 0 0"/><geometry><box size="0.004 0.12 0.06"/></geometry></collision>
+    <collision><origin xyz="0.016 0.1 0.205" rpy="0.314159 0 0"/><geometry><box size="0.034 0.13 0.034"/></geometry></collision>
+    <collision><origin xyz="0.02 0.14 0.15" rpy="-0.349066 0 0"/><geometry><box size="0.03 0.03 0.08"/></geometry></collision>
+    <collision><origin xyz="0 -0.088 0.03" rpy="0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.112 0.012" rpy="0 0 0"/><geometry><box size="0.054 0.004 0.016"/></geometry></collision>
+    <collision><origin xyz="0 -0.102 0.004" rpy="0 0 0"/><geometry><box size="0.06 0.026 0.006"/></geometry></collision>
+    <collision><origin xyz="0.008 0.02 0.1" rpy="0 1.5708 0"/><geometry><cylinder radius="0.01" length="0.05"/></geometry></collision>
+  </link>
+  <link name="tape_gun_tape_hub">
+    <inertial><origin xyz="0 -1.50954e-09 1.98312e-09" rpy="0 0 0"/><mass value="0.35"/><inertia ixx="0.0012211" ixy="0" ixz="0" iyy="0.000678223" iyz="0" izz="0.000678223"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tape_gun_tape_hub.glb"/></geometry></visual>
+    <collision><origin xyz="-2.49155e-09 0 -0.057" rpy="0 1.5708 0"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="-1.76179e-09 0.0403051 -0.0403051" rpy="1.5708 0.785398 1.5708"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="0 0.057 0" rpy="1.5708 -4.37114e-08 1.5708"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="1.76179e-09 0.0403051 0.0403051" rpy="1.5708 -0.785398 1.5708"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="2.49155e-09 -5.58794e-09 0.057" rpy="-3.14159 -1.5708 0"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="1.76179e-09 -0.0403051 0.0403051" rpy="-1.5708 -0.785398 -1.5708"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="0 -0.057 0" rpy="-1.5708 1.19249e-08 -1.5708"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="-1.76179e-09 -0.0403051 -0.0403051" rpy="-1.5708 0.785398 -1.5708"/><geometry><box size="0.036 0.062132 0.048"/></geometry></collision>
+    <collision><origin xyz="-1.57361e-09 0 -0.036" rpy="0 1.5708 0"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+    <collision><origin xyz="-1.11271e-09 0.0254558 -0.0254558" rpy="1.5708 0.785398 1.5708"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+    <collision><origin xyz="0 0.036 0" rpy="1.5708 -4.37114e-08 1.5708"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+    <collision><origin xyz="1.11271e-09 0.0254558 0.0254558" rpy="1.5708 -0.785398 1.5708"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+    <collision><origin xyz="1.57361e-09 -3.72529e-09 0.036" rpy="-3.14159 -1.5708 0"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+    <collision><origin xyz="1.11271e-09 -0.0254558 0.0254558" rpy="-1.5708 -0.785398 -1.5708"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.036 0" rpy="-1.5708 1.19249e-08 -1.5708"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+    <collision><origin xyz="-1.11271e-09 -0.0254558 -0.0254558" rpy="-1.5708 0.785398 -1.5708"/><geometry><box size="0.006 0.0323087 0.05"/></geometry></collision>
+  </link>
+  <link name="tape_gun_blade_guard">
+    <inertial><origin xyz="0 -0.000644616 -0.0045123" rpy="0 0 0"/><mass value="0.01"/><inertia ixx="6.53211e-07" ixy="0" ixz="0" iyy="3.56154e-06" iyz="-6.11592e-08" izz="2.9649e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tape_gun_blade_guard.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.002 -0.014" rpy="0 0 0"/><geometry><box size="0.058 0.004 0.026"/></geometry></collision>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.003" length="0.06"/></geometry></collision>
+  </link>
+  <link name="tape_gun_tension_knob">
+    <inertial><origin xyz="0.006 0 0" rpy="0 0 0"/><mass value="0.005"/><inertia ixx="4.225e-07" ixy="0" ixz="0" iyy="2.7125e-07" iyz="0" izz="2.7125e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tape_gun_tension_knob.glb"/></geometry></visual>
+    <collision><origin xyz="0.006 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.013" length="0.012"/></geometry></collision>
+  </link>
+  <joint name="tape_gun_tape_hub_joint" type="continuous">
+    <parent link="tape_gun_body"/><child link="tape_gun_tape_hub"/>
+    <origin xyz="0 0.02 0.1" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="tape_gun_blade_guard_joint" type="revolute">
+    <parent link="tape_gun_body"/><child link="tape_gun_blade_guard"/>
+    <origin xyz="0 -0.116 0.03" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.2" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="tape_gun_tension_knob_joint" type="revolute">
+    <parent link="tape_gun_body"/><child link="tape_gun_tension_knob"/>
+    <origin xyz="0.035 0.02 0.1" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="4.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="tape_gun_handle_grip"/>
+  <joint name="tape_gun_handle_grip_joint" type="fixed"><parent link="tape_gun_body"/><child link="tape_gun_handle_grip"/><origin xyz="0.016 0.1 0.205" rpy="0 0 1.5708"/></joint>
+  <link name="tape_gun_tape_roll_mount"/>
+  <joint name="tape_gun_tape_roll_mount_joint" type="fixed"><parent link="tape_gun_body"/><child link="tape_gun_tape_roll_mount"/><origin xyz="0 0.02 0.1" rpy="0 1.5708 0"/></joint>
+  <link name="tape_gun_blade_guard_grip"/>
+  <joint name="tape_gun_blade_guard_grip_joint" type="fixed"><parent link="tape_gun_blade_guard"/><child link="tape_gun_blade_guard_grip"/><origin xyz="0 -0.005 -0.024" rpy="0 0 0"/></joint>
+  <link name="tape_gun_tension_knob_contact"/>
+  <joint name="tape_gun_tension_knob_contact_joint" type="fixed"><parent link="tape_gun_tension_knob"/><child link="tape_gun_tension_knob_contact"/><origin xyz="0.012 0 0" rpy="0 0 0"/></joint>
+</robot>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<robot name="stud_welding_gun">
+  <link name="stud_welding_gun_body">
+    <inertial><origin xyz="0.0207192 0.0424513 0.0331888" rpy="0 0 0"/><mass value="2.5"/><inertia ixx="0.0151046" ixy="-0.00241855" ixz="0.000139876" iyy="0.005087" iyz="0.00060709" izz="0.0188044"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/stud_welding_gun_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.02 0.035" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.035" length="0.2"/></geometry></collision>
+    <collision><origin xyz="0 -0.075 0.035" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.036" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.085 0.08 0.0315" rpy="0 0 -0.139626"/><geometry><box size="0.12 0.05 0.045"/></geometry></collision>
+    <collision><origin xyz="0.00535 -0.06 0.063" rpy="-1.5708 0 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.00378302 -0.06 0.059217" rpy="-1.5708 0.785398 -4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.06 0.05765" rpy="-1.5708 1.5708 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.00378302 -0.06 0.059217" rpy="-1.5708 2.35619 4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.00535 -0.06 0.063" rpy="1.5708 -8.74228e-08 3.14159"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.00378302 -0.06 0.066783" rpy="-1.5708 -2.35619 -4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.06 0.06835" rpy="-1.5708 -1.5708 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.00378302 -0.06 0.066783" rpy="-1.5708 -0.785398 4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0188987 -0.06 0.021" rpy="-1.5708 0 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0204657 -0.06 0.017217" rpy="-1.5708 0.785398 -4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0242487 -0.06 0.01565" rpy="-1.5708 1.5708 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0280317 -0.06 0.017217" rpy="-1.5708 2.35619 4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0295987 -0.06 0.021" rpy="1.5708 -8.74228e-08 3.14159"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0280317 -0.06 0.024783" rpy="-1.5708 -2.35619 -4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0242487 -0.06 0.02635" rpy="-1.5708 -1.5708 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.0204657 -0.06 0.024783" rpy="-1.5708 -0.785398 4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0295987 -0.06 0.021" rpy="-1.5708 0 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0280317 -0.06 0.017217" rpy="-1.5708 0.785398 -4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0242487 -0.06 0.01565" rpy="-1.5708 1.5708 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0204657 -0.06 0.017217" rpy="-1.5708 2.35619 4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0188987 -0.06 0.021" rpy="1.5708 -8.74228e-08 3.14159"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0204657 -0.06 0.024783" rpy="-1.5708 -2.35619 -4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0242487 -0.06 0.02635" rpy="-1.5708 -1.5708 0"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.0280317 -0.06 0.024783" rpy="-1.5708 -0.785398 4.37114e-08"/><geometry><box size="0.0023 0.00538478 0.03"/></geometry></collision>
+    <collision><origin xyz="0.03 -0.06 0.06" rpy="0 0.785398 0"/><geometry><cylinder radius="0.008" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.15 0.0295" rpy="-1.75212 0 0"/><geometry><cylinder radius="0.011" length="0.061"/></geometry></collision>
+    <collision><origin xyz="0.01 0.21 0.0185" rpy="-1.75212 0.316825 -0.378806"/><geometry><cylinder radius="0.011" length="0.064195"/></geometry></collision>
+    <collision><origin xyz="0.04 0.27 0.0125" rpy="-1.58746 0.587938 -0.597246"/><geometry><cylinder radius="0.011" length="0.072118"/></geometry></collision>
+  </link>
+  <link name="stud_welding_gun_support_legs">
+    <inertial><origin xyz="0 -0.0619552 0" rpy="0 0 0"/><mass value="0.15"/><inertia ixx="0.000223585" ixy="0" ixz="0" iyy="0.00012156" iyz="0" izz="0.000223585"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/stud_welding_gun_support_legs.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.04 0.028" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.004" length="0.1"/></geometry></collision>
+    <collision><origin xyz="-0.0242487 -0.04 -0.014" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.004" length="0.1"/></geometry></collision>
+    <collision><origin xyz="0.0242487 -0.04 -0.014" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.004" length="0.1"/></geometry></collision>
+    <collision><origin xyz="0.0258686 -0.09 -0.0107151" rpy="3.14159 0.392699 -1.81059e-08"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+    <collision><origin xyz="0.0107151 -0.09 -0.0258686" rpy="3.14159 1.1781 -1.05529e-07"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+    <collision><origin xyz="-0.0107151 -0.09 -0.0258686" rpy="7.0512e-08 1.1781 -3.14159"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+    <collision><origin xyz="-0.0258686 -0.09 -0.0107151" rpy="3.60148e-09 0.392699 -3.14159"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+    <collision><origin xyz="-0.0258686 -0.09 0.0107151" rpy="3.60148e-09 -0.392699 3.14159"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+    <collision><origin xyz="-0.0107151 -0.09 0.0258686" rpy="7.05119e-08 -1.1781 3.14159"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+    <collision><origin xyz="0.0107151 -0.09 0.0258686" rpy="3.14159 -1.1781 1.05529e-07"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+    <collision><origin xyz="0.0258686 -0.09 0.0107151" rpy="3.14159 -0.392699 1.81058e-08"/><geometry><cylinder radius="0.0045" length="0.023196"/></geometry></collision>
+  </link>
+  <link name="stud_welding_gun_stud_chuck">
+    <inertial><origin xyz="0 -0.017868 0" rpy="0 0 0"/><mass value="0.05"/><inertia ixx="7.10519e-06" ixy="0" ixz="0" iyy="2.99225e-06" iyz="0" izz="7.10519e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/stud_welding_gun_stud_chuck.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.0175 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.011" length="0.035"/></geometry></collision>
+    <collision><origin xyz="0 -0.047 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.004" length="0.025"/></geometry></collision>
+  </link>
+  <link name="stud_welding_gun_trigger">
+    <inertial><origin xyz="0.02 -0.003 0" rpy="0 0 0"/><mass value="0.01"/><inertia ixx="2.96667e-07" ixy="0" ixz="0" iyy="1.06667e-06" iyz="0" izz="9.36667e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/stud_welding_gun_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="0.02 -0.003 0" rpy="0 0 0"/><geometry><box size="0.032 0.01 0.016"/></geometry></collision>
+  </link>
+  <joint name="stud_welding_gun_support_legs_joint" type="prismatic">
+    <parent link="stud_welding_gun_body"/><child link="stud_welding_gun_support_legs"/>
+    <origin xyz="0 -0.06 0.035" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.06" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="stud_welding_gun_stud_chuck_joint" type="prismatic">
+    <parent link="stud_welding_gun_body"/><child link="stud_welding_gun_stud_chuck"/>
+    <origin xyz="0 -0.081 0.035" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.012" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="stud_welding_gun_trigger_joint" type="revolute">
+    <parent link="stud_welding_gun_body"/><child link="stud_welding_gun_trigger"/>
+    <origin xyz="0.035 0.053 0.032" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.3" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="stud_welding_gun_handle_grip"/>
+  <joint name="stud_welding_gun_handle_grip_joint" type="fixed"><parent link="stud_welding_gun_body"/><child link="stud_welding_gun_handle_grip"/><origin xyz="0.09 0.08 0.032" rpy="0 0 -0.139626"/></joint>
+  <link name="stud_welding_gun_trigger_contact"/>
+  <joint name="stud_welding_gun_trigger_contact_joint" type="fixed"><parent link="stud_welding_gun_trigger"/><child link="stud_welding_gun_trigger_contact"/><origin xyz="0.027 -0.009 0" rpy="0 0 0"/></joint>
+  <link name="stud_welding_gun_stud_tip"/>
+  <joint name="stud_welding_gun_stud_tip_joint" type="fixed"><parent link="stud_welding_gun_stud_chuck"/><child link="stud_welding_gun_stud_tip"/><origin xyz="0 -0.06 0" rpy="1.5708 0 0"/></joint>
+</robot>

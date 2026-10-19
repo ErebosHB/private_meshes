@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<robot name="dual_compartment_bin_squat">
+  <link name="dual_compartment_bin_squat_body">
+    <inertial><origin xyz="1.96836e-17 -0.00402398 0.191365" rpy="0 0 0"/><mass value="11.2807"/><inertia ixx="0.399296" ixy="9.94415e-19" ixz="-1.05454e-17" iyy="0.603817" iyz="-0.0152477" izz="0.420251"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dual_compartment_bin_squat_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.009 0.01" rpy="0 0 0"/><geometry><box size="0.48 0.24 0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.12825 0.249" rpy="0 0 0"/><geometry><box size="0.48 0.0015 0.458"/></geometry></collision>
+    <collision><origin xyz="0 0.11025 0.249" rpy="0 0 0"/><geometry><box size="0.48 0.0015 0.458"/></geometry></collision>
+    <collision><origin xyz="-0.23925 -0.009 0.249" rpy="0 0 0"/><geometry><box size="0.0015 0.237 0.458"/></geometry></collision>
+    <collision><origin xyz="0.23925 -0.009 0.249" rpy="0 0 0"/><geometry><box size="0.0015 0.237 0.458"/></geometry></collision>
+    <collision><origin xyz="0 -0.009 0.023" rpy="0 0 0"/><geometry><box size="0.477 0.237 0.006"/></geometry></collision>
+    <collision><origin xyz="0 0.126 0.463" rpy="0 0 0"/><geometry><box size="0.44 0.03 0.03"/></geometry></collision>
+  </link>
+  <link name="dual_compartment_bin_squat_lid">
+    <inertial><origin xyz="2.6144e-18 -0.124165 0.0102233" rpy="0 0 0"/><mass value="1.65882"/><inertia ixx="0.0104837" ixy="3.77246e-20" ixz="2.5471e-20" iyy="0.032744" iyz="5.48916e-05" izz="0.0432062"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dual_compartment_bin_squat_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.132 0.01125" rpy="0 0 0"/><geometry><box size="0.48 0.24 0.0015"/></geometry></collision>
+    <collision><origin xyz="0 -0.247 0.00525" rpy="0 0 0"/><geometry><box size="0.48 0.01 0.0105"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.00525" rpy="0 0 0"/><geometry><box size="0.48 0.01 0.0105"/></geometry></collision>
+    <collision><origin xyz="-0.235 -0.132 0.00525" rpy="0 0 0"/><geometry><box size="0.01 0.22 0.0105"/></geometry></collision>
+    <collision><origin xyz="0.235 -0.132 0.00525" rpy="0 0 0"/><geometry><box size="0.01 0.22 0.0105"/></geometry></collision>
+    <collision><origin xyz="0 0 0.006" rpy="0 1.5708 0"/><geometry><cylinder radius="0.006" length="0.42"/></geometry></collision>
+    <collision><origin xyz="0 -0.004 0.006" rpy="0 0 0"/><geometry><box size="0.44 0.02 0.008"/></geometry></collision>
+    <collision><origin xyz="0 -0.258 0.006" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+  </link>
+  <joint name="dual_compartment_bin_squat_lid_joint" type="revolute">
+    <parent link="dual_compartment_bin_squat_body"/><child link="dual_compartment_bin_squat_lid"/>
+    <origin xyz="0 0.123 0.478" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="dual_compartment_bin_squat_left_bucket">
+    <inertial><origin xyz="1.60116e-17 0.094715 -0.243373" rpy="0 0 0"/><mass value="1.3001"/><inertia ixx="0.0322074" ixy="-1.27388e-20" ixz="-6.6937e-19" iyy="0.034428" iyz="0.000166488" izz="0.0170267"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dual_compartment_bin_squat_left_bucket.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.09525 -0.431" rpy="0 0 0"/><geometry><box size="0.2265 0.1905 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.11175 0.09525 -0.2145" rpy="0 0 0"/><geometry><box size="0.003 0.1905 0.429"/></geometry></collision>
+    <collision><origin xyz="0.11175 0.09525 -0.2145" rpy="0 0 0"/><geometry><box size="0.003 0.1905 0.429"/></geometry></collision>
+    <collision><origin xyz="0 0.0015 -0.2145" rpy="0 0 0"/><geometry><box size="0.2205 0.003 0.429"/></geometry></collision>
+    <collision><origin xyz="0 0.189 -0.2145" rpy="0 0 0"/><geometry><box size="0.2205 0.003 0.429"/></geometry></collision>
+    <collision><origin xyz="0 0.009 -0.004" rpy="0 0 0"/><geometry><box size="0.08 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="dual_compartment_bin_squat_left_bucket_joint" type="prismatic">
+    <parent link="dual_compartment_bin_squat_body"/><child link="dual_compartment_bin_squat_left_bucket"/>
+    <origin xyz="-0.11725 -0.1195 0.463" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.325" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="dual_compartment_bin_squat_right_bucket">
+    <inertial><origin xyz="1.06744e-17 0.094715 -0.243373" rpy="0 0 0"/><mass value="1.3001"/><inertia ixx="0.0322074" ixy="-1.07513e-20" ixz="-3.37826e-19" iyy="0.034428" iyz="0.000166488" izz="0.0170267"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/dual_compartment_bin_squat_right_bucket.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.09525 -0.431" rpy="0 0 0"/><geometry><box size="0.2265 0.1905 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.11175 0.09525 -0.2145" rpy="0 0 0"/><geometry><box size="0.003 0.1905 0.429"/></geometry></collision>
+    <collision><origin xyz="0.11175 0.09525 -0.2145" rpy="0 0 0"/><geometry><box size="0.003 0.1905 0.429"/></geometry></collision>
+    <collision><origin xyz="0 0.0015 -0.2145" rpy="0 0 0"/><geometry><box size="0.2205 0.003 0.429"/></geometry></collision>
+    <collision><origin xyz="0 0.189 -0.2145" rpy="0 0 0"/><geometry><box size="0.2205 0.003 0.429"/></geometry></collision>
+    <collision><origin xyz="0 0.009 -0.004" rpy="0 0 0"/><geometry><box size="0.08 0.012 0.008"/></geometry></collision>
+  </link>
+  <joint name="dual_compartment_bin_squat_right_bucket_joint" type="prismatic">
+    <parent link="dual_compartment_bin_squat_body"/><child link="dual_compartment_bin_squat_right_bucket"/>
+    <origin xyz="0.11725 -0.1195 0.463" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.325" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="dual_compartment_bin_squat_lid_grip"/>
+  <joint name="dual_compartment_bin_squat_lid_grip_fixed" type="fixed">
+    <parent link="dual_compartment_bin_squat_lid"/><child link="dual_compartment_bin_squat_lid_grip"/>
+    <origin xyz="0 -0.258 0.006" rpy="0 0 0"/>
+  </joint>
+  <link name="dual_compartment_bin_squat_left_bucket_grip"/>
+  <joint name="dual_compartment_bin_squat_left_bucket_grip_fixed" type="fixed">
+    <parent link="dual_compartment_bin_squat_left_bucket"/><child link="dual_compartment_bin_squat_left_bucket_grip"/>
+    <origin xyz="0 0.009 -0.004" rpy="0 0 0"/>
+  </joint>
+  <link name="dual_compartment_bin_squat_left_bucket_volume"/>
+  <joint name="dual_compartment_bin_squat_left_bucket_volume_fixed" type="fixed">
+    <parent link="dual_compartment_bin_squat_left_bucket"/><child link="dual_compartment_bin_squat_left_bucket_volume"/>
+    <origin xyz="0 0.09525 -0.2165" rpy="0 0 0"/>
+  </joint>
+  <link name="dual_compartment_bin_squat_right_bucket_grip"/>
+  <joint name="dual_compartment_bin_squat_right_bucket_grip_fixed" type="fixed">
+    <parent link="dual_compartment_bin_squat_right_bucket"/><child link="dual_compartment_bin_squat_right_bucket_grip"/>
+    <origin xyz="0 0.009 -0.004" rpy="0 0 0"/>
+  </joint>
+  <link name="dual_compartment_bin_squat_right_bucket_volume"/>
+  <joint name="dual_compartment_bin_squat_right_bucket_volume_fixed" type="fixed">
+    <parent link="dual_compartment_bin_squat_right_bucket"/><child link="dual_compartment_bin_squat_right_bucket_volume"/>
+    <origin xyz="0 0.09525 -0.2165" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<robot name="pallet_racking_bay">
+  <link name="pallet_racking_bay_body">
+    <inertial><origin xyz="-1.32289e-07 0 1.67979" rpy="0 0 0"/><mass value="364.056"/><inertia ixx="322.402" ixy="0" ixz="2.86102e-06" iyy="758.177" iyz="-0.0251932" izz="586.043"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pallet_racking_bay_body.glb"/></geometry></visual>
+    <collision><origin xyz="-1.4 -0.5 1.5" rpy="0 0 0"/><geometry><box size="0.1 0.08 3"/></geometry></collision>
+    <collision><origin xyz="-1.4 0.5 1.5" rpy="0 0 0"/><geometry><box size="0.1 0.08 3"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 0.15" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 0.85" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 1.55" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 2.25" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 2.85" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 0.5" rpy="-0.948494 0 0"/><geometry><box size="0.03 0.02 1.13225"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 1.2" rpy="0.948494 0 0"/><geometry><box size="0.03 0.02 1.13225"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 1.9" rpy="-0.948494 0 0"/><geometry><box size="0.03 0.02 1.13225"/></geometry></collision>
+    <collision><origin xyz="-1.4 0 2.55" rpy="1.02401 0 0"/><geometry><box size="0.03 0.02 1.07703"/></geometry></collision>
+    <collision><origin xyz="1.4 -0.5 1.5" rpy="0 0 0"/><geometry><box size="0.1 0.08 3"/></geometry></collision>
+    <collision><origin xyz="1.4 0.5 1.5" rpy="0 0 0"/><geometry><box size="0.1 0.08 3"/></geometry></collision>
+    <collision><origin xyz="1.4 0 0.15" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="1.4 0 0.85" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="1.4 0 1.55" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="1.4 0 2.25" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="1.4 0 2.85" rpy="0 0 0"/><geometry><box size="0.04 0.92 0.03"/></geometry></collision>
+    <collision><origin xyz="1.4 0 0.5" rpy="-0.948494 0 0"/><geometry><box size="0.03 0.02 1.13225"/></geometry></collision>
+    <collision><origin xyz="1.4 0 1.2" rpy="0.948494 0 0"/><geometry><box size="0.03 0.02 1.13225"/></geometry></collision>
+    <collision><origin xyz="1.4 0 1.9" rpy="-0.948494 0 0"/><geometry><box size="0.03 0.02 1.13225"/></geometry></collision>
+    <collision><origin xyz="1.4 0 2.55" rpy="1.02401 0 0"/><geometry><box size="0.03 0.02 1.07703"/></geometry></collision>
+    <collision><origin xyz="0 -0.45 1.34" rpy="0 0 0"/><geometry><box size="2.7 0.05 0.12"/></geometry></collision>
+    <collision><origin xyz="0 0.45 1.34" rpy="0 0 0"/><geometry><box size="2.7 0.05 0.12"/></geometry></collision>
+    <collision><origin xyz="0 -0.45 2.74" rpy="0 0 0"/><geometry><box size="2.7 0.05 0.12"/></geometry></collision>
+    <collision><origin xyz="0 0.45 2.74" rpy="0 0 0"/><geometry><box size="2.7 0.05 0.12"/></geometry></collision>
+    <collision><origin xyz="-1.1 0 1.43" rpy="0 0 0"/><geometry><box size="0.06 1 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.24 0 1.43" rpy="0 0 0"/><geometry><box size="0.06 1 0.06"/></geometry></collision>
+    <collision><origin xyz="0.24 0 1.43" rpy="0 0 0"/><geometry><box size="0.06 1 0.06"/></geometry></collision>
+    <collision><origin xyz="1.1 0 1.43" rpy="0 0 0"/><geometry><box size="0.06 1 0.06"/></geometry></collision>
+  </link>
+  <link name="pallet_racking_bay_left_pullout_frame">
+    <inertial><origin xyz="0 -0.0116458 0.113174" rpy="0 0 0"/><mass value="86.6199"/><inertia ixx="8.51693" ixy="0" ixz="0" iyy="8.51191" iyz="0.0204071" izz="16.9312"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pallet_racking_bay_left_pullout_frame.glb"/></geometry></visual>
+    <collision><origin xyz="-0.41 0 0.085" rpy="0 0 0"/><geometry><box size="0.04 1 0.05"/></geometry></collision>
+    <collision><origin xyz="0.41 0 0.085" rpy="0 0 0"/><geometry><box size="0.04 1 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.48 0.12" rpy="0 0 0"/><geometry><box size="0.86 0.04 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0 0.12" rpy="0 0 0"/><geometry><box size="0.86 0.04 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.48 0.12" rpy="0 0 0"/><geometry><box size="0.86 0.04 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0 0.133" rpy="0 0 0"/><geometry><box size="0.82 0.96 0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.515 0.13" rpy="0 0 0"/><geometry><box size="0.86 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="0 -0.545 0.15" rpy="0 0 0"/><geometry><box size="0.4 0.03 0.025"/></geometry></collision>
+  </link>
+  <joint name="pallet_racking_bay_left_pullout_frame_joint" type="prismatic">
+    <parent link="pallet_racking_bay_body"/><child link="pallet_racking_bay_left_pullout_frame"/>
+    <origin xyz="-0.67 0 1.4" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.78" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="pallet_racking_bay_right_pullout_frame">
+    <inertial><origin xyz="0 -0.0116458 0.113174" rpy="0 0 0"/><mass value="86.6199"/><inertia ixx="8.51693" ixy="0" ixz="0" iyy="8.51191" iyz="0.0204071" izz="16.9312"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pallet_racking_bay_right_pullout_frame.glb"/></geometry></visual>
+    <collision><origin xyz="-0.41 0 0.085" rpy="0 0 0"/><geometry><box size="0.04 1 0.05"/></geometry></collision>
+    <collision><origin xyz="0.41 0 0.085" rpy="0 0 0"/><geometry><box size="0.04 1 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.48 0.12" rpy="0 0 0"/><geometry><box size="0.86 0.04 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0 0.12" rpy="0 0 0"/><geometry><box size="0.86 0.04 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.48 0.12" rpy="0 0 0"/><geometry><box size="0.86 0.04 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0 0.133" rpy="0 0 0"/><geometry><box size="0.82 0.96 0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.515 0.13" rpy="0 0 0"/><geometry><box size="0.86 0.03 0.06"/></geometry></collision>
+    <collision><origin xyz="0 -0.545 0.15" rpy="0 0 0"/><geometry><box size="0.4 0.03 0.025"/></geometry></collision>
+  </link>
+  <joint name="pallet_racking_bay_right_pullout_frame_joint" type="prismatic">
+    <parent link="pallet_racking_bay_body"/><child link="pallet_racking_bay_right_pullout_frame"/>
+    <origin xyz="0.67 0 1.4" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.78" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="pallet_racking_bay_top_level_surface"/>
+  <joint name="pallet_racking_bay_top_level_surface_fixed" type="fixed">
+    <parent link="pallet_racking_bay_body"/><child link="pallet_racking_bay_top_level_surface"/>
+    <origin xyz="0 0 2.8" rpy="0 0 0"/>
+  </joint>
+  <link name="pallet_racking_bay_wall_anchor"/>
+  <joint name="pallet_racking_bay_wall_anchor_fixed" type="fixed">
+    <parent link="pallet_racking_bay_body"/><child link="pallet_racking_bay_wall_anchor"/>
+    <origin xyz="0 0.54 2.9" rpy="0 0 0"/>
+  </joint>
+  <link name="pallet_racking_bay_left_pullout_frame_grip"/>
+  <joint name="pallet_racking_bay_left_pullout_frame_grip_fixed" type="fixed">
+    <parent link="pallet_racking_bay_left_pullout_frame"/><child link="pallet_racking_bay_left_pullout_frame_grip"/>
+    <origin xyz="0 -0.545 0.15" rpy="0 0 0"/>
+  </joint>
+  <link name="pallet_racking_bay_left_pullout_frame_surface"/>
+  <joint name="pallet_racking_bay_left_pullout_frame_surface_fixed" type="fixed">
+    <parent link="pallet_racking_bay_left_pullout_frame"/><child link="pallet_racking_bay_left_pullout_frame_surface"/>
+    <origin xyz="0 0 0.136" rpy="0 0 0"/>
+  </joint>
+  <link name="pallet_racking_bay_right_pullout_frame_grip"/>
+  <joint name="pallet_racking_bay_right_pullout_frame_grip_fixed" type="fixed">
+    <parent link="pallet_racking_bay_right_pullout_frame"/><child link="pallet_racking_bay_right_pullout_frame_grip"/>
+    <origin xyz="0 -0.545 0.15" rpy="0 0 0"/>
+  </joint>
+  <link name="pallet_racking_bay_right_pullout_frame_surface"/>
+  <joint name="pallet_racking_bay_right_pullout_frame_surface_fixed" type="fixed">
+    <parent link="pallet_racking_bay_right_pullout_frame"/><child link="pallet_racking_bay_right_pullout_frame_surface"/>
+    <origin xyz="0 0 0.136" rpy="0 0 0"/>
+  </joint>
+</robot>

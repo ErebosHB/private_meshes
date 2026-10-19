@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot name="pullout_pantry_cabinet">
+  <link name="pullout_pantry_cabinet_body">
+    <inertial><origin xyz="5.41848e-17 0.030466 1.03102" rpy="0 0 0"/><mass value="28.6854"/><inertia ixx="11.6607" ixy="1.12673e-17" ixz="-3.11788e-17" iyy="11.4161" iyz="-0.132828" izz="1.24418"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pullout_pantry_cabinet_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.141 0.023 1.05" rpy="0 0 0"/><geometry><box size="0.018 0.53 1.9"/></geometry></collision>
+    <collision><origin xyz="0.141 0.023 1.05" rpy="0 0 0"/><geometry><box size="0.018 0.53 1.9"/></geometry></collision>
+    <collision><origin xyz="0 0.023 0.109" rpy="0 0 0"/><geometry><box size="0.264 0.53 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.023 1.991" rpy="0 0 0"/><geometry><box size="0.264 0.53 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.286 1.059" rpy="0 0 0"/><geometry><box size="0.264 0.004 1.882"/></geometry></collision>
+    <collision><origin xyz="0 -0.203 0.049" rpy="0 0 0"/><geometry><box size="0.3 0.018 0.098"/></geometry></collision>
+  </link>
+  <link name="pullout_pantry_cabinet_pullout">
+    <inertial><origin xyz="-2.11329e-17 0.276102 -0.083118" rpy="0 0 0"/><mass value="42.3475"/><inertia ixx="12.6383" ixy="5.19319e-17" ixz="-1.3969e-17" iyy="11.4599" iyz="-0.0637178" izz="1.75603"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/pullout_pantry_cabinet_pullout.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.297 0.018 1.897"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.4965 0" rpy="0 0 0"/><geometry><box size="0.24 0.003 1.797"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.258 -0.848" rpy="0 0 0"/><geometry><box size="0.24 0.48 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.1185 0.258 -0.813" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="0.1185 0.258 -0.813" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.258 -0.498" rpy="0 0 0"/><geometry><box size="0.24 0.48 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.1185 0.258 -0.463" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="0.1185 0.258 -0.463" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.258 -0.148" rpy="0 0 0"/><geometry><box size="0.24 0.48 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.1185 0.258 -0.113" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="0.1185 0.258 -0.113" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.258 0.202" rpy="0 0 0"/><geometry><box size="0.24 0.48 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.1185 0.258 0.237" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="0.1185 0.258 0.237" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="-2.77556e-17 0.258 0.552" rpy="0 0 0"/><geometry><box size="0.24 0.48 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.1185 0.258 0.587" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="0.1185 0.258 0.587" rpy="0 0 0"/><geometry><box size="0.003 0.48 0.066"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0" rpy="0 0 0"/><geometry><box size="0.012 0.012 0.32"/></geometry></collision>
+    <collision><origin xyz="0 -0.007 -0.145" rpy="0 0 0"/><geometry><box size="0.01 0.014 0.012"/></geometry></collision>
+    <collision><origin xyz="0 -0.007 0.145" rpy="0 0 0"/><geometry><box size="0.01 0.014 0.012"/></geometry></collision>
+  </link>
+  <joint name="pullout_pantry_cabinet_pullout_joint" type="prismatic">
+    <parent link="pullout_pantry_cabinet_body"/><child link="pullout_pantry_cabinet_pullout"/>
+    <origin xyz="0 -0.262 1.05" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.36" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="pullout_pantry_cabinet_pullout_grip"/>
+  <joint name="pullout_pantry_cabinet_pullout_grip_fixed" type="fixed">
+    <parent link="pullout_pantry_cabinet_pullout"/><child link="pullout_pantry_cabinet_pullout_grip"/>
+    <origin xyz="0 -0.02 0" rpy="0 0 0"/>
+  </joint>
+  <link name="pullout_pantry_cabinet_pullout_lower_tray_volume"/>
+  <joint name="pullout_pantry_cabinet_pullout_lower_tray_volume_fixed" type="fixed">
+    <parent link="pullout_pantry_cabinet_pullout"/><child link="pullout_pantry_cabinet_pullout_lower_tray_volume"/>
+    <origin xyz="0 0.258 -0.4" rpy="0 0 0"/>
+  </joint>
+  <link name="pullout_pantry_cabinet_pullout_upper_tray_volume"/>
+  <joint name="pullout_pantry_cabinet_pullout_upper_tray_volume_fixed" type="fixed">
+    <parent link="pullout_pantry_cabinet_pullout"/><child link="pullout_pantry_cabinet_pullout_upper_tray_volume"/>
+    <origin xyz="0 0.258 0.3" rpy="0 0 0"/>
+  </joint>
+  <link name="pullout_pantry_cabinet_top_surface"/>
+  <joint name="pullout_pantry_cabinet_top_surface_fixed" type="fixed">
+    <parent link="pullout_pantry_cabinet_body"/><child link="pullout_pantry_cabinet_top_surface"/>
+    <origin xyz="0 0.023 2" rpy="0 0 0"/>
+  </joint>
+  <link name="pullout_pantry_cabinet_wall_anchor"/>
+  <joint name="pullout_pantry_cabinet_wall_anchor_fixed" type="fixed">
+    <parent link="pullout_pantry_cabinet_body"/><child link="pullout_pantry_cabinet_wall_anchor"/>
+    <origin xyz="0 0.288 1.9" rpy="0 0 0"/>
+  </joint>
+</robot>

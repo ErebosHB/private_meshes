@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="tig_torch_flex_head">
+  <link name="tig_torch_flex_head_body">
+    <inertial><origin xyz="0.0034597 0.1286 0.0149489" rpy="0 0 0"/><mass value="0.35"/><inertia ixx="0.00272055" ixy="-0.000208896" ixz="5.88222e-06" iyy="7.22158e-05" iyz="6.51488e-05" izz="0.00275074"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tig_torch_flex_head_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.0875 0.016" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.016" length="0.175"/></geometry></collision>
+    <collision><origin xyz="0 0.04 0.029" rpy="0 0 0"/><geometry><box size="0.016 0.03 0.006"/></geometry></collision>
+    <collision><origin xyz="0 0.2 0.0125" rpy="-1.62075 0 0"/><geometry><cylinder radius="0.009" length="0.060075"/></geometry></collision>
+    <collision><origin xyz="0.01 0.26 0.0105" rpy="-1.58746 0.321709 -0.32702"/><geometry><cylinder radius="0.009" length="0.0632534"/></geometry></collision>
+    <collision><origin xyz="0.035 0.31 0.01" rpy="-1.5708 0.643501 -0.643501"/><geometry><cylinder radius="0.009" length="0.05"/></geometry></collision>
+  </link>
+  <link name="tig_torch_flex_head_flex_head">
+    <inertial><origin xyz="0.00449343 -0.0334619 -1.28749e-09" rpy="0 0 0"/><mass value="0.12"/><inertia ixx="5.15595e-05" ixy="1.32313e-05" ixz="0" iyy="4.29041e-05" iyz="0" izz="8.68931e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tig_torch_flex_head_flex_head.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.0225 -1.86265e-09" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0105" length="0.045"/></geometry></collision>
+    <collision><origin xyz="0.0025 -0.058 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.013" length="0.075"/></geometry></collision>
+    <collision><origin xyz="0.053 -0.058 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.026"/></geometry></collision>
+    <collision><origin xyz="0.073 -0.058 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0012" length="0.014"/></geometry></collision>
+  </link>
+  <link name="tig_torch_flex_head_back_cap">
+    <inertial><origin xyz="-0.0265 0 -1.86265e-09" rpy="0 0 0"/><mass value="0.02"/><inertia ixx="8.1e-07" ixy="0" ixz="0" iyy="5.08667e-06" iyz="0" izz="5.08667e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tig_torch_flex_head_back_cap.glb"/></geometry></visual>
+    <collision><origin xyz="-0.0265 0 -1.86265e-09" rpy="0 -1.5708 0"/><geometry><cylinder radius="0.009" length="0.053"/></geometry></collision>
+  </link>
+  <link name="tig_torch_flex_head_gas_valve">
+    <inertial><origin xyz="0 0 0.0035" rpy="0 0 0"/><mass value="0.005"/><inertia ixx="7.32292e-08" ixy="0" ixz="0" iyy="7.32292e-08" iyz="0" izz="1.05625e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tig_torch_flex_head_gas_valve.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.0035" rpy="0 0 0"/><geometry><cylinder radius="0.0065" length="0.007"/></geometry></collision>
+  </link>
+  <link name="tig_torch_flex_head_torch_button">
+    <inertial><origin xyz="0 0 0.002" rpy="0 0 0"/><mass value="0.002"/><inertia ixx="5.66667e-08" ixy="0" ixz="0" iyy="1.93333e-08" iyz="0" izz="7.06667e-08"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/tig_torch_flex_head_torch_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.002" rpy="0 0 0"/><geometry><box size="0.01 0.018 0.004"/></geometry></collision>
+  </link>
+  <joint name="tig_torch_flex_head_flex_head_joint" type="revolute">
+    <parent link="tig_torch_flex_head_body"/><child link="tig_torch_flex_head_flex_head"/>
+    <origin xyz="0 -0.002 0.016" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="-0.9" upper="0.9" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="tig_torch_flex_head_back_cap_joint" type="prismatic">
+    <parent link="tig_torch_flex_head_flex_head"/><child link="tig_torch_flex_head_back_cap"/>
+    <origin xyz="-0.035 -0.058 0" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.03" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="tig_torch_flex_head_gas_valve_joint" type="revolute">
+    <parent link="tig_torch_flex_head_flex_head"/><child link="tig_torch_flex_head_gas_valve"/>
+    <origin xyz="0 -0.058 0.013" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="4.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="tig_torch_flex_head_torch_button_joint" type="prismatic">
+    <parent link="tig_torch_flex_head_body"/><child link="tig_torch_flex_head_torch_button"/>
+    <origin xyz="0 0.04 0.032" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.002" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="tig_torch_flex_head_handle_grip"/>
+  <joint name="tig_torch_flex_head_handle_grip_joint" type="fixed"><parent link="tig_torch_flex_head_body"/><child link="tig_torch_flex_head_handle_grip"/><origin xyz="0 0.09 0.016" rpy="0 0 1.5708"/></joint>
+  <link name="tig_torch_flex_head_torch_button_contact"/>
+  <joint name="tig_torch_flex_head_torch_button_contact_joint" type="fixed"><parent link="tig_torch_flex_head_torch_button"/><child link="tig_torch_flex_head_torch_button_contact"/><origin xyz="0 0 0.004" rpy="0 0 0"/></joint>
+  <link name="tig_torch_flex_head_gas_valve_contact"/>
+  <joint name="tig_torch_flex_head_gas_valve_contact_joint" type="fixed"><parent link="tig_torch_flex_head_gas_valve"/><child link="tig_torch_flex_head_gas_valve_contact"/><origin xyz="0 0 0.007" rpy="0 0 0"/></joint>
+  <link name="tig_torch_flex_head_electrode_tip"/>
+  <joint name="tig_torch_flex_head_electrode_tip_joint" type="fixed"><parent link="tig_torch_flex_head_flex_head"/><child link="tig_torch_flex_head_electrode_tip"/><origin xyz="0.08 -0.058 0" rpy="0 1.5708 0"/></joint>
+</robot>

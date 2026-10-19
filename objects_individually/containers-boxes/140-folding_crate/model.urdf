@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<robot name="folding_crate">
+  <link name="folding_crate_body">
+    <inertial><origin xyz="0.00479375 0.0050477 0.013014" rpy="0 0 0"/><mass value="4.6489"/><inertia ixx="0.0704213" ixy="0.000112491" ixz="-0.00126997" iyy="0.169685" iyz="-0.000586326" izz="0.238291"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_crate_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.0075" rpy="0 0 0"/><geometry><box size="0.6 0.4 0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.194 0.0225" rpy="0 0 0"/><geometry><box size="0.6 0.012 0.015"/></geometry></collision>
+    <collision><origin xyz="0 0.194 0.0305" rpy="0 0 0"/><geometry><box size="0.6 0.012 0.031"/></geometry></collision>
+    <collision><origin xyz="-0.294 0 0.0385" rpy="0 0 0"/><geometry><box size="0.012 0.376 0.047"/></geometry></collision>
+    <collision><origin xyz="0.294 0 0.0465" rpy="0 0 0"/><geometry><box size="0.012 0.376 0.063"/></geometry></collision>
+  </link>
+  <link name="folding_crate_front_wall">
+    <inertial><origin xyz="0 -0.006 0.139" rpy="0 0 0"/><mass value="2.1924"/><inertia ixx="0.0153914" ixy="0" ixz="0" iyy="0.0811371" iyz="0" izz="0.0657983"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_crate_front_wall.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.006 0.139" rpy="0 0 0"/><geometry><box size="0.6 0.012 0.29"/></geometry></collision>
+  </link>
+  <joint name="folding_crate_front_wall_joint" type="revolute">
+    <parent link="folding_crate_body"/><child link="folding_crate_front_wall"/>
+    <origin xyz="0 -0.188 0.036" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="folding_crate_back_wall">
+    <inertial><origin xyz="0 0.006 0.131" rpy="0 0 0"/><mass value="2.07144"/><inertia ixx="0.0129845" ixy="0" ixz="0" iyy="0.0751028" iyz="0" izz="0.0621681"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_crate_back_wall.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.006 0.131" rpy="0 0 0"/><geometry><box size="0.6 0.012 0.274"/></geometry></collision>
+  </link>
+  <joint name="folding_crate_back_wall_joint" type="revolute">
+    <parent link="folding_crate_body"/><child link="folding_crate_back_wall"/>
+    <origin xyz="0 0.188 0.052" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="folding_crate_left_wall">
+    <inertial><origin xyz="-0.006 0 0.123" rpy="0 0 0"/><mass value="1.2223"/><inertia ixx="0.0211804" ixy="0" ixz="0" iyy="0.00679477" iyz="0" izz="0.014415"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_crate_left_wall.glb"/></geometry></visual>
+    <collision><origin xyz="-0.006 0 0.123" rpy="0 0 0"/><geometry><box size="0.012 0.376 0.258"/></geometry></collision>
+  </link>
+  <joint name="folding_crate_left_wall_joint" type="revolute">
+    <parent link="folding_crate_body"/><child link="folding_crate_left_wall"/>
+    <origin xyz="-0.288 0 0.068" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="folding_crate_right_wall">
+    <inertial><origin xyz="0.006 0 0.115" rpy="0 0 0"/><mass value="1.1465"/><inertia ixx="0.0191026" ixy="0" ixz="0" iyy="0.00560906" iyz="0" izz="0.013521"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/folding_crate_right_wall.glb"/></geometry></visual>
+    <collision><origin xyz="0.006 0 0.115" rpy="0 0 0"/><geometry><box size="0.012 0.376 0.242"/></geometry></collision>
+  </link>
+  <joint name="folding_crate_right_wall_joint" type="revolute">
+    <parent link="folding_crate_body"/><child link="folding_crate_right_wall"/>
+    <origin xyz="0.288 0 0.084" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="folding_crate_crate_volume"/>
+  <joint name="folding_crate_crate_volume_fixed" type="fixed">
+    <parent link="folding_crate_body"/><child link="folding_crate_crate_volume"/>
+    <origin xyz="0 0 0.17" rpy="0 0 0"/>
+  </joint>
+  <link name="folding_crate_left_wall_grip"/>
+  <joint name="folding_crate_left_wall_grip_fixed" type="fixed">
+    <parent link="folding_crate_left_wall"/><child link="folding_crate_left_wall_grip"/>
+    <origin xyz="-0.016 0 0.202" rpy="0 0 0"/>
+  </joint>
+  <link name="folding_crate_right_wall_grip"/>
+  <joint name="folding_crate_right_wall_grip_fixed" type="fixed">
+    <parent link="folding_crate_right_wall"/><child link="folding_crate_right_wall_grip"/>
+    <origin xyz="0.016 0 0.186" rpy="0 0 0"/>
+  </joint>
+</robot>

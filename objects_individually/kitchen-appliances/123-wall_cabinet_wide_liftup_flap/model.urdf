@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot name="wall_cabinet_wide_liftup_flap">
+  <link name="wall_cabinet_wide_liftup_flap_body">
+    <inertial><origin xyz="3.45471e-17 -0.139606 0.16053" rpy="0 0 0"/><mass value="12.8546"/><inertia ixx="0.281787" ixy="4.27611e-18" ixz="2.57969e-19" iyy="1.54169" iyz="-0.000937425" izz="1.46439"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wall_cabinet_wide_liftup_flap_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.491 -0.15 0.16" rpy="0 0 0"/><geometry><box size="0.018 0.3 0.32"/></geometry></collision>
+    <collision><origin xyz="0.491 -0.15 0.16" rpy="0 0 0"/><geometry><box size="0.018 0.3 0.32"/></geometry></collision>
+    <collision><origin xyz="0 -0.15 0.009" rpy="0 0 0"/><geometry><box size="0.964 0.3 0.018"/></geometry></collision>
+    <collision><origin xyz="0 -0.15 0.311" rpy="0 0 0"/><geometry><box size="0.964 0.3 0.018"/></geometry></collision>
+    <collision><origin xyz="0 -0.002 0.169" rpy="0 0 0"/><geometry><box size="0.964 0.004 0.302"/></geometry></collision>
+    <collision><origin xyz="0 -0.143 0.16" rpy="0 0 0"/><geometry><box size="0.962 0.274 0.018"/></geometry></collision>
+  </link>
+  <link name="wall_cabinet_wide_liftup_flap_flap">
+    <inertial><origin xyz="0 0.00861074 -0.16021" rpy="0 0 0"/><mass value="3.74969"/><inertia ixx="0.0318884" ixy="0" ixz="0" iyy="0.338536" iyz="-0.000177763" izz="0.30693"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wall_cabinet_wide_liftup_flap_flap.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 -0.1585" rpy="0 0 0"/><geometry><box size="0.997 0.018 0.317"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 -0.282" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 -0.282" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 -0.282" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="wall_cabinet_wide_liftup_flap_flap_joint" type="revolute">
+    <parent link="wall_cabinet_wide_liftup_flap_body"/><child link="wall_cabinet_wide_liftup_flap_flap"/>
+    <origin xyz="0 -0.32 0.3185" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="wall_cabinet_wide_liftup_flap_flap_grip"/>
+  <joint name="wall_cabinet_wide_liftup_flap_flap_grip_fixed" type="fixed">
+    <parent link="wall_cabinet_wide_liftup_flap_flap"/><child link="wall_cabinet_wide_liftup_flap_flap_grip"/>
+    <origin xyz="0 -0.02 -0.282" rpy="0 0 0"/>
+  </joint>
+  <link name="wall_cabinet_wide_liftup_flap_shelf_surface"/>
+  <joint name="wall_cabinet_wide_liftup_flap_shelf_surface_fixed" type="fixed">
+    <parent link="wall_cabinet_wide_liftup_flap_body"/><child link="wall_cabinet_wide_liftup_flap_shelf_surface"/>
+    <origin xyz="0 -0.15 0.169" rpy="0 0 0"/>
+  </joint>
+  <link name="wall_cabinet_wide_liftup_flap_top_surface"/>
+  <joint name="wall_cabinet_wide_liftup_flap_top_surface_fixed" type="fixed">
+    <parent link="wall_cabinet_wide_liftup_flap_body"/><child link="wall_cabinet_wide_liftup_flap_top_surface"/>
+    <origin xyz="0 -0.15 0.32" rpy="0 0 0"/>
+  </joint>
+  <link name="wall_cabinet_wide_liftup_flap_wall_anchor"/>
+  <joint name="wall_cabinet_wide_liftup_flap_wall_anchor_fixed" type="fixed">
+    <parent link="wall_cabinet_wide_liftup_flap_body"/><child link="wall_cabinet_wide_liftup_flap_wall_anchor"/>
+    <origin xyz="0 0 0.27" rpy="0 0 0"/>
+  </joint>
+</robot>

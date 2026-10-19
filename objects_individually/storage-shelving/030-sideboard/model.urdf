@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<robot name="sideboard">
+  <link name="sideboard_body">
+    <inertial><origin xyz="0.00925364 0.0386117 0.410884" rpy="0 0 0"/><mass value="40.092"/><inertia ixx="3.4683" ixy="-0.012788" ixz="0.0092322" iyy="13.94" iyz="0.0056025" izz="11.971"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sideboard_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.791 0.01 0.3975" rpy="0 0 0"/><geometry><box size="0.018 0.43 0.635"/></geometry></collision>
+    <collision><origin xyz="0.791 0.01 0.3975" rpy="0 0 0"/><geometry><box size="0.018 0.43 0.635"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.089" rpy="0 0 0"/><geometry><box size="1.564 0.43 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.221 0.4065" rpy="0 0 0"/><geometry><box size="1.564 0.008 0.617"/></geometry></collision>
+    <collision><origin xyz="0 0.01 0.7275" rpy="0 0 0"/><geometry><box size="1.6 0.43 0.025"/></geometry></collision>
+    <collision><origin xyz="-0.76 -0.17 0.04" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.76 0.19 0.04" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.08"/></geometry></collision>
+    <collision><origin xyz="0.76 -0.17 0.04" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.08"/></geometry></collision>
+    <collision><origin xyz="0.76 0.19 0.04" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.27 0.01 0.4065" rpy="0 0 0"/><geometry><box size="0.018 0.41 0.617"/></geometry></collision>
+    <collision><origin xyz="0.265 0.03 0.4" rpy="0 0 0"/><geometry><box size="1.02 0.37 0.018"/></geometry></collision>
+  </link>
+  <link name="sideboard_drawer_1">
+    <inertial><origin xyz="-4.67998e-12 0.192926 0.116842" rpy="0 0 0"/><mass value="7.7735"/><inertia ixx="0.2424" ixy="-1.0914e-11" ixz="4.5475e-12" iyy="0.29696" iyz="0.006408" izz="0.41309"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sideboard_drawer_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.00899999 0.155" rpy="0 0 0"/><geometry><box size="0.527 0.018 0.31"/></geometry></collision>
+    <collision><origin xyz="0 0.208 0.02075" rpy="0 0 0"/><geometry><box size="0.467 0.38 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.23275 0.208 0.15" rpy="0 0 0"/><geometry><box size="0.0015 0.38 0.26"/></geometry></collision>
+    <collision><origin xyz="0.23275 0.208 0.15" rpy="0 0 0"/><geometry><box size="0.0015 0.38 0.26"/></geometry></collision>
+    <collision><origin xyz="0 0.39725 0.15" rpy="0 0 0"/><geometry><box size="0.464 0.0015 0.26"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.26" rpy="0 0 0"/><geometry><box size="0.18 0.01 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.078 -0.00600001 0.26" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.078 -0.00600001 0.26" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="sideboard_drawer_2">
+    <inertial><origin xyz="-4.58292e-12 0.193044 0.120521" rpy="0 0 0"/><mass value="7.9381"/><inertia ixx="0.25186" ixy="-9.0949e-12" ixz="5.457e-12" iyy="0.30785" iyz="0.006569" izz="0.42326"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sideboard_drawer_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.00899999 0.159" rpy="0 0 0"/><geometry><box size="0.527 0.018 0.318"/></geometry></collision>
+    <collision><origin xyz="0 0.208 0.02075" rpy="0 0 0"/><geometry><box size="0.467 0.38 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.23275 0.208 0.154" rpy="0 0 0"/><geometry><box size="0.0015 0.38 0.268"/></geometry></collision>
+    <collision><origin xyz="0.23275 0.208 0.154" rpy="0 0 0"/><geometry><box size="0.0015 0.38 0.268"/></geometry></collision>
+    <collision><origin xyz="0 0.39725 0.154" rpy="0 0 0"/><geometry><box size="0.464 0.0015 0.268"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.268" rpy="0 0 0"/><geometry><box size="0.18 0.01 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.078 -0.00600001 0.268" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.078 -0.00600001 0.268" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="sideboard_left_door">
+    <inertial><origin xyz="0.267879 0.00887459 0.000776593" rpy="0 0 0"/><mass value="3.9588"/><inertia ixx="0.13131" ixy="0.00010952" ixz="-0.00067828" iyy="0.2256" iyz="7.5322e-05" izz="0.094525"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sideboard_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.26675 0.00899999 0" rpy="0 0 0"/><geometry><box size="0.5335 0.018 0.631"/></geometry></collision>
+    <collision><origin xyz="0.4885 -0.017 0.1525" rpy="0 0 0"/><geometry><box size="0.012 0.01 0.14"/></geometry></collision>
+    <collision><origin xyz="0.4885 -0.00600001 0.0945" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.4885 -0.00600001 0.2105" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="sideboard_right_door">
+    <inertial><origin xyz="-0.266878 0.00887412 0.0007795" rpy="0 0 0"/><mass value="3.9441"/><inertia ixx="0.13082" ixy="-0.00010903" ixz="0.0006752" iyy="0.22405" iyz="7.532e-05" izz="0.093469"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/sideboard_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.26575 0.00899999 0" rpy="0 0 0"/><geometry><box size="0.5315 0.018 0.631"/></geometry></collision>
+    <collision><origin xyz="-0.4865 -0.017 0.1525" rpy="0 0 0"/><geometry><box size="0.012 0.01 0.14"/></geometry></collision>
+    <collision><origin xyz="-0.4865 -0.00600001 0.0945" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.4865 -0.00600001 0.2105" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <joint name="sideboard_drawer_1_joint" type="prismatic">
+    <parent link="sideboard_body"/><child link="sideboard_drawer_1"/>
+    <origin xyz="-0.5355 -0.225 0.403" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.285" effort="200" velocity="0.1"/>
+  </joint>
+  <joint name="sideboard_drawer_2_joint" type="prismatic">
+    <parent link="sideboard_body"/><child link="sideboard_drawer_2"/>
+    <origin xyz="-0.5355 -0.225 0.082" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.285" effort="200" velocity="0.1"/>
+  </joint>
+  <joint name="sideboard_left_door_joint" type="revolute">
+    <parent link="sideboard_body"/><child link="sideboard_left_door"/>
+    <origin xyz="-0.269 -0.225 0.3975" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.0"/>
+  </joint>
+  <joint name="sideboard_right_door_joint" type="revolute">
+    <parent link="sideboard_body"/><child link="sideboard_right_door"/>
+    <origin xyz="0.799 -0.225 0.3975" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="sideboard_drawer_1_grip"/>
+  <joint name="sideboard_drawer_1_grip_joint" type="fixed"><parent link="sideboard_drawer_1"/><child link="sideboard_drawer_1_grip"/><origin xyz="0 -0.017 0.26" rpy="0 0 0"/></joint>
+  <link name="sideboard_drawer_1_volume"/>
+  <joint name="sideboard_drawer_1_volume_joint" type="fixed"><parent link="sideboard_drawer_1"/><child link="sideboard_drawer_1_volume"/><origin xyz="0 0.208 0.15" rpy="0 0 0"/></joint>
+  <link name="sideboard_drawer_2_grip"/>
+  <joint name="sideboard_drawer_2_grip_joint" type="fixed"><parent link="sideboard_drawer_2"/><child link="sideboard_drawer_2_grip"/><origin xyz="0 -0.017 0.268" rpy="0 0 0"/></joint>
+  <link name="sideboard_drawer_2_volume"/>
+  <joint name="sideboard_drawer_2_volume_joint" type="fixed"><parent link="sideboard_drawer_2"/><child link="sideboard_drawer_2_volume"/><origin xyz="0 0.208 0.154" rpy="0 0 0"/></joint>
+  <link name="sideboard_left_door_grip"/>
+  <joint name="sideboard_left_door_grip_joint" type="fixed"><parent link="sideboard_left_door"/><child link="sideboard_left_door_grip"/><origin xyz="0.4885 -0.017 0.1525" rpy="0 -1.5708 0"/></joint>
+  <link name="sideboard_right_door_grip"/>
+  <joint name="sideboard_right_door_grip_joint" type="fixed"><parent link="sideboard_right_door"/><child link="sideboard_right_door_grip"/><origin xyz="-0.4865 -0.017 0.1525" rpy="0 -1.5708 0"/></joint>
+  <link name="sideboard_cupboard_bottom_surface"/>
+  <joint name="sideboard_cupboard_bottom_surface_joint" type="fixed"><parent link="sideboard_body"/><child link="sideboard_cupboard_bottom_surface"/><origin xyz="0.265 0.03 0.098" rpy="0 0 0"/></joint>
+  <link name="sideboard_cupboard_shelf_surface"/>
+  <joint name="sideboard_cupboard_shelf_surface_joint" type="fixed"><parent link="sideboard_body"/><child link="sideboard_cupboard_shelf_surface"/><origin xyz="0.265 0.03 0.409" rpy="0 0 0"/></joint>
+  <link name="sideboard_top_surface"/>
+  <joint name="sideboard_top_surface_joint" type="fixed"><parent link="sideboard_body"/><child link="sideboard_top_surface"/><origin xyz="0 0.01 0.74" rpy="0 0 0"/></joint>
+</robot>

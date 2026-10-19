@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<robot name="under_counter_freezer">
+  <link name="under_counter_freezer_body">
+    <inertial><origin xyz="4.86897e-17 0.093264 0.43977" rpy="0 0 0"/><mass value="196.097"/><inertia ixx="23.0012" ixy="5.81777e-16" ixz="-4.17776e-18" iyy="25.8124" iyz="-0.00260621" izz="14.8028"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/under_counter_freezer_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2665 0.0355 0.44" rpy="0 0 0"/><geometry><box size="0.012 0.54 0.82"/></geometry></collision>
+    <collision><origin xyz="0.2665 0.0355 0.44" rpy="0 0 0"/><geometry><box size="0.012 0.54 0.82"/></geometry></collision>
+    <collision><origin xyz="0 0.0355 0.844" rpy="0 0 0"/><geometry><box size="0.521 0.54 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.0355 0.036" rpy="0 0 0"/><geometry><box size="0.521 0.54 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.2995 0.44" rpy="0 0 0"/><geometry><box size="0.521 0.012 0.796"/></geometry></collision>
+    <collision><origin xyz="-0.2325 -0.1945 0.015" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.03"/></geometry></collision>
+    <collision><origin xyz="-0.2325 0.2655 0.015" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0.2325 -0.1945 0.015" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0.2325 0.2655 0.015" rpy="0 0 0"/><geometry><cylinder radius="0.016" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.0305 0.058" rpy="0 0 0"/><geometry><box size="0.501 0.506 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.0305 0.822" rpy="0 0 0"/><geometry><box size="0.501 0.506 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.2445 0.0305 0.44" rpy="0 0 0"/><geometry><box size="0.012 0.506 0.752"/></geometry></collision>
+    <collision><origin xyz="0.2445 0.0305 0.44" rpy="0 0 0"/><geometry><box size="0.012 0.506 0.752"/></geometry></collision>
+    <collision><origin xyz="0 0.2775 0.44" rpy="0 0 0"/><geometry><box size="0.477 0.012 0.752"/></geometry></collision>
+  </link>
+  <link name="under_counter_freezer_door">
+    <inertial><origin xyz="-0.271597 0.0173601 9.82055e-05" rpy="0 0 0"/><mass value="119.475"/><inertia ixx="6.60859" ixy="-0.000422892" ixz="0.00278548" iyy="9.50986" iyz="0.000427343" izz="2.92687"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/under_counter_freezer_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2715 0.0165 0" rpy="0 0 0"/><geometry><box size="0.543 0.033 0.816"/></geometry></collision>
+    <collision><origin xyz="-0.2715 0.039 -5.55112e-17" rpy="0 0 0"/><geometry><box size="0.485 0.012 0.76"/></geometry></collision>
+    <collision><origin xyz="-0.509 -0.02 0.24" rpy="0 0 0"/><geometry><box size="0.012 0.012 0.3"/></geometry></collision>
+    <collision><origin xyz="-0.509 -0.007 0.105" rpy="0 0 0"/><geometry><box size="0.01 0.014 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.509 -0.007 0.375" rpy="0 0 0"/><geometry><box size="0.01 0.014 0.012"/></geometry></collision>
+  </link>
+  <joint name="under_counter_freezer_door_joint" type="revolute">
+    <parent link="under_counter_freezer_body"/><child link="under_counter_freezer_door"/>
+    <origin xyz="0.2715 -0.2795 0.44" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_1">
+    <inertial><origin xyz="1.18388e-17 0.150784 -0.0104341" rpy="0 0 0"/><mass value="3.87088"/><inertia ixx="0.11012" ixy="-3.38777e-19" ixz="-1.35311e-18" iyy="0.0723028" iyz="0.00185015" izz="0.150632"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/under_counter_freezer_basket_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.382 0.018 0.227"/></geometry></collision>
+    <collision><origin xyz="0 0.218 -0.0845" rpy="0 0 0"/><geometry><box size="0.323 0.4 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.1555 0.218 0.0105" rpy="0 0 0"/><geometry><box size="0.012 0.4 0.182"/></geometry></collision>
+    <collision><origin xyz="0.1555 0.218 0.0105" rpy="0 0 0"/><geometry><box size="0.012 0.4 0.182"/></geometry></collision>
+    <collision><origin xyz="-5.55112e-17 0.412 0.0105" rpy="0 0 0"/><geometry><box size="0.299 0.012 0.182"/></geometry></collision>
+  </link>
+  <joint name="under_counter_freezer_basket_1_joint" type="prismatic">
+    <parent link="under_counter_freezer_body"/><child link="under_counter_freezer_basket_1"/>
+    <origin xyz="0 -0.2145 0.185" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_2">
+    <inertial><origin xyz="1.18388e-17 0.150784 -0.0104341" rpy="0 0 0"/><mass value="3.87088"/><inertia ixx="0.11012" ixy="5.28585e-19" ixz="-1.35311e-18" iyy="0.0723028" iyz="0.00185015" izz="0.150632"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/under_counter_freezer_basket_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.382 0.018 0.227"/></geometry></collision>
+    <collision><origin xyz="0 0.218 -0.0845" rpy="0 0 0"/><geometry><box size="0.323 0.4 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.1555 0.218 0.0105" rpy="0 0 0"/><geometry><box size="0.012 0.4 0.182"/></geometry></collision>
+    <collision><origin xyz="0.1555 0.218 0.0105" rpy="0 0 0"/><geometry><box size="0.012 0.4 0.182"/></geometry></collision>
+    <collision><origin xyz="-5.55112e-17 0.412 0.0105" rpy="0 0 0"/><geometry><box size="0.299 0.012 0.182"/></geometry></collision>
+  </link>
+  <joint name="under_counter_freezer_basket_2_joint" type="prismatic">
+    <parent link="under_counter_freezer_body"/><child link="under_counter_freezer_basket_2"/>
+    <origin xyz="0 -0.2145 0.435" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_3">
+    <inertial><origin xyz="1.18388e-17 0.150784 -0.0104341" rpy="0 0 0"/><mass value="3.87088"/><inertia ixx="0.11012" ixy="-3.38777e-19" ixz="-1.35311e-18" iyy="0.0723028" iyz="0.00185015" izz="0.150632"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/under_counter_freezer_basket_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.382 0.018 0.227"/></geometry></collision>
+    <collision><origin xyz="0 0.218 -0.0845" rpy="0 0 0"/><geometry><box size="0.323 0.4 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.1555 0.218 0.0105" rpy="0 0 0"/><geometry><box size="0.012 0.4 0.182"/></geometry></collision>
+    <collision><origin xyz="0.1555 0.218 0.0105" rpy="0 0 0"/><geometry><box size="0.012 0.4 0.182"/></geometry></collision>
+    <collision><origin xyz="-5.55112e-17 0.412 0.0105" rpy="0 0 0"/><geometry><box size="0.299 0.012 0.182"/></geometry></collision>
+  </link>
+  <joint name="under_counter_freezer_basket_3_joint" type="prismatic">
+    <parent link="under_counter_freezer_body"/><child link="under_counter_freezer_basket_3"/>
+    <origin xyz="0 -0.2145 0.685" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="under_counter_freezer_door_grip"/>
+  <joint name="under_counter_freezer_door_grip_fixed" type="fixed">
+    <parent link="under_counter_freezer_door"/><child link="under_counter_freezer_door_grip"/>
+    <origin xyz="-0.509 -0.02 0.24" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_1_volume"/>
+  <joint name="under_counter_freezer_basket_1_volume_fixed" type="fixed">
+    <parent link="under_counter_freezer_basket_1"/><child link="under_counter_freezer_basket_1_volume"/>
+    <origin xyz="0 0.218 0.0065" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_1_grip"/>
+  <joint name="under_counter_freezer_basket_1_grip_fixed" type="fixed">
+    <parent link="under_counter_freezer_basket_1"/><child link="under_counter_freezer_basket_1_grip"/>
+    <origin xyz="0 -0.003 0.085" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_2_volume"/>
+  <joint name="under_counter_freezer_basket_2_volume_fixed" type="fixed">
+    <parent link="under_counter_freezer_basket_2"/><child link="under_counter_freezer_basket_2_volume"/>
+    <origin xyz="0 0.218 0.0065" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_2_grip"/>
+  <joint name="under_counter_freezer_basket_2_grip_fixed" type="fixed">
+    <parent link="under_counter_freezer_basket_2"/><child link="under_counter_freezer_basket_2_grip"/>
+    <origin xyz="0 -0.003 0.085" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_3_volume"/>
+  <joint name="under_counter_freezer_basket_3_volume_fixed" type="fixed">
+    <parent link="under_counter_freezer_basket_3"/><child link="under_counter_freezer_basket_3_volume"/>
+    <origin xyz="0 0.218 0.0065" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_basket_3_grip"/>
+  <joint name="under_counter_freezer_basket_3_grip_fixed" type="fixed">
+    <parent link="under_counter_freezer_basket_3"/><child link="under_counter_freezer_basket_3_grip"/>
+    <origin xyz="0 -0.003 0.085" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_freezer_volume"/>
+  <joint name="under_counter_freezer_freezer_volume_fixed" type="fixed">
+    <parent link="under_counter_freezer_body"/><child link="under_counter_freezer_freezer_volume"/>
+    <origin xyz="0 0.0355 0.425" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_top_surface"/>
+  <joint name="under_counter_freezer_top_surface_fixed" type="fixed">
+    <parent link="under_counter_freezer_body"/><child link="under_counter_freezer_top_surface"/>
+    <origin xyz="0 0.0355 0.85" rpy="0 0 0"/>
+  </joint>
+  <link name="under_counter_freezer_wall_anchor"/>
+  <joint name="under_counter_freezer_wall_anchor_fixed" type="fixed">
+    <parent link="under_counter_freezer_body"/><child link="under_counter_freezer_wall_anchor"/>
+    <origin xyz="0 0.3055 0.8" rpy="0 0 0"/>
+  </joint>
+</robot>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<robot name="wide_span_shelving">
+  <link name="wide_span_shelving_body">
+    <inertial><origin xyz="-1.32164e-08 0 1.02311" rpy="0 0 0"/><mass value="198.436"/><inertia ixx="101.129" ixy="0" ixz="1.49012e-08" iyy="179.493" iyz="0" izz="102.877"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wide_span_shelving_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.975 -0.275 1" rpy="0 0 0"/><geometry><box size="0.05 0.05 2"/></geometry></collision>
+    <collision><origin xyz="-0.975 0.275 1" rpy="0 0 0"/><geometry><box size="0.05 0.05 2"/></geometry></collision>
+    <collision><origin xyz="-0.975 0 0.08" rpy="0 0 0"/><geometry><box size="0.03 0.5 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.975 0 1" rpy="0 0 0"/><geometry><box size="0.03 0.5 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.975 0 1.92" rpy="0 0 0"/><geometry><box size="0.03 0.5 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.975 0 0.54" rpy="-0.508063 0 0"/><geometry><box size="0.02 0.02 1.00722"/></geometry></collision>
+    <collision><origin xyz="-0.975 0 1.46" rpy="0.508063 0 0"/><geometry><box size="0.02 0.02 1.00722"/></geometry></collision>
+    <collision><origin xyz="0.975 -0.275 1" rpy="0 0 0"/><geometry><box size="0.05 0.05 2"/></geometry></collision>
+    <collision><origin xyz="0.975 0.275 1" rpy="0 0 0"/><geometry><box size="0.05 0.05 2"/></geometry></collision>
+    <collision><origin xyz="0.975 0 0.08" rpy="0 0 0"/><geometry><box size="0.03 0.5 0.03"/></geometry></collision>
+    <collision><origin xyz="0.975 0 1" rpy="0 0 0"/><geometry><box size="0.03 0.5 0.03"/></geometry></collision>
+    <collision><origin xyz="0.975 0 1.92" rpy="0 0 0"/><geometry><box size="0.03 0.5 0.03"/></geometry></collision>
+    <collision><origin xyz="0.975 0 0.54" rpy="-0.508063 0 0"/><geometry><box size="0.02 0.02 1.00722"/></geometry></collision>
+    <collision><origin xyz="0.975 0 1.46" rpy="0.508063 0 0"/><geometry><box size="0.02 0.02 1.00722"/></geometry></collision>
+    <collision><origin xyz="0 -0.27 0.1" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0.27 0.1" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 -0.27 0.7" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0.27 0.7" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 -0.27 1.3" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0.27 1.3" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 -0.27 1.9" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0.27 1.9" rpy="0 0 0"/><geometry><box size="1.9 0.04 0.1"/></geometry></collision>
+    <collision><origin xyz="0 0 0.1405" rpy="0 0 0"/><geometry><box size="1.9 0.5 0.019"/></geometry></collision>
+    <collision><origin xyz="0 0 1.3405" rpy="0 0 0"/><geometry><box size="1.9 0.5 0.019"/></geometry></collision>
+    <collision><origin xyz="0 0 1.9405" rpy="0 0 0"/><geometry><box size="1.9 0.5 0.019"/></geometry></collision>
+    <collision><origin xyz="-0.944 0 0.765" rpy="0 0 0"/><geometry><box size="0.006 0.54 0.03"/></geometry></collision>
+    <collision><origin xyz="0.944 0 0.765" rpy="0 0 0"/><geometry><box size="0.006 0.54 0.03"/></geometry></collision>
+  </link>
+  <link name="wide_span_shelving_pullout_shelf">
+    <inertial><origin xyz="0 -0.00253569 0.0306681" rpy="0 0 0"/><mass value="33.2513"/><inertia ixx="1.71037" ixy="0" ixz="0" iyy="11.2828" iyz="0.000112303" izz="12.9835"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wide_span_shelving_pullout_shelf.glb"/></geometry></visual>
+    <collision><origin xyz="-0.933 0 0.018" rpy="0 0 0"/><geometry><box size="0.014 0.54 0.024"/></geometry></collision>
+    <collision><origin xyz="0.933 0 0.018" rpy="0 0 0"/><geometry><box size="0.014 0.54 0.024"/></geometry></collision>
+    <collision><origin xyz="0 0 0.0345" rpy="0 0 0"/><geometry><box size="1.86 0.54 0.019"/></geometry></collision>
+    <collision><origin xyz="0 -0.272 0.03" rpy="0 0 0"/><geometry><box size="1.88 0.012 0.05"/></geometry></collision>
+    <collision><origin xyz="0 0.272 0.03" rpy="0 0 0"/><geometry><box size="1.88 0.012 0.05"/></geometry></collision>
+    <collision><origin xyz="0 -0.292 0.032" rpy="0 0 0"/><geometry><box size="0.5 0.025 0.022"/></geometry></collision>
+  </link>
+  <joint name="wide_span_shelving_pullout_shelf_joint" type="prismatic">
+    <parent link="wide_span_shelving_body"/><child link="wide_span_shelving_pullout_shelf"/>
+    <origin xyz="0 0 0.75" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.41" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="wide_span_shelving_bottom_shelf_surface"/>
+  <joint name="wide_span_shelving_bottom_shelf_surface_fixed" type="fixed">
+    <parent link="wide_span_shelving_body"/><child link="wide_span_shelving_bottom_shelf_surface"/>
+    <origin xyz="0 0 0.15" rpy="0 0 0"/>
+  </joint>
+  <link name="wide_span_shelving_upper_shelf_surface"/>
+  <joint name="wide_span_shelving_upper_shelf_surface_fixed" type="fixed">
+    <parent link="wide_span_shelving_body"/><child link="wide_span_shelving_upper_shelf_surface"/>
+    <origin xyz="0 0 1.35" rpy="0 0 0"/>
+  </joint>
+  <link name="wide_span_shelving_top_surface"/>
+  <joint name="wide_span_shelving_top_surface_fixed" type="fixed">
+    <parent link="wide_span_shelving_body"/><child link="wide_span_shelving_top_surface"/>
+    <origin xyz="0 0 1.95" rpy="0 0 0"/>
+  </joint>
+  <link name="wide_span_shelving_wall_anchor"/>
+  <joint name="wide_span_shelving_wall_anchor_fixed" type="fixed">
+    <parent link="wide_span_shelving_body"/><child link="wide_span_shelving_wall_anchor"/>
+    <origin xyz="0 0.3 1.9" rpy="0 0 0"/>
+  </joint>
+  <link name="wide_span_shelving_pullout_shelf_grip"/>
+  <joint name="wide_span_shelving_pullout_shelf_grip_fixed" type="fixed">
+    <parent link="wide_span_shelving_pullout_shelf"/><child link="wide_span_shelving_pullout_shelf_grip"/>
+    <origin xyz="0 -0.292 0.032" rpy="0 0 0"/>
+  </joint>
+  <link name="wide_span_shelving_pullout_shelf_surface"/>
+  <joint name="wide_span_shelving_pullout_shelf_surface_fixed" type="fixed">
+    <parent link="wide_span_shelving_pullout_shelf"/><child link="wide_span_shelving_pullout_shelf_surface"/>
+    <origin xyz="0 0 0.044" rpy="0 0 0"/>
+  </joint>
+</robot>

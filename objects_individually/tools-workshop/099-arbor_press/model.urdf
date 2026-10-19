@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot name="arbor_press">
+  <link name="arbor_press_body">
+    <inertial><origin xyz="-0.000507811 0.0453551 0.251109" rpy="0 0 0"/><mass value="25"/><inertia ixx="0.936553" ixy="-0.000194937" ixz="0.00227107" iyy="0.873083" iyz="-0.0566622" izz="0.181762"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/arbor_press_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.02" rpy="0 0 0"/><geometry><box size="0.26 0.3 0.04"/></geometry></collision>
+    <collision><origin xyz="0 0.09 0.265" rpy="0 0 0"/><geometry><box size="0.1 0.1 0.45"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.43" rpy="0 0 0"/><geometry><box size="0.13 0.2 0.14"/></geometry></collision>
+    <collision><origin xyz="-0.075 0.03 0.43" rpy="0 1.5708 0"/><geometry><cylinder radius="0.035" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.03 0.044" rpy="0 0 0"/><geometry><cylinder radius="0.035" length="0.008"/></geometry></collision>
+  </link>
+  <link name="arbor_press_anvil_plate">
+    <inertial><origin xyz="0 0 0.008" rpy="0 0 0"/><mass value="0.6"/><inertia ixx="0.00064655" ixy="0" ixz="0" iyy="0.00064655" iyz="0" izz="0.0012675"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/arbor_press_anvil_plate.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.008" rpy="0 0 0"/><geometry><cylinder radius="0.065" length="0.016"/></geometry></collision>
+  </link>
+  <link name="arbor_press_ram">
+    <inertial><origin xyz="0 0 -0.109064" rpy="0 0 0"/><mass value="2.5"/><inertia ixx="0.0217841" ixy="0" ixz="0" iyy="0.0217841" iyz="0" izz="0.000375293"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/arbor_press_ram.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.11" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.32"/></geometry></collision>
+    <collision><origin xyz="0 0 0.055" rpy="0 0 0"/><geometry><box size="0.032 0.032 0.012"/></geometry></collision>
+  </link>
+  <link name="arbor_press_lever">
+    <inertial><origin xyz="-0.01 0 0.107856" rpy="0 0 0"/><mass value="0.6"/><inertia ixx="0.0101228" ixy="0" ixz="0" iyy="0.0100809" iyz="0" izz="9.97119e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/arbor_press_lever.glb"/></geometry></visual>
+    <collision><origin xyz="-0.01 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.03" length="0.03"/></geometry></collision>
+    <collision><origin xyz="-0.01 0 0.19" rpy="0 0 0"/><geometry><cylinder radius="0.009" length="0.36"/></geometry></collision>
+    <collision><origin xyz="-0.01 0 0.38" rpy="0 0 0"/><geometry><sphere radius="0.022"/></geometry></collision>
+  </link>
+  <joint name="arbor_press_anvil_plate_joint" type="revolute">
+    <parent link="arbor_press_body"/><child link="arbor_press_anvil_plate"/>
+    <origin xyz="0 -0.03 0.048" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="4.71" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="arbor_press_ram_joint" type="prismatic">
+    <parent link="arbor_press_body"/><child link="arbor_press_ram"/>
+    <origin xyz="0 -0.03 0.5" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="0.13" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="arbor_press_lever_joint" type="revolute">
+    <parent link="arbor_press_body"/><child link="arbor_press_lever"/>
+    <origin xyz="-0.09 0.03 0.43" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.3" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="arbor_press_lever_knob_grip"/>
+  <joint name="arbor_press_lever_knob_grip_joint" type="fixed"><parent link="arbor_press_lever"/><child link="arbor_press_lever_knob_grip"/><origin xyz="-0.01 0 0.38" rpy="0 -1.5708 0"/></joint>
+  <link name="arbor_press_ram_tip"/>
+  <joint name="arbor_press_ram_tip_joint" type="fixed"><parent link="arbor_press_ram"/><child link="arbor_press_ram_tip"/><origin xyz="0 0 -0.27" rpy="3.14159 0 0"/></joint>
+  <link name="arbor_press_anvil_surface"/>
+  <joint name="arbor_press_anvil_surface_joint" type="fixed"><parent link="arbor_press_anvil_plate"/><child link="arbor_press_anvil_surface"/><origin xyz="0 0 0.016" rpy="0 0 0"/></joint>
+  <link name="arbor_press_rear_anchor"/>
+  <joint name="arbor_press_rear_anchor_joint" type="fixed"><parent link="arbor_press_body"/><child link="arbor_press_rear_anchor"/><origin xyz="0 0.14 0.4" rpy="0 0 0"/></joint>
+</robot>

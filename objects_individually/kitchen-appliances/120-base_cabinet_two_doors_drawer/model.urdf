@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<robot name="base_cabinet_two_doors_drawer">
+  <link name="base_cabinet_two_doors_drawer_body">
+    <inertial><origin xyz="4.11816e-17 0.0189554 0.521478" rpy="0 0 0"/><mass value="43.1347"/><inertia ixx="4.55903" ixy="-6.67084e-18" ixz="1.07373e-16" iyy="8.1973" iyz="-0.091102" izz="6.07737"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_two_doors_drawer_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.491 0.023 0.455" rpy="0 0 0"/><geometry><box size="0.018 0.53 0.71"/></geometry></collision>
+    <collision><origin xyz="0.491 0.023 0.455" rpy="0 0 0"/><geometry><box size="0.018 0.53 0.71"/></geometry></collision>
+    <collision><origin xyz="0 0.023 0.109" rpy="0 0 0"/><geometry><box size="0.964 0.53 0.018"/></geometry></collision>
+    <collision><origin xyz="0 -0.202 0.801" rpy="0 0 0"/><geometry><box size="0.964 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.246 0.801" rpy="0 0 0"/><geometry><box size="0.964 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.286 0.464" rpy="0 0 0"/><geometry><box size="0.964 0.004 0.692"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.389" rpy="0 0 0"/><geometry><box size="0.962 0.504 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.021 0.651" rpy="0 0 0"/><geometry><box size="0.964 0.526 0.018"/></geometry></collision>
+    <collision><origin xyz="0 -0.203 0.049" rpy="0 0 0"/><geometry><box size="1 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="0 0.003 0.83" rpy="0 0 0"/><geometry><box size="1 0.57 0.04"/></geometry></collision>
+  </link>
+  <link name="base_cabinet_two_doors_drawer_drawer">
+    <inertial><origin xyz="2.23964e-17 0.176621 -0.01875" rpy="0 0 0"/><mass value="4.95716"/><inertia ixx="0.144842" ixy="-6.41712e-18" ixz="-2.32256e-18" iyy="0.455243" iyz="0.00573094" izz="0.587841"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_two_doors_drawer_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.997 0.018 0.147"/></geometry></collision>
+    <collision><origin xyz="0 0.233 -0.0445" rpy="0 0 0"/><geometry><box size="0.938 0.43 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.463 0.233 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.43 0.079"/></geometry></collision>
+    <collision><origin xyz="0.463 0.233 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.43 0.079"/></geometry></collision>
+    <collision><origin xyz="0 0.442 -0.001" rpy="0 0 0"/><geometry><box size="0.914 0.012 0.079"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0285" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="base_cabinet_two_doors_drawer_drawer_joint" type="prismatic">
+    <parent link="base_cabinet_two_doors_drawer_body"/><child link="base_cabinet_two_doors_drawer_drawer"/>
+    <origin xyz="0 -0.262 0.735" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3225" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_left_door">
+    <inertial><origin xyz="0.249675 0.00876795 0.00198144" rpy="0 0 0"/><mass value="3.26662"/><inertia ixx="0.0853465" ixy="0.000104094" ixz="-0.000888851" iyy="0.152501" iyz="0.000175495" izz="0.0673724"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_two_doors_drawer_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2485 0.009 0" rpy="0 0 0"/><geometry><box size="0.497 0.018 0.557"/></geometry></collision>
+    <collision><origin xyz="0.387 -0.02 0.2335" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.322 -0.007 0.2335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.452 -0.007 0.2335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="base_cabinet_two_doors_drawer_left_door_joint" type="revolute">
+    <parent link="base_cabinet_two_doors_drawer_body"/><child link="base_cabinet_two_doors_drawer_left_door"/>
+    <origin xyz="-0.4985 -0.262 0.38" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_right_door">
+    <inertial><origin xyz="-0.249675 0.00876795 0.00198144" rpy="0 0 0"/><mass value="3.26662"/><inertia ixx="0.0853465" ixy="-0.000104094" ixz="0.000888851" iyy="0.152501" iyz="0.000175495" izz="0.0673724"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/base_cabinet_two_doors_drawer_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2485 0.009 0" rpy="0 0 0"/><geometry><box size="0.497 0.018 0.557"/></geometry></collision>
+    <collision><origin xyz="-0.387 -0.02 0.2335" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.452 -0.007 0.2335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.322 -0.007 0.2335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="base_cabinet_two_doors_drawer_right_door_joint" type="revolute">
+    <parent link="base_cabinet_two_doors_drawer_body"/><child link="base_cabinet_two_doors_drawer_right_door"/>
+    <origin xyz="0.4985 -0.262 0.38" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_drawer_grip"/>
+  <joint name="base_cabinet_two_doors_drawer_drawer_grip_fixed" type="fixed">
+    <parent link="base_cabinet_two_doors_drawer_drawer"/><child link="base_cabinet_two_doors_drawer_drawer_grip"/>
+    <origin xyz="0 -0.02 0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_drawer_volume"/>
+  <joint name="base_cabinet_two_doors_drawer_drawer_volume_fixed" type="fixed">
+    <parent link="base_cabinet_two_doors_drawer_drawer"/><child link="base_cabinet_two_doors_drawer_drawer_volume"/>
+    <origin xyz="0 0.233 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_left_door_grip"/>
+  <joint name="base_cabinet_two_doors_drawer_left_door_grip_fixed" type="fixed">
+    <parent link="base_cabinet_two_doors_drawer_left_door"/><child link="base_cabinet_two_doors_drawer_left_door_grip"/>
+    <origin xyz="0.387 -0.02 0.2335" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_right_door_grip"/>
+  <joint name="base_cabinet_two_doors_drawer_right_door_grip_fixed" type="fixed">
+    <parent link="base_cabinet_two_doors_drawer_right_door"/><child link="base_cabinet_two_doors_drawer_right_door_grip"/>
+    <origin xyz="-0.387 -0.02 0.2335" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_shelf_surface"/>
+  <joint name="base_cabinet_two_doors_drawer_shelf_surface_fixed" type="fixed">
+    <parent link="base_cabinet_two_doors_drawer_body"/><child link="base_cabinet_two_doors_drawer_shelf_surface"/>
+    <origin xyz="0 0.023 0.398" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_worktop_surface"/>
+  <joint name="base_cabinet_two_doors_drawer_worktop_surface_fixed" type="fixed">
+    <parent link="base_cabinet_two_doors_drawer_body"/><child link="base_cabinet_two_doors_drawer_worktop_surface"/>
+    <origin xyz="0 0.003 0.85" rpy="0 0 0"/>
+  </joint>
+  <link name="base_cabinet_two_doors_drawer_wall_anchor"/>
+  <joint name="base_cabinet_two_doors_drawer_wall_anchor_fixed" type="fixed">
+    <parent link="base_cabinet_two_doors_drawer_body"/><child link="base_cabinet_two_doors_drawer_wall_anchor"/>
+    <origin xyz="0 0.288 0.79" rpy="0 0 0"/>
+  </joint>
+</robot>

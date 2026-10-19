@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<robot name="electric_planer">
+  <link name="electric_planer_body">
+    <inertial><origin xyz="-0.0116833 -0.0178271 0.0368338" rpy="0 0 0"/><mass value="1.3966"/><inertia ixx="0.0036045" ixy="-5.1897e-05" ixz="-0.0013291" iyy="0.012935" iyz="-1.3376e-05" izz="0.010979"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electric_planer_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.055 -0.019 0.006" rpy="0 -0 0"/><geometry><box size="0.13 0.082 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.1 -0.019 0.007" rpy="0 -0 0"/><geometry><box size="0.13 0.082 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.02 -0.019 0.045" rpy="0 -0 0"/><geometry><box size="0.29 0.088 0.065"/></geometry></collision>
+    <collision><origin xyz="0.02 0.033 0.045" rpy="0 -0 0"/><geometry><box size="0.1 0.02 0.05"/></geometry></collision>
+    <collision><origin xyz="-0.005 -0.019 0.1225" rpy="0 -0 0"/><geometry><box size="0.03 0.034 0.105"/></geometry></collision>
+    <collision><origin xyz="0.12 -0.019 0.1225" rpy="0 -0 0"/><geometry><box size="0.024 0.034 0.105"/></geometry></collision>
+    <collision><origin xyz="0.056 -0.019 0.165" rpy="0 -0 0"/><geometry><box size="0.152 0.034 0.026"/></geometry></collision>
+    <collision><origin xyz="0.056 -0.019 0.165" rpy="0 -0 0"/><geometry><box size="0.09 0.04 0.03"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.019 0.12" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.01" length="0.04"/></geometry></collision>
+  </link>
+  <link name="electric_planer_cutter_drum">
+    <inertial><origin xyz="4.97292e-11 0 0" rpy="0 0 0"/><mass value="0.58525"/><inertia ixx="0.00035337" ixy="0" ixz="1.7569e-15" iyy="8.6796e-05" iyz="-8.9986e-12" izz="0.00035769"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electric_planer_cutter_drum.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.017" length="0.08"/></geometry></collision>
+  </link>
+  <link name="electric_planer_depth_knob">
+    <inertial><origin xyz="4.57199e-11 1.524e-11 0.0257973" rpy="0 0 0"/><mass value="0.11936"/><inertia ixx="6.213e-05" ixy="0" ixz="2.8422e-14" iyy="6.213e-05" iyz="-1.4211e-14" izz="7.2105e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electric_planer_depth_knob.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.026" rpy="0 -0 0"/><geometry><cylinder radius="0.034" length="0.052"/></geometry></collision>
+  </link>
+  <link name="electric_planer_chip_chute">
+    <inertial><origin xyz="3.93316e-11 0.0261845 0.0101335" rpy="0 0 0"/><mass value="0.046248"/><inertia ixx="4.7711e-05" ixy="-1.7053e-13" ixz="-7.1054e-15" iyy="7.9464e-06" iyz="-4.6822e-06" izz="4.9311e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electric_planer_chip_chute.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.006" rpy="0 -0 0"/><geometry><cylinder radius="0.022" length="0.014"/></geometry></collision>
+    <collision><origin xyz="0 0.045 0.014" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.017" length="0.07"/></geometry></collision>
+    <collision><origin xyz="0.017 0.08 0.014" rpy="-1.5708 -0 0"/><geometry><box size="0.004 0.0192265 0.008"/></geometry></collision>
+    <collision><origin xyz="0.0085 0.08 -0.000722431" rpy="-1.5708 1.0472 5.92856e-08"/><geometry><box size="0.004 0.0192265 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.0085 0.08 -0.000722431" rpy="-1.5708 2.09439 -5.92856e-08"/><geometry><box size="0.004 0.0192265 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.017 0.08 0.014" rpy="1.5708 8.74228e-08 3.14159"/><geometry><box size="0.004 0.0192265 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.0085 0.08 0.0287224" rpy="-1.5708 -2.09439 5.92856e-08"/><geometry><box size="0.004 0.0192265 0.008"/></geometry></collision>
+    <collision><origin xyz="0.0085 0.08 0.0287224" rpy="-1.5708 -1.0472 -5.92856e-08"/><geometry><box size="0.004 0.0192265 0.008"/></geometry></collision>
+  </link>
+  <link name="electric_planer_trigger">
+    <inertial><origin xyz="0 0 -0.001" rpy="0 0 0"/><mass value="0.0024192"/><inertia ixx="1e-07" ixy="0" ixz="0" iyy="3.5159e-07" iyz="0" izz="3.7417e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electric_planer_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 -0.001" rpy="0 -0 0"/><geometry><box size="0.04 0.016 0.012"/></geometry></collision>
+  </link>
+  <link name="electric_planer_lock_off_button">
+    <inertial><origin xyz="0 -0.002 0" rpy="0 0 0"/><mass value="0.00065973"/><inertia ixx="1e-07" ixy="0" ixz="0" iyy="1e-07" iyz="2.07e-17" izz="1e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electric_planer_lock_off_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.002 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.005" length="0.008"/></geometry></collision>
+  </link>
+  <joint name="electric_planer_cutter_drum_joint" type="continuous">
+    <parent link="electric_planer_body"/><child link="electric_planer_cutter_drum"/>
+    <origin xyz="-0.032 -0.019 0.022" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="electric_planer_depth_knob_joint" type="revolute">
+    <parent link="electric_planer_body"/><child link="electric_planer_depth_knob"/>
+    <origin xyz="-0.13 -0.019 0.078" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="6" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="electric_planer_chip_chute_joint" type="revolute">
+    <parent link="electric_planer_body"/><child link="electric_planer_chip_chute"/>
+    <origin xyz="-0.075 -0.019 0.078" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="3.14" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="electric_planer_trigger_joint" type="prismatic">
+    <parent link="electric_planer_body"/><child link="electric_planer_trigger"/>
+    <origin xyz="0.05 -0.019 0.142" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.008" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="electric_planer_lock_off_button_joint" type="prismatic">
+    <parent link="electric_planer_body"/><child link="electric_planer_lock_off_button"/>
+    <origin xyz="0.01 -0.038 0.15" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.004" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="electric_planer_rear_grip"/>
+  <joint name="electric_planer_rear_grip_joint" type="fixed"><parent link="electric_planer_body"/><child link="electric_planer_rear_grip"/><origin xyz="0.065 -0.019 0.165" rpy="0 0 0"/></joint>
+  <link name="electric_planer_depth_knob_grip"/>
+  <joint name="electric_planer_depth_knob_grip_joint" type="fixed"><parent link="electric_planer_depth_knob"/><child link="electric_planer_depth_knob_grip"/><origin xyz="0 0 0.032" rpy="0 0 0"/></joint>
+  <link name="electric_planer_trigger_contact"/>
+  <joint name="electric_planer_trigger_contact_joint" type="fixed"><parent link="electric_planer_trigger"/><child link="electric_planer_trigger_contact"/><origin xyz="0 0 -0.007" rpy="0 0 0"/></joint>
+  <link name="electric_planer_lock_off_contact"/>
+  <joint name="electric_planer_lock_off_contact_joint" type="fixed"><parent link="electric_planer_lock_off_button"/><child link="electric_planer_lock_off_contact"/><origin xyz="0 -0.007 0" rpy="0 0 0"/></joint>
+  <link name="electric_planer_chute_outlet"/>
+  <joint name="electric_planer_chute_outlet_joint" type="fixed"><parent link="electric_planer_chip_chute"/><child link="electric_planer_chute_outlet"/><origin xyz="0 0.084 0.014" rpy="-1.5708 0 0"/></joint>
+  <link name="electric_planer_cutter_edge"/>
+  <joint name="electric_planer_cutter_edge_joint" type="fixed"><parent link="electric_planer_cutter_drum"/><child link="electric_planer_cutter_edge"/><origin xyz="0 0 -0.022" rpy="3.14159 0 0"/></joint>
+</robot>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot name="conference_table">
+  <link name="conference_table_body">
+    <inertial><origin xyz="-1.03838e-08 0 0.594382" rpy="0 0 0"/><mass value="183.68"/><inertia ixx="29.103" ixy="2.7707e-08" ixz="2.9429e-07" iyy="102.12" iyz="0" izz="117.91"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/conference_table_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.285 0.7275" rpy="0 0 0"/><geometry><box size="2 0.43 0.025"/></geometry></collision>
+    <collision><origin xyz="0 0.285 0.7275" rpy="0 0 0"/><geometry><box size="2 0.43 0.025"/></geometry></collision>
+    <collision><origin xyz="-0.59 0 0.7275" rpy="0 0 0"/><geometry><box size="0.82 0.14 0.025"/></geometry></collision>
+    <collision><origin xyz="0.59 0 0.7275" rpy="0 0 0"/><geometry><box size="0.82 0.14 0.025"/></geometry></collision>
+    <collision><origin xyz="-0.9 -0.4 0.3625" rpy="0 0 0"/><geometry><box size="0.05 0.05 0.705"/></geometry></collision>
+    <collision><origin xyz="-0.9 -0.4 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.018" length="0.01"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.4 0.3625" rpy="0 0 0"/><geometry><box size="0.05 0.05 0.705"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.4 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.018" length="0.01"/></geometry></collision>
+    <collision><origin xyz="-0.9 0 0.685" rpy="0 0 0"/><geometry><box size="0.04 0.75 0.06"/></geometry></collision>
+    <collision><origin xyz="0.9 -0.4 0.3625" rpy="0 0 0"/><geometry><box size="0.05 0.05 0.705"/></geometry></collision>
+    <collision><origin xyz="0.9 -0.4 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.018" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.9 0.4 0.3625" rpy="0 0 0"/><geometry><box size="0.05 0.05 0.705"/></geometry></collision>
+    <collision><origin xyz="0.9 0.4 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.018" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.9 0 0.685" rpy="0 0 0"/><geometry><box size="0.04 0.75 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.38 0.685" rpy="0 0 0"/><geometry><box size="1.75 0.04 0.06"/></geometry></collision>
+    <collision><origin xyz="0 -0.38 0.685" rpy="0 0 0"/><geometry><box size="1.75 0.04 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0 0.60075" rpy="0 0 0"/><geometry><box size="0.4 0.18 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.2 0 0.6575" rpy="0 0 0"/><geometry><box size="0.0015 0.18 0.115"/></geometry></collision>
+    <collision><origin xyz="0.2 0 0.6575" rpy="0 0 0"/><geometry><box size="0.0015 0.18 0.115"/></geometry></collision>
+    <collision><origin xyz="0 -0.09 0.6575" rpy="0 0 0"/><geometry><box size="0.4 0.0015 0.115"/></geometry></collision>
+    <collision><origin xyz="0 0.09 0.6575" rpy="0 0 0"/><geometry><box size="0.4 0.0015 0.115"/></geometry></collision>
+  </link>
+  <link name="conference_table_cable_lid">
+    <inertial><origin xyz="0 -0.0682861 -0.00596052" rpy="0 0 0"/><mass value="0.61307"/><inertia ixx="0.00095795" ixy="0" ixz="0" iyy="0.0064513" iyz="1.3962e-06" izz="0.0073942"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/conference_table_cable_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.068 -0.00599998" rpy="0 0 0"/><geometry><box size="0.356 0.136 0.012"/></geometry></collision>
+  </link>
+  <joint name="conference_table_cable_lid_joint" type="revolute">
+    <parent link="conference_table_body"/><child link="conference_table_cable_lid"/>
+    <origin xyz="0 0.068 0.74" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="conference_table_cable_lid_grip"/>
+  <joint name="conference_table_cable_lid_grip_joint" type="fixed"><parent link="conference_table_cable_lid"/><child link="conference_table_cable_lid_grip"/><origin xyz="0 -0.126 0.00400001" rpy="0 0 0"/></joint>
+  <link name="conference_table_cable_tray_volume"/>
+  <joint name="conference_table_cable_tray_volume_joint" type="fixed"><parent link="conference_table_body"/><child link="conference_table_cable_tray_volume"/><origin xyz="0 0 0.6575" rpy="0 0 0"/></joint>
+  <link name="conference_table_tabletop_left_surface"/>
+  <joint name="conference_table_tabletop_left_surface_joint" type="fixed"><parent link="conference_table_body"/><child link="conference_table_tabletop_left_surface"/><origin xyz="-0.55 0 0.74" rpy="0 0 0"/></joint>
+  <link name="conference_table_tabletop_right_surface"/>
+  <joint name="conference_table_tabletop_right_surface_joint" type="fixed"><parent link="conference_table_body"/><child link="conference_table_tabletop_right_surface"/><origin xyz="0.55 0 0.74" rpy="0 0 0"/></joint>
+</robot>

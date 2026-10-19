@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot name="electrode_drying_oven">
+  <link name="electrode_drying_oven_body">
+    <inertial><origin xyz="-7.42635e-05 0.000132464 0.203389" rpy="0 0 0"/><mass value="4.5"/><inertia ixx="0.0707146" ixy="4.9876e-05" ixz="-6.11402e-05" iyy="0.070683" iyz="6.67422e-05" izz="0.0137042"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electrode_drying_oven_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.044 0 0.205" rpy="0 0 0"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="0.0311127 0.0311127 0.205" rpy="0 0 0.785398"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="-1.9233e-09 0.044 0.205" rpy="0 0 1.5708"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="-0.0311127 0.0311127 0.205" rpy="0 0 2.35619"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="-0.044 -3.8466e-09 0.205" rpy="0 0 -3.14159"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="-0.0311127 -0.0311127 0.205" rpy="0 0 -2.35619"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="0 -0.044 0.205" rpy="0 0 -1.5708"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="0.0311127 -0.0311127 0.205" rpy="0 0 -0.785398"/><geometry><box size="0.088 0.0729016 0.41"/></geometry></collision>
+    <collision><origin xyz="0 0 0.024" rpy="0 0 0"/><geometry><cylinder radius="0.07" length="0.012"/></geometry></collision>
+    <collision><origin xyz="-0.093 0 0.3" rpy="0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.093 0 0.3" rpy="0 1.5708 0"/><geometry><cylinder radius="0.012" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 0.092 0.405" rpy="0 0 0"/><geometry><box size="0.03 0.012 0.016"/></geometry></collision>
+    <collision><origin xyz="-0.07 0.08 0.045" rpy="-2.2143 -0.380506 0.735305"/><geometry><cylinder radius="0.005" length="0.0538516"/></geometry></collision>
+    <collision><origin xyz="-0.09 0.13 0.021" rpy="-1.86225 -0.309046 0.412744"/><geometry><cylinder radius="0.005" length="0.0657571"/></geometry></collision>
+    <collision><origin xyz="-0.12 0.19 0.01" rpy="-1.63736 -0.58698 0.624909"/><geometry><cylinder radius="0.005" length="0.0722219"/></geometry></collision>
+  </link>
+  <link name="electrode_drying_oven_lid">
+    <inertial><origin xyz="0 -0.091479 0.0108921" rpy="0 0 0"/><mass value="0.4"/><inertia ixx="0.00092967" ixy="0" ixz="0" iyy="0.000858059" iyz="7.0686e-06" izz="0.00172745"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electrode_drying_oven_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.092 0.011" rpy="0 0 0"/><geometry><cylinder radius="0.092" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.177 0.016" rpy="0 0 0"/><geometry><box size="0.03 0.02 0.012"/></geometry></collision>
+    <collision><origin xyz="0 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.004" length="0.03"/></geometry></collision>
+  </link>
+  <link name="electrode_drying_oven_bail_handle">
+    <inertial><origin xyz="0 -0.0731085 -0.0769563" rpy="0 0 0"/><mass value="0.15"/><inertia ixx="0.000289909" ixy="0" ixz="0" iyy="0.00104314" iyz="-0.000143363" izz="0.00102843"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/electrode_drying_oven_bail_handle.glb"/></geometry></visual>
+    <collision><origin xyz="-0.1 -0.0475237 -0.050025" rpy="2.38183 0 0"/><geometry><cylinder radius="0.004" length="0.138"/></geometry></collision>
+    <collision><origin xyz="0.1 -0.0475237 -0.050025" rpy="2.38183 0 0"/><geometry><cylinder radius="0.004" length="0.138"/></geometry></collision>
+    <collision><origin xyz="0 -0.0950474 -0.10005" rpy="0 1.5708 0"/><geometry><cylinder radius="0.004" length="0.2"/></geometry></collision>
+    <collision><origin xyz="0 -0.0950474 -0.10005" rpy="0 1.5708 0"/><geometry><cylinder radius="0.011" length="0.11"/></geometry></collision>
+  </link>
+  <joint name="electrode_drying_oven_lid_joint" type="revolute">
+    <parent link="electrode_drying_oven_body"/><child link="electrode_drying_oven_lid"/>
+    <origin xyz="0 0.092 0.414" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="electrode_drying_oven_bail_handle_joint" type="revolute">
+    <parent link="electrode_drying_oven_body"/><child link="electrode_drying_oven_bail_handle"/>
+    <origin xyz="0 0 0.3" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="2.6" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="electrode_drying_oven_bail_handle_grip"/>
+  <joint name="electrode_drying_oven_bail_handle_grip_joint" type="fixed"><parent link="electrode_drying_oven_bail_handle"/><child link="electrode_drying_oven_bail_handle_grip"/><origin xyz="0 -0.0950474 -0.10005" rpy="0 0 0"/></joint>
+  <link name="electrode_drying_oven_lid_tab_grip"/>
+  <joint name="electrode_drying_oven_lid_tab_grip_joint" type="fixed"><parent link="electrode_drying_oven_lid"/><child link="electrode_drying_oven_lid_tab_grip"/><origin xyz="0 -0.187 0.016" rpy="0 0 0"/></joint>
+  <link name="electrode_drying_oven_chamber_volume"/>
+  <joint name="electrode_drying_oven_chamber_volume_joint" type="fixed"><parent link="electrode_drying_oven_body"/><child link="electrode_drying_oven_chamber_volume"/><origin xyz="0 0 0.22" rpy="0 0 0"/></joint>
+</robot>

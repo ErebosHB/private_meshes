@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<robot name="washing_machine">
+  <link name="washing_machine_body">
+    <inertial><origin xyz="-2.19396e-05 0.0346984 0.440824" rpy="0 0 0"/><mass value="79.209"/><inertia ixx="7.2586" ixy="0.015568" ixz="0.00066307" iyy="7.3102" iyz="0.070625" izz="5.6436"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/washing_machine_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.29925 0 0.4225" rpy="0 0 0"/><geometry><box size="0.0015 0.6 0.815"/></geometry></collision>
+    <collision><origin xyz="0.29925 0 0.4225" rpy="0 0 0"/><geometry><box size="0.0015 0.6 0.815"/></geometry></collision>
+    <collision><origin xyz="0 0 0.84" rpy="0 0 0"/><geometry><box size="0.6 0.6 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.29925 0.4225" rpy="0 0 0"/><geometry><box size="0.597 0.0015 0.815"/></geometry></collision>
+    <collision><origin xyz="0 0 0.01575" rpy="0 0 0"/><geometry><box size="0.597 0.5985 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.25 -0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="-0.25 0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 -0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0.25 0.25 0.0075" rpy="0 0 0"/><geometry><cylinder radius="0.02" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.299 0.645" rpy="0 0 0"/><geometry><box size="0.6 0.002 0.11"/></geometry></collision>
+    <collision><origin xyz="0 -0.299 0.165" rpy="0 0 0"/><geometry><box size="0.6 0.002 0.17"/></geometry></collision>
+    <collision><origin xyz="-0.235 -0.299 0.42" rpy="0 0 0"/><geometry><box size="0.13 0.002 0.34"/></geometry></collision>
+    <collision><origin xyz="0.235 -0.299 0.42" rpy="0 0 0"/><geometry><box size="0.13 0.002 0.34"/></geometry></collision>
+    <collision><origin xyz="0 -0.292 0.0475" rpy="0 0 0"/><geometry><box size="0.596 0.002 0.065"/></geometry></collision>
+    <collision><origin xyz="0.2425 0.03 0.42" rpy="1.5708 0 0"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="0.210011 0.03 0.54125" rpy="1.5708 -0.523599 4.35887e-08"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="0.12125 0.03 0.630011" rpy="1.5708 -1.0472 1.30766e-07"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.6625" rpy="1.5708 -1.5708 0"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.12125 0.03 0.630011" rpy="1.5708 -2.09439 -1.30766e-07"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.210011 0.03 0.54125" rpy="1.5708 -2.61799 -4.35888e-08"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.2425 0.03 0.42" rpy="-1.5708 -8.74228e-08 3.14159"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.210011 0.03 0.29875" rpy="1.5708 2.61799 4.35887e-08"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="-0.12125 0.03 0.209989" rpy="1.5708 2.09439 1.30766e-07"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="0 0.03 0.1775" rpy="1.5708 1.5708 0"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="0.12125 0.03 0.209989" rpy="1.5708 1.0472 -1.30766e-07"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="0.210011 0.03 0.29875" rpy="1.5708 0.523599 -4.35887e-08"/><geometry><box size="0.005 0.131295 0.42"/></geometry></collision>
+    <collision><origin xyz="0 0.245 0.42" rpy="1.5708 0 0"/><geometry><cylinder radius="0.245" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0.105 -0.291 0.765" rpy="0 0 0"/><geometry><box size="0.39 0.018 0.13"/></geometry></collision>
+    <collision><origin xyz="-0.295 -0.291 0.765" rpy="0 0 0"/><geometry><box size="0.01 0.018 0.13"/></geometry></collision>
+    <collision><origin xyz="-0.19 -0.291 0.7075" rpy="0 0 0"/><geometry><box size="0.2 0.018 0.015"/></geometry></collision>
+    <collision><origin xyz="-0.19 -0.291 0.8225" rpy="0 0 0"/><geometry><box size="0.2 0.018 0.015"/></geometry></collision>
+    <collision><origin xyz="-0.19 -0.091 0.71275" rpy="0 0 0"/><geometry><box size="0.2 0.382 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.19 -0.091 0.81725" rpy="0 0 0"/><geometry><box size="0.2 0.382 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.28925 -0.091 0.765" rpy="0 0 0"/><geometry><box size="0.0015 0.382 0.103"/></geometry></collision>
+    <collision><origin xyz="-0.09075 -0.091 0.765" rpy="0 0 0"/><geometry><box size="0.0015 0.382 0.103"/></geometry></collision>
+    <collision><origin xyz="-0.19 0.09925 0.765" rpy="0 0 0"/><geometry><box size="0.197 0.0015 0.103"/></geometry></collision>
+  </link>
+  <link name="washing_machine_detergent_drawer">
+    <inertial><origin xyz="0 0.130239 -0.010385" rpy="0 0 0"/><mass value="0.91519"/><inertia ixx="0.016778" ixy="-5.2981e-12" ixz="-9.1781e-13" iyy="0.0041776" iyz="0.00062802" izz="0.019368"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/washing_machine_detergent_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.00800002 0" rpy="0 0 0"/><geometry><box size="0.196 0.018 0.097"/></geometry></collision>
+    <collision><origin xyz="0 -0.00149998 -0.023" rpy="0 0 0"/><geometry><box size="0.11 0.004 0.018"/></geometry></collision>
+    <collision><origin xyz="0 0.1985 -0.04575" rpy="0 0 0"/><geometry><box size="0.19 0.363 0.0025"/></geometry></collision>
+    <collision><origin xyz="-0.09375 0.1985 -0.00224996" rpy="0 0 0"/><geometry><box size="0.0025 0.363 0.0845"/></geometry></collision>
+    <collision><origin xyz="0.09375 0.1985 -0.00224996" rpy="0 0 0"/><geometry><box size="0.0025 0.363 0.0845"/></geometry></collision>
+    <collision><origin xyz="0 0.37875 -0.00224996" rpy="0 0 0"/><geometry><box size="0.185 0.0025 0.0845"/></geometry></collision>
+    <collision><origin xyz="-0.03 0.2 -0.00349998" rpy="0 0 0"/><geometry><box size="0.0025 0.36 0.087"/></geometry></collision>
+    <collision><origin xyz="0.03 0.2 -0.00349998" rpy="0 0 0"/><geometry><box size="0.0025 0.36 0.087"/></geometry></collision>
+  </link>
+  <link name="washing_machine_program_dial">
+    <inertial><origin xyz="0 -0.0151553 0" rpy="0 0 0"/><mass value="0.094674"/><inertia ixx="2.9578e-05" ixy="0" ixz="0" iyy="4.3426e-05" iyz="0" izz="3.0013e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/washing_machine_program_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00299999 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0324" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.018 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.03" length="0.024"/></geometry></collision>
+    <collision><origin xyz="0 -0.034 0" rpy="0 0 0"/><geometry><box size="0.045 0.008 0.007"/></geometry></collision>
+  </link>
+  <link name="washing_machine_start_button">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0016632"/><inertia ixx="2.4948e-08" ixy="0" ixz="0" iyy="8.7041e-08" iyz="0" izz="7.2072e-08"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/washing_machine_start_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.022 0.006 0.012"/></geometry></collision>
+  </link>
+  <link name="washing_machine_door">
+    <inertial><origin xyz="0.231531 0.000974705 0" rpy="0 0 0"/><mass value="40.237"/><inertia ixx="0.6715" ixy="0.00040753" ixz="0" iyy="1.3356" iyz="0" izz="0.67866"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/washing_machine_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.437 -0.024 0" rpy="0 0 0"/><geometry><box size="0.03 0.012 0.09"/></geometry></collision>
+    <collision><origin xyz="0.232 0 0.19" rpy="0 0 0"/><geometry><box size="0.3 0.04 0.08"/></geometry></collision>
+    <collision><origin xyz="0.232 0 -0.19" rpy="0 0 0"/><geometry><box size="0.3 0.04 0.08"/></geometry></collision>
+    <collision><origin xyz="0.042 0 0" rpy="0 0 0"/><geometry><box size="0.08 0.04 0.3"/></geometry></collision>
+    <collision><origin xyz="0.422 0 0" rpy="0 0 0"/><geometry><box size="0.08 0.04 0.3"/></geometry></collision>
+    <collision><origin xyz="0.232 0.012 0" rpy="0 0 0"/><geometry><box size="0.24 0.03 0.24"/></geometry></collision>
+  </link>
+  <joint name="washing_machine_detergent_drawer_joint" type="prismatic">
+    <parent link="washing_machine_body"/><child link="washing_machine_detergent_drawer"/>
+    <origin xyz="-0.19 -0.3 0.765" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.27" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="washing_machine_program_dial_joint" type="revolute">
+    <parent link="washing_machine_body"/><child link="washing_machine_program_dial"/>
+    <origin xyz="0.2 -0.3 0.765" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="5.5" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="washing_machine_start_button_joint" type="prismatic">
+    <parent link="washing_machine_body"/><child link="washing_machine_start_button"/>
+    <origin xyz="0.255 -0.302 0.735" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.003" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="washing_machine_door_joint" type="revolute">
+    <parent link="washing_machine_body"/><child link="washing_machine_door"/>
+    <origin xyz="-0.232 -0.328 0.42" rpy="0 0 0"/><axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50" velocity="1.5"/>
+  </joint>
+  <link name="washing_machine_detergent_drawer_grip"/>
+  <joint name="washing_machine_detergent_drawer_grip_joint" type="fixed"><parent link="washing_machine_detergent_drawer"/><child link="washing_machine_detergent_drawer_grip"/><origin xyz="0 -0.00399998 -0.023" rpy="0 0 0"/></joint>
+  <link name="washing_machine_detergent_drawer_volume"/>
+  <joint name="washing_machine_detergent_drawer_volume_joint" type="fixed"><parent link="washing_machine_detergent_drawer"/><child link="washing_machine_detergent_drawer_volume"/><origin xyz="0 0.2 -0.005" rpy="0 0 0"/></joint>
+  <link name="washing_machine_program_dial_contact"/>
+  <joint name="washing_machine_program_dial_contact_joint" type="fixed"><parent link="washing_machine_program_dial"/><child link="washing_machine_program_dial_contact"/><origin xyz="0 -0.038 0" rpy="0 0 0"/></joint>
+  <link name="washing_machine_start_button_contact"/>
+  <joint name="washing_machine_start_button_contact_joint" type="fixed"><parent link="washing_machine_start_button"/><child link="washing_machine_start_button_contact"/><origin xyz="0 -0.00300002 0" rpy="0 0 0"/></joint>
+  <link name="washing_machine_door_grip"/>
+  <joint name="washing_machine_door_grip_joint" type="fixed"><parent link="washing_machine_door"/><child link="washing_machine_door_grip"/><origin xyz="0.437 -0.03 0" rpy="0 -1.5708 0"/></joint>
+  <link name="washing_machine_drum_volume"/>
+  <joint name="washing_machine_drum_volume_joint" type="fixed"><parent link="washing_machine_body"/><child link="washing_machine_drum_volume"/><origin xyz="0 0.03 0.42" rpy="0 0 0"/></joint>
+  <link name="washing_machine_top_surface"/>
+  <joint name="washing_machine_top_surface_joint" type="fixed"><parent link="washing_machine_body"/><child link="washing_machine_top_surface"/><origin xyz="0 0 0.85" rpy="0 0 0"/></joint>
+  <link name="washing_machine_wall_anchor"/>
+  <joint name="washing_machine_wall_anchor_joint" type="fixed"><parent link="washing_machine_body"/><child link="washing_machine_wall_anchor"/><origin xyz="0 0.3 0.8" rpy="0 0 0"/></joint>
+</robot>

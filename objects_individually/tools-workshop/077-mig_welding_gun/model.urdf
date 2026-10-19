@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="mig_welding_gun">
+  <link name="mig_welding_gun_body">
+    <inertial><origin xyz="0.00612982 0.124964 0.0196228" rpy="0 0 0"/><mass value="0.9"/><inertia ixx="0.0085063" ixy="-0.000899485" ixz="3.52945e-05" iyy="0.000443401" iyz="0.000375858" izz="0.00873257"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mig_welding_gun_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.0525 0.024" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.023" length="0.165"/></geometry></collision>
+    <collision><origin xyz="0.0365 -0.0185 0.024" rpy="-1.5708 1.38382 -1.38382"/><geometry><cylinder radius="0.004" length="0.0376563"/></geometry></collision>
+    <collision><origin xyz="0.0595 0.0025 0.024" rpy="-1.5708 0.25169 -0.25169"/><geometry><cylinder radius="0.004" length="0.0361386"/></geometry></collision>
+    <collision><origin xyz="0.057 0.0325 0.024" rpy="-1.5708 -0.510488 0.510488"/><geometry><cylinder radius="0.004" length="0.0286531"/></geometry></collision>
+    <collision><origin xyz="0.035 0.0475 0.024" rpy="-1.5708 -1.40565 1.40565"/><geometry><cylinder radius="0.004" length="0.0304138"/></geometry></collision>
+    <collision><origin xyz="0.0125 0.165 0.016" rpy="-1.5708 0 0"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="0.00883884 0.165 0.00716117" rpy="-1.5708 0.785398 -4.37114e-08"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.165 0.0035" rpy="-1.5708 1.5708 0"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.00883884 0.165 0.00716117" rpy="-1.5708 2.35619 4.37114e-08"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.0125 0.165 0.016" rpy="1.5708 -8.74228e-08 3.14159"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="-0.00883884 0.165 0.0248388" rpy="-1.5708 -2.35619 -4.37114e-08"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.165 0.0285" rpy="-1.5708 -1.5708 0"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="0.00883883 0.165 0.0248388" rpy="-1.5708 -0.785398 4.37114e-08"/><geometry><box size="0.003 0.011598 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.18 0.015" rpy="-1.62075 0 0"/><geometry><cylinder radius="0.012" length="0.0800999"/></geometry></collision>
+    <collision><origin xyz="0.015 0.255 0.0125" rpy="-1.58508 0.404855 -0.410519"/><geometry><cylinder radius="0.012" length="0.0761643"/></geometry></collision>
+    <collision><origin xyz="0.055 0.325 0.012" rpy="-1.5708 0.620249 -0.620249"/><geometry><cylinder radius="0.012" length="0.0860233"/></geometry></collision>
+  </link>
+  <link name="mig_welding_gun_swan_neck">
+    <inertial><origin xyz="0.00660722 -0.0395468 0" rpy="0 0 0"/><mass value="0.25"/><inertia ixx="0.000656397" ixy="0.000180155" ixz="0" iyy="9.42247e-05" iyz="0" izz="0.000721602"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mig_welding_gun_swan_neck.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.01 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.017" length="0.02"/></geometry></collision>
+    <collision><origin xyz="0 -0.05 0" rpy="1.5708 0 0"/><geometry><cylinder radius="0.0105" length="0.06"/></geometry></collision>
+    <collision><origin xyz="0.015 -0.11 0" rpy="1.5708 0.463648 0.463648"/><geometry><cylinder radius="0.0105" length="0.067082"/></geometry></collision>
+    <collision><origin xyz="0.05 -0.155 0" rpy="1.5708 0.927295 0.927295"/><geometry><cylinder radius="0.0105" length="0.05"/></geometry></collision>
+    <collision><origin xyz="0.086 -0.182 0" rpy="1.5708 0.927295 0.927295"/><geometry><cylinder radius="0.004" length="0.022"/></geometry></collision>
+  </link>
+  <link name="mig_welding_gun_gas_nozzle">
+    <inertial><origin xyz="0.0172 -0.0129 -1.86265e-09" rpy="0 0 0"/><mass value="0.05"/><inertia ixx="6.2655e-06" ixy="3.554e-06" ixz="0" iyy="8.33867e-06" iyz="0" izz="1.10042e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mig_welding_gun_gas_nozzle.glb"/></geometry></visual>
+    <collision><origin xyz="0.0172 -0.0129 -1.86265e-09" rpy="1.5708 0.927295 0.927295"/><geometry><cylinder radius="0.012" length="0.047"/></geometry></collision>
+  </link>
+  <link name="mig_welding_gun_trigger">
+    <inertial><origin xyz="0.016 0.004 0" rpy="0 0 0"/><mass value="0.01"/><inertia ixx="2.37836e-07" ixy="-1.38799e-07" ixz="0" iyy="8.61331e-07" iyz="0" izz="8.175e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/mig_welding_gun_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="0.016 0.004 0" rpy="0 0 0.20944"/><geometry><box size="0.03 0.009 0.013"/></geometry></collision>
+  </link>
+  <joint name="mig_welding_gun_swan_neck_joint" type="revolute">
+    <parent link="mig_welding_gun_body"/><child link="mig_welding_gun_swan_neck"/>
+    <origin xyz="0 -0.03 0.024" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="-1.57" upper="1.57" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mig_welding_gun_gas_nozzle_joint" type="prismatic">
+    <parent link="mig_welding_gun_swan_neck"/><child link="mig_welding_gun_gas_nozzle"/>
+    <origin xyz="0.07 -0.17 0" rpy="0 0 0"/><axis xyz="0.8 -0.6 0"/>
+    <limit lower="0" upper="0.03" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="mig_welding_gun_trigger_joint" type="revolute">
+    <parent link="mig_welding_gun_body"/><child link="mig_welding_gun_trigger"/>
+    <origin xyz="0.02 -0.004 0.024" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.3" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="mig_welding_gun_handle_grip"/>
+  <joint name="mig_welding_gun_handle_grip_joint" type="fixed"><parent link="mig_welding_gun_body"/><child link="mig_welding_gun_handle_grip"/><origin xyz="0 0.05 0.024" rpy="0 0 1.5708"/></joint>
+  <link name="mig_welding_gun_trigger_contact"/>
+  <joint name="mig_welding_gun_trigger_contact_joint" type="fixed"><parent link="mig_welding_gun_trigger"/><child link="mig_welding_gun_trigger_contact"/><origin xyz="0.025 0.008 0" rpy="0 0 0"/></joint>
+  <link name="mig_welding_gun_contact_tip"/>
+  <joint name="mig_welding_gun_contact_tip_joint" type="fixed"><parent link="mig_welding_gun_swan_neck"/><child link="mig_welding_gun_contact_tip"/><origin xyz="0.094 -0.188 0" rpy="0 1.5708 -0.643503"/></joint>
+</robot>

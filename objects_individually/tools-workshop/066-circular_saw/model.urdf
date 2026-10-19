@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<robot name="circular_saw">
+  <link name="circular_saw_body">
+    <inertial><origin xyz="-0.015 -0.0146023 0.00864277" rpy="0 0 0"/><mass value="1.0893"/><inertia ixx="0.0034817" ixy="5.8208e-11" ixz="0" iyy="0.010572" iyz="0.00019197" izz="0.013784"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/circular_saw_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.015 -0.0105 0.0025" rpy="0 -0 0"/><geometry><box size="0.3 0.18 0.005"/></geometry></collision>
+    <collision><origin xyz="-0.015 0.0735 0.011" rpy="0 -0 0"/><geometry><box size="0.26 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.0605 0.025" rpy="0 -0 0"/><geometry><box size="0.03 0.04 0.04"/></geometry></collision>
+    <collision><origin xyz="0.115 -0.0605 0.025" rpy="0 -0 0"/><geometry><box size="0.03 0.04 0.04"/></geometry></collision>
+  </link>
+  <link name="circular_saw_saw_unit">
+    <inertial><origin xyz="0.0228212 0.0551961 0.128058" rpy="0 0 0"/><mass value="0.92912"/><inertia ixx="0.0041354" ixy="-0.00034887" ixz="-0.00065463" iyy="0.0050753" iyz="0.00043937" izz="0.004801"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/circular_saw_saw_unit.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.1255" rpy="0 -0 0"/><geometry><box size="0.186 0.03 0.093"/></geometry></collision>
+    <collision><origin xyz="0.02 0.08 0.089" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.048" length="0.1"/></geometry></collision>
+    <collision><origin xyz="0.02 0.1425 0.089" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.048" length="0.025"/></geometry></collision>
+    <collision><origin xyz="0.075 0.06 0.184" rpy="0 -0 0"/><geometry><box size="0.15 0.032 0.12"/></geometry></collision>
+    <collision><origin xyz="0.09 0.06 0.229" rpy="0 -0 0"/><geometry><box size="0.07 0.036 0.03"/></geometry></collision>
+    <collision><origin xyz="-0.08 0.06 0.168" rpy="0 -0 0"/><geometry><cylinder radius="0.024" length="0.058"/></geometry></collision>
+    <collision><origin xyz="0.16 0.06 0.194" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.01" length="0.04"/></geometry></collision>
+  </link>
+  <link name="circular_saw_blade">
+    <inertial><origin xyz="1.24981e-05 -0.00010645 0" rpy="0 0 0"/><mass value="0.40326"/><inertia ixx="0.00063249" ixy="6.5195e-09" ixz="0" iyy="0.0012643" iyz="2.1625e-11" izz="0.0006327"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/circular_saw_blade.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.08" length="0.0025"/></geometry></collision>
+    <collision><origin xyz="0 -0.005 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.018" length="0.008"/></geometry></collision>
+  </link>
+  <link name="circular_saw_lower_guard">
+    <inertial><origin xyz="-0.0088438 -0.00483235 -0.039263" rpy="0 0 0"/><mass value="0.038753"/><inertia ixx="2.2795e-05" ixy="-2.4565e-06" ixz="6.6018e-06" iyy="0.00012762" iyz="6.2135e-07" izz="0.00010694"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/circular_saw_lower_guard.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.004 -0.0415" rpy="0 -0 0"/><geometry><box size="0.166 0.016 0.083"/></geometry></collision>
+    <collision><origin xyz="-0.085 -0.012 -0.02" rpy="0 -0 0"/><geometry><box size="0.012 0.016 0.02"/></geometry></collision>
+  </link>
+  <link name="circular_saw_trigger">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0015876"/><inertia ixx="1e-07" ixy="0" ixz="0" iyy="1.3812e-07" iyz="0" izz="1.45e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/circular_saw_trigger.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 -0 0"/><geometry><box size="0.03 0.014 0.012"/></geometry></collision>
+  </link>
+  <joint name="circular_saw_saw_unit_joint" type="revolute">
+    <parent link="circular_saw_body"/><child link="circular_saw_saw_unit"/>
+    <origin xyz="-0.015 -0.0555 0.006" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="0.79" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="circular_saw_blade_joint" type="continuous">
+    <parent link="circular_saw_saw_unit"/><child link="circular_saw_blade"/>
+    <origin xyz="0 0 0.079" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="circular_saw_lower_guard_joint" type="revolute">
+    <parent link="circular_saw_saw_unit"/><child link="circular_saw_lower_guard"/>
+    <origin xyz="0 0 0.079" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="1.9" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="circular_saw_trigger_joint" type="prismatic">
+    <parent link="circular_saw_saw_unit"/><child link="circular_saw_trigger"/>
+    <origin xyz="0.08 0.06 0.144" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.008" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="circular_saw_rear_grip"/>
+  <joint name="circular_saw_rear_grip_joint" type="fixed"><parent link="circular_saw_saw_unit"/><child link="circular_saw_rear_grip"/><origin xyz="0.09 0.06 0.229" rpy="0 0 0"/></joint>
+  <link name="circular_saw_front_knob_grip"/>
+  <joint name="circular_saw_front_knob_grip_joint" type="fixed"><parent link="circular_saw_saw_unit"/><child link="circular_saw_front_knob_grip"/><origin xyz="-0.08 0.06 0.169" rpy="0 0 0"/></joint>
+  <link name="circular_saw_guard_lever_tip"/>
+  <joint name="circular_saw_guard_lever_tip_joint" type="fixed"><parent link="circular_saw_lower_guard"/><child link="circular_saw_guard_lever_tip"/><origin xyz="-0.09 -0.02 -0.02" rpy="0 0 0"/></joint>
+  <link name="circular_saw_trigger_contact"/>
+  <joint name="circular_saw_trigger_contact_joint" type="fixed"><parent link="circular_saw_trigger"/><child link="circular_saw_trigger_contact"/><origin xyz="0 0 -0.00600001" rpy="0 0 0"/></joint>
+  <link name="circular_saw_blade_edge"/>
+  <joint name="circular_saw_blade_edge_joint" type="fixed"><parent link="circular_saw_blade"/><child link="circular_saw_blade_edge"/><origin xyz="-0.08 0 0" rpy="0 -1.5708 0"/></joint>
+</robot>

@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<robot name="kitchen_run_cabinets">
+  <link name="kitchen_run_cabinets_body">
+    <inertial><origin xyz="-0.0014357 0.0490242 0.914636" rpy="0 0 0"/><mass value="160.08"/><inertia ixx="65.2893" ixy="0.461403" ixz="0.851877" iyy="178.773" iyz="-5.9222" izz="122.696"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_body.glb"/></geometry></visual>
+    <collision><origin xyz="-1.341 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="-0.859 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.0105 0.109" rpy="0 0 0"/><geometry><box size="0.464 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="-1.1 -0.2295 0.811" rpy="0 0 0"/><geometry><box size="0.464 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.2485 0.811" rpy="0 0 0"/><geometry><box size="0.464 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.2885 0.469" rpy="0 0 0"/><geometry><box size="0.464 0.004 0.702"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.0175 0.394" rpy="0 0 0"/><geometry><box size="0.462 0.534 0.018"/></geometry></collision>
+    <collision><origin xyz="-1.1 -0.2305 0.049" rpy="0 0 0"/><geometry><box size="0.5 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="-0.841 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="-0.059 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.0105 0.109" rpy="0 0 0"/><geometry><box size="0.764 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.45 -0.2295 0.811" rpy="0 0 0"/><geometry><box size="0.764 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2485 0.811" rpy="0 0 0"/><geometry><box size="0.764 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2885 0.469" rpy="0 0 0"/><geometry><box size="0.764 0.004 0.702"/></geometry></collision>
+    <collision><origin xyz="-0.45 -0.2305 0.049" rpy="0 0 0"/><geometry><box size="0.8 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.0105 0.681" rpy="0 0 0"/><geometry><box size="0.5 0.4 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.699 0.0105 0.771" rpy="0 0 0"/><geometry><box size="0.002 0.4 0.178"/></geometry></collision>
+    <collision><origin xyz="-0.201 0.0105 0.771" rpy="0 0 0"/><geometry><box size="0.002 0.4 0.178"/></geometry></collision>
+    <collision><origin xyz="-0.45 -0.1885 0.771" rpy="0 0 0"/><geometry><box size="0.496 0.002 0.178"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2095 0.771" rpy="0 0 0"/><geometry><box size="0.496 0.002 0.178"/></geometry></collision>
+    <collision><origin xyz="-0.45 -0.1985 0.861" rpy="0 0 0"/><geometry><box size="0.536 0.018 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2195 0.861" rpy="0 0 0"/><geometry><box size="0.536 0.018 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.709 0.0105 0.861" rpy="0 0 0"/><geometry><box size="0.018 0.4 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.191 0.0105 0.861" rpy="0 0 0"/><geometry><box size="0.018 0.4 0.002"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2555 0.885" rpy="0 0 0"/><geometry><cylinder radius="0.024" length="0.05"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2555 1.04" rpy="0 0 0"/><geometry><cylinder radius="0.013" length="0.26"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.1555 1.16" rpy="1.5708 0 0"/><geometry><cylinder radius="0.012" length="0.21"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.0655 1.14" rpy="0 0 0"/><geometry><cylinder radius="0.011" length="0.04"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.283 0.941" rpy="0 0 0"/><geometry><box size="0.012 0.065 0.012"/></geometry></collision>
+    <collision><origin xyz="0.25 -0.2305 0.049" rpy="0 0 0"/><geometry><box size="0.6 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="0.559 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="1.141 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="0.85 0.0105 0.109" rpy="0 0 0"/><geometry><box size="0.564 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="0.85 -0.2295 0.811" rpy="0 0 0"/><geometry><box size="0.564 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="0.85 0.2485 0.811" rpy="0 0 0"/><geometry><box size="0.564 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="0.85 0.2885 0.469" rpy="0 0 0"/><geometry><box size="0.564 0.004 0.702"/></geometry></collision>
+    <collision><origin xyz="0.85 0.0085 0.224" rpy="0 0 0"/><geometry><box size="0.564 0.556 0.018"/></geometry></collision>
+    <collision><origin xyz="0.85 -0.2305 0.049" rpy="0 0 0"/><geometry><box size="0.6 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="1.159 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="1.341 0.0105 0.46" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.72"/></geometry></collision>
+    <collision><origin xyz="1.25 0.0105 0.109" rpy="0 0 0"/><geometry><box size="0.164 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="1.25 -0.2295 0.811" rpy="0 0 0"/><geometry><box size="0.164 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="1.25 0.2485 0.811" rpy="0 0 0"/><geometry><box size="0.164 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="1.25 0.2885 0.469" rpy="0 0 0"/><geometry><box size="0.164 0.004 0.702"/></geometry></collision>
+    <collision><origin xyz="1.25 -0.2305 0.049" rpy="0 0 0"/><geometry><box size="0.2 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="-1.341 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="-0.859 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.1255 1.409" rpy="0 0 0"/><geometry><box size="0.464 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.1255 1.991" rpy="0 0 0"/><geometry><box size="0.464 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.2885 1.709" rpy="0 0 0"/><geometry><box size="0.464 0.004 0.582"/></geometry></collision>
+    <collision><origin xyz="-1.1 0.1325 1.7" rpy="0 0 0"/><geometry><box size="0.462 0.304 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.841 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="-0.059 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.1255 1.409" rpy="0 0 0"/><geometry><box size="0.764 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.1255 1.991" rpy="0 0 0"/><geometry><box size="0.764 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2885 1.709" rpy="0 0 0"/><geometry><box size="0.764 0.004 0.582"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.1325 1.7" rpy="0 0 0"/><geometry><box size="0.762 0.304 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.041 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="0.541 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="0.25 0.1255 1.409" rpy="0 0 0"/><geometry><box size="0.564 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="0.25 0.1255 1.991" rpy="0 0 0"/><geometry><box size="0.564 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="0.25 0.2885 1.709" rpy="0 0 0"/><geometry><box size="0.564 0.004 0.582"/></geometry></collision>
+    <collision><origin xyz="0.25 0.1325 1.7" rpy="0 0 0"/><geometry><box size="0.562 0.304 0.018"/></geometry></collision>
+    <collision><origin xyz="0.559 0.1255 1.825" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.35"/></geometry></collision>
+    <collision><origin xyz="1.141 0.1255 1.825" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.35"/></geometry></collision>
+    <collision><origin xyz="0.85 0.1255 1.659" rpy="0 0 0"/><geometry><box size="0.564 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="0.85 0.1255 1.991" rpy="0 0 0"/><geometry><box size="0.564 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="0.85 0.2885 1.834" rpy="0 0 0"/><geometry><box size="0.564 0.004 0.332"/></geometry></collision>
+    <collision><origin xyz="1.159 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="1.341 0.1255 1.7" rpy="0 0 0"/><geometry><box size="0.018 0.33 0.6"/></geometry></collision>
+    <collision><origin xyz="1.25 0.1255 1.409" rpy="0 0 0"/><geometry><box size="0.164 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="1.25 0.1255 1.991" rpy="0 0 0"/><geometry><box size="0.164 0.33 0.018"/></geometry></collision>
+    <collision><origin xyz="1.25 0.2885 1.709" rpy="0 0 0"/><geometry><box size="0.164 0.004 0.582"/></geometry></collision>
+    <collision><origin xyz="1.25 0.1325 1.709" rpy="0 0 0"/><geometry><box size="0.162 0.304 0.018"/></geometry></collision>
+    <collision><origin xyz="-1.025 -0.0095 0.84" rpy="0 0 0"/><geometry><box size="0.65 0.6 0.04"/></geometry></collision>
+    <collision><origin xyz="-0.45 -0.2495 0.84" rpy="0 0 0"/><geometry><box size="0.5 0.12 0.04"/></geometry></collision>
+    <collision><origin xyz="-0.45 0.2505 0.84" rpy="0 0 0"/><geometry><box size="0.5 0.08 0.04"/></geometry></collision>
+    <collision><origin xyz="0.575 -0.0095 0.84" rpy="0 0 0"/><geometry><box size="1.55 0.6 0.04"/></geometry></collision>
+  </link>
+  <link name="kitchen_run_cabinets_b1_drawer">
+    <inertial><origin xyz="1.2528e-17 0.19054 -0.0166703" rpy="0 0 0"/><mass value="2.76936"/><inertia ixx="0.0874939" ixy="-2.24972e-18" ixz="-6.84403e-19" iyy="0.0673398" iyz="0.00305117" izz="0.148203"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_b1_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.497 0.018 0.147"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.0445" rpy="0 0 0"/><geometry><box size="0.438 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.213 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="0.213 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="0 0.472 -0.001" rpy="0 0 0"/><geometry><box size="0.414 0.012 0.079"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0285" rpy="0 0 0"/><geometry><box size="0.27335 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.121675 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.121675 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_b1_drawer_joint" type="prismatic">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_b1_drawer"/>
+    <origin xyz="-1.1 -0.2895 0.745" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b1_door">
+    <inertial><origin xyz="0.249655 0.00877201 0.00198848" rpy="0 0 0"/><mass value="3.32477"/><inertia ixx="0.0900048" ixy="0.00010411" ixz="-0.00090802" iyy="0.158355" iyz="0.00017928" izz="0.068571"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_b1_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2485 0.009 0" rpy="0 0 0"/><geometry><box size="0.497 0.018 0.567"/></geometry></collision>
+    <collision><origin xyz="0.387 -0.02 0.2385" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.322 -0.007 0.2385" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.452 -0.007 0.2385" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_b1_door_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_b1_door"/>
+    <origin xyz="-1.3485 -0.2895 0.385" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_sink_left_door">
+    <inertial><origin xyz="0.199231 0.00877427 0.00258783" rpy="0 0 0"/><mass value="3.35811"/><inertia ixx="0.14549" ixy="6.65307e-05" ixz="-0.000762736" iyy="0.189402" iyz="0.000235676" izz="0.0441349"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_sink_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.1985 0.009 0" rpy="0 0 0"/><geometry><box size="0.397 0.018 0.717"/></geometry></collision>
+    <collision><origin xyz="0.287 -0.02 0.3135" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.222 -0.007 0.3135" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.352 -0.007 0.3135" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_sink_left_door_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_sink_left_door"/>
+    <origin xyz="-0.8485 -0.2895 0.46" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_sink_right_door">
+    <inertial><origin xyz="-0.199231 0.00877427 0.00258783" rpy="0 0 0"/><mass value="3.35811"/><inertia ixx="0.14549" ixy="-6.65307e-05" ixz="0.000762736" iyy="0.189402" iyz="0.000235676" izz="0.0441349"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_sink_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.1985 0.009 0" rpy="0 0 0"/><geometry><box size="0.397 0.018 0.717"/></geometry></collision>
+    <collision><origin xyz="-0.287 -0.02 0.3135" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.352 -0.007 0.3135" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.222 -0.007 0.3135" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_sink_right_door_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_sink_right_door"/>
+    <origin xyz="-0.0515 -0.2895 0.46" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b4_drawer">
+    <inertial><origin xyz="-3.45145e-17 0.196427 -0.010171" rpy="0 0 0"/><mass value="2.8146"/><inertia ixx="0.0856841" ixy="4.08609e-18" ixz="1.5416e-18" iyy="0.0927597" iyz="0.0011835" izz="0.174954"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_b4_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.112"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.027" rpy="0 0 0"/><geometry><box size="0.538 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.248 0.008" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.062"/></geometry></collision>
+    <collision><origin xyz="0.263 0.248 0.008" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.062"/></geometry></collision>
+    <collision><origin xyz="0 0.472 0.008" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.062"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.011" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.011" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.011" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_b4_drawer_joint" type="prismatic">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_b4_drawer"/>
+    <origin xyz="0.85 -0.2895 0.1575" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b5_pullout">
+    <inertial><origin xyz="0 0.252777 -0.0372478" rpy="0 0 0"/><mass value="13.4149"/><inertia ixx="0.847093" ixy="0" ixz="0" iyy="0.50974" iyz="0.00406754" izz="0.408727"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_b5_pullout.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.197 0.018 0.717"/></geometry></collision>
+    <collision><origin xyz="0 0.4765 -0.01" rpy="0 0 0"/><geometry><box size="0.14 0.003 0.617"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.288" rpy="0 0 0"/><geometry><box size="0.14 0.46 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.0685 0.248 -0.258" rpy="0 0 0"/><geometry><box size="0.003 0.46 0.056"/></geometry></collision>
+    <collision><origin xyz="0.0685 0.248 -0.258" rpy="0 0 0"/><geometry><box size="0.003 0.46 0.056"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.058" rpy="0 0 0"/><geometry><box size="0.14 0.46 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.0685 0.248 -0.028" rpy="0 0 0"/><geometry><box size="0.003 0.46 0.056"/></geometry></collision>
+    <collision><origin xyz="0.0685 0.248 -0.028" rpy="0 0 0"/><geometry><box size="0.003 0.46 0.056"/></geometry></collision>
+    <collision><origin xyz="0 0.248 0.162" rpy="0 0 0"/><geometry><box size="0.14 0.46 0.004"/></geometry></collision>
+    <collision><origin xyz="-0.0685 0.248 0.192" rpy="0 0 0"/><geometry><box size="0.003 0.46 0.056"/></geometry></collision>
+    <collision><origin xyz="0.0685 0.248 0.192" rpy="0 0 0"/><geometry><box size="0.003 0.46 0.056"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.3135" rpy="0 0 0"/><geometry><box size="0.12 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.045 -0.007 0.3135" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.045 -0.007 0.3135" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_b5_pullout_joint" type="prismatic">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_b5_pullout"/>
+    <origin xyz="1.25 -0.2895 0.46" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w1_door">
+    <inertial><origin xyz="0.249597 0.00878338 -0.00200817" rpy="0 0 0"/><mass value="3.49922"/><inertia ixx="0.104989" ixy="0.000104154" ixz="0.000965532" iyy="0.176925" iyz="-0.000190635" izz="0.0721668"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_w1_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2485 0.009 0" rpy="0 0 0"/><geometry><box size="0.497 0.018 0.597"/></geometry></collision>
+    <collision><origin xyz="0.387 -0.02 -0.2535" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.322 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.452 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_w1_door_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_w1_door"/>
+    <origin xyz="-1.3485 -0.0595 1.7" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w2_left_glass_door">
+    <inertial><origin xyz="0.199457 0.00870426 -0.00274159" rpy="0 0 0"/><mass value="2.56312"/><inertia ixx="0.0794806" ixy="6.63589e-05" ixz="0.000615166" iyy="0.114498" iyz="-0.000190079" izz="0.0351252"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_w2_left_glass_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.1985 0.009 -0.271" rpy="0 0 0"/><geometry><box size="0.397 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="0.1985 0.009 0.271" rpy="0 0 0"/><geometry><box size="0.397 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="0.0275 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.487"/></geometry></collision>
+    <collision><origin xyz="0.3695 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.487"/></geometry></collision>
+    <collision><origin xyz="0.1985 0.009 0" rpy="0 0 0"/><geometry><box size="0.287 0.004 0.487"/></geometry></collision>
+    <collision><origin xyz="0.287 -0.02 -0.2535" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.222 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.352 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_w2_left_glass_door_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_w2_left_glass_door"/>
+    <origin xyz="-0.8485 -0.0595 1.7" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w2_right_glass_door">
+    <inertial><origin xyz="-0.199457 0.00870426 -0.00274159" rpy="0 0 0"/><mass value="2.56312"/><inertia ixx="0.0794806" ixy="-6.63589e-05" ixz="-0.000615166" iyy="0.114498" iyz="-0.000190079" izz="0.0351252"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_w2_right_glass_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.1985 0.009 -0.271" rpy="0 0 0"/><geometry><box size="0.397 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="-0.1985 0.009 0.271" rpy="0 0 0"/><geometry><box size="0.397 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="-0.3695 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.487"/></geometry></collision>
+    <collision><origin xyz="-0.0275 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.487"/></geometry></collision>
+    <collision><origin xyz="-0.1985 0.009 0" rpy="0 0 0"/><geometry><box size="0.287 0.004 0.487"/></geometry></collision>
+    <collision><origin xyz="-0.287 -0.02 -0.2535" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.352 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.222 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_w2_right_glass_door_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_w2_right_glass_door"/>
+    <origin xyz="-0.0515 -0.0595 1.7" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w3_glass_door">
+    <inertial><origin xyz="0.299877 0.00880023 -0.00185189" rpy="0 0 0"/><mass value="3.79452"/><inertia ixx="0.117714" ixy="0.000141842" ixz="0.00131492" iyy="0.234579" iyz="-0.000190753" izz="0.11699"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_w3_glass_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2985 0.009 -0.271" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="0.2985 0.009 0.271" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.055"/></geometry></collision>
+    <collision><origin xyz="0.0275 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.487"/></geometry></collision>
+    <collision><origin xyz="0.5695 0.009 0" rpy="0 0 0"/><geometry><box size="0.055 0.018 0.487"/></geometry></collision>
+    <collision><origin xyz="0.2985 0.009 0" rpy="0 0 0"/><geometry><box size="0.487 0.004 0.487"/></geometry></collision>
+    <collision><origin xyz="0.487 -0.02 -0.2535" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.422 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.552 -0.007 -0.2535" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_w3_glass_door_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_w3_glass_door"/>
+    <origin xyz="-0.0485 -0.0595 1.7" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w4_flap">
+    <inertial><origin xyz="0 0.00844778 -0.176226" rpy="0 0 0"/><mass value="2.47242"/><inertia ixx="0.02534" ixy="0" ixz="0" iyy="0.0976221" iyz="-0.000185374" izz="0.0724904"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_run_cabinets_w4_flap.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 -0.1735" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.347"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 -0.312" rpy="0 0 0"/><geometry><box size="0.2985 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.13425 -0.007 -0.312" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.13425 -0.007 -0.312" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_run_cabinets_w4_flap_joint" type="revolute">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_w4_flap"/>
+    <origin xyz="0.85 -0.0595 1.9985" rpy="0 0 0"/>
+    <axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b1_drawer_grip"/>
+  <joint name="kitchen_run_cabinets_b1_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_b1_drawer"/><child link="kitchen_run_cabinets_b1_drawer_grip"/>
+    <origin xyz="0 -0.02 0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b1_drawer_volume"/>
+  <joint name="kitchen_run_cabinets_b1_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_b1_drawer"/><child link="kitchen_run_cabinets_b1_drawer_volume"/>
+    <origin xyz="0 0.248 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b1_door_grip"/>
+  <joint name="kitchen_run_cabinets_b1_door_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_b1_door"/><child link="kitchen_run_cabinets_b1_door_grip"/>
+    <origin xyz="0.387 -0.02 0.2385" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_sink_left_door_grip"/>
+  <joint name="kitchen_run_cabinets_sink_left_door_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_sink_left_door"/><child link="kitchen_run_cabinets_sink_left_door_grip"/>
+    <origin xyz="0.287 -0.02 0.3135" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_sink_right_door_grip"/>
+  <joint name="kitchen_run_cabinets_sink_right_door_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_sink_right_door"/><child link="kitchen_run_cabinets_sink_right_door_grip"/>
+    <origin xyz="-0.287 -0.02 0.3135" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_sink_basin_volume"/>
+  <joint name="kitchen_run_cabinets_sink_basin_volume_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_sink_basin_volume"/>
+    <origin xyz="-0.45 0.0105 0.77" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b3_appliance_niche_volume"/>
+  <joint name="kitchen_run_cabinets_b3_appliance_niche_volume_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_b3_appliance_niche_volume"/>
+    <origin xyz="0.25 0.0105 0.46" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b4_drawer_grip"/>
+  <joint name="kitchen_run_cabinets_b4_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_b4_drawer"/><child link="kitchen_run_cabinets_b4_drawer_grip"/>
+    <origin xyz="0 -0.02 0.011" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b4_drawer_volume"/>
+  <joint name="kitchen_run_cabinets_b4_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_b4_drawer"/><child link="kitchen_run_cabinets_b4_drawer_volume"/>
+    <origin xyz="0 0.248 0.004" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b4_oven_niche_volume"/>
+  <joint name="kitchen_run_cabinets_b4_oven_niche_volume_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_b4_oven_niche_volume"/>
+    <origin xyz="0.85 0.0105 0.5175" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b5_pullout_grip"/>
+  <joint name="kitchen_run_cabinets_b5_pullout_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_b5_pullout"/><child link="kitchen_run_cabinets_b5_pullout_grip"/>
+    <origin xyz="0 -0.02 0.3135" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_b5_pullout_volume"/>
+  <joint name="kitchen_run_cabinets_b5_pullout_volume_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_b5_pullout"/><child link="kitchen_run_cabinets_b5_pullout_volume"/>
+    <origin xyz="0 0.248 -0.03" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w1_door_grip"/>
+  <joint name="kitchen_run_cabinets_w1_door_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_w1_door"/><child link="kitchen_run_cabinets_w1_door_grip"/>
+    <origin xyz="0.387 -0.02 -0.2535" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w2_left_glass_door_grip"/>
+  <joint name="kitchen_run_cabinets_w2_left_glass_door_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_w2_left_glass_door"/><child link="kitchen_run_cabinets_w2_left_glass_door_grip"/>
+    <origin xyz="0.287 -0.02 -0.2535" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w2_right_glass_door_grip"/>
+  <joint name="kitchen_run_cabinets_w2_right_glass_door_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_w2_right_glass_door"/><child link="kitchen_run_cabinets_w2_right_glass_door_grip"/>
+    <origin xyz="-0.287 -0.02 -0.2535" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w3_glass_door_grip"/>
+  <joint name="kitchen_run_cabinets_w3_glass_door_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_w3_glass_door"/><child link="kitchen_run_cabinets_w3_glass_door_grip"/>
+    <origin xyz="0.487 -0.02 -0.2535" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w4_flap_grip"/>
+  <joint name="kitchen_run_cabinets_w4_flap_grip_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_w4_flap"/><child link="kitchen_run_cabinets_w4_flap_grip"/>
+    <origin xyz="0 -0.02 -0.312" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w4_hood_niche_volume"/>
+  <joint name="kitchen_run_cabinets_w4_hood_niche_volume_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_w4_hood_niche_volume"/>
+    <origin xyz="0.85 0.1155 1.525" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_w5_shelf_surface"/>
+  <joint name="kitchen_run_cabinets_w5_shelf_surface_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_w5_shelf_surface"/>
+    <origin xyz="1.25 0.1255 1.418" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_worktop_surface"/>
+  <joint name="kitchen_run_cabinets_worktop_surface_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_worktop_surface"/>
+    <origin xyz="0 -0.0095 0.86" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_run_cabinets_wall_anchor"/>
+  <joint name="kitchen_run_cabinets_wall_anchor_fixed" type="fixed">
+    <parent link="kitchen_run_cabinets_body"/><child link="kitchen_run_cabinets_wall_anchor"/>
+    <origin xyz="0 0.2905 1.85" rpy="0 0 0"/>
+  </joint>
+</robot>

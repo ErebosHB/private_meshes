@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot name="kitchen_machine">
+  <link name="kitchen_machine_body">
+    <inertial><origin xyz="0 0.0333496 0.0966254" rpy="0 0 0"/><mass value="52.048"/><inertia ixx="0.89358" ixy="5.3344e-14" ixz="2.2937e-13" iyy="0.55984" iyz="-0.2155" izz="0.60743"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_machine_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.02 0.02" rpy="0 0 0"/><geometry><box size="0.22 0.34 0.04"/></geometry></collision>
+    <collision><origin xyz="0 0.1 0.17" rpy="0 0 0"/><geometry><box size="0.12 0.1 0.26"/></geometry></collision>
+    <collision><origin xyz="-0.08 -0.16 0.003" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.006"/></geometry></collision>
+    <collision><origin xyz="-0.08 0.12 0.003" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0.08 -0.16 0.003" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0.08 0.12 0.003" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0 -0.06 0.046" rpy="0 0 0"/><geometry><cylinder radius="0.055" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.0935 -0.06 0.125" rpy="0 0 0"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="0.0809734 -0.01325 0.125" rpy="0 0 0.523599"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="0.04675 0.0209734 0.125" rpy="0 0 1.0472"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="0 0.0335 0.125" rpy="0 0 1.5708"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="-0.04675 0.0209734 0.125" rpy="0 0 2.09439"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="-0.0809734 -0.01325 0.125" rpy="0 0 2.61799"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="-0.0935 -0.06 0.125" rpy="0 0 3.14159"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="-0.0809734 -0.10675 0.125" rpy="0 0 -2.61799"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="-0.04675 -0.140973 0.125" rpy="0 0 -2.09439"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="0 -0.1535 0.125" rpy="0 0 -1.5708"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="0.04675 -0.140973 0.125" rpy="0 0 -1.0472"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="0.0809734 -0.10675 0.125" rpy="0 0 -0.523599"/><geometry><box size="0.003 0.0509103 0.15"/></geometry></collision>
+    <collision><origin xyz="0 -0.06 0.054" rpy="0 0 0"/><geometry><cylinder radius="0.092" length="0.004"/></geometry></collision>
+  </link>
+  <link name="kitchen_machine_speed_dial">
+    <inertial><origin xyz="0.0104299 0 0" rpy="0 0 0"/><mass value="0.028379"/><inertia ixx="5.5644e-06" ixy="0" ixz="0" iyy="3.99e-06" iyz="0" izz="4.1151e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_machine_speed_dial.glb"/></geometry></visual>
+    <collision><origin xyz="0.003 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.0216" length="0.006"/></geometry></collision>
+    <collision><origin xyz="0.013 0 0" rpy="0 1.5708 0"/><geometry><cylinder radius="0.02" length="0.014"/></geometry></collision>
+    <collision><origin xyz="0.024 0 0" rpy="0 0 0"/><geometry><box size="0.008 0.03 0.007"/></geometry></collision>
+  </link>
+  <link name="kitchen_machine_head">
+    <inertial><origin xyz="0 -0.124638 0.0485944" rpy="0 0 0"/><mass value="29.682"/><inertia ixx="0.269" ixy="0" ixz="0" iyy="0.075775" iyz="-0.005642" izz="0.26211"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_machine_head.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.12 0.052" rpy="0 0 0"/><geometry><box size="0.12 0.3 0.1"/></geometry></collision>
+    <collision><origin xyz="0 -0.27 0.052" rpy="1.5708 0 0"/><geometry><cylinder radius="0.04" length="0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.18 -0.012" rpy="0 0 0"/><geometry><cylinder radius="0.025" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0 -0.18 -0.078" rpy="0 0 0"/><geometry><cylinder radius="0.006" length="0.105"/></geometry></collision>
+    <collision><origin xyz="0 -0.18 -0.18" rpy="0 0 0"/><geometry><box size="0.1 0.008 0.12"/></geometry></collision>
+  </link>
+  <joint name="kitchen_machine_speed_dial_joint" type="revolute">
+    <parent link="kitchen_machine_body"/><child link="kitchen_machine_speed_dial"/>
+    <origin xyz="0.06 0.1 0.17" rpy="0 0 0"/><axis xyz="1 0 0"/>
+    <limit lower="0" upper="4.71" effort="50" velocity="1.5"/>
+  </joint>
+  <joint name="kitchen_machine_head_joint" type="revolute">
+    <parent link="kitchen_machine_body"/><child link="kitchen_machine_head"/>
+    <origin xyz="0 0.12 0.3" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="0.7" effort="50" velocity="1.5"/>
+  </joint>
+  <link name="kitchen_machine_speed_dial_contact"/>
+  <joint name="kitchen_machine_speed_dial_contact_joint" type="fixed"><parent link="kitchen_machine_speed_dial"/><child link="kitchen_machine_speed_dial_contact"/><origin xyz="0.028 0 0" rpy="0 0 0"/></joint>
+  <link name="kitchen_machine_head_grip"/>
+  <joint name="kitchen_machine_head_grip_joint" type="fixed"><parent link="kitchen_machine_head"/><child link="kitchen_machine_head_grip"/><origin xyz="0 -0.22 0.1" rpy="0 0 0"/></joint>
+  <link name="kitchen_machine_beater_attachment"/>
+  <joint name="kitchen_machine_beater_attachment_joint" type="fixed"><parent link="kitchen_machine_head"/><child link="kitchen_machine_beater_attachment"/><origin xyz="0 -0.18 -0.027" rpy="0 0 0"/></joint>
+  <link name="kitchen_machine_bowl_volume"/>
+  <joint name="kitchen_machine_bowl_volume_joint" type="fixed"><parent link="kitchen_machine_body"/><child link="kitchen_machine_bowl_volume"/><origin xyz="0 -0.06 0.13" rpy="0 0 0"/></joint>
+  <link name="kitchen_machine_carry_grip"/>
+  <joint name="kitchen_machine_carry_grip_joint" type="fixed"><parent link="kitchen_machine_body"/><child link="kitchen_machine_carry_grip"/><origin xyz="0 0.15 0.25" rpy="0 0 0"/></joint>
+</robot>

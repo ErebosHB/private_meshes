@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot name="open_top_drum">
+  <link name="open_top_drum_body">
+    <inertial><origin xyz="0 5.50596e-10 0.347602" rpy="0 0 0"/><mass value="13.5318"/><inertia ixx="1.62735" ixy="3.72529e-09" ixz="-1.86265e-09" iyy="1.62735" iyz="1.74539e-09" izz="1.00122"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/open_top_drum_body.glb"/></geometry></visual>
+    <collision><origin xyz="0.277221 0.0742811 0.45" rpy="0 0 0.261799"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="0.20294 0.20294 0.45" rpy="0 0 0.785398"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="0.0742811 0.277221 0.45" rpy="0 0 1.309"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="-0.0742811 0.277221 0.45" rpy="0 0 1.8326"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="-0.20294 0.20294 0.45" rpy="0 0 2.35619"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="-0.277221 0.0742811 0.45" rpy="0 0 2.87979"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="-0.277221 -0.0742811 0.45" rpy="0 0 -2.87979"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="-0.20294 -0.20294 0.45" rpy="0 0 -2.35619"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="-0.0742811 -0.277221 0.45" rpy="0 0 -1.8326"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="0.0742811 -0.277221 0.45" rpy="0 0 -1.309"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="0.20294 -0.20294 0.45" rpy="0 0 -0.785398"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="0.277221 -0.0742811 0.45" rpy="0 0 -0.261799"/><geometry><box size="0.006 0.155411 0.88"/></geometry></collision>
+    <collision><origin xyz="0 0 0.016" rpy="0 0 0"/><geometry><cylinder radius="0.284" length="0.012"/></geometry></collision>
+  </link>
+  <link name="open_top_drum_lid">
+    <inertial><origin xyz="1.72891e-09 3.89005e-09 0.00202692" rpy="0 0 0"/><mass value="8.61881"/><inertia ixx="0.327012" ixy="3.72529e-09" ixz="1.16415e-10" iyy="0.327012" iyz="2.76486e-10" izz="0.651868"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/open_top_drum_lid.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0.012" rpy="0 0 0"/><geometry><cylinder radius="0.3" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.297505 0.0797163 -0.005" rpy="0 0 0.261799"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="0.217789 0.217789 -0.005" rpy="0 0 0.785398"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="0.0797163 0.297505 -0.005" rpy="0 0 1.309"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="-0.0797163 0.297505 -0.005" rpy="0 0 1.8326"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="-0.217789 0.217789 -0.005" rpy="0 0 2.35619"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="-0.297505 0.0797163 -0.005" rpy="0 0 2.87979"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="-0.297505 -0.0797163 -0.005" rpy="0 0 -2.87979"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="-0.217789 -0.217789 -0.005" rpy="0 0 -2.35619"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="-0.0797163 -0.297505 -0.005" rpy="0 0 -1.8326"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="0.0797163 -0.297505 -0.005" rpy="0 0 -1.309"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="0.217789 -0.217789 -0.005" rpy="0 0 -0.785398"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+    <collision><origin xyz="0.297505 -0.0797163 -0.005" rpy="0 0 -0.261799"/><geometry><box size="0.01 0.167736 0.032"/></geometry></collision>
+  </link>
+  <joint name="open_top_drum_lid_joint" type="prismatic">
+    <parent link="open_top_drum_body"/><child link="open_top_drum_lid"/>
+    <origin xyz="0 0 0.89" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.3" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="open_top_drum_clamp_lever">
+    <inertial><origin xyz="0.065 -0.007 0" rpy="0 0 0"/><mass value="0.036036"/><inertia ixx="1.88588e-06" ixy="0" ixz="0" iyy="5.22042e-05" iyz="0" izz="5.11831e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/open_top_drum_clamp_lever.glb"/></geometry></visual>
+    <collision><origin xyz="0.065 -0.007 0" rpy="0 0 0"/><geometry><box size="0.13 0.012 0.022"/></geometry></collision>
+  </link>
+  <joint name="open_top_drum_clamp_lever_joint" type="revolute">
+    <parent link="open_top_drum_lid"/><child link="open_top_drum_clamp_lever"/>
+    <origin xyz="-0.06 -0.322 -0.005" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="open_top_drum_drum_volume"/>
+  <joint name="open_top_drum_drum_volume_fixed" type="fixed">
+    <parent link="open_top_drum_body"/><child link="open_top_drum_drum_volume"/>
+    <origin xyz="0 0 0.45" rpy="0 0 0"/>
+  </joint>
+  <link name="open_top_drum_strap_anchor"/>
+  <joint name="open_top_drum_strap_anchor_fixed" type="fixed">
+    <parent link="open_top_drum_body"/><child link="open_top_drum_strap_anchor"/>
+    <origin xyz="0 0.305 0.62" rpy="0 0 0"/>
+  </joint>
+  <link name="open_top_drum_lid_grip"/>
+  <joint name="open_top_drum_lid_grip_fixed" type="fixed">
+    <parent link="open_top_drum_lid"/><child link="open_top_drum_lid_grip"/>
+    <origin xyz="0.21 0.21 0.018" rpy="0 0 0"/>
+  </joint>
+  <link name="open_top_drum_lid_top_surface"/>
+  <joint name="open_top_drum_lid_top_surface_fixed" type="fixed">
+    <parent link="open_top_drum_lid"/><child link="open_top_drum_lid_top_surface"/>
+    <origin xyz="0 0 0.018" rpy="0 0 0"/>
+  </joint>
+  <link name="open_top_drum_clamp_lever_tip"/>
+  <joint name="open_top_drum_clamp_lever_tip_fixed" type="fixed">
+    <parent link="open_top_drum_clamp_lever"/><child link="open_top_drum_clamp_lever_tip"/>
+    <origin xyz="0.125 -0.007 0" rpy="0 0 0"/>
+  </joint>
+</robot>

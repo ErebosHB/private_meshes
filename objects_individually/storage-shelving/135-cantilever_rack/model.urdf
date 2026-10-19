@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<robot name="cantilever_rack">
+  <link name="cantilever_rack_body">
+    <inertial><origin xyz="4.94627e-09 0.179156 0.979374" rpy="0 0 0"/><mass value="289.21"/><inertia ixx="142.191" ixy="7.38244e-07" ixz="-9.50838e-07" iyy="346.724" iyz="-7.23378" izz="239.124"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.9 0.256 1.1" rpy="0 0 0"/><geometry><box size="0.12 0.012 2.2"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.404 1.1" rpy="0 0 0"/><geometry><box size="0.12 0.012 2.2"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.33 1.1" rpy="0 0 0"/><geometry><box size="0.008 0.136 2.2"/></geometry></collision>
+    <collision><origin xyz="-0.9 -0.02 0.05" rpy="0 0 0"/><geometry><box size="0.12 0.9 0.1"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.22 0.48" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="-0.9 -0.11 0.515" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.22 0.93" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="-0.9 -0.11 0.965" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.22 1.38" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="-0.9 -0.11 1.415" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="-0.9 0.22 1.83" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="-0.9 -0.11 1.865" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="0.9 0.256 1.1" rpy="0 0 0"/><geometry><box size="0.12 0.012 2.2"/></geometry></collision>
+    <collision><origin xyz="0.9 0.404 1.1" rpy="0 0 0"/><geometry><box size="0.12 0.012 2.2"/></geometry></collision>
+    <collision><origin xyz="0.9 0.33 1.1" rpy="0 0 0"/><geometry><box size="0.008 0.136 2.2"/></geometry></collision>
+    <collision><origin xyz="0.9 -0.02 0.05" rpy="0 0 0"/><geometry><box size="0.12 0.9 0.1"/></geometry></collision>
+    <collision><origin xyz="0.9 0.22 0.48" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="0.9 -0.11 0.515" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="0.9 0.22 0.93" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="0.9 -0.11 0.965" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="0.9 0.22 1.38" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="0.9 -0.11 1.415" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="0.9 0.22 1.83" rpy="0 0 0"/><geometry><box size="0.13 0.06 0.22"/></geometry></collision>
+    <collision><origin xyz="0.9 -0.11 1.865" rpy="0 0 0"/><geometry><box size="0.08 0.74 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.39 0.6" rpy="0 0 0"/><geometry><box size="1.68 0.04 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.39 1.7" rpy="0 0 0"/><geometry><box size="1.68 0.04 0.06"/></geometry></collision>
+    <collision><origin xyz="0 0.39 1.15" rpy="0 1.02514 0"/><geometry><box size="0.03 0.03 1.9654"/></geometry></collision>
+    <collision><origin xyz="0 0.39 1.15" rpy="0 -1.02514 0"/><geometry><box size="0.03 0.03 1.9654"/></geometry></collision>
+  </link>
+  <link name="cantilever_rack_left_stop_1">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_left_stop_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_left_stop_1_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_left_stop_1"/>
+    <origin xyz="-0.9 -0.47 0.558" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_left_stop_2">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_left_stop_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_left_stop_2_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_left_stop_2"/>
+    <origin xyz="-0.9 -0.47 1.008" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_left_stop_3">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_left_stop_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_left_stop_3_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_left_stop_3"/>
+    <origin xyz="-0.9 -0.47 1.458" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_left_stop_4">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_left_stop_4.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_left_stop_4_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_left_stop_4"/>
+    <origin xyz="-0.9 -0.47 1.908" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_1">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_right_stop_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_right_stop_1_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_right_stop_1"/>
+    <origin xyz="0.9 -0.47 0.558" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_2">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_right_stop_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_right_stop_2_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_right_stop_2"/>
+    <origin xyz="0.9 -0.47 1.008" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_3">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_right_stop_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_right_stop_3_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_right_stop_3"/>
+    <origin xyz="0.9 -0.47 1.458" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_4">
+    <inertial><origin xyz="0 0.05 0.006" rpy="0 0 0"/><mass value="0.0756"/><inertia ixx="6.39072e-05" ixy="0" ixz="0" iyy="2.35872e-05" iyz="0" izz="8.568e-05"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/cantilever_rack_right_stop_4.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.05 0.006" rpy="0 0 0"/><geometry><box size="0.06 0.1 0.012"/></geometry></collision>
+  </link>
+  <joint name="cantilever_rack_right_stop_4_joint" type="revolute">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_right_stop_4"/>
+    <origin xyz="0.9 -0.47 1.908" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="cantilever_rack_level_1_arm_surface"/>
+  <joint name="cantilever_rack_level_1_arm_surface_fixed" type="fixed">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_level_1_arm_surface"/>
+    <origin xyz="0 -0.11 0.55" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_level_2_arm_surface"/>
+  <joint name="cantilever_rack_level_2_arm_surface_fixed" type="fixed">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_level_2_arm_surface"/>
+    <origin xyz="0 -0.11 1" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_level_3_arm_surface"/>
+  <joint name="cantilever_rack_level_3_arm_surface_fixed" type="fixed">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_level_3_arm_surface"/>
+    <origin xyz="0 -0.11 1.45" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_level_4_arm_surface"/>
+  <joint name="cantilever_rack_level_4_arm_surface_fixed" type="fixed">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_level_4_arm_surface"/>
+    <origin xyz="0 -0.11 1.9" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_wall_anchor"/>
+  <joint name="cantilever_rack_wall_anchor_fixed" type="fixed">
+    <parent link="cantilever_rack_body"/><child link="cantilever_rack_wall_anchor"/>
+    <origin xyz="0 0.41 2.15" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_left_stop_1_grip"/>
+  <joint name="cantilever_rack_left_stop_1_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_left_stop_1"/><child link="cantilever_rack_left_stop_1_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_left_stop_2_grip"/>
+  <joint name="cantilever_rack_left_stop_2_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_left_stop_2"/><child link="cantilever_rack_left_stop_2_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_left_stop_3_grip"/>
+  <joint name="cantilever_rack_left_stop_3_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_left_stop_3"/><child link="cantilever_rack_left_stop_3_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_left_stop_4_grip"/>
+  <joint name="cantilever_rack_left_stop_4_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_left_stop_4"/><child link="cantilever_rack_left_stop_4_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_1_grip"/>
+  <joint name="cantilever_rack_right_stop_1_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_right_stop_1"/><child link="cantilever_rack_right_stop_1_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_2_grip"/>
+  <joint name="cantilever_rack_right_stop_2_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_right_stop_2"/><child link="cantilever_rack_right_stop_2_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_3_grip"/>
+  <joint name="cantilever_rack_right_stop_3_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_right_stop_3"/><child link="cantilever_rack_right_stop_3_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+  <link name="cantilever_rack_right_stop_4_grip"/>
+  <joint name="cantilever_rack_right_stop_4_grip_fixed" type="fixed">
+    <parent link="cantilever_rack_right_stop_4"/><child link="cantilever_rack_right_stop_4_grip"/>
+    <origin xyz="0 0.09 0.012" rpy="0 0 0"/>
+  </joint>
+</robot>

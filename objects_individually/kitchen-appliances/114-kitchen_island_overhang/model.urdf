@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+<robot name="kitchen_island_overhang">
+  <link name="kitchen_island_overhang_body">
+    <inertial><origin xyz="0.0216319 -0.0625646 0.544419" rpy="0 0 0"/><mass value="114.946"/><inertia ixx="16.8466" ixy="0.159544" ixz="0.282939" iyy="55" iyz="-1.41863" izz="50.8534"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.866 -0.132 0.48" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.76"/></geometry></collision>
+    <collision><origin xyz="-0.284 -0.132 0.48" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.76"/></geometry></collision>
+    <collision><origin xyz="-0.575 -0.132 0.109" rpy="0 0 0"/><geometry><box size="0.564 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.575 -0.372 0.851" rpy="0 0 0"/><geometry><box size="0.564 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.575 0.106 0.851" rpy="0 0 0"/><geometry><box size="0.564 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="-0.575 0.146 0.489" rpy="0 0 0"/><geometry><box size="0.564 0.004 0.742"/></geometry></collision>
+    <collision><origin xyz="-0.575 -0.373 0.049" rpy="0 0 0"/><geometry><box size="0.6 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="-0.266 -0.132 0.48" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.76"/></geometry></collision>
+    <collision><origin xyz="0.316 -0.132 0.48" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.76"/></geometry></collision>
+    <collision><origin xyz="0.025 -0.132 0.109" rpy="0 0 0"/><geometry><box size="0.564 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="0.025 -0.372 0.851" rpy="0 0 0"/><geometry><box size="0.564 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="0.025 0.106 0.851" rpy="0 0 0"/><geometry><box size="0.564 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="0.025 0.146 0.489" rpy="0 0 0"/><geometry><box size="0.564 0.004 0.742"/></geometry></collision>
+    <collision><origin xyz="0.025 -0.125 0.489" rpy="0 0 0"/><geometry><box size="0.562 0.534 0.018"/></geometry></collision>
+    <collision><origin xyz="0.025 -0.373 0.049" rpy="0 0 0"/><geometry><box size="0.6 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="0.334 -0.132 0.48" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.76"/></geometry></collision>
+    <collision><origin xyz="0.866 -0.132 0.48" rpy="0 0 0"/><geometry><box size="0.018 0.56 0.76"/></geometry></collision>
+    <collision><origin xyz="0.6 -0.132 0.109" rpy="0 0 0"/><geometry><box size="0.514 0.56 0.018"/></geometry></collision>
+    <collision><origin xyz="0.6 -0.372 0.851" rpy="0 0 0"/><geometry><box size="0.514 0.08 0.018"/></geometry></collision>
+    <collision><origin xyz="0.6 0.106 0.851" rpy="0 0 0"/><geometry><box size="0.514 0.076 0.018"/></geometry></collision>
+    <collision><origin xyz="0.6 0.146 0.489" rpy="0 0 0"/><geometry><box size="0.514 0.004 0.742"/></geometry></collision>
+    <collision><origin xyz="0.6 -0.125 0.414" rpy="0 0 0"/><geometry><box size="0.512 0.534 0.018"/></geometry></collision>
+    <collision><origin xyz="0.6 -0.373 0.049" rpy="0 0 0"/><geometry><box size="0.55 0.018 0.098"/></geometry></collision>
+    <collision><origin xyz="-0.8875 0.003 0.43" rpy="0 0 0"/><geometry><box size="0.025 0.91 0.86"/></geometry></collision>
+    <collision><origin xyz="0.8875 0.003 0.43" rpy="0 0 0"/><geometry><box size="0.025 0.91 0.86"/></geometry></collision>
+    <collision><origin xyz="0 0.003 0.88" rpy="0 0 0"/><geometry><box size="1.8 0.91 0.04"/></geometry></collision>
+  </link>
+  <link name="kitchen_island_overhang_b1_top_drawer">
+    <inertial><origin xyz="2.33476e-17 0.191402 -0.018947" rpy="0 0 0"/><mass value="3.56174"/><inertia ixx="0.117899" ixy="-5.54976e-18" ixz="-1.71609e-18" iyy="0.127678" iyz="0.00442031" izz="0.233903"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_b1_top_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.1642"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.0531" rpy="0 0 0"/><geometry><box size="0.538 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.0962"/></geometry></collision>
+    <collision><origin xyz="0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.0962"/></geometry></collision>
+    <collision><origin xyz="0 0.472 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.0962"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0371" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.0371" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.0371" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_island_overhang_b1_top_drawer_joint" type="prismatic">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_b1_top_drawer"/>
+    <origin xyz="-0.575 -0.432 0.7764" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_middle_drawer">
+    <inertial><origin xyz="2.18302e-17 0.195632 -0.0236267" rpy="0 0 0"/><mass value="5.08077"/><inertia ixx="0.19367" ixy="-6.32225e-18" ixz="-3.42201e-18" iyy="0.211427" iyz="0.0075419" izz="0.358375"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_b1_middle_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.2478"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.0949" rpy="0 0 0"/><geometry><box size="0.538 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.1798"/></geometry></collision>
+    <collision><origin xyz="0.263 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.1798"/></geometry></collision>
+    <collision><origin xyz="0 0.472 -0.001" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.1798"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0789" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.0789" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.0789" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_island_overhang_b1_middle_drawer_joint" type="prismatic">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_b1_middle_drawer"/>
+    <origin xyz="-0.575 -0.432 0.5674" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_bottom_drawer">
+    <inertial><origin xyz="2.28152e-17 0.183932 -0.0405843" rpy="0 0 0"/><mass value="6.07795"/><inertia ixx="0.256221" ixy="-1.02796e-17" ixz="-1.76183e-18" iyy="0.275782" iyz="0.0233368" izz="0.432066"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_b1_bottom_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.597 0.018 0.339"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.1405" rpy="0 0 0"/><geometry><box size="0.538 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.263 0.248 -0.0305" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.212"/></geometry></collision>
+    <collision><origin xyz="0.263 0.248 -0.0305" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.212"/></geometry></collision>
+    <collision><origin xyz="0 0.472 -0.0305" rpy="0 0 0"/><geometry><box size="0.514 0.012 0.212"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.1245" rpy="0 0 0"/><geometry><box size="0.32 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.145 -0.007 0.1245" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.145 -0.007 0.1245" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_island_overhang_b1_bottom_drawer_joint" type="prismatic">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_b1_bottom_drawer"/>
+    <origin xyz="-0.575 -0.432 0.271" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b2_left_door">
+    <inertial><origin xyz="0.148933 0.00873364 0.00326173" rpy="0 0 0"/><mass value="2.65648"/><inertia ixx="0.12857" ixy="3.10047e-05" ixz="-0.000379664" iyy="0.147919" iyz="0.000233674" izz="0.0195312"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_b2_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.1485 0.009 0" rpy="0 0 0"/><geometry><box size="0.297 0.018 0.757"/></geometry></collision>
+    <collision><origin xyz="0.19275 -0.02 0.3335" rpy="0 0 0"/><geometry><box size="0.1485 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="0.1335 -0.007 0.3335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.252 -0.007 0.3335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_island_overhang_b2_left_door_joint" type="revolute">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_b2_left_door"/>
+    <origin xyz="-0.2735 -0.432 0.48" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b2_right_door">
+    <inertial><origin xyz="-0.148933 0.00873364 0.00326173" rpy="0 0 0"/><mass value="2.65648"/><inertia ixx="0.12857" ixy="-3.10047e-05" ixz="0.000379664" iyy="0.147919" iyz="0.000233674" izz="0.0195312"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_b2_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.1485 0.009 0" rpy="0 0 0"/><geometry><box size="0.297 0.018 0.757"/></geometry></collision>
+    <collision><origin xyz="-0.19275 -0.02 0.3335" rpy="0 0 0"/><geometry><box size="0.1485 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.252 -0.007 0.3335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.1335 -0.007 0.3335" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_island_overhang_b2_right_door_joint" type="revolute">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_b2_right_door"/>
+    <origin xyz="0.3235 -0.432 0.48" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b3_drawer">
+    <inertial><origin xyz="-2.30534e-17 0.190227 -0.017077" rpy="0 0 0"/><mass value="3.00992"/><inertia ixx="0.095763" ixy="3.14419e-18" ixz="9.26654e-19" iyy="0.087898" iyz="0.0034067" izz="0.176423"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_b3_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0" rpy="0 0 0"/><geometry><box size="0.547 0.018 0.147"/></geometry></collision>
+    <collision><origin xyz="0 0.248 -0.0445" rpy="0 0 0"/><geometry><box size="0.488 0.46 0.008"/></geometry></collision>
+    <collision><origin xyz="-0.238 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="0.238 0.248 -0.001" rpy="0 0 0"/><geometry><box size="0.012 0.46 0.079"/></geometry></collision>
+    <collision><origin xyz="0 0.472 -0.001" rpy="0 0 0"/><geometry><box size="0.464 0.012 0.079"/></geometry></collision>
+    <collision><origin xyz="0 -0.02 0.0285" rpy="0 0 0"/><geometry><box size="0.30085 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.135425 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="0.135425 -0.007 0.0285" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_island_overhang_b3_drawer_joint" type="prismatic">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_b3_drawer"/>
+    <origin xyz="0.6 -0.432 0.785" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.345" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b3_door">
+    <inertial><origin xyz="-0.274658 0.00880626 0.00183149" rpy="0 0 0"/><mass value="3.91246"/><inertia ixx="0.121243" ixy="-0.000123058" ixz="0.00116328" iyy="0.218782" iyz="0.000194559" izz="0.0977911"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/kitchen_island_overhang_b3_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2735 0.009 0" rpy="0 0 0"/><geometry><box size="0.547 0.018 0.607"/></geometry></collision>
+    <collision><origin xyz="-0.437 -0.02 0.2585" rpy="0 0 0"/><geometry><box size="0.16 0.012 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.502 -0.007 0.2585" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+    <collision><origin xyz="-0.372 -0.007 0.2585" rpy="0 0 0"/><geometry><box size="0.012 0.014 0.01"/></geometry></collision>
+  </link>
+  <joint name="kitchen_island_overhang_b3_door_joint" type="revolute">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_b3_door"/>
+    <origin xyz="0.8735 -0.432 0.405" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_top_drawer_grip"/>
+  <joint name="kitchen_island_overhang_b1_top_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b1_top_drawer"/><child link="kitchen_island_overhang_b1_top_drawer_grip"/>
+    <origin xyz="0 -0.02 0.0371" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_top_drawer_volume"/>
+  <joint name="kitchen_island_overhang_b1_top_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b1_top_drawer"/><child link="kitchen_island_overhang_b1_top_drawer_volume"/>
+    <origin xyz="0 0.248 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_middle_drawer_grip"/>
+  <joint name="kitchen_island_overhang_b1_middle_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b1_middle_drawer"/><child link="kitchen_island_overhang_b1_middle_drawer_grip"/>
+    <origin xyz="0 -0.02 0.0789" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_middle_drawer_volume"/>
+  <joint name="kitchen_island_overhang_b1_middle_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b1_middle_drawer"/><child link="kitchen_island_overhang_b1_middle_drawer_volume"/>
+    <origin xyz="0 0.248 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_bottom_drawer_grip"/>
+  <joint name="kitchen_island_overhang_b1_bottom_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b1_bottom_drawer"/><child link="kitchen_island_overhang_b1_bottom_drawer_grip"/>
+    <origin xyz="0 -0.02 0.1245" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b1_bottom_drawer_volume"/>
+  <joint name="kitchen_island_overhang_b1_bottom_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b1_bottom_drawer"/><child link="kitchen_island_overhang_b1_bottom_drawer_volume"/>
+    <origin xyz="0 0.248 -0.0345" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b2_left_door_grip"/>
+  <joint name="kitchen_island_overhang_b2_left_door_grip_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b2_left_door"/><child link="kitchen_island_overhang_b2_left_door_grip"/>
+    <origin xyz="0.19275 -0.02 0.3335" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b2_right_door_grip"/>
+  <joint name="kitchen_island_overhang_b2_right_door_grip_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b2_right_door"/><child link="kitchen_island_overhang_b2_right_door_grip"/>
+    <origin xyz="-0.19275 -0.02 0.3335" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b3_drawer_grip"/>
+  <joint name="kitchen_island_overhang_b3_drawer_grip_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b3_drawer"/><child link="kitchen_island_overhang_b3_drawer_grip"/>
+    <origin xyz="0 -0.02 0.0285" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b3_drawer_volume"/>
+  <joint name="kitchen_island_overhang_b3_drawer_volume_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b3_drawer"/><child link="kitchen_island_overhang_b3_drawer_volume"/>
+    <origin xyz="0 0.248 -0.005" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_b3_door_grip"/>
+  <joint name="kitchen_island_overhang_b3_door_grip_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_b3_door"/><child link="kitchen_island_overhang_b3_door_grip"/>
+    <origin xyz="-0.437 -0.02 0.2585" rpy="0 0 0"/>
+  </joint>
+  <link name="kitchen_island_overhang_worktop_surface"/>
+  <joint name="kitchen_island_overhang_worktop_surface_fixed" type="fixed">
+    <parent link="kitchen_island_overhang_body"/><child link="kitchen_island_overhang_worktop_surface"/>
+    <origin xyz="0 0.003 0.9" rpy="0 0 0"/>
+  </joint>
+</robot>

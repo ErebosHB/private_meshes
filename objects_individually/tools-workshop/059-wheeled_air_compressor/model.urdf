@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<robot name="wheeled_air_compressor">
+  <link name="wheeled_air_compressor_body">
+    <inertial><origin xyz="0.0485794 -0.00223799 0.325363" rpy="0 0 0"/><mass value="13.908"/><inertia ixx="0.51326" ixy="0.0014662" ixz="0.0081" iyy="0.87451" iyz="-0.015544" izz="0.57007"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wheeled_air_compressor_body.glb"/></geometry></visual>
+    <collision><origin xyz="-0.0105 0 0.22" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.14" length="0.48"/></geometry></collision>
+    <collision><origin xyz="-0.2875 0 0.22" rpy="-0 -1.5708 0"/><geometry><cylinder radius="0.14" length="0.074"/></geometry></collision>
+    <collision><origin xyz="0.2665 0 0.22" rpy="-0 1.5708 0"/><geometry><cylinder radius="0.14" length="0.074"/></geometry></collision>
+    <collision><origin xyz="-0.2305 -0.09 0.045" rpy="0 -0 0"/><geometry><box size="0.03 0.03 0.09"/></geometry></collision>
+    <collision><origin xyz="-0.2305 -0.09 0.008" rpy="0 -0 0"/><geometry><cylinder radius="0.022" length="0.016"/></geometry></collision>
+    <collision><origin xyz="-0.2305 0.09 0.045" rpy="0 -0 0"/><geometry><box size="0.03 0.03 0.09"/></geometry></collision>
+    <collision><origin xyz="-0.2305 0.09 0.008" rpy="0 -0 0"/><geometry><cylinder radius="0.022" length="0.016"/></geometry></collision>
+    <collision><origin xyz="0.0095 0 0.45" rpy="0 -0 0"/><geometry><box size="0.3 0.2 0.16"/></geometry></collision>
+    <collision><origin xyz="-0.1005 0.03 0.56" rpy="0 -0 0"/><geometry><cylinder radius="0.05" length="0.1"/></geometry></collision>
+    <collision><origin xyz="0.0495 0.04 0.55" rpy="0 -0 0"/><geometry><cylinder radius="0.032" length="0.04"/></geometry></collision>
+    <collision><origin xyz="-0.0305 -0.165 0.29" rpy="0 -0 0"/><geometry><box size="0.16 0.03 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.0805 -0.185 0.295" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.022" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.0195 -0.185 0.295" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.022" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.0495 -0.195 0.27" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.009" length="0.03"/></geometry></collision>
+    <collision><origin xyz="0.2895 -0.11 0.34" rpy="0 -0 0"/><geometry><cylinder radius="0.012" length="0.36"/></geometry></collision>
+    <collision><origin xyz="0.2495 -0.11 0.2" rpy="0 -0 0"/><geometry><box size="0.1 0.02 0.02"/></geometry></collision>
+    <collision><origin xyz="0.2895 0.11 0.34" rpy="0 -0 0"/><geometry><cylinder radius="0.012" length="0.36"/></geometry></collision>
+    <collision><origin xyz="0.2495 0.11 0.2" rpy="0 -0 0"/><geometry><box size="0.1 0.02 0.02"/></geometry></collision>
+    <collision><origin xyz="0.2395 0 0.085" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.01" length="0.4"/></geometry></collision>
+  </link>
+  <link name="wheeled_air_compressor_wheel_1">
+    <inertial><origin xyz="4.34997e-09 0 1.44999e-09" rpy="0 0 0"/><mass value="1.2846"/><inertia ixx="0.0022758" ixy="0" ixz="-2.9104e-11" iyy="0.00417" iyz="1.4275e-11" izz="0.0022758"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wheeled_air_compressor_wheel_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.085" length="0.045"/></geometry></collision>
+  </link>
+  <link name="wheeled_air_compressor_wheel_2">
+    <inertial><origin xyz="4.34997e-09 0 1.44999e-09" rpy="0 0 0"/><mass value="1.2846"/><inertia ixx="0.0022758" ixy="0" ixz="-2.9104e-11" iyy="0.00417" iyz="1.4275e-11" izz="0.0022758"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wheeled_air_compressor_wheel_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.085" length="0.045"/></geometry></collision>
+  </link>
+  <link name="wheeled_air_compressor_pull_handle">
+    <inertial><origin xyz="0 0 -0.0743393" rpy="0 0 0"/><mass value="1.6699"/><inertia ixx="0.04092" ixy="0" ixz="0" iyy="0.02242" iyz="-3.7548e-11" izz="0.018588"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wheeled_air_compressor_pull_handle.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.11 -0.1" rpy="0 -0 0"/><geometry><cylinder radius="0.009" length="0.36"/></geometry></collision>
+    <collision><origin xyz="0 0.11 -0.1" rpy="0 -0 0"/><geometry><cylinder radius="0.009" length="0.36"/></geometry></collision>
+    <collision><origin xyz="0 0 0.085" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.016" length="0.24"/></geometry></collision>
+  </link>
+  <link name="wheeled_air_compressor_regulator_knob">
+    <inertial><origin xyz="-8.41893e-11 -0.00999999 -1.05838e-09" rpy="0 0 0"/><mass value="0.018905"/><inertia ixx="1.9718e-06" ixy="-1.2705e-21" ixz="3.5527e-15" iyy="2.6833e-06" iyz="1.7728e-14" izz="1.9718e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wheeled_air_compressor_regulator_knob.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.00999999 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.016" length="0.02"/></geometry></collision>
+  </link>
+  <link name="wheeled_air_compressor_power_switch">
+    <inertial><origin xyz="0 -0.00623118 0" rpy="0 0 0"/><mass value="0.0091697"/><inertia ixx="5.6297e-07" ixy="0" ixz="0" iyy="8.3383e-07" iyz="9.8258e-15" izz="6.2495e-07"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/wheeled_air_compressor_power_switch.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.005 0" rpy="-1.5708 -0 0"/><geometry><cylinder radius="0.014" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0 -0.013 0" rpy="0 -0 0"/><geometry><box size="0.024 0.008 0.007"/></geometry></collision>
+  </link>
+  <joint name="wheeled_air_compressor_wheel_1_joint" type="continuous">
+    <parent link="wheeled_air_compressor_body"/><child link="wheeled_air_compressor_wheel_1"/>
+    <origin xyz="0.2395 -0.19 0.085" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="wheeled_air_compressor_wheel_2_joint" type="continuous">
+    <parent link="wheeled_air_compressor_body"/><child link="wheeled_air_compressor_wheel_2"/>
+    <origin xyz="0.2395 0.19 0.085" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="wheeled_air_compressor_pull_handle_joint" type="prismatic">
+    <parent link="wheeled_air_compressor_body"/><child link="wheeled_air_compressor_pull_handle"/>
+    <origin xyz="0.2895 0 0.52" rpy="0 0 0"/><axis xyz="0 0 1"/>
+    <limit lower="0" upper="0.35" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="wheeled_air_compressor_regulator_knob_joint" type="revolute">
+    <parent link="wheeled_air_compressor_body"/><child link="wheeled_air_compressor_regulator_knob"/>
+    <origin xyz="-0.0305 -0.18 0.27" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="4.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="wheeled_air_compressor_power_switch_joint" type="revolute">
+    <parent link="wheeled_air_compressor_body"/><child link="wheeled_air_compressor_power_switch"/>
+    <origin xyz="0.0895 -0.101 0.46" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="1.57" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="wheeled_air_compressor_pull_handle_grip"/>
+  <joint name="wheeled_air_compressor_pull_handle_grip_joint" type="fixed"><parent link="wheeled_air_compressor_pull_handle"/><child link="wheeled_air_compressor_pull_handle_grip"/><origin xyz="0 0 0.085" rpy="0 0 1.5708"/></joint>
+  <link name="wheeled_air_compressor_regulator_knob_contact"/>
+  <joint name="wheeled_air_compressor_regulator_knob_contact_joint" type="fixed"><parent link="wheeled_air_compressor_regulator_knob"/><child link="wheeled_air_compressor_regulator_knob_contact"/><origin xyz="0 -0.021 0" rpy="0 0 0"/></joint>
+  <link name="wheeled_air_compressor_power_switch_contact"/>
+  <joint name="wheeled_air_compressor_power_switch_contact_joint" type="fixed"><parent link="wheeled_air_compressor_power_switch"/><child link="wheeled_air_compressor_power_switch_contact"/><origin xyz="0 -0.017 0" rpy="0 0 0"/></joint>
+  <link name="wheeled_air_compressor_air_coupler"/>
+  <joint name="wheeled_air_compressor_air_coupler_joint" type="fixed"><parent link="wheeled_air_compressor_body"/><child link="wheeled_air_compressor_air_coupler"/><origin xyz="0.0495 -0.21 0.27" rpy="1.5708 0 0"/></joint>
+  <link name="wheeled_air_compressor_pump_cover_surface"/>
+  <joint name="wheeled_air_compressor_pump_cover_surface_joint" type="fixed"><parent link="wheeled_air_compressor_body"/><child link="wheeled_air_compressor_pump_cover_surface"/><origin xyz="0.0095 0 0.53" rpy="0 0 0"/></joint>
+</robot>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot name="extractor_hood">
+  <link name="extractor_hood_body">
+    <inertial><origin xyz="1.52103e-09 -0.140575 0.167457" rpy="0 0 0"/><mass value="29.39"/><inertia ixx="0.29674" ixy="1.8619e-10" ixz="7.4769e-09" iyy="0.9929" iyz="-0.012452" izz="1.1061"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/extractor_hood_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.14 0.1925" rpy="0 0 0"/><geometry><box size="0.6 0.28 0.015"/></geometry></collision>
+    <collision><origin xyz="-0.29925 -0.14 0.12" rpy="0 0 0"/><geometry><box size="0.0015 0.28 0.16"/></geometry></collision>
+    <collision><origin xyz="0.29925 -0.14 0.12" rpy="0 0 0"/><geometry><box size="0.0015 0.28 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.00075 0.12" rpy="0 0 0"/><geometry><box size="0.6 0.0015 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.2793 0.12" rpy="0 0 0"/><geometry><box size="0.6 0.0015 0.16"/></geometry></collision>
+    <collision><origin xyz="0 -0.12 0.21" rpy="0 0 0"/><geometry><cylinder radius="0.075" length="0.02"/></geometry></collision>
+    <collision><origin xyz="-0.15 -0.14 0.043" rpy="0 0 0"/><geometry><box size="0.27 0.26 0.006"/></geometry></collision>
+    <collision><origin xyz="0.15 -0.14 0.043" rpy="0 0 0"/><geometry><box size="0.27 0.26 0.006"/></geometry></collision>
+    <collision><origin xyz="-0.25 -0.2 0.028" rpy="0 0 0"/><geometry><box size="0.02 0.16 0.024"/></geometry></collision>
+    <collision><origin xyz="0.25 -0.2 0.028" rpy="0 0 0"/><geometry><box size="0.02 0.16 0.024"/></geometry></collision>
+  </link>
+  <link name="extractor_hood_visor">
+    <inertial><origin xyz="0 0.108693 0.00817879" rpy="0 0 0"/><mass value="17.027"/><inertia ixx="0.085118" ixy="9.8828e-14" ixz="1.7193e-13" iyy="0.50379" iyz="0.0014842" izz="0.5877"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/extractor_hood_visor.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.115 0.0075" rpy="0 0 0"/><geometry><box size="0.596 0.23 0.015"/></geometry></collision>
+    <collision><origin xyz="0 -0.015 0.022" rpy="0 0 0"/><geometry><box size="0.596 0.03 0.044"/></geometry></collision>
+  </link>
+  <link name="extractor_hood_fan_button">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0016632"/><inertia ixx="2.4948e-08" ixy="0" ixz="0" iyy="8.7041e-08" iyz="0" izz="7.2072e-08"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/extractor_hood_fan_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.022 0.006 0.012"/></geometry></collision>
+  </link>
+  <link name="extractor_hood_light_button">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0"/><mass value="0.0016632"/><inertia ixx="2.4948e-08" ixy="0" ixz="0" iyy="8.7041e-08" iyz="0" izz="7.2072e-08"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/extractor_hood_light_button.glb"/></geometry></visual>
+    <collision><origin xyz="0 0 0" rpy="0 0 0"/><geometry><box size="0.022 0.006 0.012"/></geometry></collision>
+  </link>
+  <joint name="extractor_hood_visor_joint" type="prismatic">
+    <parent link="extractor_hood_body"/><child link="extractor_hood_visor"/>
+    <origin xyz="0 -0.28 0" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.16" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="extractor_hood_fan_button_joint" type="prismatic">
+    <parent link="extractor_hood_visor"/><child link="extractor_hood_fan_button"/>
+    <origin xyz="0.2 -0.031 0.022" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.003" effort="50" velocity="0.2"/>
+  </joint>
+  <joint name="extractor_hood_light_button_joint" type="prismatic">
+    <parent link="extractor_hood_visor"/><child link="extractor_hood_light_button"/>
+    <origin xyz="0.24 -0.031 0.022" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="0.003" effort="50" velocity="0.2"/>
+  </joint>
+  <link name="extractor_hood_fan_button_contact"/>
+  <joint name="extractor_hood_fan_button_contact_joint" type="fixed"><parent link="extractor_hood_fan_button"/><child link="extractor_hood_fan_button_contact"/><origin xyz="0 -0.00300002 0" rpy="0 0 0"/></joint>
+  <link name="extractor_hood_light_button_contact"/>
+  <joint name="extractor_hood_light_button_contact_joint" type="fixed"><parent link="extractor_hood_light_button"/><child link="extractor_hood_light_button_contact"/><origin xyz="0 -0.00300002 0" rpy="0 0 0"/></joint>
+  <link name="extractor_hood_visor_grip"/>
+  <joint name="extractor_hood_visor_grip_joint" type="fixed"><parent link="extractor_hood_visor"/><child link="extractor_hood_visor_grip"/><origin xyz="0 -0.03 0" rpy="0 0 0"/></joint>
+  <link name="extractor_hood_wall_anchor"/>
+  <joint name="extractor_hood_wall_anchor_joint" type="fixed"><parent link="extractor_hood_body"/><child link="extractor_hood_wall_anchor"/><origin xyz="0 0 0.15" rpy="0 0 0"/></joint>
+  <link name="extractor_hood_duct_attachment"/>
+  <joint name="extractor_hood_duct_attachment_joint" type="fixed"><parent link="extractor_hood_body"/><child link="extractor_hood_duct_attachment"/><origin xyz="0 -0.12 0.22" rpy="0 0 0"/></joint>
+</robot>

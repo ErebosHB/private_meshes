@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<robot name="chemical_storage_cabinet">
+  <link name="chemical_storage_cabinet_body">
+    <inertial><origin xyz="0 0.0421181 0.38099" rpy="0 0 0"/><mass value="526.553"/><inertia ixx="190.859" ixy="0" ixz="0" iyy="238.279" iyz="-10.188" izz="68.2907"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chemical_storage_cabinet_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.0125 0.05" rpy="0 0 0"/><geometry><box size="1.01 0.42 0.1"/></geometry></collision>
+    <collision><origin xyz="-0.515 0.0125 1.025" rpy="0 0 0"/><geometry><box size="0.02 0.475 1.85"/></geometry></collision>
+    <collision><origin xyz="0.515 0.0125 1.025" rpy="0 0 0"/><geometry><box size="0.02 0.475 1.85"/></geometry></collision>
+    <collision><origin xyz="0 0.0125 1.94" rpy="0 0 0"/><geometry><box size="1.01 0.475 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.0125 0.11" rpy="0 0 0"/><geometry><box size="1.01 0.475 0.02"/></geometry></collision>
+    <collision><origin xyz="0 0.24 1.025" rpy="0 0 0"/><geometry><box size="1.01 0.02 1.81"/></geometry></collision>
+    <collision><origin xyz="0 0.0025 0.123" rpy="0 0 0"/><geometry><box size="1 0.445 0.003"/></geometry></collision>
+    <collision><origin xyz="0 -0.218 0.16" rpy="0 0 0"/><geometry><box size="1 0.003 0.08"/></geometry></collision>
+    <collision><origin xyz="0 0.223 0.16" rpy="0 0 0"/><geometry><box size="1 0.003 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.498 0.0025 0.16" rpy="0 0 0"/><geometry><box size="0.003 0.445 0.08"/></geometry></collision>
+    <collision><origin xyz="0.498 0.0025 0.16" rpy="0 0 0"/><geometry><box size="0.003 0.445 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.499 0.0025 0.47" rpy="0 0 0"/><geometry><box size="0.012 0.435 0.02"/></geometry></collision>
+    <collision><origin xyz="0.499 0.0025 0.47" rpy="0 0 0"/><geometry><box size="0.012 0.435 0.02"/></geometry></collision>
+    <collision><origin xyz="-0.499 0.0025 0.97" rpy="0 0 0"/><geometry><box size="0.012 0.435 0.02"/></geometry></collision>
+    <collision><origin xyz="0.499 0.0025 0.97" rpy="0 0 0"/><geometry><box size="0.012 0.435 0.02"/></geometry></collision>
+    <collision><origin xyz="-0.499 0.0025 1.47" rpy="0 0 0"/><geometry><box size="0.012 0.435 0.02"/></geometry></collision>
+    <collision><origin xyz="0.499 0.0025 1.47" rpy="0 0 0"/><geometry><box size="0.012 0.435 0.02"/></geometry></collision>
+  </link>
+  <link name="chemical_storage_cabinet_tray_1">
+    <inertial><origin xyz="0 0.209235 0.0127195" rpy="0 0 0"/><mass value="13.7047"/><inertia ixx="0.272919" ixy="0" ixz="0" iyy="1.28099" iyz="0.000390819" izz="1.54328"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chemical_storage_cabinet_tray_1.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.21 0.0015" rpy="0 0 0"/><geometry><box size="0.97 0.4 0.003"/></geometry></collision>
+    <collision><origin xyz="0 0.0115 0.035" rpy="0 0 0"/><geometry><box size="0.97 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.4085 0.035" rpy="0 0 0"/><geometry><box size="0.97 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="-0.4835 0.21 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.4 0.07"/></geometry></collision>
+    <collision><origin xyz="0.4835 0.21 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.4 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.05" rpy="0 0 0"/><geometry><box size="0.2 0.012 0.02"/></geometry></collision>
+  </link>
+  <joint name="chemical_storage_cabinet_tray_1_joint" type="prismatic">
+    <parent link="chemical_storage_cabinet_body"/><child link="chemical_storage_cabinet_tray_1"/>
+    <origin xyz="0 -0.225 0.45" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_2">
+    <inertial><origin xyz="0 0.209235 0.0127195" rpy="0 0 0"/><mass value="13.7047"/><inertia ixx="0.272919" ixy="0" ixz="0" iyy="1.28099" iyz="0.000390819" izz="1.54328"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chemical_storage_cabinet_tray_2.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.21 0.0015" rpy="0 0 0"/><geometry><box size="0.97 0.4 0.003"/></geometry></collision>
+    <collision><origin xyz="0 0.0115 0.035" rpy="0 0 0"/><geometry><box size="0.97 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.4085 0.035" rpy="0 0 0"/><geometry><box size="0.97 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="-0.4835 0.21 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.4 0.07"/></geometry></collision>
+    <collision><origin xyz="0.4835 0.21 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.4 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.05" rpy="0 0 0"/><geometry><box size="0.2 0.012 0.02"/></geometry></collision>
+  </link>
+  <joint name="chemical_storage_cabinet_tray_2_joint" type="prismatic">
+    <parent link="chemical_storage_cabinet_body"/><child link="chemical_storage_cabinet_tray_2"/>
+    <origin xyz="0 -0.225 0.95" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_3">
+    <inertial><origin xyz="0 0.209235 0.0127195" rpy="0 0 0"/><mass value="13.7047"/><inertia ixx="0.272919" ixy="0" ixz="0" iyy="1.28099" iyz="0.000390819" izz="1.54328"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chemical_storage_cabinet_tray_3.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.21 0.0015" rpy="0 0 0"/><geometry><box size="0.97 0.4 0.003"/></geometry></collision>
+    <collision><origin xyz="0 0.0115 0.035" rpy="0 0 0"/><geometry><box size="0.97 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.4085 0.035" rpy="0 0 0"/><geometry><box size="0.97 0.003 0.07"/></geometry></collision>
+    <collision><origin xyz="-0.4835 0.21 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.4 0.07"/></geometry></collision>
+    <collision><origin xyz="0.4835 0.21 0.035" rpy="0 0 0"/><geometry><box size="0.003 0.4 0.07"/></geometry></collision>
+    <collision><origin xyz="0 0.002 0.05" rpy="0 0 0"/><geometry><box size="0.2 0.012 0.02"/></geometry></collision>
+  </link>
+  <joint name="chemical_storage_cabinet_tray_3_joint" type="prismatic">
+    <parent link="chemical_storage_cabinet_body"/><child link="chemical_storage_cabinet_tray_3"/>
+    <origin xyz="0 -0.225 1.45" rpy="0 0 0"/>
+    <axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.3" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_left_door">
+    <inertial><origin xyz="0.261382 0.0123664 0.925103" rpy="0 0 0"/><mass value="45.9719"/><inertia ixx="13.061" ixy="0.00131215" ixz="-0.00100934" iyy="14.1027" iyz="0.000152931" izz="1.04688"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chemical_storage_cabinet_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2605 0.0125 0.925" rpy="0 0 0"/><geometry><box size="0.521 0.025 1.85"/></geometry></collision>
+    <collision><origin xyz="0.475 -0.02 0.95" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.2"/></geometry></collision>
+  </link>
+  <joint name="chemical_storage_cabinet_left_door_joint" type="revolute">
+    <parent link="chemical_storage_cabinet_body"/><child link="chemical_storage_cabinet_left_door"/>
+    <origin xyz="-0.525 -0.25 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_right_door">
+    <inertial><origin xyz="-0.261382 0.0123664 0.925103" rpy="0 0 0"/><mass value="45.9719"/><inertia ixx="13.061" ixy="-0.00131215" ixz="0.00100934" iyy="14.1027" iyz="0.000152931" izz="1.04688"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/chemical_storage_cabinet_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2605 0.0125 0.925" rpy="0 0 0"/><geometry><box size="0.521 0.025 1.85"/></geometry></collision>
+    <collision><origin xyz="-0.475 -0.02 0.95" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.2"/></geometry></collision>
+  </link>
+  <joint name="chemical_storage_cabinet_right_door_joint" type="revolute">
+    <parent link="chemical_storage_cabinet_body"/><child link="chemical_storage_cabinet_right_door"/>
+    <origin xyz="0.525 -0.25 0.1" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_floor_sump_volume"/>
+  <joint name="chemical_storage_cabinet_floor_sump_volume_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_body"/><child link="chemical_storage_cabinet_floor_sump_volume"/>
+    <origin xyz="0 0.0025 0.16" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_wall_anchor"/>
+  <joint name="chemical_storage_cabinet_wall_anchor_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_body"/><child link="chemical_storage_cabinet_wall_anchor"/>
+    <origin xyz="0 0.25 1.9" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_1_grip"/>
+  <joint name="chemical_storage_cabinet_tray_1_grip_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_tray_1"/><child link="chemical_storage_cabinet_tray_1_grip"/>
+    <origin xyz="0 0.002 0.05" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_1_volume"/>
+  <joint name="chemical_storage_cabinet_tray_1_volume_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_tray_1"/><child link="chemical_storage_cabinet_tray_1_volume"/>
+    <origin xyz="0 0.21 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_2_grip"/>
+  <joint name="chemical_storage_cabinet_tray_2_grip_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_tray_2"/><child link="chemical_storage_cabinet_tray_2_grip"/>
+    <origin xyz="0 0.002 0.05" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_2_volume"/>
+  <joint name="chemical_storage_cabinet_tray_2_volume_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_tray_2"/><child link="chemical_storage_cabinet_tray_2_volume"/>
+    <origin xyz="0 0.21 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_3_grip"/>
+  <joint name="chemical_storage_cabinet_tray_3_grip_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_tray_3"/><child link="chemical_storage_cabinet_tray_3_grip"/>
+    <origin xyz="0 0.002 0.05" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_tray_3_volume"/>
+  <joint name="chemical_storage_cabinet_tray_3_volume_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_tray_3"/><child link="chemical_storage_cabinet_tray_3_volume"/>
+    <origin xyz="0 0.21 0.035" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_left_door_grip"/>
+  <joint name="chemical_storage_cabinet_left_door_grip_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_left_door"/><child link="chemical_storage_cabinet_left_door_grip"/>
+    <origin xyz="0.475 -0.035 0.95" rpy="0 0 0"/>
+  </joint>
+  <link name="chemical_storage_cabinet_right_door_grip"/>
+  <joint name="chemical_storage_cabinet_right_door_grip_fixed" type="fixed">
+    <parent link="chemical_storage_cabinet_right_door"/><child link="chemical_storage_cabinet_right_door_grip"/>
+    <origin xyz="-0.475 -0.035 0.95" rpy="0 0 0"/>
+  </joint>
+</robot>

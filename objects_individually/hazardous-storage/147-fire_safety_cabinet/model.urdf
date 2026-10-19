@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot name="fire_safety_cabinet">
+  <link name="fire_safety_cabinet_body">
+    <inertial><origin xyz="0 0.0574718 0.457592" rpy="0 0 0"/><mass value="789.822"/><inertia ixx="320.261" ixy="0" ixz="0" iyy="406.993" iyz="-15.067" izz="130.069"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/fire_safety_cabinet_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.025 0.05" rpy="0 0 0"/><geometry><box size="1.134 0.495 0.1"/></geometry></collision>
+    <collision><origin xyz="-0.572 0.025 1.0265" rpy="0 0 0"/><geometry><box size="0.05 0.565 1.853"/></geometry></collision>
+    <collision><origin xyz="0.572 0.025 1.0265" rpy="0 0 0"/><geometry><box size="0.05 0.565 1.853"/></geometry></collision>
+    <collision><origin xyz="0 0.025 1.928" rpy="0 0 0"/><geometry><box size="1.094 0.565 0.05"/></geometry></collision>
+    <collision><origin xyz="0 0.025 0.125" rpy="0 0 0"/><geometry><box size="1.094 0.565 0.05"/></geometry></collision>
+    <collision><origin xyz="0 0.2825 1.0265" rpy="0 0 0"/><geometry><box size="1.094 0.05 1.753"/></geometry></collision>
+    <collision><origin xyz="0 -6.93889e-18 0.55" rpy="0 0 0"/><geometry><box size="1.074 0.495 0.003"/></geometry></collision>
+    <collision><origin xyz="0 -0.2445 0.565" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.2445 0.565" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -6.93889e-18 0.95" rpy="0 0 0"/><geometry><box size="1.074 0.495 0.003"/></geometry></collision>
+    <collision><origin xyz="0 -0.2445 0.965" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.2445 0.965" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -6.93889e-18 1.35" rpy="0 0 0"/><geometry><box size="1.074 0.495 0.003"/></geometry></collision>
+    <collision><origin xyz="0 -0.2445 1.365" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.03"/></geometry></collision>
+    <collision><origin xyz="0 0.2445 1.365" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.03"/></geometry></collision>
+    <collision><origin xyz="0 -6.93889e-18 0.152" rpy="0 0 0"/><geometry><box size="1.074 0.495 0.003"/></geometry></collision>
+    <collision><origin xyz="0 -0.246 0.19" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.08"/></geometry></collision>
+    <collision><origin xyz="0 0.246 0.19" rpy="0 0 0"/><geometry><box size="1.074 0.003 0.08"/></geometry></collision>
+    <collision><origin xyz="-0.5355 -6.93889e-18 0.19" rpy="0 0 0"/><geometry><box size="0.003 0.495 0.08"/></geometry></collision>
+    <collision><origin xyz="0.5355 -6.93889e-18 0.19" rpy="0 0 0"/><geometry><box size="0.003 0.495 0.08"/></geometry></collision>
+  </link>
+  <link name="fire_safety_cabinet_left_door">
+    <inertial><origin xyz="0.297347 0.0248239 0.901565" rpy="0 0 0"/><mass value="59.0127"/><inertia ixx="15.944" ixy="0.00249119" ixz="-0.000921742" iyy="17.6664" iyz="0.00019163" izz="1.748"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/fire_safety_cabinet_left_door.glb"/></geometry></visual>
+    <collision><origin xyz="0.2965 0.025 0.9015" rpy="0 0 0"/><geometry><box size="0.593 0.05 1.803"/></geometry></collision>
+    <collision><origin xyz="0.537 -0.025 0.92" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.22"/></geometry></collision>
+  </link>
+  <joint name="fire_safety_cabinet_left_door_joint" type="revolute">
+    <parent link="fire_safety_cabinet_body"/><child link="fire_safety_cabinet_left_door"/>
+    <origin xyz="-0.597 -0.3075 0.15" rpy="0 0 0"/>
+    <axis xyz="0 0 -1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="fire_safety_cabinet_right_door">
+    <inertial><origin xyz="-0.297347 0.0248239 0.901565" rpy="0 0 0"/><mass value="59.0127"/><inertia ixx="15.944" ixy="-0.00249119" ixz="0.000921742" iyy="17.6664" iyz="0.00019163" izz="1.748"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/fire_safety_cabinet_right_door.glb"/></geometry></visual>
+    <collision><origin xyz="-0.2965 0.025 0.9015" rpy="0 0 0"/><geometry><box size="0.593 0.05 1.803"/></geometry></collision>
+    <collision><origin xyz="-0.537 -0.025 0.92" rpy="0 0 0"/><geometry><box size="0.03 0.03 0.22"/></geometry></collision>
+  </link>
+  <joint name="fire_safety_cabinet_right_door_joint" type="revolute">
+    <parent link="fire_safety_cabinet_body"/><child link="fire_safety_cabinet_right_door"/>
+    <origin xyz="0.597 -0.3075 0.15" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="0" upper="1.92" effort="50.0" velocity="1.0"/>
+  </joint>
+  <link name="fire_safety_cabinet_shelf_1_surface"/>
+  <joint name="fire_safety_cabinet_shelf_1_surface_fixed" type="fixed">
+    <parent link="fire_safety_cabinet_body"/><child link="fire_safety_cabinet_shelf_1_surface"/>
+    <origin xyz="0 -6.93889e-18 0.552" rpy="0 0 0"/>
+  </joint>
+  <link name="fire_safety_cabinet_shelf_2_surface"/>
+  <joint name="fire_safety_cabinet_shelf_2_surface_fixed" type="fixed">
+    <parent link="fire_safety_cabinet_body"/><child link="fire_safety_cabinet_shelf_2_surface"/>
+    <origin xyz="0 -6.93889e-18 0.952" rpy="0 0 0"/>
+  </joint>
+  <link name="fire_safety_cabinet_shelf_3_surface"/>
+  <joint name="fire_safety_cabinet_shelf_3_surface_fixed" type="fixed">
+    <parent link="fire_safety_cabinet_body"/><child link="fire_safety_cabinet_shelf_3_surface"/>
+    <origin xyz="0 -6.93889e-18 1.352" rpy="0 0 0"/>
+  </joint>
+  <link name="fire_safety_cabinet_sump_volume"/>
+  <joint name="fire_safety_cabinet_sump_volume_fixed" type="fixed">
+    <parent link="fire_safety_cabinet_body"/><child link="fire_safety_cabinet_sump_volume"/>
+    <origin xyz="0 -6.93889e-18 0.19" rpy="0 0 0"/>
+  </joint>
+  <link name="fire_safety_cabinet_wall_anchor"/>
+  <joint name="fire_safety_cabinet_wall_anchor_fixed" type="fixed">
+    <parent link="fire_safety_cabinet_body"/><child link="fire_safety_cabinet_wall_anchor"/>
+    <origin xyz="0 0.3075 1.903" rpy="0 0 0"/>
+  </joint>
+  <link name="fire_safety_cabinet_left_door_grip"/>
+  <joint name="fire_safety_cabinet_left_door_grip_fixed" type="fixed">
+    <parent link="fire_safety_cabinet_left_door"/><child link="fire_safety_cabinet_left_door_grip"/>
+    <origin xyz="0.537 -0.04 0.92" rpy="0 0 0"/>
+  </joint>
+  <link name="fire_safety_cabinet_right_door_grip"/>
+  <joint name="fire_safety_cabinet_right_door_grip_fixed" type="fixed">
+    <parent link="fire_safety_cabinet_right_door"/><child link="fire_safety_cabinet_right_door_grip"/>
+    <origin xyz="-0.537 -0.04 0.92" rpy="0 0 0"/>
+  </joint>
+</robot>

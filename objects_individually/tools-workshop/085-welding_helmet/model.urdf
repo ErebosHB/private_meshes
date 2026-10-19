@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot name="welding_helmet">
+  <link name="welding_helmet_headgear">
+    <inertial><origin xyz="0 0.0318367 0.180814" rpy="0 0 0"/><mass value="0.15"/><inertia ixx="0.000437267" ixy="0" ixz="0" iyy="0.000916055" iyz="2.97925e-06" izz="0.0011743"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/welding_helmet_headgear.glb"/></geometry></visual>
+    <collision><origin xyz="0.0785298 0.0625281 0.17" rpy="-1.5708 0 0.392699"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="0.0325281 0.10853 0.17" rpy="-1.5708 0 1.1781"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="-0.0325281 0.10853 0.17" rpy="-1.5708 0 1.9635"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="-0.0785298 0.0625281 0.17" rpy="-1.5708 0 2.74889"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="-0.0785298 -0.00252809 0.17" rpy="-1.5708 0 -2.74889"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="-0.0325281 -0.0485298 0.17" rpy="-1.5708 0 -1.9635"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="0.0325281 -0.0485298 0.17" rpy="-1.5708 0 -1.1781"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="0.0785298 -0.00252809 0.17" rpy="-1.5708 0 -0.392699"/><geometry><cylinder radius="0.008" length="0.0704163"/></geometry></collision>
+    <collision><origin xyz="-0.0725 0.03 0.2" rpy="0 0.394791 0"/><geometry><cylinder radius="0.007" length="0.065"/></geometry></collision>
+    <collision><origin xyz="-0.03 0.03 0.2425" rpy="0 1.17601 0"/><geometry><cylinder radius="0.007" length="0.065"/></geometry></collision>
+    <collision><origin xyz="0.03 0.03 0.2425" rpy="0 1.96559 0"/><geometry><cylinder radius="0.007" length="0.065"/></geometry></collision>
+    <collision><origin xyz="0.0725 0.03 0.2" rpy="0 2.7468 0"/><geometry><cylinder radius="0.007" length="0.065"/></geometry></collision>
+    <collision><origin xyz="-0.118 0.04 0.17" rpy="0 1.5708 0"/><geometry><cylinder radius="0.02" length="0.012"/></geometry></collision>
+    <collision><origin xyz="-0.09853 0.0375 0.17" rpy="-1.5708 -1.38861 1.38861"/><geometry><cylinder radius="0.006" length="0.0275967"/></geometry></collision>
+    <collision><origin xyz="0.118 0.04 0.17" rpy="0 1.5708 0"/><geometry><cylinder radius="0.02" length="0.012"/></geometry></collision>
+    <collision><origin xyz="0.09853 0.0375 0.17" rpy="-1.5708 1.38861 -1.38861"/><geometry><cylinder radius="0.006" length="0.0275967"/></geometry></collision>
+  </link>
+  <link name="welding_helmet_shell">
+    <inertial><origin xyz="0 -0.0607821 -0.0196933" rpy="0 0 0"/><mass value="0.45"/><inertia ixx="0.00424448" ixy="0" ixz="0" iyy="0.00452667" iyz="1.39705e-05" izz="0.00333046"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/welding_helmet_shell.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.06 -0.02" rpy="0 0 0"/><geometry><box size="0.22 0.2 0.27"/></geometry></collision>
+    <collision><origin xyz="0 -0.162 0.02" rpy="0 0 0"/><geometry><box size="0.135 0.008 0.085"/></geometry></collision>
+  </link>
+  <link name="welding_helmet_ratchet_knob">
+    <inertial><origin xyz="0 0.00799999 0" rpy="0 0 0"/><mass value="0.01"/><inertia ixx="1.21333e-06" ixy="0" ixz="0" iyy="2e-06" iyz="0" izz="1.21333e-06"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/welding_helmet_ratchet_knob.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.00799999 0" rpy="-1.5708 0 0"/><geometry><cylinder radius="0.02" length="0.016"/></geometry></collision>
+  </link>
+  <joint name="welding_helmet_shell_joint" type="revolute">
+    <parent link="welding_helmet_headgear"/><child link="welding_helmet_shell"/>
+    <origin xyz="0 0.04 0.17" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.6" effort="20.0" velocity="1.5"/>
+  </joint>
+  <joint name="welding_helmet_ratchet_knob_joint" type="revolute">
+    <parent link="welding_helmet_headgear"/><child link="welding_helmet_ratchet_knob"/>
+    <origin xyz="0 0.121 0.165" rpy="0 0 0"/><axis xyz="0 1 0"/>
+    <limit lower="0" upper="4.7" effort="20.0" velocity="1.5"/>
+  </joint>
+  <link name="welding_helmet_shell_front_grip"/>
+  <joint name="welding_helmet_shell_front_grip_joint" type="fixed"><parent link="welding_helmet_shell"/><child link="welding_helmet_shell_front_grip"/><origin xyz="0 -0.166 -0.11" rpy="0 0 0"/></joint>
+  <link name="welding_helmet_ratchet_knob_contact"/>
+  <joint name="welding_helmet_ratchet_knob_contact_joint" type="fixed"><parent link="welding_helmet_ratchet_knob"/><child link="welding_helmet_ratchet_knob_contact"/><origin xyz="0 0.017 0" rpy="0 0 0"/></joint>
+  <link name="welding_helmet_head_space_volume"/>
+  <joint name="welding_helmet_head_space_volume_joint" type="fixed"><parent link="welding_helmet_headgear"/><child link="welding_helmet_head_space_volume"/><origin xyz="0 0.03 0.17" rpy="0 0 0"/></joint>
+</robot>

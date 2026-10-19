@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<robot name="desk_with_drawer">
+  <link name="desk_with_drawer_body">
+    <inertial><origin xyz="0.0108276 0.0317821 0.553624" rpy="0 0 0"/><mass value="41.159"/><inertia ixx="3.4407" ixy="-0.015806" ixz="-0.020563" iyy="12.019" iyz="0.081157" izz="11.944"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desk_with_drawer_body.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.095 0.7275" rpy="0 0 0"/><geometry><box size="1.4 0.51 0.025"/></geometry></collision>
+    <collision><origin xyz="0 0.315 0.7275" rpy="0 0 0"/><geometry><box size="1.4 0.07 0.025"/></geometry></collision>
+    <collision><origin xyz="-0.225 0.22 0.7275" rpy="0 0 0"/><geometry><box size="0.95 0.12 0.025"/></geometry></collision>
+    <collision><origin xyz="0.625 0.22 0.7275" rpy="0 0 0"/><geometry><box size="0.15 0.12 0.025"/></geometry></collision>
+    <collision><origin xyz="-0.6625 0 0.3625" rpy="0 0 0"/><geometry><box size="0.025 0.66 0.705"/></geometry></collision>
+    <collision><origin xyz="-0.6625 -0.3 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="-0.6625 0.3 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.6625 0 0.3625" rpy="0 0 0"/><geometry><box size="0.025 0.66 0.705"/></geometry></collision>
+    <collision><origin xyz="0.6625 -0.3 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0.6625 0.3 0.005" rpy="0 0 0"/><geometry><cylinder radius="0.012" length="0.01"/></geometry></collision>
+    <collision><origin xyz="0 0.27 0.515" rpy="0 0 0"/><geometry><box size="1.3 0.018 0.36"/></geometry></collision>
+    <collision><origin xyz="0.05 -0.07 0.625" rpy="0 0 0"/><geometry><box size="0.5 0.5 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.2 -0.07 0.67" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.09"/></geometry></collision>
+    <collision><origin xyz="0.3 -0.07 0.67" rpy="0 0 0"/><geometry><box size="0.0015 0.5 0.09"/></geometry></collision>
+    <collision><origin xyz="0.4 0.22 0.62" rpy="0 0 0"/><geometry><box size="0.32 0.14 0.0015"/></geometry></collision>
+    <collision><origin xyz="0.24 0.22 0.6675" rpy="0 0 0"/><geometry><box size="0.0015 0.14 0.095"/></geometry></collision>
+    <collision><origin xyz="0.56 0.22 0.6675" rpy="0 0 0"/><geometry><box size="0.0015 0.14 0.095"/></geometry></collision>
+    <collision><origin xyz="0.4 0.15 0.6675" rpy="0 0 0"/><geometry><box size="0.32 0.0015 0.095"/></geometry></collision>
+  </link>
+  <link name="desk_with_drawer_drawer">
+    <inertial><origin xyz="0 0.216535 0.0275672" rpy="0 0 0"/><mass value="3.3742"/><inertia ixx="0.07879" ixy="-5.8208e-11" ixz="-5.8208e-11" iyy="0.068435" iyz="0.0012149" izz="0.14585"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desk_with_drawer_drawer.glb"/></geometry></visual>
+    <collision><origin xyz="0 0.009 0.042" rpy="0 0 0"/><geometry><box size="0.494 0.018 0.084"/></geometry></collision>
+    <collision><origin xyz="0 0.238 0.02075" rpy="0 0 0"/><geometry><box size="0.434 0.44 0.0015"/></geometry></collision>
+    <collision><origin xyz="-0.21625 0.238 0.04" rpy="0 0 0"/><geometry><box size="0.0015 0.44 0.04"/></geometry></collision>
+    <collision><origin xyz="0.21625 0.238 0.04" rpy="0 0 0"/><geometry><box size="0.0015 0.44 0.04"/></geometry></collision>
+    <collision><origin xyz="0 0.45725 0.04" rpy="0 0 0"/><geometry><box size="0.431 0.0015 0.04"/></geometry></collision>
+    <collision><origin xyz="0 -0.017 0.056" rpy="0 0 0"/><geometry><box size="0.16 0.01 0.012"/></geometry></collision>
+    <collision><origin xyz="-0.068 -0.00600001 0.056" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+    <collision><origin xyz="0.068 -0.00600001 0.056" rpy="0 0 0"/><geometry><box size="0.01 0.012 0.01"/></geometry></collision>
+  </link>
+  <link name="desk_with_drawer_cable_flap">
+    <inertial><origin xyz="0 -0.058 -0.00599998" rpy="0 0 0"/><mass value="0.43263"/><inertia ixx="0.00049032" ixy="0" ixz="0" iyy="0.003164" iyz="0" izz="0.0036439"/></inertial>
+    <visual><origin xyz="0 0 0" rpy="0 0 0"/><geometry><mesh filename="assets/desk_with_drawer_cable_flap.glb"/></geometry></visual>
+    <collision><origin xyz="0 -0.058 -0.00599998" rpy="0 0 0"/><geometry><box size="0.296 0.116 0.012"/></geometry></collision>
+  </link>
+  <joint name="desk_with_drawer_drawer_joint" type="prismatic">
+    <parent link="desk_with_drawer_body"/><child link="desk_with_drawer_drawer"/>
+    <origin xyz="0.05 -0.345 0.628" rpy="0 0 0"/><axis xyz="0 -1 0"/>
+    <limit lower="0" upper="0.33" effort="200" velocity="0.1"/>
+  </joint>
+  <joint name="desk_with_drawer_cable_flap_joint" type="revolute">
+    <parent link="desk_with_drawer_body"/><child link="desk_with_drawer_cable_flap"/>
+    <origin xyz="0.4 0.278 0.74" rpy="0 0 0"/><axis xyz="-1 0 0"/>
+    <limit lower="0" upper="1.57" effort="50" velocity="1.0"/>
+  </joint>
+  <link name="desk_with_drawer_drawer_grip"/>
+  <joint name="desk_with_drawer_drawer_grip_joint" type="fixed"><parent link="desk_with_drawer_drawer"/><child link="desk_with_drawer_drawer_grip"/><origin xyz="0 -0.017 0.056" rpy="0 0 0"/></joint>
+  <link name="desk_with_drawer_drawer_volume"/>
+  <joint name="desk_with_drawer_drawer_volume_joint" type="fixed"><parent link="desk_with_drawer_drawer"/><child link="desk_with_drawer_drawer_volume"/><origin xyz="0 0.238 0.04" rpy="0 0 0"/></joint>
+  <link name="desk_with_drawer_cable_flap_grip"/>
+  <joint name="desk_with_drawer_cable_flap_grip_joint" type="fixed"><parent link="desk_with_drawer_cable_flap"/><child link="desk_with_drawer_cable_flap_grip"/><origin xyz="0 -0.108 0" rpy="0 0 0"/></joint>
+  <link name="desk_with_drawer_cable_tray_volume"/>
+  <joint name="desk_with_drawer_cable_tray_volume_joint" type="fixed"><parent link="desk_with_drawer_body"/><child link="desk_with_drawer_cable_tray_volume"/><origin xyz="0.4 0.22 0.67" rpy="0 0 0"/></joint>
+  <link name="desk_with_drawer_desktop_surface"/>
+  <joint name="desk_with_drawer_desktop_surface_joint" type="fixed"><parent link="desk_with_drawer_body"/><child link="desk_with_drawer_desktop_surface"/><origin xyz="-0.25 -0.05 0.74" rpy="0 0 0"/></joint>
+</robot>
