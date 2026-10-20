@@ -70,7 +70,7 @@
    "title": "Material Handling",
    "blurb": "Pallet trucks, tipping skips and other equipment for moving loads around a warehouse.",
    "added": "2026-10-19",
-   "count": 2
+   "count": 3
   },
   {
    "key": "ladders-steps",
@@ -16334,6 +16334,65 @@
    },
    "variant_of": null,
    "folder": "containers-boxes/153-shipping_carton"
+  },
+  {
+   "slug": "charging_dock",
+   "name": "Robot Charging Dock",
+   "desc": "Wall-standing charging dock for a mobile robot with two spring-loaded contact pads behind a floor plate.",
+   "size": [
+    0.4,
+    0.14,
+    0.32
+   ],
+   "joints": [
+    {
+     "name": "charging_dock_left_pad_joint",
+     "type": "prismatic",
+     "lower": 0.0,
+     "upper": 0.012,
+     "inspect": 0.012
+    },
+    {
+     "name": "charging_dock_right_pad_joint",
+     "type": "prismatic",
+     "lower": 0.0,
+     "upper": 0.012,
+     "inspect": 0.012
+    }
+   ],
+   "frames": [
+    {
+     "name": "charging_dock_wall_anchor",
+     "link": "charging_dock_body",
+     "purpose": "wall_mount"
+    },
+    {
+     "name": "charging_dock_left_contact",
+     "link": "charging_dock_left_pad",
+     "purpose": "control"
+    },
+    {
+     "name": "charging_dock_right_contact",
+     "link": "charging_dock_right_pad",
+     "purpose": "control"
+    }
+   ],
+   "id": "154",
+   "category": "material-handling",
+   "added": "2026-10-20",
+   "fingerprint": {
+    "type": "robot charging dock",
+    "joints": {
+     "prismatic": 2
+    },
+    "size_m": [
+     0.4,
+     0.14,
+     0.32
+    ]
+   },
+   "variant_of": null,
+   "folder": "material-handling/154-charging_dock"
   }
  ]
 }
