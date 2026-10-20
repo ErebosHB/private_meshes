@@ -2,7 +2,7 @@
 
 Shelves, cabinets, chests, sideboards, display and filing cabinets.
 
-25 objects. Each folder holds `model.blend`, `model.urdf`, `assets/*.glb`, the model's `README.md` and `NOTICE.md`, and two renders (`renders/rest.webp` closed, `renders/open.webp` with the moving parts open).
+26 objects. Each folder holds `model.blend`, `model.urdf`, `assets/*.glb`, the model's `README.md` and `NOTICE.md`, and two renders (`renders/rest.webp` closed, `renders/open.webp` with the moving parts open).
 
 | Closed | Open | Object | Size W × D × H (cm) | Moving joints | Interaction frames |
 | --- | --- | --- | --- | --- | --- |
@@ -31,5 +31,6 @@ Shelves, cabinets, chests, sideboards, display and filing cabinets.
 | <img src="./136-mobile_shelving_run/renders/rest.webp" width="160"> | <img src="./136-mobile_shelving_run/renders/open.webp" width="160"> | **[#136 Mobile Shelving Run with Crank Drive](./136-mobile_shelving_run/)**<br>Three double-sided shelving units on floor rails: two carriages crank sideways to open an aisle next to the fixed unit. | 255 × 115 × 200 | 2× slides, 2× spins/rolls | 6 |
 | <img src="./137-tilt_bin_rack/renders/rest.webp" width="160"> | <img src="./137-tilt_bin_rack/renders/open.webp" width="160"> | **[#137 Tilt Bin Rack](./137-tilt_bin_rack/)**<br>Steel rack of nine tilt-out bins in three rows; each bin pivots at its front lower edge to present its contents. | 91 × 26 × 78 | 9× hinges | 19 |
 | <img src="./138-small_parts_cabinet/renders/rest.webp" width="160"> | <img src="./138-small_parts_cabinet/renders/open.webp" width="160"> | **[#138 Small-Parts Cabinet with Clear Drawers](./138-small_parts_cabinet/)**<br>Bench or wall cabinet with twelve clear drawers in a three-by-four grid, each pulling out on its own runners. | 48 × 23 × 40 | 12× slides | 25 |
+| <img src="./155-two_sided_tote_shelving/renders/rest.webp" width="160"> | <img src="./155-two_sided_tote_shelving/renders/open.webp" width="160"> | **[#155 Two-Sided Tote Shelving](./155-two_sided_tote_shelving/)**<br>Shallow boltless shelving bay open on both faces, with a low tote level that robots load from one side and unload from the other. | 203 × 33 × 130 | none | 3 |
 
 [← All categories](../)

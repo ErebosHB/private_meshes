@@ -6,7 +6,7 @@
    "title": "Storage & Shelving",
    "blurb": "Shelves, cabinets, chests, sideboards, display and filing cabinets.",
    "added": "2026-10-14",
-   "count": 25
+   "count": 26
   },
   {
    "key": "wardrobes",
@@ -16393,6 +16393,48 @@
    },
    "variant_of": null,
    "folder": "material-handling/154-charging_dock"
+  },
+  {
+   "slug": "two_sided_tote_shelving",
+   "name": "Two-Sided Tote Shelving",
+   "desc": "Shallow boltless shelving bay open on both faces, with a low tote level that robots load from one side and unload from the other.",
+   "size": [
+    2.03,
+    0.33,
+    1.3
+   ],
+   "joints": [],
+   "frames": [
+    {
+     "name": "two_sided_tote_shelving_robot_level_surface",
+     "link": "two_sided_tote_shelving_body",
+     "purpose": "place_surface"
+    },
+    {
+     "name": "two_sided_tote_shelving_manual_deck_surface",
+     "link": "two_sided_tote_shelving_body",
+     "purpose": "place_surface"
+    },
+    {
+     "name": "two_sided_tote_shelving_top_surface",
+     "link": "two_sided_tote_shelving_body",
+     "purpose": "place_surface"
+    }
+   ],
+   "id": "155",
+   "category": "storage-shelving",
+   "added": "2026-10-20",
+   "fingerprint": {
+    "type": "two-sided tote shelving",
+    "joints": {},
+    "size_m": [
+     2.03,
+     0.33,
+     1.3
+    ]
+   },
+   "variant_of": "133",
+   "folder": "storage-shelving/155-two_sided_tote_shelving"
   }
  ]
 }

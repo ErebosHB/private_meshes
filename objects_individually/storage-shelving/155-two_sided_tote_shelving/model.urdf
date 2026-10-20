@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<robot name="two_sided_tote_shelving">
+  <link name="two_sided_tote_shelving_body">
+    <inertial>
+      <origin xyz="0 0 0.719816" rpy="0 0 0" />
+      <mass value="42" />
+      <inertia ixx="9.12611" ixy="0" ixz="0" iyy="26.9166" iyz="0" izz="18.706" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/two_sided_tote_shelving_body.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.975 -0.1325 0.65" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.035 1.3" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.975 0.1325 0.65" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.035 1.3" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.975 -0.1325 0.65" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.035 1.3" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.975 0.1325 0.65" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.035 1.3" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.144 0.125" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.012 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.144 0.125" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.012 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0.141" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.276 0.018" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.144 0.775" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.012 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.144 0.775" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.012 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0.791" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.276 0.018" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.144 1.275" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.012 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.144 1.275" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.012 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 1.291" rpy="0 0 0" />
+      <geometry>
+        <box size="1.9 0.276 0.018" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="two_sided_tote_shelving_robot_level_surface" />
+  <joint name="two_sided_tote_shelving_robot_level_surface_fixed" type="fixed">
+    <parent link="two_sided_tote_shelving_body" />
+    <child link="two_sided_tote_shelving_robot_level_surface" />
+    <origin xyz="0 0 0.15" rpy="0 0 0" />
+  </joint>
+  <link name="two_sided_tote_shelving_manual_deck_surface" />
+  <joint name="two_sided_tote_shelving_manual_deck_surface_fixed" type="fixed">
+    <parent link="two_sided_tote_shelving_body" />
+    <child link="two_sided_tote_shelving_manual_deck_surface" />
+    <origin xyz="0 0 0.8" rpy="0 0 0" />
+  </joint>
+  <link name="two_sided_tote_shelving_top_surface" />
+  <joint name="two_sided_tote_shelving_top_surface_fixed" type="fixed">
+    <parent link="two_sided_tote_shelving_body" />
+    <child link="two_sided_tote_shelving_top_surface" />
+    <origin xyz="0 0 1.3" rpy="0 0 0" />
+  </joint>
+</robot>

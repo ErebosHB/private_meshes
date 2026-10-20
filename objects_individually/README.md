@@ -7,7 +7,7 @@ These are original concept models in common product typologies, not replicas of 
 
 | | Category | Contents | Objects |
 | --- | --- | --- | --- |
-| <img src="./storage-shelving/001-cube_shelf_drawer_insert/renders/rest.webp" width="120"> | **[Storage & Shelving](./storage-shelving/)** | Shelves, cabinets, chests, sideboards, display and filing cabinets. | 25 |
+| <img src="./storage-shelving/001-cube_shelf_drawer_insert/renders/rest.webp" width="120"> | **[Storage & Shelving](./storage-shelving/)** | Shelves, cabinets, chests, sideboards, display and filing cabinets. | 26 |
 | <img src="./wardrobes/004-wardrobe_frame_hinged_doors/renders/rest.webp" width="120"> | **[Wardrobes](./wardrobes/)** | Full-height wardrobes with hinged or sliding doors, rails and baskets. | 3 |
 | <img src="./seating/016-swivel_office_chair/renders/rest.webp" width="120"> | **[Seating](./seating/)** | Chairs, stools and armchairs with lifts, swivels and reclining backs. | 3 |
 | <img src="./tables-desks/017-sit_stand_desk/renders/rest.webp" width="120"> | **[Tables & Desks](./tables-desks/)** | Desks and tables with height adjustment, drawers, cable flaps and tilting tops. | 5 |
