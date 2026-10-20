@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<robot name="robot_tote_bulb_rail">
+  <link name="robot_tote_bulb_rail_body">
+    <inertial>
+      <origin xyz="0 0 0.0707828" rpy="0 0 0" />
+      <mass value="0.708238" />
+      <inertia ixx="0.00920725" ixy="0" ixz="0" iyy="0.00498255" iyz="0" izz="0.0106583" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/robot_tote_bulb_rail_body.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0085" rpy="0 0 0" />
+      <geometry>
+        <box size="0.167 0.248 0.017" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.09 0 0.081" rpy="0 0 0" />
+      <geometry>
+        <box size="0.018 0.297 0.132" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.09 0 0.081" rpy="0 0 0" />
+      <geometry>
+        <box size="0.018 0.297 0.132" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.135 0.081" rpy="0 0 0" />
+      <geometry>
+        <box size="0.162 0.027 0.132" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.135 0.081" rpy="0 0 0" />
+      <geometry>
+        <box size="0.162 0.027 0.132" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0.183" rpy="0 0 0" />
+      <geometry>
+        <box size="0.008 0.243 0.04" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.1315 0.175" rpy="0 0 0" />
+      <geometry>
+        <box size="0.008 0.02 0.056" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.1315 0.175" rpy="0 0 0" />
+      <geometry>
+        <box size="0.008 0.02 0.056" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 0.163" rpy="1.5707963 0 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.243" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="robot_tote_bulb_rail_rail_grip" />
+  <joint name="robot_tote_bulb_rail_rail_grip_fixed" type="fixed">
+    <parent link="robot_tote_bulb_rail_body" />
+    <child link="robot_tote_bulb_rail_rail_grip" />
+    <origin xyz="0 0 0.176" rpy="0 0 0" />
+  </joint>
+  <link name="robot_tote_bulb_rail_tote_volume" />
+  <joint name="robot_tote_bulb_rail_tote_volume_fixed" type="fixed">
+    <parent link="robot_tote_bulb_rail_body" />
+    <child link="robot_tote_bulb_rail_tote_volume" />
+    <origin xyz="0 0 0.065" rpy="0 0 0" />
+  </joint>
+</robot>

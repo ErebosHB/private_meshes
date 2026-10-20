@@ -62,7 +62,7 @@
    "title": "Containers & Boxes",
    "blurb": "Lidded and folding crates, mesh pallet boxes, drums and walk-in storage containers.",
    "added": "2026-10-19",
-   "count": 5
+   "count": 6
   },
   {
    "key": "material-handling",
@@ -16140,6 +16140,43 @@
    },
    "variant_of": null,
    "folder": "hazardous-storage/150-hazmat_depot"
+  },
+  {
+   "slug": "robot_tote_bulb_rail",
+   "name": "Robot Tote with Bulb Rail",
+   "desc": "Stackable small-load tote with a moulded bulb rail across the top that a parallel gripper holds from above.",
+   "size": [
+    0.198,
+    0.301,
+    0.203
+   ],
+   "joints": [],
+   "frames": [
+    {
+     "name": "robot_tote_bulb_rail_rail_grip",
+     "link": "robot_tote_bulb_rail_body",
+     "purpose": "grasp"
+    },
+    {
+     "name": "robot_tote_bulb_rail_tote_volume",
+     "link": "robot_tote_bulb_rail_body",
+     "purpose": "container_volume"
+    }
+   ],
+   "id": "151",
+   "category": "containers-boxes",
+   "added": "2026-10-20",
+   "fingerprint": {
+    "type": "robot tote",
+    "joints": {},
+    "size_m": [
+     0.198,
+     0.301,
+     0.203
+    ]
+   },
+   "variant_of": null,
+   "folder": "containers-boxes/151-robot_tote_bulb_rail"
   }
  ]
 }
