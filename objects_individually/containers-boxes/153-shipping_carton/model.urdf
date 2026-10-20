@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<robot name="shipping_carton">
+  <link name="shipping_carton_body">
+    <inertial>
+      <origin xyz="0 0 0.0376037" rpy="0 0 0" />
+      <mass value="0.09" />
+      <inertia ixx="0.000536195" ixy="0" ixz="0" iyy="0.000856075" iyz="0" izz="0.00115878" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/shipping_carton_body.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.002" rpy="0 0 0" />
+      <geometry>
+        <box size="0.255 0.18 0.004" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.1255 0 0.055" rpy="0 0 0" />
+      <geometry>
+        <box size="0.004 0.18 0.11" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.1255 0 0.055" rpy="0 0 0" />
+      <geometry>
+        <box size="0.004 0.18 0.11" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.088 0.055" rpy="0 0 0" />
+      <geometry>
+        <box size="0.247 0.004 0.11" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.088 0.055" rpy="0 0 0" />
+      <geometry>
+        <box size="0.247 0.004 0.11" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="shipping_carton_front_flap">
+    <inertial>
+      <origin xyz="0 -0.045 0.112" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="7.76e-06" ixy="0" ixz="0" iyy="6.4025e-05" iyz="0" izz="7.1753e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/shipping_carton_front_flap.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.045 0.112" rpy="0 0 0" />
+      <geometry>
+        <box size="0.253 0.088 0.004" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="shipping_carton_back_flap">
+    <inertial>
+      <origin xyz="0 0.045 0.112" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="7.76e-06" ixy="0" ixz="0" iyy="6.4025e-05" iyz="0" izz="7.1753e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/shipping_carton_back_flap.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0.045 0.112" rpy="0 0 0" />
+      <geometry>
+        <box size="0.253 0.088 0.004" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="shipping_carton_left_flap">
+    <inertial>
+      <origin xyz="-0.0825 0 0.108" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.17e-05" ixy="0" ixz="0" iyy="7.76e-06" iyz="0" izz="3.9428e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/shipping_carton_left_flap.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0825 0 0.108" rpy="0 0 0" />
+      <geometry>
+        <box size="0.088 0.178 0.004" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="shipping_carton_right_flap">
+    <inertial>
+      <origin xyz="0.0825 0 0.108" rpy="0 0 0" />
+      <mass value="0.012" />
+      <inertia ixx="3.17e-05" ixy="0" ixz="0" iyy="7.76e-06" iyz="0" izz="3.9428e-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/shipping_carton_right_flap.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0825 0 0.108" rpy="0 0 0" />
+      <geometry>
+        <box size="0.088 0.178 0.004" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="shipping_carton_front_flap_joint" type="revolute">
+    <parent link="shipping_carton_body" />
+    <child link="shipping_carton_front_flap" />
+    <origin xyz="0 -0.09 0.11" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0" />
+  </joint>
+  <joint name="shipping_carton_back_flap_joint" type="revolute">
+    <parent link="shipping_carton_body" />
+    <child link="shipping_carton_back_flap" />
+    <origin xyz="0 0.09 0.11" rpy="0 0 0" />
+    <axis xyz="-1 0 0" />
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0" />
+  </joint>
+  <joint name="shipping_carton_left_flap_joint" type="revolute">
+    <parent link="shipping_carton_body" />
+    <child link="shipping_carton_left_flap" />
+    <origin xyz="-0.1275 0 0.11" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0" />
+  </joint>
+  <joint name="shipping_carton_right_flap_joint" type="revolute">
+    <parent link="shipping_carton_body" />
+    <child link="shipping_carton_right_flap" />
+    <origin xyz="0.1275 0 0.11" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0" upper="1.57" effort="50.0" velocity="1.0" />
+  </joint>
+  <link name="shipping_carton_carton_volume" />
+  <joint name="shipping_carton_carton_volume_fixed" type="fixed">
+    <parent link="shipping_carton_body" />
+    <child link="shipping_carton_carton_volume" />
+    <origin xyz="0 0 0.055" rpy="0 0 0" />
+  </joint>
+  <link name="shipping_carton_front_flap_grip" />
+  <joint name="shipping_carton_front_flap_grip_fixed" type="fixed">
+    <parent link="shipping_carton_front_flap" />
+    <child link="shipping_carton_front_flap_grip" />
+    <origin xyz="0 -0.018 0.114" rpy="0 0 0" />
+  </joint>
+  <link name="shipping_carton_back_flap_grip" />
+  <joint name="shipping_carton_back_flap_grip_fixed" type="fixed">
+    <parent link="shipping_carton_back_flap" />
+    <child link="shipping_carton_back_flap_grip" />
+    <origin xyz="0 0.018 0.114" rpy="0 0 0" />
+  </joint>
+  <link name="shipping_carton_left_flap_grip" />
+  <joint name="shipping_carton_left_flap_grip_fixed" type="fixed">
+    <parent link="shipping_carton_left_flap" />
+    <child link="shipping_carton_left_flap_grip" />
+    <origin xyz="-0.0555 0 0.11" rpy="0 0 0" />
+  </joint>
+  <link name="shipping_carton_right_flap_grip" />
+  <joint name="shipping_carton_right_flap_grip_fixed" type="fixed">
+    <parent link="shipping_carton_right_flap" />
+    <child link="shipping_carton_right_flap_grip" />
+    <origin xyz="0.0555 0 0.11" rpy="0 0 0" />
+  </joint>
+</robot>
