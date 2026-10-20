@@ -30,7 +30,7 @@
    "title": "Tables & Desks",
    "blurb": "Desks and tables with height adjustment, drawers, cable flaps and tilting tops.",
    "added": "2026-10-15",
-   "count": 4
+   "count": 5
   },
   {
    "key": "room-dividers",
@@ -16177,6 +16177,80 @@
    },
    "variant_of": null,
    "folder": "containers-boxes/151-robot_tote_bulb_rail"
+  },
+  {
+   "slug": "packing_station",
+   "name": "Packing Station with Tote In-feed",
+   "desc": "Height-adjustable packing table with a drawer, a carton shelf above and a low in-feed shelf for delivered totes.",
+   "size": [
+    2.0,
+    0.8,
+    1.566
+   ],
+   "joints": [
+    {
+     "name": "packing_station_worktop_joint",
+     "type": "prismatic",
+     "lower": 0.0,
+     "upper": 0.27,
+     "inspect": 0.27
+    },
+    {
+     "name": "packing_station_drawer_joint",
+     "type": "prismatic",
+     "lower": 0.0,
+     "upper": 0.41,
+     "inspect": 0.33
+    }
+   ],
+   "frames": [
+    {
+     "name": "packing_station_infeed_surface",
+     "link": "packing_station_body",
+     "purpose": "place_surface"
+    },
+    {
+     "name": "packing_station_carton_shelf_surface",
+     "link": "packing_station_body",
+     "purpose": "place_surface"
+    },
+    {
+     "name": "packing_station_worktop_surface",
+     "link": "packing_station_worktop",
+     "purpose": "place_surface"
+    },
+    {
+     "name": "packing_station_height_switch",
+     "link": "packing_station_worktop",
+     "purpose": "control"
+    },
+    {
+     "name": "packing_station_drawer_grip",
+     "link": "packing_station_drawer",
+     "purpose": "grasp"
+    },
+    {
+     "name": "packing_station_drawer_volume",
+     "link": "packing_station_drawer",
+     "purpose": "container_volume"
+    }
+   ],
+   "id": "152",
+   "category": "tables-desks",
+   "added": "2026-10-20",
+   "fingerprint": {
+    "type": "packing table",
+    "joints": {
+     "prismatic": 2
+    },
+    "size_m": [
+     2.0,
+     0.8,
+     1.566
+    ]
+   },
+   "variant_of": null,
+   "folder": "tables-desks/152-packing_station"
   }
  ]
 }

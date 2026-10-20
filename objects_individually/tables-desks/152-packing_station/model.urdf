@@ -1,0 +1,146 @@
+<?xml version="1.0"?>
+<robot name="packing_station">
+  <link name="packing_station_body">
+    <inertial>
+      <origin xyz="-0.0117028 0.00342177 0.280574" rpy="0 0 0" />
+      <mass value="38" />
+      <inertia ixx="3.26445" ixy="-0.00152168" ixz="0.0954215" iyy="9.17352" iyz="-0.159859" izz="9.05964" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/packing_station_body.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.26" rpy="0 0 0" />
+      <geometry>
+        <box size="1.5 0.7 0.52" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-1 0 0.491" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.8 0.018" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-1 -0.39 0.525" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.02 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-1 0.39 0.525" rpy="0 0 0" />
+      <geometry>
+        <box size="0.4 0.02 0.05" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.24 1.51" rpy="0 0 0" />
+      <geometry>
+        <box size="1.48 0.3 0.018" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="packing_station_worktop">
+    <inertial>
+      <origin xyz="0.0543956 0.0241758 0.684066" rpy="0 0 0" />
+      <mass value="24" />
+      <inertia ixx="1.2584" ixy="-0.229537" ixz="-0.0860766" iyy="5.04664" iyz="-0.0382562" izz="6.26622" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/packing_station_worktop.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.675" rpy="0 0 0" />
+      <geometry>
+        <box size="1.6 0.8 0.03" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.45 0.2 0.75" rpy="0 0 0" />
+      <geometry>
+        <box size="0.2 0.22 0.12" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="packing_station_drawer">
+    <inertial>
+      <origin xyz="-0.35 -0.10026 0.574478" rpy="0 0 0" />
+      <mass value="3.5" />
+      <inertia ixx="0.120682" ixy="0" ixz="0" iyy="0.0774222" iyz="0.00895593" izz="0.1934" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/packing_station_drawer.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.35 0 0.56" rpy="0 0 0" />
+      <geometry>
+        <box size="0.5 0.55 0.004" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.35 -0.277 0.6" rpy="0 0 0" />
+      <geometry>
+        <box size="0.52 0.012 0.1" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="packing_station_worktop_joint" type="prismatic">
+    <parent link="packing_station_body" />
+    <child link="packing_station_worktop" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0.27" effort="50.0" velocity="1.0" />
+  </joint>
+  <joint name="packing_station_drawer_joint" type="prismatic">
+    <parent link="packing_station_worktop" />
+    <child link="packing_station_drawer" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+    <limit lower="0" upper="0.41" effort="50.0" velocity="1.0" />
+  </joint>
+  <link name="packing_station_infeed_surface" />
+  <joint name="packing_station_infeed_surface_fixed" type="fixed">
+    <parent link="packing_station_body" />
+    <child link="packing_station_infeed_surface" />
+    <origin xyz="-1 0 0.5" rpy="0 0 0" />
+  </joint>
+  <link name="packing_station_carton_shelf_surface" />
+  <joint name="packing_station_carton_shelf_surface_fixed" type="fixed">
+    <parent link="packing_station_body" />
+    <child link="packing_station_carton_shelf_surface" />
+    <origin xyz="0 0.24 1.519" rpy="0 0 0" />
+  </joint>
+  <link name="packing_station_worktop_surface" />
+  <joint name="packing_station_worktop_surface_fixed" type="fixed">
+    <parent link="packing_station_worktop" />
+    <child link="packing_station_worktop_surface" />
+    <origin xyz="0 0 0.69" rpy="0 0 0" />
+  </joint>
+  <link name="packing_station_height_switch" />
+  <joint name="packing_station_height_switch_fixed" type="fixed">
+    <parent link="packing_station_worktop" />
+    <child link="packing_station_height_switch" />
+    <origin xyz="0.68 -0.395 0.64" rpy="0 0 0" />
+  </joint>
+  <link name="packing_station_drawer_grip" />
+  <joint name="packing_station_drawer_grip_fixed" type="fixed">
+    <parent link="packing_station_drawer" />
+    <child link="packing_station_drawer_grip" />
+    <origin xyz="-0.35 -0.3 0.6" rpy="0 0 0" />
+  </joint>
+  <link name="packing_station_drawer_volume" />
+  <joint name="packing_station_drawer_volume_fixed" type="fixed">
+    <parent link="packing_station_drawer" />
+    <child link="packing_station_drawer_volume" />
+    <origin xyz="-0.35 0 0.6" rpy="0 0 0" />
+  </joint>
+</robot>
