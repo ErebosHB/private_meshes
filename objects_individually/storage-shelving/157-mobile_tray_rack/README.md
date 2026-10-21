@@ -20,10 +20,6 @@ Masses/inertias are approximate model parameters (stainless tube and sheet), not
 | Joint | Motion | Inspection position |
 | --- | --- | --- |
 | `mobile_tray_rack_tray_joint` | prismatic | 0.38 |
-| `mobile_tray_rack_castor_0_joint` | continuous | 0.00 |
-| `mobile_tray_rack_castor_1_joint` | continuous | 0.00 |
-| `mobile_tray_rack_castor_2_joint` | continuous | 0.00 |
-| `mobile_tray_rack_castor_3_joint` | continuous | 0.00 |
 
 ## Interaction frames
 
@@ -34,4 +30,4 @@ Masses/inertias are approximate model parameters (stainless tube and sheet), not
 | `mobile_tray_rack_push_grip` | `mobile_tray_rack_body` | grasp |
 | `mobile_tray_rack_wall_anchor` | `mobile_tray_rack_body` | wall_mount |
 
-The URDF supplies geometry, articulation and frames. It does not model castor swivel or brakes, the trays' load rating or any food on the trays.
+The URDF supplies geometry, articulation and frames. It does not model castor rolling or swivel (the castors are part of the body), brakes, the trays' load rating or any food on the trays.

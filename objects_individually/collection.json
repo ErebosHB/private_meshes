@@ -16564,8 +16564,8 @@
    "desc": "Stainless mobile rack with runners for baking or confectionery trays on four castors; trays slide out to the front.",
    "size": [
     0.46,
-    0.66,
-    1.74
+    0.7,
+    1.7
    ],
    "joints": [
     {
@@ -16574,34 +16574,6 @@
      "lower": 0.0,
      "upper": 0.47250000000000025,
      "inspect": 0.37800000000000017
-    },
-    {
-     "name": "mobile_tray_rack_castor_0_joint",
-     "type": "continuous",
-     "lower": 0.0,
-     "upper": 0.0,
-     "inspect": 0.0
-    },
-    {
-     "name": "mobile_tray_rack_castor_1_joint",
-     "type": "continuous",
-     "lower": 0.0,
-     "upper": 0.0,
-     "inspect": 0.0
-    },
-    {
-     "name": "mobile_tray_rack_castor_2_joint",
-     "type": "continuous",
-     "lower": 0.0,
-     "upper": 0.0,
-     "inspect": 0.0
-    },
-    {
-     "name": "mobile_tray_rack_castor_3_joint",
-     "type": "continuous",
-     "lower": 0.0,
-     "upper": 0.0,
-     "inspect": 0.0
     }
    ],
    "frames": [
@@ -16632,13 +16604,12 @@
    "fingerprint": {
     "type": "mobile tray rack",
     "joints": {
-     "prismatic": 1,
-     "continuous": 4
+     "prismatic": 1
     },
     "size_m": [
      0.46,
-     0.66,
-     1.74
+     0.7,
+     1.7
     ]
    },
    "variant_of": null,
