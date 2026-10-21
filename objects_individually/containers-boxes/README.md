@@ -2,7 +2,7 @@
 
 Lidded and folding crates, mesh pallet boxes, drums and walk-in storage containers.
 
-7 objects. Each folder holds `model.blend`, `model.urdf`, `assets/*.glb`, the model's `README.md` and `NOTICE.md`, and two renders (`renders/rest.webp` closed, `renders/open.webp` with the moving parts open).
+8 objects. Each folder holds `model.blend`, `model.urdf`, `assets/*.glb`, the model's `README.md` and `NOTICE.md`, and two renders (`renders/rest.webp` closed, `renders/open.webp` with the moving parts open).
 
 | Closed | Open | Object | Size W × D × H (cm) | Moving joints | Interaction frames |
 | --- | --- | --- | --- | --- | --- |
@@ -13,5 +13,6 @@ Lidded and folding crates, mesh pallet boxes, drums and walk-in storage containe
 | <img src="./143-storage_container/renders/rest.webp" width="160"> | <img src="./143-storage_container/renders/open.webp" width="160"> | **[#143 Walk-in Storage Container](./143-storage_container/)**<br>Ten-foot steel storage container with corrugated walls and two end doors, each locked by a swinging bar handle. | 245 × 307 × 259 | 4× hinges | 7 |
 | <img src="./151-robot_tote_bulb_rail/renders/rest.webp" width="160"> | <img src="./151-robot_tote_bulb_rail/renders/open.webp" width="160"> | **[#151 Robot Tote with Bulb Rail](./151-robot_tote_bulb_rail/)**<br>Stackable small-load tote with a moulded bulb rail across the top that a parallel gripper holds from above. | 20 × 30 × 20 | none | 2 |
 | <img src="./153-shipping_carton/renders/rest.webp" width="160"> | <img src="./153-shipping_carton/renders/open.webp" width="160"> | **[#153 Shipping Carton with Top Flaps](./153-shipping_carton/)**<br>Small single-wall regular slotted carton whose four top flaps hinge on the top edges and fold over the opening. | 26 × 18 × 11 | 4× hinges | 5 |
+| <img src="./156-praline_gift_box/renders/rest.webp" width="160"> | <img src="./156-praline_gift_box/renders/open.webp" width="160"> | **[#156 Praline Gift Box with Assortment Blister](./156-praline_gift_box/)**<br>Sixteen-piece gift box: board base with a thermoformed blister whose cavities are shaped per variety, and a telescope lid. | 15 × 15 × 3 | 1× slides | 17 |
 
 [← All categories](../)

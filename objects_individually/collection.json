@@ -62,7 +62,7 @@
    "title": "Containers & Boxes",
    "blurb": "Lidded and folding crates, mesh pallet boxes, drums and walk-in storage containers.",
    "added": "2026-10-19",
-   "count": 7
+   "count": 8
   },
   {
    "key": "material-handling",
@@ -16435,6 +16435,128 @@
    },
    "variant_of": "133",
    "folder": "storage-shelving/155-two_sided_tote_shelving"
+  },
+  {
+   "slug": "praline_gift_box",
+   "name": "Praline Gift Box with Assortment Blister",
+   "desc": "Sixteen-piece gift box: board base with a thermoformed blister whose cavities are shaped per variety, and a telescope lid.",
+   "size": [
+    0.147,
+    0.147,
+    0.028
+   ],
+   "joints": [
+    {
+     "name": "praline_gift_box_lid_joint",
+     "type": "prismatic",
+     "lower": 0.0,
+     "upper": 0.06,
+     "inspect": 0.06
+    }
+   ],
+   "frames": [
+    {
+     "name": "praline_gift_box_cavity_0_0_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_0_1_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_0_2_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_0_3_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_1_0_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_1_1_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_1_2_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_1_3_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_2_0_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_2_1_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_2_2_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_2_3_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_3_0_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_3_1_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_3_2_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_cavity_3_3_volume",
+     "link": "praline_gift_box_body",
+     "purpose": "container_volume"
+    },
+    {
+     "name": "praline_gift_box_lid_grip",
+     "link": "praline_gift_box_lid",
+     "purpose": "grasp"
+    }
+   ],
+   "id": "156",
+   "category": "containers-boxes",
+   "added": "2026-10-21",
+   "fingerprint": {
+    "type": "gift box with blister insert",
+    "joints": {
+     "prismatic": 1
+    },
+    "size_m": [
+     0.147,
+     0.147,
+     0.028
+    ]
+   },
+   "variant_of": null,
+   "folder": "containers-boxes/156-praline_gift_box"
   }
  ]
 }

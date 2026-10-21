@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<robot name="praline_gift_box">
+  <link name="praline_gift_box_body">
+    <inertial>
+      <origin xyz="-7.85189e-20 0 0.00703697" rpy="0 0 0" />
+      <mass value="0.1" />
+      <inertia ixx="0.000230624" ixy="-2.3624e-07" ixz="-5.29396e-23" iyy="0.000230764" iyz="-5.29396e-23" izz="0.000449452" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/praline_gift_box_body.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.001" rpy="0 0 0" />
+      <geometry>
+        <box size="0.142 0.142 0.002" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.07 0 0.0135" rpy="0 0 0" />
+      <geometry>
+        <box size="0.002 0.142 0.027" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.07 0 0.0135" rpy="0 0 0" />
+      <geometry>
+        <box size="0.002 0.142 0.027" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.07 0.0135" rpy="0 0 0" />
+      <geometry>
+        <box size="0.142 0.002 0.027" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.07 0.0135" rpy="0 0 0" />
+      <geometry>
+        <box size="0.142 0.002 0.027" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.05175 -0.05175 0.0133" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0303 0.0303 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.01725 -0.05175 0.0118" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0318 0.0228 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.01725 -0.05175 0.0125" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0317936 0.0317936 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.05175 -0.05175 0.0019" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0258 0.0258 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.05175 -0.01725 0.0019" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0258 0.0258 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.01725 -0.01725 0.0133" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0303 0.0303 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.01725 -0.01725 0.0118" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0318 0.0228 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.05175 -0.01725 0.0125" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0317936 0.0317936 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.05175 0.01725 0.0125" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0317936 0.0317936 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.01725 0.01725 0.0019" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0258 0.0258 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.01725 0.01725 0.0133" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0303 0.0303 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.05175 0.01725 0.0118" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0318 0.0228 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.05175 0.05175 0.0118" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0318 0.0228 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.01725 0.05175 0.0125" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0317936 0.0317936 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.01725 0.05175 0.0019" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0258 0.0258 0.001" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.05175 0.05175 0.0133" rpy="0 0 0" />
+      <geometry>
+        <box size="0.0303 0.0303 0.001" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="praline_gift_box_lid">
+    <inertial>
+      <origin xyz="0 0 0.0213827" rpy="0 0 0" />
+      <mass value="0.07" />
+      <inertia ixx="0.000183698" ixy="0" ixz="0" iyy="0.000183698" iyz="0" izz="0.00035761" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="1.5707963 0 0" />
+      <geometry>
+        <mesh filename="assets/praline_gift_box_lid.glb" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.027" rpy="0 0 0" />
+      <geometry>
+        <box size="0.1472 0.1472 0.002" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.0726 0 0.014" rpy="0 0 0" />
+      <geometry>
+        <box size="0.002 0.1472 0.028" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0.0726 0 0.014" rpy="0 0 0" />
+      <geometry>
+        <box size="0.002 0.1472 0.028" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0.0726 0.014" rpy="0 0 0" />
+      <geometry>
+        <box size="0.1472 0.002 0.028" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 -0.0726 0.014" rpy="0 0 0" />
+      <geometry>
+        <box size="0.1472 0.002 0.028" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="praline_gift_box_lid_joint" type="prismatic">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_lid" />
+    <origin xyz="0 0 2.60209e-18" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="0" upper="0.06" effort="50.0" velocity="1.0" />
+  </joint>
+  <link name="praline_gift_box_cavity_0_0_volume" />
+  <joint name="praline_gift_box_cavity_0_0_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_0_0_volume" />
+    <origin xyz="-0.05175 -0.05175 0.0188" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_0_1_volume" />
+  <joint name="praline_gift_box_cavity_0_1_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_0_1_volume" />
+    <origin xyz="-0.01725 -0.05175 0.0173" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_0_2_volume" />
+  <joint name="praline_gift_box_cavity_0_2_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_0_2_volume" />
+    <origin xyz="0.01725 -0.05175 0.018" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_0_3_volume" />
+  <joint name="praline_gift_box_cavity_0_3_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_0_3_volume" />
+    <origin xyz="0.05175 -0.05175 0.0074" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_1_0_volume" />
+  <joint name="praline_gift_box_cavity_1_0_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_1_0_volume" />
+    <origin xyz="-0.05175 -0.01725 0.0074" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_1_1_volume" />
+  <joint name="praline_gift_box_cavity_1_1_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_1_1_volume" />
+    <origin xyz="-0.01725 -0.01725 0.0188" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_1_2_volume" />
+  <joint name="praline_gift_box_cavity_1_2_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_1_2_volume" />
+    <origin xyz="0.01725 -0.01725 0.0173" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_1_3_volume" />
+  <joint name="praline_gift_box_cavity_1_3_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_1_3_volume" />
+    <origin xyz="0.05175 -0.01725 0.018" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_2_0_volume" />
+  <joint name="praline_gift_box_cavity_2_0_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_2_0_volume" />
+    <origin xyz="-0.05175 0.01725 0.018" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_2_1_volume" />
+  <joint name="praline_gift_box_cavity_2_1_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_2_1_volume" />
+    <origin xyz="-0.01725 0.01725 0.0074" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_2_2_volume" />
+  <joint name="praline_gift_box_cavity_2_2_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_2_2_volume" />
+    <origin xyz="0.01725 0.01725 0.0188" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_2_3_volume" />
+  <joint name="praline_gift_box_cavity_2_3_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_2_3_volume" />
+    <origin xyz="0.05175 0.01725 0.0173" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_3_0_volume" />
+  <joint name="praline_gift_box_cavity_3_0_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_3_0_volume" />
+    <origin xyz="-0.05175 0.05175 0.0173" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_3_1_volume" />
+  <joint name="praline_gift_box_cavity_3_1_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_3_1_volume" />
+    <origin xyz="-0.01725 0.05175 0.018" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_3_2_volume" />
+  <joint name="praline_gift_box_cavity_3_2_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_3_2_volume" />
+    <origin xyz="0.01725 0.05175 0.0074" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_cavity_3_3_volume" />
+  <joint name="praline_gift_box_cavity_3_3_volume_fixed" type="fixed">
+    <parent link="praline_gift_box_body" />
+    <child link="praline_gift_box_cavity_3_3_volume" />
+    <origin xyz="0.05175 0.05175 0.0188" rpy="0 0 0" />
+  </joint>
+  <link name="praline_gift_box_lid_grip" />
+  <joint name="praline_gift_box_lid_grip_fixed" type="fixed">
+    <parent link="praline_gift_box_lid" />
+    <child link="praline_gift_box_lid_grip" />
+    <origin xyz="0 -0.0736 0.014" rpy="0 0 0" />
+  </joint>
+</robot>
