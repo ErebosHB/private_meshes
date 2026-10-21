@@ -2,13 +2,13 @@
 
 Shallow boltless shelving bay open on both faces, with a low tote level that robots load from one side and unload from the other.
 
-Original AICOR concept model. Principal author and design direction: Vanessa Hassouna.
+Original concept model by Vanessa Hassouna, developed for AICOR Solutions.
 Typology drawn from a public product reference; not a replica of, or affiliated with, any manufacturer's product.
 
 `model.blend` is editable in Blender 4.0 or newer. Its timeline shows closed/rest at frame 1,
 an inspection pose at frame 60, and closed/rest again at frame 120.
 `model.urdf` loads independently using only local `assets/*.glb` files.
-Copy this entire folder, including its notices, for an authorized reuse.
+Licensed under BSD-3-Clause (see LICENSE.txt and NOTICE.md); keep both with every copy.
 
 Coordinates are metres, Z up, front toward negative Y. Origin at floor level, centre of the footprint; both long faces are open.
 Use a unique URDF parser prefix for each instance.

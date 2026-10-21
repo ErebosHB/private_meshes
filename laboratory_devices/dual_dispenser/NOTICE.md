@@ -1,31 +1,25 @@
-# AICOR laboratory asset credits
+# AICOR laboratory assets: credits and licence
 
-- **Principal author and design direction:** Vanessa Hassouna
-- **Institution:** AICOR Institute
-- **Year:** 2026
-- **Permission requests:** hassouna@uni-bremen.de
-- **Asset terms:** [LICENSE.txt](LICENSE.txt)
-- **Identifier:** `LicenseRef-AICOR-Laboratory-Assets`
+- **Author and design direction:** Vanessa Hassouna (33067562+sunava@users.noreply.github.com)
+- **Developed for:** AICOR Solutions
+- **Copyright:** Copyright (c) 2026, Vanessa Hassouna
+- **Licence:** BSD 3-Clause License, see [LICENSE.txt](LICENSE.txt) (SPDX: `BSD-3-Clause`)
 
 The room, workbench, drawer, glassware and instrument models were developed
 procedurally for this laboratory project, with AI-assisted implementation.
 The authoring scripts construct their geometry and materials; the device
 exporter packages individual instruments from that scene. This records the
-generation process and project attribution, not a legal determination of
-copyright eligibility or an assignment of rights to an institution.
+generation process, not a legal determination of copyright eligibility.
 
-The existing AICOR logo artwork is incorporated into the visual models.
-This notice makes no claim to having created that artwork and grants no
-separate logo or trademark permission. Font artwork and other third-party
-components retain their applicable rights. The separately obtained PR2 model
-and the CRAM/CRAMERA software are outside this asset notice.
+Not covered by the licence, and keeping their own rights and terms: the AICOR name and the
+AICOR logo artwork in the visual models (no trademark or logo permission is granted), font
+artwork, the separately obtained PR2 model, and the CRAM/CRAMERA software.
 
-The laboratory asset README previously described the bundle as GPL-3.0-only.
-On 2026-09-25 the project owner stated that the assets had only been used by
-the owner in a private repository and requested permission-only asset reuse.
-The current notice reflects that instruction. It does not retrospectively
-cancel any licence that was validly granted to another recipient.
+Licence history: the laboratory assets were first described as GPL-3.0-only, then from
+2026-09-25 as permission-only (`LicenseRef-AICOR-Laboratory-Assets`). On 2026-10-21 the
+copyright holder relicensed them under BSD-3-Clause. Permissions validly granted earlier are
+not withdrawn.
 
-Copy this notice and LICENSE.txt together with any asset copies that you are
-authorized to distribute. Each independent device folder contains both files;
-model descriptions and mesh metadata also identify the author and asset terms.
+Keep LICENSE.txt and this notice with every copy, as the licence requires.
+Each independent device folder contains both files; model descriptions and
+mesh metadata also name the author and the licence.

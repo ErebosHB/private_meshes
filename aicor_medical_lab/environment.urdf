@@ -1,9 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<robot name="aicor_medical_lab"><!-- CRAMERA laboratory asset rights:
-Principal author: Vanessa Hassouna
-Institution: AICOR Institute
-Copyright (c) 2026 Vanessa Hassouna. All rights reserved where rights subsist.
-License: LicenseRef-AICOR-Laboratory-Assets
+<robot name="aicor_medical_lab"><!-- AICOR laboratory asset:
+Author: Vanessa Hassouna <33067562+sunava@users.noreply.github.com>, developed for AICOR Solutions
+Copyright (c) 2026, Vanessa Hassouna
+SPDX-License-Identifier: BSD-3-Clause
 See LICENSE.txt and NOTICE.md.
 -->
   <link name="laboratory_root" />

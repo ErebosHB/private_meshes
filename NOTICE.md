@@ -1,31 +1,38 @@
-# AICOR laboratory asset credits
+# private_meshes: credits and licence
 
-- **Principal author and design direction:** Vanessa Hassouna
-- **Institution:** AICOR Institute
-- **Year:** 2026
-- **Permission requests:** hassouna@uni-bremen.de
-- **Asset terms:** [LICENSE.txt](LICENSE.txt)
-- **Identifier:** `LicenseRef-AICOR-Laboratory-Assets`
+- **Author and design direction:** Vanessa Hassouna (33067562+sunava@users.noreply.github.com)
+- **Developed for:** AICOR Solutions
+- **Copyright:** Copyright (c) 2026, Vanessa Hassouna
+- **Licence:** BSD 3-Clause License, see [LICENSE.txt](LICENSE.txt) (SPDX: `BSD-3-Clause`), for the content
+  listed under "Covered"
 
-The room, workbench, drawer, glassware and instrument models were developed
-procedurally for this laboratory project, with AI-assisted implementation.
-The authoring scripts construct their geometry and materials; the device
-exporter packages individual instruments from that scene. This records the
-generation process and project attribution, not a legal determination of
-copyright eligibility or an assignment of rights to an institution.
+## Covered
 
-The existing AICOR logo artwork is incorporated into the visual models.
-This notice makes no claim to having created that artwork and grants no
-separate logo or trademark permission. Font artwork and other third-party
-components retain their applicable rights. The separately obtained PR2 model
-and the CRAM/CRAMERA software are outside this asset notice.
+- `aicor_medical_lab/`, `laboratory_devices/` and `centrifuge_manuals/`: the AICOR laboratory
+  assets and the manuals of the simulated centrifuge.
+- `objects_individually/`: objects #151 and later, and the entries and rows that describe
+  them in `collection.json` and the catalogue READMEs.
+- The repository's top-level `README.md`, `NOTICE.md` and `rights.json`.
 
-The laboratory asset README previously described the bundle as GPL-3.0-only.
-On 2026-09-25 the project owner stated that the assets had only been used by
-the owner in a private repository and requested permission-only asset reuse.
-The current notice reflects that instruction. It does not retrospectively
-cancel any licence that was validly granted to another recipient.
+## Licence pending: contribution by Yannick Schroeder
 
-Copy this notice and LICENSE.txt together with any asset copies that you are
-authorized to distribute. Each independent device folder contains both files;
-model descriptions and mesh metadata also identify the author and asset terms.
+Objects #001-#150 in `objects_individually/`, together with `PROMPT.md`, `collection.json`,
+`objects_individually/README.md` and the category `README.md` files in the form he added
+them, were contributed by Yannick Schroeder (commit c9cb1b3, pull request #1, 2026-10-19).
+Their licence is not settled yet: the BSD-3-Clause licence of this repository does not cover
+them until he agrees. Their `NOTICE.md` and `README.md` files keep the placeholders
+`<OWNER>` and `<AUTHOR>` until then.
+
+## Not covered
+
+Not covered by the licence, and keeping their own rights and terms: the AICOR name and the
+AICOR logo artwork in the visual models (no trademark or logo permission is granted), font
+artwork, the separately obtained PR2 model, and the CRAM/CRAMERA software. Typology references named in object notices (manufacturer or retailer catalogues)
+were used only for the kind of object and its size class; no material from them is included.
+
+## History
+
+Licence history: the laboratory assets were first described as GPL-3.0-only, then from
+2026-09-25 as permission-only (`LicenseRef-AICOR-Laboratory-Assets`). On 2026-10-21 the
+copyright holder relicensed them under BSD-3-Clause. Permissions validly granted earlier are
+not withdrawn.

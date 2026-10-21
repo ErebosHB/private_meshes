@@ -1,9 +1,8 @@
 # AICOR Laboratory assets
 
-**Principal author:** Vanessa Hassouna · **Institution:** AICOR Institute.
-Original laboratory assets require written permission for reuse; see
-[LICENSE.txt](LICENSE.txt) and [NOTICE.md](NOTICE.md) for scope, provenance,
-third-party exclusions and preservation of existing permissions.
+**Author:** Vanessa Hassouna · developed for AICOR Solutions · licence: BSD-3-Clause, see
+[LICENSE.txt](LICENSE.txt) and [NOTICE.md](NOTICE.md) for scope, provenance and
+third-party exclusions.
 
 This portable bundle contains the authored laboratory's environment, movable
 objects, collision meshes, materials, initial poses, and rack-slot metadata.
@@ -54,7 +53,7 @@ The scene was generated with `cramera/tools/laboratory/build_blender.py` and
 `cramera/tools/laboratory/bundle.py` from
 `cramera/tools/laboratory/specification.json`. The source Blender project and
 preview renders are authoring outputs and are excluded from this runtime bundle.
-The original asset content is covered by `LicenseRef-AICOR-Laboratory-Assets`.
+The original asset content is licensed under `BSD-3-Clause`.
 CRAMERA software and third-party components retain their own licences.
 
 The GLB files retain the authored visual materials. URDF collision geometry is

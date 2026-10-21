@@ -1,11 +1,10 @@
 # AICOR laboratory devices
 
-**Principal author:** Vanessa Hassouna · **Institution:** AICOR Institute.
-Original laboratory assets require written permission for reuse. Every device
-folder includes `LICENSE.txt`, `NOTICE.md` and `rights.json`; keep them with
-authorized copies. Existing permissions and third-party rights are preserved.
+**Author:** Vanessa Hassouna · developed for AICOR Solutions · licence: [BSD-3-Clause](LICENSE.txt).
+Every device folder includes `LICENSE.txt`, `NOTICE.md` and `rights.json`; keep them
+with every copy, as the licence requires. Third-party rights are preserved.
 
-Each subdirectory is a self-contained device model. For an authorized reuse, copy
+Each subdirectory is a self-contained device model. To reuse a device, copy
 the entire device folder: `model.urdf` refers only to relative files under
 `assets/`, and the GLB files embed their material images. Coordinates are metres with Z up.
 
@@ -37,7 +36,7 @@ world.merge_world_at_pose(
     Pose.from_xyz_quaternion(0.3, 0.0, 0.9, 0.0, 0.0, 0.0, 1.0).to_homogeneous_matrix(),
 )
 
-# Copy the model for an authorized use on another machine or project.
+# Copy the model to another machine or project.
 model.copy_to(Path("my_devices"))
 ```
 

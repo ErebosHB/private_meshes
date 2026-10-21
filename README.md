@@ -1,11 +1,10 @@
 # private_meshes
 
-**Principal author and design direction:** Vanessa Hassouna.
-**Institution:** AICOR Institute.
+**Author and design direction:** Vanessa Hassouna (33067562+sunava@users.noreply.github.com), developed for AICOR Solutions.
 
-Original laboratory assets require prior written permission for reuse, subject
-to the scope, existing permissions and third-party exclusions in
-[LICENSE.txt](LICENSE.txt) and [NOTICE.md](NOTICE.md).
+Licensed under the [BSD 3-Clause License](LICENSE.txt), Copyright (c) 2026, Vanessa Hassouna. [NOTICE.md](NOTICE.md)
+lists what the licence covers, the third-party exclusions, and the objects #001-#150
+whose licence is still pending.
 
 This repository contains the assembled laboratory and its independent equipment:
 
@@ -29,8 +28,8 @@ The independent device models are:
 | Sample refrigerator with articulated glass door | [`refrigerator/model.urdf`](laboratory_devices/refrigerator/model.urdf) |
 
 Each device directory includes its URDF, visual meshes with embedded materials,
-collision geometry, frame metadata, documentation and permission notices. For
-authorized reuse, copy the complete device directory, including its notices;
+collision geometry, frame metadata, documentation and licence notices. To reuse a
+device, copy the complete device directory, including its notices;
 its mesh references remain relative. Units are
 metres, with Z pointing up.
 

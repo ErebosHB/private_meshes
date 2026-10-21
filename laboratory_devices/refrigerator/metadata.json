@@ -13,12 +13,16 @@
     "laboratory_refrigerator_door_handle_joint"
   ],
   "assetRights": {
-    "principalAuthor": "Vanessa Hassouna",
-    "institution": "AICOR Institute",
-    "copyright": "Copyright (c) 2026 Vanessa Hassouna. All rights reserved where rights subsist.",
-    "license": "LicenseRef-AICOR-Laboratory-Assets",
-    "permissionNotice": "Reuse, modification and redistribution of the original laboratory assets require prior written permission from Vanessa Hassouna, except where an existing licence or applicable law permits them. Permission requests: hassouna@uni-bremen.de.",
-    "priorLicenseNotice": "Existing third-party rights and any permissions already validly granted remain unaffected. This notice does not create copyright in otherwise unprotected material.",
+    "author": "Vanessa Hassouna",
+    "authorEmail": "33067562+sunava@users.noreply.github.com",
+    "developedFor": "AICOR Solutions",
+    "copyright": "Copyright (c) 2026, Vanessa Hassouna",
+    "license": "BSD-3-Clause",
+    "licenseNotice": "Licensed under the BSD 3-Clause License. The AICOR name and logo artwork, fonts, the PR2 model and the CRAM/CRAMERA software are not covered and keep their own terms.",
+    "priorLicenses": [
+      "GPL-3.0-only (initial README)",
+      "LicenseRef-AICOR-Laboratory-Assets (permission-only, 2026-09-25 to 2026-10-21)"
+    ],
     "licenseFile": "LICENSE.txt",
     "noticeFile": "NOTICE.md"
   }

@@ -1,11 +1,10 @@
 # AICOR scale
 
-**Principal author:** Vanessa Hassouna · **Institution:** AICOR Institute.
-Original laboratory assets require prior written permission for reuse; see
-[LICENSE.txt](LICENSE.txt) and [NOTICE.md](NOTICE.md). Keep these notices with
-authorized copies. Existing permissions and third-party rights are preserved.
+**Author:** Vanessa Hassouna · developed for AICOR Solutions · licence: BSD-3-Clause, see
+[LICENSE.txt](LICENSE.txt) and [NOTICE.md](NOTICE.md). Keep both with every copy.
+Third-party rights are preserved.
 
-For authorized reuse, load `model.urdf` independently or copy the complete folder
+To reuse it, load `model.urdf` independently or copy the complete folder
 into another project.
 All visual files and artwork are included under `assets/`.
 
