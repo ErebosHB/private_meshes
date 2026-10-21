@@ -6,7 +6,7 @@
    "title": "Storage & Shelving",
    "blurb": "Shelves, cabinets, chests, sideboards, display and filing cabinets.",
    "added": "2026-10-14",
-   "count": 26
+   "count": 27
   },
   {
    "key": "wardrobes",
@@ -16557,6 +16557,92 @@
    },
    "variant_of": null,
    "folder": "containers-boxes/156-praline_gift_box"
+  },
+  {
+   "slug": "mobile_tray_rack",
+   "name": "Mobile Tray Rack",
+   "desc": "Stainless mobile rack with runners for baking or confectionery trays on four castors; trays slide out to the front.",
+   "size": [
+    0.46,
+    0.66,
+    1.74
+   ],
+   "joints": [
+    {
+     "name": "mobile_tray_rack_tray_joint",
+     "type": "prismatic",
+     "lower": 0.0,
+     "upper": 0.47250000000000025,
+     "inspect": 0.37800000000000017
+    },
+    {
+     "name": "mobile_tray_rack_castor_0_joint",
+     "type": "continuous",
+     "lower": 0.0,
+     "upper": 0.0,
+     "inspect": 0.0
+    },
+    {
+     "name": "mobile_tray_rack_castor_1_joint",
+     "type": "continuous",
+     "lower": 0.0,
+     "upper": 0.0,
+     "inspect": 0.0
+    },
+    {
+     "name": "mobile_tray_rack_castor_2_joint",
+     "type": "continuous",
+     "lower": 0.0,
+     "upper": 0.0,
+     "inspect": 0.0
+    },
+    {
+     "name": "mobile_tray_rack_castor_3_joint",
+     "type": "continuous",
+     "lower": 0.0,
+     "upper": 0.0,
+     "inspect": 0.0
+    }
+   ],
+   "frames": [
+    {
+     "name": "mobile_tray_rack_tray_surface",
+     "link": "mobile_tray_rack_tray",
+     "purpose": "place_surface"
+    },
+    {
+     "name": "mobile_tray_rack_tray_grip",
+     "link": "mobile_tray_rack_tray",
+     "purpose": "grasp"
+    },
+    {
+     "name": "mobile_tray_rack_push_grip",
+     "link": "mobile_tray_rack_body",
+     "purpose": "grasp"
+    },
+    {
+     "name": "mobile_tray_rack_wall_anchor",
+     "link": "mobile_tray_rack_body",
+     "purpose": "wall_mount"
+    }
+   ],
+   "id": "157",
+   "category": "storage-shelving",
+   "added": "2026-10-21",
+   "fingerprint": {
+    "type": "mobile tray rack",
+    "joints": {
+     "prismatic": 1,
+     "continuous": 4
+    },
+    "size_m": [
+     0.46,
+     0.66,
+     1.74
+    ]
+   },
+   "variant_of": null,
+   "folder": "storage-shelving/157-mobile_tray_rack"
   }
  ]
 }
