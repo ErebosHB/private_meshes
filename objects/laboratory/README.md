@@ -50,6 +50,12 @@ the existing browser controls are implemented by the laboratory simulation; a
 generic URDF loader does not execute those behaviors automatically. Collision
 apertures use the same compound approximations as the assembled laboratory.
 
+The centrifuge operating manuals are in [`centrifuge/manuals/`](centrifuge/manuals/).
+
+Older CRAMERA versions resolve `resources/laboratory_devices/`. Update their
+resource base to `resources/objects/laboratory/`, or use the optional
+[legacy path helper](../../MIGRATION.md) before running the examples or exporter.
+
 Regenerate the folders after authoring asset changes:
 
 ```sh

@@ -4,9 +4,10 @@ on:
   push:
     branches: [main]
     paths:
-      - 'objects_individually/**'
+      - 'objects/**'
+      - 'environments/**'
       - 'site/**'
-      - 'scripts/build_site.py'
+      - 'scripts/**'
       - 'tests/**'
       - 'NOTICE.md'
       - 'LICENSE.txt'
@@ -14,9 +15,10 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'objects_individually/**'
+      - 'objects/**'
+      - 'environments/**'
       - 'site/**'
-      - 'scripts/build_site.py'
+      - 'scripts/**'
       - 'tests/**'
       - 'NOTICE.md'
       - 'LICENSE.txt'
@@ -37,8 +39,10 @@ jobs:
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - name: Test the catalogue builder
+      - name: Test catalogue and resource tooling
         run: python3 -m unittest discover -s tests -v
+      - name: Validate object and environment references
+        run: python3 scripts/validate_resources.py
       - name: Check browser JavaScript
         run: node --check site/app.js
       - name: Build and validate all objects

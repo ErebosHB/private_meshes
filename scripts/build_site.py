@@ -25,7 +25,7 @@ def local_path(base: Path, value: str) -> Path:
 
 
 def read_catalogue(root: Path) -> dict:
-    source = root / "objects_individually"
+    source = root / "objects" / "articulated"
     data = json.loads((source / "collection.json").read_text(encoding="utf-8"))
     categories = {c["key"]: c for c in data["categories"]}
     if len(categories) != len(data["categories"]):
@@ -97,7 +97,7 @@ def build(root: Path) -> dict:
     shutil.copyfile(root / "NOTICE.md", output / "NOTICE.md")
     shutil.copyfile(root / "LICENSE.txt", output / "LICENSE.txt")
     for obj in data["objects"]:
-        folder = root / "objects_individually" / obj["folder"]
+        folder = root / "objects" / "articulated" / obj["folder"]
         target = output / "models" / obj["folder"]
         (target / "renders").mkdir(parents=True)
         for name in ("renders/rest.webp", "renders/open.webp", "README.md", "NOTICE.md"):

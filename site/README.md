@@ -1,6 +1,6 @@
 # Object catalogue
 
-The static catalogue is generated from `objects_individually/collection.json` and
+The static catalogue is generated from `objects/articulated/collection.json` and
 the object folders. It includes category filters, full-text search, sorting,
 rest/inspection previews, joint limits, interaction frames and complete ZIP
 downloads. There is no server, package installation, external CDN or Blender
@@ -29,6 +29,7 @@ From the repository root:
 
 ```sh
 python3 -m unittest discover -s tests -v
+python3 scripts/validate_resources.py
 node --check site/app.js
 python3 scripts/build_site.py
 python3 -m http.server 8000 --directory dist
@@ -40,7 +41,7 @@ and ignored by Git. The builder recreates it on each successful validation.
 
 ## Adding and updating objects
 
-Keep the object's entry in `objects_individually/collection.json` aligned with its
+Keep the object's entry in `objects/articulated/collection.json` aligned with its
 folder. Every model needs `model.blend`, `model.urdf`, local mesh references,
 `README.md`, `NOTICE.md`, and `renders/rest.webp` plus `renders/open.webp`. Add new
 category metadata to the same manifest when needed. Counts are computed from the
@@ -56,3 +57,7 @@ assign a new licence to models whose licence is pending.
 
 The workflow uses GitHub-hosted Ubuntu runners and the standard Pages actions.
 Its build job has only read permission; only the deployment job can publish Pages.
+Changes in both `objects/` and `environments/` trigger validation. All URDF mesh
+references and scene JSON file references are checked before the site is built.
+The web catalogue itself continues to use `objects/articulated/`; the repository
+also contains portable laboratory devices under `objects/laboratory/`.

@@ -1,2 +1,7 @@
 /dist/
 __pycache__/
+# Optional local compatibility aliases; see MIGRATION.md.
+/objects_individually
+/laboratory_devices
+/aicor_medical_lab
+/centrifuge_manuals

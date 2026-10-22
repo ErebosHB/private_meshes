@@ -16,7 +16,7 @@ class CatalogueBuildTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        self.source = self.root / 'objects_individually'
+        self.source = self.root / 'objects' / 'articulated'
         self.folder = self.source / 'storage/001-test'
         for name in ('model.blend', 'README.md', 'NOTICE.md', 'assets/body.glb',
                      'renders/rest.webp', 'renders/open.webp'):

@@ -22,3 +22,5 @@ moves with the hinge. Its visual and collision geometry remains on the lid.
 This model supplies geometry, contact shapes and articulation. The laboratory's
 motor commands, sample clamps, manual knowledge and safety interlocks require its
 simulation controller and are not implemented by the URDF alone.
+
+The two simulation operating-manual editions are in [manuals/](manuals/).

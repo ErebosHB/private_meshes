@@ -112,5 +112,5 @@ fetch('catalogue.json').then((r) => { if (!r.ok) throw Error('Catalogue unavaila
   route();
 }).catch(() => {
   $('#models').setAttribute('aria-busy', 'false');
-  $('#models').innerHTML = '<p>The collection could not be loaded. Please reload, or <a href="https://github.com/sunava/private_meshes/tree/main/objects_individually">browse it on GitHub</a>.</p>';
+  $('#models').innerHTML = '<p>The collection could not be loaded. Please reload, or <a href="https://github.com/sunava/private_meshes/tree/main/objects/articulated">browse it on GitHub</a>.</p>';
 });

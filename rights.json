@@ -11,5 +11,5 @@
   ],
   "licenseFile": "LICENSE.txt",
   "noticeFile": "NOTICE.md",
-  "licensePending": "objects_individually #001-#150, PROMPT.md, collection.json and the catalogue READMEs as contributed by Yannick Schroeder (commit c9cb1b3); see NOTICE.md"
+  "licensePending": "objects/articulated #001-#150, PROMPT.md, collection.json and the catalogue READMEs as contributed by Yannick Schroeder (commit c9cb1b3); see NOTICE.md"
 }

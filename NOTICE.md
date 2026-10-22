@@ -8,16 +8,16 @@
 
 ## Covered
 
-- `aicor_medical_lab/`, `laboratory_devices/` and `centrifuge_manuals/`: the AICOR laboratory
+- `environments/aicor_medical_lab/` and `objects/laboratory/` (including the centrifuge manuals): the AICOR laboratory
   assets and the manuals of the simulated centrifuge.
-- `objects_individually/`: objects #151 and later, and the entries and rows that describe
+- `objects/articulated/`: objects #151 and later, and the entries and rows that describe
   them in `collection.json` and the catalogue READMEs.
 - The repository's top-level `README.md`, `NOTICE.md` and `rights.json`.
 
 ## Licence pending: contribution by Yannick Schroeder
 
-Objects #001-#150 in `objects_individually/`, together with `PROMPT.md`, `collection.json`,
-`objects_individually/README.md` and the category `README.md` files in the form he added
+Objects #001-#150 in `objects/articulated/`, together with `PROMPT.md`, `collection.json`,
+`objects/articulated/README.md` and the category `README.md` files in the form he added
 them, were contributed by Yannick Schroeder (commit c9cb1b3, pull request #1, 2026-10-19).
 Their licence is not settled yet: the BSD-3-Clause licence of this repository does not cover
 them until he agrees. Their `NOTICE.md` and `README.md` files keep the placeholders

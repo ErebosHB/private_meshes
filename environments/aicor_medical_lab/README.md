@@ -40,7 +40,7 @@ state; missing observations remain unknown. In a live physics scene, open the
 centrifuge lid to show its interior annotations. **Show controls** restores the
 instrument controls, and **Exit manual** returns to the ordinary scene.
 
-The adjacent `resources/laboratory_devices/` catalog provides independently
+The [`objects/laboratory/`](../../objects/laboratory/README.md) collection provides independently
 loadable URDF folders, each with its own local meshes and documentation. These
 portable models preserve the geometry and joints used in this assembled scene.
 

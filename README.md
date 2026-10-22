@@ -1,65 +1,66 @@
 # private_meshes
 
-**Author and design direction:** Vanessa Hassouna (33067562+sunava@users.noreply.github.com), developed for AICOR Solutions.
+Reusable 3D objects and assembled environments, developed for AICOR Solutions.
 
-Licensed under the [BSD 3-Clause License](LICENSE.txt), Copyright (c) 2026, Vanessa Hassouna. [NOTICE.md](NOTICE.md)
-lists what the licence covers, the third-party exclusions, and the objects #001-#150
-whose licence is still pending.
+**Author and design direction:** Vanessa Hassouna (33067562+sunava@users.noreply.github.com).
+Licensed under the [BSD 3-Clause License](LICENSE.txt) within the scope described
+in [NOTICE.md](NOTICE.md). Objects #001–#150 retain their pending licence status.
 
-The independent object collection also has an automatically generated
-[web catalogue](https://sunava.github.io/private_meshes/).
-See [site/README.md](site/README.md) for the GitHub Pages setup, local
-preview commands and instructions for adding objects.
+## Asset layout
 
-This repository contains the assembled laboratory and its independent equipment:
+```text
+objects/                         independently loadable models
+  articulated/                   157 models, organised by category
+    collection.json              web-catalogue metadata
+    <category>/<id>-<slug>/       Blender, URDF, meshes, previews and notices
+  laboratory/                    five portable laboratory devices
+    centrifuge/                  includes manuals/v1.md and manuals/v2.md
+    dual_dispenser/
+    refrigerator/
+    scale/
+    tube_rack/
+environments/                    assembled scenes and their configuration
+  aicor_medical_lab/             room, equipment, placements and sample vessels
+```
 
-- [`aicor_medical_lab`](aicor_medical_lab/README.md): the room, workbench, articulated
-  drawer, instruments, rack and separate sample vessels. `scene.json` describes
-  the assembled scene; `environment.urdf` describes the environment and
-  articulated equipment. Meshes, materials and collision data are included.
-- [`laboratory_devices`](laboratory_devices/README.md): five independently
-  loadable instrument folders, listed below.
-- [`centrifuge_manuals`](centrifuge_manuals/): the two operating-manual editions
-  used by the laboratory knowledge demonstration.
+- **[Objects](objects/README.md):** copy a complete model folder to use an object
+  independently. Its URDF keeps relative references to its own meshes and notices.
+- **[Environments](environments/README.md):** load an assembled scene with its
+  placements, configuration and supporting assets. The medical laboratory is a
+  complete environment, even though it contains individually movable objects.
+- **[Web catalogue](https://sunava.github.io/private_meshes/):** browse the
+  articulated collection, compare rest/inspection poses and download models.
 
-The independent device models are:
+Model geometry, joint names, materials and scene placements are preserved by the
+folder reorganisation. The laboratory environment remains a self-contained
+runtime bundle; the portable device exports can be used without it.
 
-| Device | URDF |
-| --- | --- |
-| Centrifuge with articulated lid and rotor | [`centrifuge/model.urdf`](laboratory_devices/centrifuge/model.urdf) |
-| Dual dispenser | [`dual_dispenser/model.urdf`](laboratory_devices/dual_dispenser/model.urdf) |
-| Laboratory scale | [`scale/model.urdf`](laboratory_devices/scale/model.urdf) |
-| Tube rack | [`tube_rack/model.urdf`](laboratory_devices/tube_rack/model.urdf) |
-| Sample refrigerator with articulated glass door | [`refrigerator/model.urdf`](laboratory_devices/refrigerator/model.urdf) |
-
-Each device directory includes its URDF, visual meshes with embedded materials,
-collision geometry, frame metadata, documentation and licence notices. To reuse a
-device, copy the complete device directory, including its notices;
-its mesh references remain relative. Units are
-metres, with Z pointing up.
-
-Load a model directly with CRAM's semantic digital twin:
+## Load an individual model
 
 ```python
 from semantic_digital_twin.adapters.urdf import URDFParser
 
 world = URDFParser.from_file(
-    "/path/to/private_meshes/laboratory_devices/centrifuge/model.urdf",
+    "/path/to/private_meshes/objects/laboratory/centrifuge/model.urdf",
     prefix="centrifuge_one_",
 ).parse()
 ```
 
-Use a distinct prefix for each instance. Loading these models does not require
-the CRAMERA viewer. Instrument controllers and fluid simulation belong to the
-laboratory application; loading a URDF supplies the geometry and articulation.
+Use a distinct prefix for each instance. Coordinates are metres with Z up.
+URDF loading supplies geometry and articulation; instrument controllers and
+fluid simulation belong to the consuming laboratory application.
 
-In the CRAMERA workspace this repository is checked out directly at
-`cramera/src/cramera/resources`. Its `laboratory_devices` catalog can therefore
-also be accessed through `cramera.laboratory_devices.LaboratoryDeviceResource`.
-The `aicor_medical_lab`, `laboratory_devices` and `centrifuge_manuals` directories
-are all versioned in this resource repository. The surrounding CRAMERA
-repository currently also tracks these resource files for application packaging;
-a commit in one repository does not automatically create a commit in the other.
+## Existing consumers and maintenance
 
-The PR2 robot description and the CRAM/CRAMERA application source are separate
-dependencies and are not included here.
+The former top-level asset directories have moved. See [MIGRATION.md](MIGRATION.md)
+for the path mapping and an optional helper that restores the old entry points
+locally for existing CRAMERA installations. No legacy aliases are tracked in Git.
+
+In a CRAMERA checkout, these assets may live under `cramera/src/cramera/resources`.
+The CRAM/CRAMERA application and the PR2 robot description are separate projects;
+changes here do not update their source or packaging configuration automatically.
+
+Run `python3 scripts/validate_resources.py` to check model and scene references.
+The GitHub Actions workflow validates both asset groups before publishing the
+catalogue. [site/README.md](site/README.md) describes local previews, the catalogue
+build and how to add entries.
