@@ -102,6 +102,8 @@ def build(root: Path) -> dict:
         (target / "renders").mkdir(parents=True)
         for name in ("renders/rest.webp", "renders/open.webp", "README.md", "NOTICE.md"):
             shutil.copyfile(folder / name, target / name)
+        if (folder / "semantics.json").is_file():
+            shutil.copyfile(folder / "semantics.json", target / "semantics.json")
         with ZipFile(output / obj["download"], "w") as archive:
             for file in sorted(folder.rglob("*")):
                 if file.is_file():

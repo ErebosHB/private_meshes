@@ -2,8 +2,8 @@
 
 The static catalogue is generated from `objects/articulated/collection.json` and
 the object folders. It includes category filters, full-text search, sorting,
-rest/inspection previews, joint limits, interaction frames and complete ZIP
-downloads. There is no server, package installation, external CDN or Blender
+rest/inspection previews, joint limits, interaction frames, each object's semantic
+annotations (read from its `semantics.json`) and complete ZIP downloads. There is no server, package installation, external CDN or Blender
 rendering step. All URLs are relative, including downloads and object deep links,
 so the site works under the GitHub Pages repository path.
 

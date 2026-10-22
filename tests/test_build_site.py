@@ -47,6 +47,13 @@ class CatalogueBuildTests(unittest.TestCase):
                 self.assertIn('001-test/' + name, archive.namelist())
         self.assertTrue((self.root / 'dist/models/storage/001-test/renders/rest.webp').is_file())
 
+    def test_semantics_are_published_beside_the_notice_when_present(self):
+        builder.build(self.root)
+        self.assertFalse((self.root / 'dist/models/storage/001-test/semantics.json').exists())
+        (self.folder / 'semantics.json').write_text('{"annotations": []}')
+        builder.build(self.root)
+        self.assertEqual((self.root / 'dist/models/storage/001-test/semantics.json').read_text(), '{"annotations": []}')
+
     def test_missing_asset_fails_before_replacing_good_build(self):
         builder.build(self.root)
         previous = (self.root / 'dist/catalogue.json').read_bytes()
