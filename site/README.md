@@ -15,7 +15,8 @@ so the site works under the GitHub Pages repository path.
 3. Open **Actions → Build and deploy object catalogue → Run workflow** and select
    `main`. This retries publication if the first push ran before Pages was enabled.
 
-The resulting URL is normally `https://sunava.github.io/private_meshes/`.
+Site address: [Objects, Individually](https://sunava.github.io/private_meshes/).
+The catalogue becomes available there after the deployment job succeeds.
 Subsequent pushes to `main` that change models, catalogue source, build code,
 tests, workflow or notices rebuild and publish automatically. Pull requests run
 tests and build the entire site without deploying. A manual run on another branch
