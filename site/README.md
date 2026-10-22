@@ -8,6 +8,10 @@ downloads. There is no server, package installation, external CDN or Blender
 rendering step. All URLs are relative, including downloads and object deep links,
 so the site works under the GitHub Pages repository path.
 
+The build adds a deterministic content version to script, stylesheet and
+catalogue requests so returning visitors do not mix a new page with cached
+catalogue data. Rebuilding unchanged sources keeps the same version.
+
 ## Enable automatic publication
 
 1. Merge the catalogue files and `.github/workflows/pages.yml` into `main`.

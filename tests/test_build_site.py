@@ -1,6 +1,7 @@
 import copy
 import importlib.util
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -35,8 +36,10 @@ class CatalogueBuildTests(unittest.TestCase):
                                   'frames': [{}, {}]}]}
         self.save()
         (self.root / 'site').mkdir()
-        for name in ('index.html', 'styles.css', 'app.js'):
-            (self.root / 'site' / name).write_text('fixture')
+        (self.root / 'site/index.html').write_text(
+            '<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>')
+        (self.root / 'site/styles.css').write_text('body { color: black; }')
+        (self.root / 'site/app.js').write_text("fetch('catalogue.json?v=__CATALOGUE_VERSION__')")
         (self.root / 'NOTICE.md').write_text('Repository licence scope')
         (self.root / 'LICENSE.txt').write_text('Repository licence')
 
@@ -226,6 +229,36 @@ class CatalogueBuildTests(unittest.TestCase):
         (self.root / 'objects/laboratory').mkdir()
         with self.assertRaisesRegex(ValueError, 'Missing laboratory/collection.json'):
             builder.read_catalogue(self.root)
+
+    def test_build_versions_are_stable_and_catalogue_changes_refresh_all_requests(self):
+        builder.build(self.root)
+        names = ('index.html', 'app.js', 'styles.css', 'catalogue.json')
+        first = {name: (self.root / 'dist' / name).read_bytes() for name in names}
+        builder.build(self.root)
+        self.assertEqual(first, {name: (self.root / 'dist' / name).read_bytes() for name in names})
+        version = re.search(r'app\.js\?v=([a-f0-9]+)', first['index.html'].decode()).group(1)
+        self.assertIn(f'styles.css?v={version}', first['index.html'].decode())
+        self.assertIn(f'catalogue.json?v={version}', first['app.js'].decode())
+        self.assertNotIn(b'__CATALOGUE_VERSION__', first['app.js'])
+        self.data['categories'][0]['title'] = 'Updated storage category'
+        self.save()
+        builder.build(self.root)
+        html = (self.root / 'dist/index.html').read_text()
+        changed = re.search(r'app\.js\?v=([a-f0-9]+)', html).group(1)
+        self.assertNotEqual(version, changed)
+        self.assertIn(f'styles.css?v={changed}', html)
+        self.assertIn(f'catalogue.json?v={changed}', (self.root / 'dist/app.js').read_text())
+        self.assertIn('__CATALOGUE_VERSION__', (self.root / 'site/app.js').read_text())
+
+    def test_application_and_style_changes_refresh_build_version(self):
+        builder.build(self.root)
+        for name in ('app.js', 'styles.css'):
+            with self.subTest(asset=name):
+                before = (self.root / 'dist/index.html').read_bytes()
+                source = self.root / 'site' / name
+                source.write_text(source.read_text() + '\n/* updated */')
+                builder.build(self.root)
+                self.assertNotEqual(before, (self.root / 'dist/index.html').read_bytes())
 
 
 if __name__ == '__main__':

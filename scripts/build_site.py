@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import math
 import re
 import shutil
@@ -169,17 +170,26 @@ def build(root: Path) -> dict:
     # Validate before touching the previous build. Output is always root/dist.
     root = root.resolve()
     data = read_catalogue(root)
+    catalogue = json.dumps(data, ensure_ascii=False).encode("utf-8")
+    assets = {name: (root / "site" / name).read_bytes()
+              for name in ("index.html", "styles.css", "app.js")}
+    # One content-derived version keeps the application and its catalogue in sync.
+    version = hashlib.sha256(b"\0".join((catalogue, assets["app.js"], assets["styles.css"]))).hexdigest()[:16]
+    for name in ("app.js", "styles.css"):
+        assets["index.html"] = assets["index.html"].replace(
+            f'"{name}"'.encode(), f'"{name}?v={version}"'.encode())
+    assets["app.js"] = assets["app.js"].replace(b"__CATALOGUE_VERSION__", version.encode())
     output = root / "dist"
     if output.is_symlink():
         raise ValueError("dist must not be a symlink")
     if output.exists():
         shutil.rmtree(output)
     output.mkdir()
-    for name in ("index.html", "styles.css", "app.js"):
-        shutil.copyfile(root / "site" / name, output / name)
+    for name, content in assets.items():
+        (output / name).write_bytes(content)
     (output / ".nojekyll").touch()
     (output / "downloads").mkdir()
-    (output / "catalogue.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    (output / "catalogue.json").write_bytes(catalogue)
     shutil.copyfile(root / "NOTICE.md", output / "NOTICE.md")
     shutil.copyfile(root / "LICENSE.txt", output / "LICENSE.txt")
     for obj in data["objects"]:

@@ -117,7 +117,7 @@ $('#details').addEventListener('click', (event) => {
   document.querySelectorAll('[data-detail-pose]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.detailPose === state.detailPose)));
 });
 
-fetch('catalogue.json').then((r) => { if (!r.ok) throw Error('Catalogue unavailable'); return r.json(); }).then((data) => {
+fetch('catalogue.json?v=__CATALOGUE_VERSION__').then((r) => { if (!r.ok) throw Error('Catalogue unavailable'); return r.json(); }).then((data) => {
   state.data = data;
   $('#stats').innerHTML = [['objects', 'independent models'], ['categories', 'categories'], ['joints', 'moving joints'], ['frames', 'interaction frames']].map(([key, label]) => `<div class="stat"><strong>${number(data.stats[key])}</strong><span>${label}</span></div>`).join('');
   window.addEventListener('hashchange', route);
