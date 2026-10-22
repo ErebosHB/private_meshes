@@ -47,7 +47,12 @@ class ResourceTests(unittest.TestCase):
             validate(self.root)
 
     def test_aliases_resolve_old_paths_and_are_idempotent(self):
-        create_links(self.root)
+        try:
+            create_links(self.root)
+        except OSError as error:
+            if getattr(error, 'winerror', None) == 1314:
+                self.skipTest('Windows account cannot create symlinks')
+            raise
         create_links(self.root)
         for old, new in LEGACY_PATHS.items():
             self.assertEqual((self.root / old).resolve(), self.root / new)

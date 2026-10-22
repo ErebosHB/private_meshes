@@ -1,0 +1,223 @@
+{
+  "categories": [
+    {
+      "key": "laboratory",
+      "code": "LAB",
+      "title": "Laboratory",
+      "blurb": "Portable laboratory instruments and sample-handling equipment, with articulated and rigid models.",
+      "added": "2026-10-22",
+      "count": 5
+    }
+  ],
+  "objects": [
+    {
+      "id": "158",
+      "slug": "centrifuge",
+      "name": "Laboratory Centrifuge",
+      "desc": "Compact centrifuge with a hinged lid, a continuously rotating rotor and four open sample sleeves.",
+      "size": [
+        0.34,
+        0.3385,
+        0.323
+      ],
+      "size_basis": "Visual bounds at zero joint positions, including handles; metres, X/Y/Z.",
+      "joints": [
+        {
+          "name": "laboratory_centrifuge_rotor_joint",
+          "type": "continuous",
+          "lower": null,
+          "upper": null,
+          "inspect": 0.0
+        },
+        {
+          "name": "laboratory_centrifuge_lid_joint",
+          "type": "revolute",
+          "lower": 0.0,
+          "upper": 1.35,
+          "inspect": 1.35
+        }
+      ],
+      "frames": [
+        {
+          "name": "laboratory_centrifuge_base",
+          "purpose": "base_origin"
+        },
+        {
+          "name": "laboratory_centrifuge_rotor",
+          "purpose": "sample_holder"
+        },
+        {
+          "name": "laboratory_centrifuge_lid_handle",
+          "purpose": "grasp"
+        }
+      ],
+      "category": "laboratory",
+      "mobility": "articulated",
+      "added": "2026-10-22",
+      "fingerprint": {
+        "type": "centrifuge",
+        "joints": {
+          "continuous": 1,
+          "revolute": 1
+        },
+        "size_m": [
+          0.34,
+          0.3385,
+          0.323
+        ]
+      },
+      "variant_of": null,
+      "folder": "centrifuge"
+    },
+    {
+      "id": "159",
+      "slug": "dual_dispenser",
+      "name": "Dual Dispenser",
+      "desc": "Stationary dual-reservoir dispenser with supply tubes, nozzles, an instrument display and an open receiving cradle.",
+      "size": [
+        0.22,
+        0.29,
+        0.410785
+      ],
+      "size_basis": "Visual bounds at zero joint positions, including handles; metres, X/Y/Z.",
+      "joints": [],
+      "frames": [
+        {
+          "name": "laboratory_pipetting_station",
+          "purpose": "base_origin"
+        }
+      ],
+      "category": "laboratory",
+      "mobility": "rigid",
+      "added": "2026-10-22",
+      "fingerprint": {
+        "type": "dual dispenser",
+        "joints": {},
+        "size_m": [
+          0.22,
+          0.29,
+          0.410785
+        ]
+      },
+      "variant_of": null,
+      "folder": "dual_dispenser"
+    },
+    {
+      "id": "160",
+      "slug": "refrigerator",
+      "name": "Sample Refrigerator",
+      "desc": "Compact sample refrigerator with a hinged glass door, a grip frame and six open sample holders on two shelves.",
+      "size": [
+        0.54,
+        0.653,
+        0.84
+      ],
+      "size_basis": "Visual bounds at zero joint positions, including handles; metres, X/Y/Z.",
+      "joints": [
+        {
+          "name": "laboratory_refrigerator_door_joint",
+          "type": "revolute",
+          "lower": 0.0,
+          "upper": 1.75,
+          "inspect": 1.75
+        }
+      ],
+      "frames": [
+        {
+          "name": "laboratory_refrigerator_base",
+          "purpose": "base_origin"
+        },
+        {
+          "name": "laboratory_refrigerator_door_handle",
+          "purpose": "grasp"
+        }
+      ],
+      "category": "laboratory",
+      "mobility": "articulated",
+      "added": "2026-10-22",
+      "fingerprint": {
+        "type": "refrigerator",
+        "joints": {
+          "revolute": 1
+        },
+        "size_m": [
+          0.54,
+          0.653,
+          0.84
+        ]
+      },
+      "variant_of": null,
+      "folder": "refrigerator"
+    },
+    {
+      "id": "161",
+      "slug": "scale",
+      "name": "Laboratory Scale",
+      "desc": "Stationary laboratory balance with a weighing pan, display and an open sample-support collar; the root frame is at the pan centre.",
+      "size": [
+        0.3,
+        0.22503,
+        0.112
+      ],
+      "size_basis": "Visual bounds at zero joint positions, including handles; metres, X/Y/Z.",
+      "joints": [],
+      "frames": [
+        {
+          "name": "laboratory_balance",
+          "purpose": "weighing_surface"
+        }
+      ],
+      "category": "laboratory",
+      "mobility": "rigid",
+      "added": "2026-10-22",
+      "fingerprint": {
+        "type": "scale",
+        "joints": {},
+        "size_m": [
+          0.3,
+          0.22503,
+          0.112
+        ]
+      },
+      "variant_of": null,
+      "folder": "scale"
+    },
+    {
+      "id": "162",
+      "slug": "tube_rack",
+      "name": "Tube Rack",
+      "desc": "Rigid six-position tube rack with two rows of three openings, socket labels and a fixed carry-handle grip frame.",
+      "size": [
+        0.19,
+        0.192,
+        0.06813
+      ],
+      "size_basis": "Visual bounds at zero joint positions, including handles; metres, X/Y/Z.",
+      "joints": [],
+      "frames": [
+        {
+          "name": "laboratory_rack",
+          "purpose": "base_origin"
+        },
+        {
+          "name": "laboratory_rack_handle",
+          "purpose": "grasp"
+        }
+      ],
+      "category": "laboratory",
+      "mobility": "rigid",
+      "added": "2026-10-22",
+      "fingerprint": {
+        "type": "tube rack",
+        "joints": {},
+        "size_m": [
+          0.19,
+          0.192,
+          0.06813
+        ]
+      },
+      "variant_of": null,
+      "folder": "tube_rack"
+    }
+  ]
+}

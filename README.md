@@ -13,7 +13,8 @@ objects/                         independently loadable models
   articulated/                   157 models, organised by category
     collection.json              web-catalogue metadata
     <category>/<id>-<slug>/       Blender, URDF, meshes, previews and notices
-  laboratory/                    five portable laboratory devices
+  laboratory/                    five portable laboratory devices, articulated and rigid
+    collection.json              laboratory web-catalogue metadata
     centrifuge/                  includes manuals/v1.md and manuals/v2.md
     dual_dispenser/
     refrigerator/
@@ -28,8 +29,9 @@ environments/                    assembled scenes and their configuration
 - **[Environments](environments/README.md):** load an assembled scene with its
   placements, configuration and supporting assets. The medical laboratory is a
   complete environment, even though it contains individually movable objects.
-- **[Web catalogue](https://sunava.github.io/private_meshes/):** browse the
-  articulated collection, compare rest/inspection poses and download models.
+- **[Web catalogue](https://sunava.github.io/private_meshes/):** browse all 162
+  models, filter articulated or rigid objects, compare available poses and
+  download complete model folders. The Laboratory category includes all five devices.
 
 Model geometry, joint names, materials and scene placements are preserved by the
 folder reorganisation. The laboratory environment remains a self-contained
