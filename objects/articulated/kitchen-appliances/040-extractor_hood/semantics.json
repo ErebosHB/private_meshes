@@ -1,0 +1,52 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "040",
+  "name": "Under-Cabinet Extractor Hood",
+  "type": "extractor hood",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "Hood": "semantic_digital_twin.semantic_annotations.semantic_annotations.Hood",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "extractor_hood_body",
+   "annotation": "Hood",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "extractor_hood_visor",
+   "annotation": "NaturalLanguageDescription",
+   "description": "visor",
+   "attached_to": "extractor_hood_body",
+   "part_of": null
+  },
+  {
+   "link": "extractor_hood_fan_button",
+   "annotation": "NaturalLanguageDescription",
+   "description": "fan button",
+   "attached_to": "extractor_hood_visor",
+   "part_of": null
+  },
+  {
+   "link": "extractor_hood_light_button",
+   "annotation": "NaturalLanguageDescription",
+   "description": "light button",
+   "attached_to": "extractor_hood_visor",
+   "part_of": null
+  },
+  {
+   "link": "extractor_hood_visor_grip",
+   "annotation": "Handle",
+   "attached_to": "extractor_hood_visor",
+   "part_of": null
+  }
+ ]
+}

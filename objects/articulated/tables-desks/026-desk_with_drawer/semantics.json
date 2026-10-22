@@ -1,0 +1,50 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "026",
+  "name": "Desk with Drawer and Cable Flap",
+  "type": "desk",
+  "category": "tables-desks",
+  "category_title": "Tables & Desks",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Desk": "semantic_digital_twin.semantic_annotations.semantic_annotations.Desk",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "desk_with_drawer_body",
+   "annotation": "Desk",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "desk_with_drawer_drawer",
+   "annotation": "Drawer",
+   "attached_to": "desk_with_drawer_body",
+   "part_of": null
+  },
+  {
+   "link": "desk_with_drawer_cable_flap",
+   "annotation": "Door",
+   "attached_to": "desk_with_drawer_body",
+   "part_of": null
+  },
+  {
+   "link": "desk_with_drawer_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "desk_with_drawer_drawer",
+   "part_of": "desk_with_drawer_drawer"
+  },
+  {
+   "link": "desk_with_drawer_cable_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "desk_with_drawer_cable_flap",
+   "part_of": "desk_with_drawer_cable_flap"
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "062",
+  "name": "Concrete Vibrator",
+  "type": "concrete vibrator",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "concrete_vibrator_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Concrete Vibrator",
+   "type_description": "concrete vibrator",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "concrete_vibrator_shaft_segment_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "shaft segment 1",
+   "attached_to": "concrete_vibrator_body",
+   "part_of": null
+  },
+  {
+   "link": "concrete_vibrator_shaft_segment_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "shaft segment 2",
+   "attached_to": "concrete_vibrator_shaft_segment_1",
+   "part_of": null
+  },
+  {
+   "link": "concrete_vibrator_shaft_segment_3",
+   "annotation": "NaturalLanguageDescription",
+   "description": "shaft segment 3",
+   "attached_to": "concrete_vibrator_shaft_segment_2",
+   "part_of": null
+  },
+  {
+   "link": "concrete_vibrator_power_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power switch",
+   "attached_to": "concrete_vibrator_body",
+   "part_of": null
+  },
+  {
+   "link": "concrete_vibrator_carry_grip",
+   "annotation": "Handle",
+   "attached_to": "concrete_vibrator_body",
+   "part_of": null
+  },
+  {
+   "link": "concrete_vibrator_shaft_grip",
+   "annotation": "Handle",
+   "attached_to": "concrete_vibrator_shaft_segment_1",
+   "part_of": null
+  }
+ ]
+}

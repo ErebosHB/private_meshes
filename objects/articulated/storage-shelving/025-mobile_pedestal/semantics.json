@@ -1,0 +1,90 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "025",
+  "name": "Mobile Drawer Pedestal",
+  "type": "mobile pedestal",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "mobile_pedestal_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "mobile_pedestal_castor_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 1",
+   "attached_to": "mobile_pedestal_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_pedestal_castor_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 2",
+   "attached_to": "mobile_pedestal_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_pedestal_castor_3",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 3",
+   "attached_to": "mobile_pedestal_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_pedestal_castor_4",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 4",
+   "attached_to": "mobile_pedestal_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_pedestal_drawer_1",
+   "annotation": "Drawer",
+   "attached_to": "mobile_pedestal_body",
+   "part_of": "mobile_pedestal_body"
+  },
+  {
+   "link": "mobile_pedestal_drawer_2",
+   "annotation": "Drawer",
+   "attached_to": "mobile_pedestal_body",
+   "part_of": "mobile_pedestal_body"
+  },
+  {
+   "link": "mobile_pedestal_drawer_3",
+   "annotation": "Drawer",
+   "attached_to": "mobile_pedestal_body",
+   "part_of": "mobile_pedestal_body"
+  },
+  {
+   "link": "mobile_pedestal_drawer_1_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_pedestal_drawer_1",
+   "part_of": "mobile_pedestal_drawer_1"
+  },
+  {
+   "link": "mobile_pedestal_drawer_2_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_pedestal_drawer_2",
+   "part_of": "mobile_pedestal_drawer_2"
+  },
+  {
+   "link": "mobile_pedestal_drawer_3_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_pedestal_drawer_3",
+   "part_of": "mobile_pedestal_drawer_3"
+  }
+ ]
+}

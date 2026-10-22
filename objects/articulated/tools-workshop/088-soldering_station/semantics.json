@@ -1,0 +1,67 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "088",
+  "name": "Soldering Station with Iron Holder",
+  "type": "soldering station",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "soldering_station_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Soldering Station with Iron Holder",
+   "type_description": "soldering station",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "soldering_station_iron_cradle",
+   "annotation": "NaturalLanguageDescription",
+   "description": "iron cradle",
+   "attached_to": "soldering_station_body",
+   "part_of": null
+  },
+  {
+   "link": "soldering_station_sponge_tray",
+   "annotation": "Drawer",
+   "attached_to": "soldering_station_body",
+   "part_of": null
+  },
+  {
+   "link": "soldering_station_temperature_knob",
+   "annotation": "NaturalLanguageDescription",
+   "description": "temperature knob",
+   "attached_to": "soldering_station_body",
+   "part_of": null
+  },
+  {
+   "link": "soldering_station_power_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power switch",
+   "attached_to": "soldering_station_body",
+   "part_of": null
+  },
+  {
+   "link": "soldering_station_iron_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "soldering_station_iron_cradle",
+   "part_of": null
+  },
+  {
+   "link": "soldering_station_sponge_tray_grip",
+   "annotation": "Handle",
+   "attached_to": "soldering_station_sponge_tray",
+   "part_of": "soldering_station_sponge_tray"
+  }
+ ]
+}

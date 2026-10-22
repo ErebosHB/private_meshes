@@ -1,0 +1,54 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "081",
+  "name": "Stud Welding Gun",
+  "type": "stud welding gun",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "stud_welding_gun_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Stud Welding Gun",
+   "type_description": "stud welding gun",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "stud_welding_gun_support_legs",
+   "annotation": "NaturalLanguageDescription",
+   "description": "support legs",
+   "attached_to": "stud_welding_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "stud_welding_gun_stud_chuck",
+   "annotation": "NaturalLanguageDescription",
+   "description": "stud chuck",
+   "attached_to": "stud_welding_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "stud_welding_gun_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "stud_welding_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "stud_welding_gun_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "stud_welding_gun_body",
+   "part_of": null
+  }
+ ]
+}

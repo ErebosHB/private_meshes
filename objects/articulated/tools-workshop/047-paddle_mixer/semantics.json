@@ -1,0 +1,67 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "047",
+  "name": "Paddle Mixer",
+  "type": "paddle mixer",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "paddle_mixer_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Paddle Mixer",
+   "type_description": "paddle mixer",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "paddle_mixer_spindle",
+   "annotation": "NaturalLanguageDescription",
+   "description": "spindle",
+   "attached_to": "paddle_mixer_body",
+   "part_of": null
+  },
+  {
+   "link": "paddle_mixer_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "paddle_mixer_body",
+   "part_of": null
+  },
+  {
+   "link": "paddle_mixer_lock_button",
+   "annotation": "NaturalLanguageDescription",
+   "description": "lock button",
+   "attached_to": "paddle_mixer_body",
+   "part_of": null
+  },
+  {
+   "link": "paddle_mixer_speed_dial",
+   "annotation": "NaturalLanguageDescription",
+   "description": "speed dial",
+   "attached_to": "paddle_mixer_body",
+   "part_of": null
+  },
+  {
+   "link": "paddle_mixer_left_grip",
+   "annotation": "Handle",
+   "attached_to": "paddle_mixer_body",
+   "part_of": null
+  },
+  {
+   "link": "paddle_mixer_right_grip",
+   "annotation": "Handle",
+   "attached_to": "paddle_mixer_body",
+   "part_of": null
+  }
+ ]
+}

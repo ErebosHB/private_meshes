@@ -1,0 +1,53 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "045",
+  "name": "Tilt-Head Kitchen Machine",
+  "type": "stand mixer",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "kitchen_machine_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Tilt-Head Kitchen Machine",
+   "type_description": "stand mixer",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "kitchen_machine_speed_dial",
+   "annotation": "NaturalLanguageDescription",
+   "description": "speed dial",
+   "attached_to": "kitchen_machine_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_machine_head",
+   "annotation": "NaturalLanguageDescription",
+   "description": "head",
+   "attached_to": "kitchen_machine_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_machine_head_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_machine_head",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_machine_carry_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_machine_body",
+   "part_of": null
+  }
+ ]
+}

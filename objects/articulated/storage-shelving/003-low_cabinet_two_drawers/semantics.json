@@ -1,0 +1,49 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "003",
+  "name": "Low Cabinet, Two Drawers",
+  "type": "low drawer cabinet",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "low_cabinet_two_drawers_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "low_cabinet_two_drawers_left_drawer",
+   "annotation": "Drawer",
+   "attached_to": "low_cabinet_two_drawers_body",
+   "part_of": "low_cabinet_two_drawers_body"
+  },
+  {
+   "link": "low_cabinet_two_drawers_right_drawer",
+   "annotation": "Drawer",
+   "attached_to": "low_cabinet_two_drawers_body",
+   "part_of": "low_cabinet_two_drawers_body"
+  },
+  {
+   "link": "low_cabinet_two_drawers_left_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "low_cabinet_two_drawers_left_drawer",
+   "part_of": "low_cabinet_two_drawers_left_drawer"
+  },
+  {
+   "link": "low_cabinet_two_drawers_right_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "low_cabinet_two_drawers_right_drawer",
+   "part_of": "low_cabinet_two_drawers_right_drawer"
+  }
+ ]
+}

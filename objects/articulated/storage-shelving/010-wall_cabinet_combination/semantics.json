@@ -1,0 +1,61 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "010",
+  "name": "Wall-Mounted Cabinet Combination",
+  "type": "wall cabinet combination",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "wall_cabinet_combination_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "wall_cabinet_combination_left_door",
+   "annotation": "Door",
+   "attached_to": "wall_cabinet_combination_body",
+   "part_of": "wall_cabinet_combination_body"
+  },
+  {
+   "link": "wall_cabinet_combination_middle_door",
+   "annotation": "Door",
+   "attached_to": "wall_cabinet_combination_body",
+   "part_of": "wall_cabinet_combination_body"
+  },
+  {
+   "link": "wall_cabinet_combination_right_door",
+   "annotation": "Door",
+   "attached_to": "wall_cabinet_combination_body",
+   "part_of": "wall_cabinet_combination_body"
+  },
+  {
+   "link": "wall_cabinet_combination_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "wall_cabinet_combination_left_door",
+   "part_of": "wall_cabinet_combination_left_door"
+  },
+  {
+   "link": "wall_cabinet_combination_middle_door_grip",
+   "annotation": "Handle",
+   "attached_to": "wall_cabinet_combination_middle_door",
+   "part_of": "wall_cabinet_combination_middle_door"
+  },
+  {
+   "link": "wall_cabinet_combination_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "wall_cabinet_combination_right_door",
+   "part_of": "wall_cabinet_combination_right_door"
+  }
+ ]
+}

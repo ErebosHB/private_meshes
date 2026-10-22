@@ -1,0 +1,133 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "137",
+  "name": "Tilt Bin Rack",
+  "type": "tilt bin rack",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "Shelf": "semantic_digital_twin.semantic_annotations.semantic_annotations.Shelf"
+ },
+ "annotations": [
+  {
+   "link": "tilt_bin_rack_body",
+   "annotation": "Shelf",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "tilt_bin_rack_bin_r1c1",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r1c2",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r1c3",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r2c1",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r2c2",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r2c3",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r3c1",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r3c2",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r3c3",
+   "annotation": "Drawer",
+   "attached_to": "tilt_bin_rack_body",
+   "part_of": "tilt_bin_rack_body"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r1c1_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r1c1",
+   "part_of": "tilt_bin_rack_bin_r1c1"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r1c2_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r1c2",
+   "part_of": "tilt_bin_rack_bin_r1c2"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r1c3_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r1c3",
+   "part_of": "tilt_bin_rack_bin_r1c3"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r2c1_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r2c1",
+   "part_of": "tilt_bin_rack_bin_r2c1"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r2c2_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r2c2",
+   "part_of": "tilt_bin_rack_bin_r2c2"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r2c3_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r2c3",
+   "part_of": "tilt_bin_rack_bin_r2c3"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r3c1_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r3c1",
+   "part_of": "tilt_bin_rack_bin_r3c1"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r3c2_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r3c2",
+   "part_of": "tilt_bin_rack_bin_r3c2"
+  },
+  {
+   "link": "tilt_bin_rack_bin_r3c3_grip",
+   "annotation": "Handle",
+   "attached_to": "tilt_bin_rack_bin_r3c3",
+   "part_of": "tilt_bin_rack_bin_r3c3"
+  }
+ ]
+}

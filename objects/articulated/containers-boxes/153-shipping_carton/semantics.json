@@ -1,0 +1,73 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "153",
+  "name": "Shipping Carton with Top Flaps",
+  "type": "shipping carton",
+  "category": "containers-boxes",
+  "category_title": "Containers & Boxes",
+  "group": "Material & Logistics"
+ },
+ "annotation_classes": {
+  "Container": "semantic_digital_twin.semantic_annotations.semantic_annotations.Container",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "shipping_carton_body",
+   "annotation": "Container",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "shipping_carton_front_flap",
+   "annotation": "Door",
+   "attached_to": "shipping_carton_body",
+   "part_of": null
+  },
+  {
+   "link": "shipping_carton_back_flap",
+   "annotation": "Door",
+   "attached_to": "shipping_carton_body",
+   "part_of": null
+  },
+  {
+   "link": "shipping_carton_left_flap",
+   "annotation": "Door",
+   "attached_to": "shipping_carton_body",
+   "part_of": null
+  },
+  {
+   "link": "shipping_carton_right_flap",
+   "annotation": "Door",
+   "attached_to": "shipping_carton_body",
+   "part_of": null
+  },
+  {
+   "link": "shipping_carton_front_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "shipping_carton_front_flap",
+   "part_of": "shipping_carton_front_flap"
+  },
+  {
+   "link": "shipping_carton_back_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "shipping_carton_back_flap",
+   "part_of": "shipping_carton_back_flap"
+  },
+  {
+   "link": "shipping_carton_left_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "shipping_carton_left_flap",
+   "part_of": "shipping_carton_left_flap"
+  },
+  {
+   "link": "shipping_carton_right_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "shipping_carton_right_flap",
+   "part_of": "shipping_carton_right_flap"
+  }
+ ]
+}

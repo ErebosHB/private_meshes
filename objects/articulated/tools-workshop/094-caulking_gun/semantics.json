@@ -1,0 +1,47 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "094",
+  "name": "Cartridge Caulking Gun",
+  "type": "cartridge dispensing gun",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "caulking_gun_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Cartridge Caulking Gun",
+   "type_description": "cartridge dispensing gun",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "caulking_gun_plunger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "plunger",
+   "attached_to": "caulking_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "caulking_gun_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "caulking_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "caulking_gun_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "caulking_gun_body",
+   "part_of": null
+  }
+ ]
+}

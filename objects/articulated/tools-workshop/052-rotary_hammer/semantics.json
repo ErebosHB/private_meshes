@@ -1,0 +1,67 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "052",
+  "name": "Rotary Hammer",
+  "type": "rotary hammer",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "rotary_hammer_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Rotary Hammer",
+   "type_description": "rotary hammer",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "rotary_hammer_side_handle",
+   "annotation": "NaturalLanguageDescription",
+   "description": "side handle",
+   "attached_to": "rotary_hammer_body",
+   "part_of": null
+  },
+  {
+   "link": "rotary_hammer_depth_rod",
+   "annotation": "NaturalLanguageDescription",
+   "description": "depth rod",
+   "attached_to": "rotary_hammer_side_handle",
+   "part_of": null
+  },
+  {
+   "link": "rotary_hammer_mode_selector",
+   "annotation": "NaturalLanguageDescription",
+   "description": "mode selector",
+   "attached_to": "rotary_hammer_body",
+   "part_of": null
+  },
+  {
+   "link": "rotary_hammer_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "rotary_hammer_body",
+   "part_of": null
+  },
+  {
+   "link": "rotary_hammer_rear_grip",
+   "annotation": "Handle",
+   "attached_to": "rotary_hammer_body",
+   "part_of": null
+  },
+  {
+   "link": "rotary_hammer_side_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "rotary_hammer_side_handle",
+   "part_of": null
+  }
+ ]
+}

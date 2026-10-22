@@ -1,0 +1,66 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "146",
+  "name": "Mobile Platform Steps",
+  "type": "platform steps",
+  "category": "ladders-steps",
+  "category_title": "Ladders & Steps",
+  "group": "Material & Logistics"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "mobile_platform_steps_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Mobile Platform Steps",
+   "type_description": "platform steps",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "mobile_platform_steps_gate",
+   "annotation": "Door",
+   "attached_to": "mobile_platform_steps_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_platform_steps_left_castor",
+   "annotation": "NaturalLanguageDescription",
+   "description": "left castor",
+   "attached_to": "mobile_platform_steps_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_platform_steps_right_castor",
+   "annotation": "NaturalLanguageDescription",
+   "description": "right castor",
+   "attached_to": "mobile_platform_steps_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_platform_steps_left_handrail_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_platform_steps_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_platform_steps_right_handrail_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_platform_steps_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_platform_steps_gate_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_platform_steps_gate",
+   "part_of": "mobile_platform_steps_gate"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "034",
+  "name": "Fridge-Freezer",
+  "type": "fridge-freezer",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Fridge": "semantic_digital_twin.semantic_annotations.semantic_annotations.Fridge",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "fridge_freezer_body",
+   "annotation": "Fridge",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "fridge_freezer_upper_freezer_drawer",
+   "annotation": "Drawer",
+   "attached_to": "fridge_freezer_body",
+   "part_of": "fridge_freezer_body"
+  },
+  {
+   "link": "fridge_freezer_lower_freezer_drawer",
+   "annotation": "Drawer",
+   "attached_to": "fridge_freezer_body",
+   "part_of": "fridge_freezer_body"
+  },
+  {
+   "link": "fridge_freezer_fridge_door",
+   "annotation": "Door",
+   "attached_to": "fridge_freezer_body",
+   "part_of": "fridge_freezer_body"
+  },
+  {
+   "link": "fridge_freezer_upper_freezer_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "fridge_freezer_upper_freezer_drawer",
+   "part_of": "fridge_freezer_upper_freezer_drawer"
+  },
+  {
+   "link": "fridge_freezer_lower_freezer_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "fridge_freezer_lower_freezer_drawer",
+   "part_of": "fridge_freezer_lower_freezer_drawer"
+  },
+  {
+   "link": "fridge_freezer_fridge_door_grip",
+   "annotation": "Handle",
+   "attached_to": "fridge_freezer_fridge_door",
+   "part_of": "fridge_freezer_fridge_door"
+  }
+ ]
+}

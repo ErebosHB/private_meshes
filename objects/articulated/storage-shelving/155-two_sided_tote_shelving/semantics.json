@@ -1,0 +1,23 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "155",
+  "name": "Two-Sided Tote Shelving",
+  "type": "two-sided tote shelving",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Shelf": "semantic_digital_twin.semantic_annotations.semantic_annotations.Shelf"
+ },
+ "annotations": [
+  {
+   "link": "two_sided_tote_shelving_body",
+   "annotation": "Shelf",
+   "attached_to": null,
+   "part_of": null
+  }
+ ]
+}

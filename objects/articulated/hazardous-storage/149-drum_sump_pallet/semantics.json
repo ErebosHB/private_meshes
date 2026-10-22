@@ -1,0 +1,40 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "149",
+  "name": "Drum Sump Pallet with Hinged Grating",
+  "type": "sump pallet",
+  "category": "hazardous-storage",
+  "category_title": "Hazardous Materials Storage",
+  "group": "Material & Logistics"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "drum_sump_pallet_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Drum Sump Pallet with Hinged Grating",
+   "type_description": "sump pallet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "drum_sump_pallet_grating",
+   "annotation": "NaturalLanguageDescription",
+   "description": "grating",
+   "attached_to": "drum_sump_pallet_body",
+   "part_of": null
+  },
+  {
+   "link": "drum_sump_pallet_grating_front_grip",
+   "annotation": "Handle",
+   "attached_to": "drum_sump_pallet_grating",
+   "part_of": null
+  }
+ ]
+}

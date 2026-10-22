@@ -1,0 +1,58 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "043",
+  "name": "Two-Slot Toaster",
+  "type": "toaster",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "Toaster": "semantic_digital_twin.semantic_annotations.semantic_annotations.Toaster"
+ },
+ "annotations": [
+  {
+   "link": "toaster_body",
+   "annotation": "Toaster",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "toaster_browning_dial",
+   "annotation": "NaturalLanguageDescription",
+   "description": "browning dial",
+   "attached_to": "toaster_body",
+   "part_of": null
+  },
+  {
+   "link": "toaster_carriage_lever",
+   "annotation": "NaturalLanguageDescription",
+   "description": "carriage lever",
+   "attached_to": "toaster_body",
+   "part_of": null
+  },
+  {
+   "link": "toaster_crumb_tray",
+   "annotation": "Drawer",
+   "attached_to": "toaster_body",
+   "part_of": null
+  },
+  {
+   "link": "toaster_crumb_tray_grip",
+   "annotation": "Handle",
+   "attached_to": "toaster_crumb_tray",
+   "part_of": "toaster_crumb_tray"
+  },
+  {
+   "link": "toaster_carry_grip",
+   "annotation": "Handle",
+   "attached_to": "toaster_body",
+   "part_of": null
+  }
+ ]
+}

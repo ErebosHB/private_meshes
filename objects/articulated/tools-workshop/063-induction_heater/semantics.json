@@ -1,0 +1,54 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "063",
+  "name": "Portable Induction Heater",
+  "type": "induction heater",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "induction_heater_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Portable Induction Heater",
+   "type_description": "induction heater",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "induction_heater_coil_head",
+   "annotation": "NaturalLanguageDescription",
+   "description": "coil head",
+   "attached_to": "induction_heater_body",
+   "part_of": null
+  },
+  {
+   "link": "induction_heater_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "induction_heater_body",
+   "part_of": null
+  },
+  {
+   "link": "induction_heater_power_dial",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power dial",
+   "attached_to": "induction_heater_body",
+   "part_of": null
+  },
+  {
+   "link": "induction_heater_grip",
+   "annotation": "Handle",
+   "attached_to": "induction_heater_body",
+   "part_of": null
+  }
+ ]
+}

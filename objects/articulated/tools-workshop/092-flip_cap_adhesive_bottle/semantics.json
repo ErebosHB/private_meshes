@@ -1,0 +1,46 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "092",
+  "name": "Adhesive Bottle with Flip Cap",
+  "type": "adhesive bottle",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "flip_cap_adhesive_bottle_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Adhesive Bottle with Flip Cap",
+   "type_description": "adhesive bottle",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "flip_cap_adhesive_bottle_flip_cap",
+   "annotation": "NaturalLanguageDescription",
+   "description": "flip cap",
+   "attached_to": "flip_cap_adhesive_bottle_body",
+   "part_of": null
+  },
+  {
+   "link": "flip_cap_adhesive_bottle_bottle_grip",
+   "annotation": "Handle",
+   "attached_to": "flip_cap_adhesive_bottle_body",
+   "part_of": null
+  },
+  {
+   "link": "flip_cap_adhesive_bottle_flip_cap_lip",
+   "annotation": "Handle",
+   "attached_to": "flip_cap_adhesive_bottle_flip_cap",
+   "part_of": null
+  }
+ ]
+}

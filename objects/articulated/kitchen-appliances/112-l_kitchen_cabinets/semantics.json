@@ -1,0 +1,254 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "112",
+  "name": "L-Shaped Kitchen, Cabinets Only",
+  "type": "l-shaped kitchen, cabinets only",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "l_kitchen_cabinets_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "l_kitchen_cabinets_b1_corner_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_b1_corner_basket",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_sink_left_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_sink_right_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_b4_top_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_b4_middle_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_b4_bottom_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_w1_left_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_w1_right_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_w2_left_glass_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_w2_right_glass_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_w3_glass_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_w4_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_rb1_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_rb2_left_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_rb2_right_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_rw1_flap",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_rw2_left_glass_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_rw2_right_glass_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_cabinets_body",
+   "part_of": "l_kitchen_cabinets_body"
+  },
+  {
+   "link": "l_kitchen_cabinets_b1_corner_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_b1_corner_door",
+   "part_of": "l_kitchen_cabinets_b1_corner_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_b1_corner_basket_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_b1_corner_basket",
+   "part_of": "l_kitchen_cabinets_b1_corner_basket"
+  },
+  {
+   "link": "l_kitchen_cabinets_sink_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_sink_left_door",
+   "part_of": "l_kitchen_cabinets_sink_left_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_sink_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_sink_right_door",
+   "part_of": "l_kitchen_cabinets_sink_right_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_b4_top_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_b4_top_drawer",
+   "part_of": "l_kitchen_cabinets_b4_top_drawer"
+  },
+  {
+   "link": "l_kitchen_cabinets_b4_middle_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_b4_middle_drawer",
+   "part_of": "l_kitchen_cabinets_b4_middle_drawer"
+  },
+  {
+   "link": "l_kitchen_cabinets_b4_bottom_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_b4_bottom_drawer",
+   "part_of": "l_kitchen_cabinets_b4_bottom_drawer"
+  },
+  {
+   "link": "l_kitchen_cabinets_w1_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_w1_left_door",
+   "part_of": "l_kitchen_cabinets_w1_left_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_w1_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_w1_right_door",
+   "part_of": "l_kitchen_cabinets_w1_right_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_w2_left_glass_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_w2_left_glass_door",
+   "part_of": "l_kitchen_cabinets_w2_left_glass_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_w2_right_glass_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_w2_right_glass_door",
+   "part_of": "l_kitchen_cabinets_w2_right_glass_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_w3_glass_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_w3_glass_door",
+   "part_of": "l_kitchen_cabinets_w3_glass_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_w4_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_w4_door",
+   "part_of": "l_kitchen_cabinets_w4_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_rb1_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_rb1_drawer",
+   "part_of": "l_kitchen_cabinets_rb1_drawer"
+  },
+  {
+   "link": "l_kitchen_cabinets_rb2_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_rb2_left_door",
+   "part_of": "l_kitchen_cabinets_rb2_left_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_rb2_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_rb2_right_door",
+   "part_of": "l_kitchen_cabinets_rb2_right_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_rw1_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_rw1_flap",
+   "part_of": "l_kitchen_cabinets_rw1_flap"
+  },
+  {
+   "link": "l_kitchen_cabinets_rw2_left_glass_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_rw2_left_glass_door",
+   "part_of": "l_kitchen_cabinets_rw2_left_glass_door"
+  },
+  {
+   "link": "l_kitchen_cabinets_rw2_right_glass_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_cabinets_rw2_right_glass_door",
+   "part_of": "l_kitchen_cabinets_rw2_right_glass_door"
+  }
+ ]
+}

@@ -1,0 +1,306 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "102",
+  "name": "Kitchen Run with Appliances, Long",
+  "type": "kitchen run with appliances",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "kitchen_run_appliances_long_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_long_freezer_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_fridge_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b1_top_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_freezer_drawer_1",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_freezer_drawer_2",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b2_top_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b2_middle_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b2_bottom_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_sink_left_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_sink_right_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_dishwasher_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_dishwasher_lower_rack",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_dishwasher_upper_rack",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_oven_storage_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_oven_knob_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "oven knob 1",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_long_oven_knob_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "oven knob 2",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_long_oven_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b6_pullout",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w2_flap",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w3_left_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w3_right_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w4_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_hood_visor",
+   "annotation": "NaturalLanguageDescription",
+   "description": "hood visor",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_long_w5_flap",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_long_body",
+   "part_of": "kitchen_run_appliances_long_body"
+  },
+  {
+   "link": "kitchen_run_appliances_long_freezer_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_freezer_door",
+   "part_of": "kitchen_run_appliances_long_freezer_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_fridge_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_fridge_door",
+   "part_of": "kitchen_run_appliances_long_fridge_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b1_top_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_b1_top_door",
+   "part_of": "kitchen_run_appliances_long_b1_top_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_freezer_drawer_1_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_freezer_drawer_1",
+   "part_of": "kitchen_run_appliances_long_freezer_drawer_1"
+  },
+  {
+   "link": "kitchen_run_appliances_long_freezer_drawer_2_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_freezer_drawer_2",
+   "part_of": "kitchen_run_appliances_long_freezer_drawer_2"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b2_top_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_b2_top_drawer",
+   "part_of": "kitchen_run_appliances_long_b2_top_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b2_middle_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_b2_middle_drawer",
+   "part_of": "kitchen_run_appliances_long_b2_middle_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b2_bottom_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_b2_bottom_drawer",
+   "part_of": "kitchen_run_appliances_long_b2_bottom_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_long_sink_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_sink_left_door",
+   "part_of": "kitchen_run_appliances_long_sink_left_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_sink_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_sink_right_door",
+   "part_of": "kitchen_run_appliances_long_sink_right_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_dishwasher_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_dishwasher_door",
+   "part_of": "kitchen_run_appliances_long_dishwasher_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_dishwasher_lower_rack_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_dishwasher_lower_rack",
+   "part_of": "kitchen_run_appliances_long_dishwasher_lower_rack"
+  },
+  {
+   "link": "kitchen_run_appliances_long_dishwasher_upper_rack_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_dishwasher_upper_rack",
+   "part_of": "kitchen_run_appliances_long_dishwasher_upper_rack"
+  },
+  {
+   "link": "kitchen_run_appliances_long_oven_storage_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_oven_storage_drawer",
+   "part_of": "kitchen_run_appliances_long_oven_storage_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_long_oven_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_oven_door",
+   "part_of": "kitchen_run_appliances_long_oven_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_b6_pullout_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_b6_pullout",
+   "part_of": "kitchen_run_appliances_long_b6_pullout"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w2_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_w2_flap",
+   "part_of": "kitchen_run_appliances_long_w2_flap"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w3_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_w3_left_door",
+   "part_of": "kitchen_run_appliances_long_w3_left_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w3_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_w3_right_door",
+   "part_of": "kitchen_run_appliances_long_w3_right_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_w4_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_w4_door",
+   "part_of": "kitchen_run_appliances_long_w4_door"
+  },
+  {
+   "link": "kitchen_run_appliances_long_hood_visor_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_hood_visor",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_long_w5_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_long_w5_flap",
+   "part_of": "kitchen_run_appliances_long_w5_flap"
+  }
+ ]
+}

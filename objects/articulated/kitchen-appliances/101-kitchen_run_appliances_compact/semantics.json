@@ -1,0 +1,186 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "101",
+  "name": "Kitchen Run with Appliances, Compact",
+  "type": "kitchen run with appliances",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "kitchen_run_appliances_compact_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_compact_sink_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_oven_storage_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_oven_knob_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "oven knob 1",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_compact_oven_knob_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "oven knob 2",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_compact_oven_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_fridge_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_b4_top_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_b4_middle_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_b4_bottom_drawer",
+   "annotation": "Drawer",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w1_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_hood_visor",
+   "annotation": "NaturalLanguageDescription",
+   "description": "hood visor",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w2_flap",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w3_glass_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w4_door",
+   "annotation": "Door",
+   "attached_to": "kitchen_run_appliances_compact_body",
+   "part_of": "kitchen_run_appliances_compact_body"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_sink_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_sink_door",
+   "part_of": "kitchen_run_appliances_compact_sink_door"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_oven_storage_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_oven_storage_drawer",
+   "part_of": "kitchen_run_appliances_compact_oven_storage_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_oven_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_oven_door",
+   "part_of": "kitchen_run_appliances_compact_oven_door"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_fridge_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_fridge_door",
+   "part_of": "kitchen_run_appliances_compact_fridge_door"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_b4_top_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_b4_top_drawer",
+   "part_of": "kitchen_run_appliances_compact_b4_top_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_b4_middle_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_b4_middle_drawer",
+   "part_of": "kitchen_run_appliances_compact_b4_middle_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_b4_bottom_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_b4_bottom_drawer",
+   "part_of": "kitchen_run_appliances_compact_b4_bottom_drawer"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w1_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_w1_door",
+   "part_of": "kitchen_run_appliances_compact_w1_door"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_hood_visor_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_hood_visor",
+   "part_of": null
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w2_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_w2_flap",
+   "part_of": "kitchen_run_appliances_compact_w2_flap"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w3_glass_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_w3_glass_door",
+   "part_of": "kitchen_run_appliances_compact_w3_glass_door"
+  },
+  {
+   "link": "kitchen_run_appliances_compact_w4_door_grip",
+   "annotation": "Handle",
+   "attached_to": "kitchen_run_appliances_compact_w4_door",
+   "part_of": "kitchen_run_appliances_compact_w4_door"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "009",
+  "name": "Solid-Wood Shelving with Base Cabinet",
+  "type": "shelving with base cabinet",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "Shelf": "semantic_digital_twin.semantic_annotations.semantic_annotations.Shelf"
+ },
+ "annotations": [
+  {
+   "link": "solidwood_shelving_base_cabinet_body",
+   "annotation": "Shelf",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "solidwood_shelving_base_cabinet_left_door",
+   "annotation": "Door",
+   "attached_to": "solidwood_shelving_base_cabinet_body",
+   "part_of": "solidwood_shelving_base_cabinet_body"
+  },
+  {
+   "link": "solidwood_shelving_base_cabinet_right_door",
+   "annotation": "Door",
+   "attached_to": "solidwood_shelving_base_cabinet_body",
+   "part_of": "solidwood_shelving_base_cabinet_body"
+  },
+  {
+   "link": "solidwood_shelving_base_cabinet_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "solidwood_shelving_base_cabinet_left_door",
+   "part_of": "solidwood_shelving_base_cabinet_left_door"
+  },
+  {
+   "link": "solidwood_shelving_base_cabinet_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "solidwood_shelving_base_cabinet_right_door",
+   "part_of": "solidwood_shelving_base_cabinet_right_door"
+  }
+ ]
+}

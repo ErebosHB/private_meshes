@@ -1,0 +1,129 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "135",
+  "name": "Cantilever Rack with Flip-up Stops",
+  "type": "cantilever rack",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "Shelf": "semantic_digital_twin.semantic_annotations.semantic_annotations.Shelf"
+ },
+ "annotations": [
+  {
+   "link": "cantilever_rack_body",
+   "annotation": "Shelf",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "left stop 1",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "left stop 2",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_3",
+   "annotation": "NaturalLanguageDescription",
+   "description": "left stop 3",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_4",
+   "annotation": "NaturalLanguageDescription",
+   "description": "left stop 4",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "right stop 1",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "right stop 2",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_3",
+   "annotation": "NaturalLanguageDescription",
+   "description": "right stop 3",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_4",
+   "annotation": "NaturalLanguageDescription",
+   "description": "right stop 4",
+   "attached_to": "cantilever_rack_body",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_1_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_left_stop_1",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_2_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_left_stop_2",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_3_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_left_stop_3",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_left_stop_4_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_left_stop_4",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_1_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_right_stop_1",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_2_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_right_stop_2",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_3_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_right_stop_3",
+   "part_of": null
+  },
+  {
+   "link": "cantilever_rack_right_stop_4_grip",
+   "annotation": "Handle",
+   "attached_to": "cantilever_rack_right_stop_4",
+   "part_of": null
+  }
+ ]
+}

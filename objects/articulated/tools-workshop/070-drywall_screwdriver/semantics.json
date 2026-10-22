@@ -1,0 +1,61 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "070",
+  "name": "Drywall Screwdriver",
+  "type": "drywall screwdriver",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "drywall_screwdriver_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Drywall Screwdriver",
+   "type_description": "drywall screwdriver",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "drywall_screwdriver_depth_nose",
+   "annotation": "NaturalLanguageDescription",
+   "description": "depth nose",
+   "attached_to": "drywall_screwdriver_body",
+   "part_of": null
+  },
+  {
+   "link": "drywall_screwdriver_belt_clip",
+   "annotation": "NaturalLanguageDescription",
+   "description": "belt clip",
+   "attached_to": "drywall_screwdriver_body",
+   "part_of": null
+  },
+  {
+   "link": "drywall_screwdriver_direction_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "direction switch",
+   "attached_to": "drywall_screwdriver_body",
+   "part_of": null
+  },
+  {
+   "link": "drywall_screwdriver_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "drywall_screwdriver_body",
+   "part_of": null
+  },
+  {
+   "link": "drywall_screwdriver_pistol_grip",
+   "annotation": "Handle",
+   "attached_to": "drywall_screwdriver_body",
+   "part_of": null
+  }
+ ]
+}

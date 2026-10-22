@@ -1,0 +1,59 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "020",
+  "name": "Folding Partition Screen",
+  "type": "partition screen",
+  "category": "room-dividers",
+  "category_title": "Room Dividers",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "folding_partition_screen_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Folding Partition Screen",
+   "type_description": "partition screen",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "folding_partition_screen_left_panel",
+   "annotation": "NaturalLanguageDescription",
+   "description": "left panel",
+   "attached_to": "folding_partition_screen_body",
+   "part_of": null
+  },
+  {
+   "link": "folding_partition_screen_right_panel",
+   "annotation": "NaturalLanguageDescription",
+   "description": "right panel",
+   "attached_to": "folding_partition_screen_body",
+   "part_of": null
+  },
+  {
+   "link": "folding_partition_screen_left_panel_grip",
+   "annotation": "Handle",
+   "attached_to": "folding_partition_screen_left_panel",
+   "part_of": null
+  },
+  {
+   "link": "folding_partition_screen_right_panel_grip",
+   "annotation": "Handle",
+   "attached_to": "folding_partition_screen_right_panel",
+   "part_of": null
+  },
+  {
+   "link": "folding_partition_screen_carry_grip",
+   "annotation": "Handle",
+   "attached_to": "folding_partition_screen_body",
+   "part_of": null
+  }
+ ]
+}

@@ -4,6 +4,7 @@
    "key": "storage-shelving",
    "code": "SS",
    "title": "Storage & Shelving",
+   "group": "Furniture",
    "blurb": "Shelves, cabinets, chests, sideboards, display and filing cabinets.",
    "added": "2026-10-14",
    "count": 27
@@ -12,6 +13,7 @@
    "key": "wardrobes",
    "code": "WR",
    "title": "Wardrobes",
+   "group": "Furniture",
    "blurb": "Full-height wardrobes with hinged or sliding doors, rails and baskets.",
    "added": "2026-10-14",
    "count": 3
@@ -20,6 +22,7 @@
    "key": "seating",
    "code": "SE",
    "title": "Seating",
+   "group": "Furniture",
    "blurb": "Chairs, stools and armchairs with lifts, swivels and reclining backs.",
    "added": "2026-10-15",
    "count": 3
@@ -28,6 +31,7 @@
    "key": "tables-desks",
    "code": "TD",
    "title": "Tables & Desks",
+   "group": "Furniture",
    "blurb": "Desks and tables with height adjustment, drawers, cable flaps and tilting tops.",
    "added": "2026-10-15",
    "count": 5
@@ -36,6 +40,7 @@
    "key": "room-dividers",
    "code": "RD",
    "title": "Room Dividers",
+   "group": "Furniture",
    "blurb": "Folding screens and partitions that stand free.",
    "added": "2026-10-15",
    "count": 1
@@ -44,6 +49,7 @@
    "key": "kitchen-appliances",
    "code": "KA",
    "title": "Kitchen & Appliances",
+   "group": "Kitchen & Appliances",
    "blurb": "Kitchen runs, corner kitchens, islands, cabinets and bins, plus laundry, dishwashing, cooling, cooking and countertop appliances.",
    "added": "2026-10-15",
    "count": 48
@@ -52,6 +58,7 @@
    "key": "tools-workshop",
    "code": "TW",
    "title": "Tools & Workshop",
+   "group": "Tools & Workshop",
    "blurb": "Power tools and workshop machines: drills, saws, grinders, vacuums, compressors and pumps, plus welding, soldering, joining and adhesive equipment.",
    "added": "2026-10-18",
    "count": 54
@@ -60,6 +67,7 @@
    "key": "containers-boxes",
    "code": "CB",
    "title": "Containers & Boxes",
+   "group": "Material & Logistics",
    "blurb": "Lidded and folding crates, mesh pallet boxes, drums and walk-in storage containers.",
    "added": "2026-10-19",
    "count": 8
@@ -68,6 +76,7 @@
    "key": "material-handling",
    "code": "MH",
    "title": "Material Handling",
+   "group": "Material & Logistics",
    "blurb": "Pallet trucks, tipping skips and other equipment for moving loads around a warehouse.",
    "added": "2026-10-19",
    "count": 3
@@ -76,6 +85,7 @@
    "key": "ladders-steps",
    "code": "LS",
    "title": "Ladders & Steps",
+   "group": "Material & Logistics",
    "blurb": "Mobile platform steps for reaching upper shelf levels safely.",
    "added": "2026-10-19",
    "count": 1
@@ -84,6 +94,7 @@
    "key": "hazardous-storage",
    "code": "HS",
    "title": "Hazardous Materials Storage",
+   "group": "Material & Logistics",
    "blurb": "Safety and chemical cabinets, sump pallets and depots for flammable or polluting substances.",
    "added": "2026-10-19",
    "count": 4

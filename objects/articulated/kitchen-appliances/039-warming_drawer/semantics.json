@@ -1,0 +1,45 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "039",
+  "name": "Warming Drawer",
+  "type": "warming drawer",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "warming_drawer_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "warming_drawer_drawer",
+   "annotation": "Drawer",
+   "attached_to": "warming_drawer_body",
+   "part_of": "warming_drawer_body"
+  },
+  {
+   "link": "warming_drawer_power_button",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power button",
+   "attached_to": "warming_drawer_drawer",
+   "part_of": null
+  },
+  {
+   "link": "warming_drawer_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "warming_drawer_drawer",
+   "part_of": "warming_drawer_drawer"
+  }
+ ]
+}

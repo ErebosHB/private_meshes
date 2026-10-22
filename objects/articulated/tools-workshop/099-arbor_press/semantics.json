@@ -1,0 +1,54 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "099",
+  "name": "Manual Arbor Press",
+  "type": "arbor press",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "arbor_press_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Manual Arbor Press",
+   "type_description": "arbor press",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "arbor_press_anvil_plate",
+   "annotation": "NaturalLanguageDescription",
+   "description": "anvil plate",
+   "attached_to": "arbor_press_body",
+   "part_of": null
+  },
+  {
+   "link": "arbor_press_ram",
+   "annotation": "NaturalLanguageDescription",
+   "description": "ram",
+   "attached_to": "arbor_press_body",
+   "part_of": null
+  },
+  {
+   "link": "arbor_press_lever",
+   "annotation": "NaturalLanguageDescription",
+   "description": "lever",
+   "attached_to": "arbor_press_body",
+   "part_of": null
+  },
+  {
+   "link": "arbor_press_lever_knob_grip",
+   "annotation": "Handle",
+   "attached_to": "arbor_press_lever",
+   "part_of": null
+  }
+ ]
+}

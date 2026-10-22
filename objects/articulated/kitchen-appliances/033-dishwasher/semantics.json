@@ -1,0 +1,77 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "033",
+  "name": "Freestanding Dishwasher",
+  "type": "dishwasher",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Dishwasher": "semantic_digital_twin.semantic_annotations.semantic_annotations.Dishwasher",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "dishwasher_body",
+   "annotation": "Dishwasher",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "dishwasher_spray_arm",
+   "annotation": "NaturalLanguageDescription",
+   "description": "spray arm",
+   "attached_to": "dishwasher_body",
+   "part_of": null
+  },
+  {
+   "link": "dishwasher_lower_rack",
+   "annotation": "Drawer",
+   "attached_to": "dishwasher_body",
+   "part_of": "dishwasher_body"
+  },
+  {
+   "link": "dishwasher_upper_rack",
+   "annotation": "Drawer",
+   "attached_to": "dishwasher_body",
+   "part_of": "dishwasher_body"
+  },
+  {
+   "link": "dishwasher_door",
+   "annotation": "Door",
+   "attached_to": "dishwasher_body",
+   "part_of": "dishwasher_body"
+  },
+  {
+   "link": "dishwasher_power_button",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power button",
+   "attached_to": "dishwasher_door",
+   "part_of": null
+  },
+  {
+   "link": "dishwasher_lower_rack_grip",
+   "annotation": "Handle",
+   "attached_to": "dishwasher_lower_rack",
+   "part_of": "dishwasher_lower_rack"
+  },
+  {
+   "link": "dishwasher_upper_rack_grip",
+   "annotation": "Handle",
+   "attached_to": "dishwasher_upper_rack",
+   "part_of": "dishwasher_upper_rack"
+  },
+  {
+   "link": "dishwasher_door_grip",
+   "annotation": "Handle",
+   "attached_to": "dishwasher_door",
+   "part_of": "dishwasher_door"
+  }
+ ]
+}

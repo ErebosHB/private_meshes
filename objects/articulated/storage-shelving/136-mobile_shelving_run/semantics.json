@@ -1,0 +1,65 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "136",
+  "name": "Mobile Shelving Run with Crank Drive",
+  "type": "mobile shelving",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "Shelf": "semantic_digital_twin.semantic_annotations.semantic_annotations.Shelf"
+ },
+ "annotations": [
+  {
+   "link": "mobile_shelving_run_body",
+   "annotation": "Shelf",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "mobile_shelving_run_outer_carriage",
+   "annotation": "NaturalLanguageDescription",
+   "description": "outer carriage",
+   "attached_to": "mobile_shelving_run_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_shelving_run_outer_carriage_crank",
+   "annotation": "NaturalLanguageDescription",
+   "description": "outer carriage crank",
+   "attached_to": "mobile_shelving_run_outer_carriage",
+   "part_of": null
+  },
+  {
+   "link": "mobile_shelving_run_inner_carriage",
+   "annotation": "NaturalLanguageDescription",
+   "description": "inner carriage",
+   "attached_to": "mobile_shelving_run_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_shelving_run_inner_carriage_crank",
+   "annotation": "NaturalLanguageDescription",
+   "description": "inner carriage crank",
+   "attached_to": "mobile_shelving_run_inner_carriage",
+   "part_of": null
+  },
+  {
+   "link": "mobile_shelving_run_outer_carriage_crank_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_shelving_run_outer_carriage_crank",
+   "part_of": null
+  },
+  {
+   "link": "mobile_shelving_run_inner_carriage_crank_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_shelving_run_inner_carriage_crank",
+   "part_of": null
+  }
+ ]
+}

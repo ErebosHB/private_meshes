@@ -1,0 +1,67 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "031",
+  "name": "Front-Load Washing Machine",
+  "type": "washing machine",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "washing_machine_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Front-Load Washing Machine",
+   "type_description": "washing machine",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "washing_machine_detergent_drawer",
+   "annotation": "Drawer",
+   "attached_to": "washing_machine_body",
+   "part_of": null
+  },
+  {
+   "link": "washing_machine_program_dial",
+   "annotation": "NaturalLanguageDescription",
+   "description": "program dial",
+   "attached_to": "washing_machine_body",
+   "part_of": null
+  },
+  {
+   "link": "washing_machine_start_button",
+   "annotation": "NaturalLanguageDescription",
+   "description": "start button",
+   "attached_to": "washing_machine_body",
+   "part_of": null
+  },
+  {
+   "link": "washing_machine_door",
+   "annotation": "Door",
+   "attached_to": "washing_machine_body",
+   "part_of": null
+  },
+  {
+   "link": "washing_machine_detergent_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "washing_machine_detergent_drawer",
+   "part_of": "washing_machine_detergent_drawer"
+  },
+  {
+   "link": "washing_machine_door_grip",
+   "annotation": "Handle",
+   "attached_to": "washing_machine_door",
+   "part_of": "washing_machine_door"
+  }
+ ]
+}

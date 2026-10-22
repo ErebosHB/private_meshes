@@ -1,0 +1,74 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "124",
+  "name": "Under-Counter Freezer",
+  "type": "freezer",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Fridge": "semantic_digital_twin.semantic_annotations.semantic_annotations.Fridge",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "under_counter_freezer_body",
+   "annotation": "Fridge",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "under_counter_freezer_door",
+   "annotation": "Door",
+   "attached_to": "under_counter_freezer_body",
+   "part_of": "under_counter_freezer_body"
+  },
+  {
+   "link": "under_counter_freezer_basket_1",
+   "annotation": "Drawer",
+   "attached_to": "under_counter_freezer_body",
+   "part_of": "under_counter_freezer_body"
+  },
+  {
+   "link": "under_counter_freezer_basket_2",
+   "annotation": "Drawer",
+   "attached_to": "under_counter_freezer_body",
+   "part_of": "under_counter_freezer_body"
+  },
+  {
+   "link": "under_counter_freezer_basket_3",
+   "annotation": "Drawer",
+   "attached_to": "under_counter_freezer_body",
+   "part_of": "under_counter_freezer_body"
+  },
+  {
+   "link": "under_counter_freezer_door_grip",
+   "annotation": "Handle",
+   "attached_to": "under_counter_freezer_door",
+   "part_of": "under_counter_freezer_door"
+  },
+  {
+   "link": "under_counter_freezer_basket_1_grip",
+   "annotation": "Handle",
+   "attached_to": "under_counter_freezer_basket_1",
+   "part_of": "under_counter_freezer_basket_1"
+  },
+  {
+   "link": "under_counter_freezer_basket_2_grip",
+   "annotation": "Handle",
+   "attached_to": "under_counter_freezer_basket_2",
+   "part_of": "under_counter_freezer_basket_2"
+  },
+  {
+   "link": "under_counter_freezer_basket_3_grip",
+   "annotation": "Handle",
+   "attached_to": "under_counter_freezer_basket_3",
+   "part_of": "under_counter_freezer_basket_3"
+  }
+ ]
+}

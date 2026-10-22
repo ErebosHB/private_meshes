@@ -1,0 +1,37 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "156",
+  "name": "Praline Gift Box with Assortment Blister",
+  "type": "gift box with blister insert",
+  "category": "containers-boxes",
+  "category_title": "Containers & Boxes",
+  "group": "Material & Logistics"
+ },
+ "annotation_classes": {
+  "Container": "semantic_digital_twin.semantic_annotations.semantic_annotations.Container",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "praline_gift_box_body",
+   "annotation": "Container",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "praline_gift_box_lid",
+   "annotation": "Door",
+   "attached_to": "praline_gift_box_body",
+   "part_of": null
+  },
+  {
+   "link": "praline_gift_box_lid_grip",
+   "annotation": "Handle",
+   "attached_to": "praline_gift_box_lid",
+   "part_of": "praline_gift_box_lid"
+  }
+ ]
+}

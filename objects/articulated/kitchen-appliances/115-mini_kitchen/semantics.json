@@ -1,0 +1,112 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "115",
+  "name": "Mini Kitchen",
+  "type": "mini kitchen",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "mini_kitchen_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "mini_kitchen_hob_knob_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "hob knob 1",
+   "attached_to": "mini_kitchen_body",
+   "part_of": null
+  },
+  {
+   "link": "mini_kitchen_hob_knob_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "hob knob 2",
+   "attached_to": "mini_kitchen_body",
+   "part_of": null
+  },
+  {
+   "link": "mini_kitchen_fridge_door",
+   "annotation": "Door",
+   "attached_to": "mini_kitchen_body",
+   "part_of": "mini_kitchen_body"
+  },
+  {
+   "link": "mini_kitchen_sink_left_door",
+   "annotation": "Door",
+   "attached_to": "mini_kitchen_body",
+   "part_of": "mini_kitchen_body"
+  },
+  {
+   "link": "mini_kitchen_sink_right_door",
+   "annotation": "Door",
+   "attached_to": "mini_kitchen_body",
+   "part_of": "mini_kitchen_body"
+  },
+  {
+   "link": "mini_kitchen_w1_flap",
+   "annotation": "Door",
+   "attached_to": "mini_kitchen_body",
+   "part_of": "mini_kitchen_body"
+  },
+  {
+   "link": "mini_kitchen_w2_left_door",
+   "annotation": "Door",
+   "attached_to": "mini_kitchen_body",
+   "part_of": "mini_kitchen_body"
+  },
+  {
+   "link": "mini_kitchen_w2_right_door",
+   "annotation": "Door",
+   "attached_to": "mini_kitchen_body",
+   "part_of": "mini_kitchen_body"
+  },
+  {
+   "link": "mini_kitchen_fridge_door_grip",
+   "annotation": "Handle",
+   "attached_to": "mini_kitchen_fridge_door",
+   "part_of": "mini_kitchen_fridge_door"
+  },
+  {
+   "link": "mini_kitchen_sink_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "mini_kitchen_sink_left_door",
+   "part_of": "mini_kitchen_sink_left_door"
+  },
+  {
+   "link": "mini_kitchen_sink_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "mini_kitchen_sink_right_door",
+   "part_of": "mini_kitchen_sink_right_door"
+  },
+  {
+   "link": "mini_kitchen_w1_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "mini_kitchen_w1_flap",
+   "part_of": "mini_kitchen_w1_flap"
+  },
+  {
+   "link": "mini_kitchen_w2_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "mini_kitchen_w2_left_door",
+   "part_of": "mini_kitchen_w2_left_door"
+  },
+  {
+   "link": "mini_kitchen_w2_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "mini_kitchen_w2_right_door",
+   "part_of": "mini_kitchen_w2_right_door"
+  }
+ ]
+}

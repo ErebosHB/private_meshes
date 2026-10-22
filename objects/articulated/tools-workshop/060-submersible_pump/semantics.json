@@ -1,0 +1,47 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "060",
+  "name": "Submersible Pump",
+  "type": "submersible pump",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "submersible_pump_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Submersible Pump",
+   "type_description": "submersible pump",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "submersible_pump_carry_handle",
+   "annotation": "NaturalLanguageDescription",
+   "description": "carry handle",
+   "attached_to": "submersible_pump_body",
+   "part_of": null
+  },
+  {
+   "link": "submersible_pump_float_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "float switch",
+   "attached_to": "submersible_pump_body",
+   "part_of": null
+  },
+  {
+   "link": "submersible_pump_carry_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "submersible_pump_carry_handle",
+   "part_of": null
+  }
+ ]
+}

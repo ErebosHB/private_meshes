@@ -2,11 +2,12 @@
 
 - **Author and design direction:** Vanessa Hassouna (33067562+sunava@users.noreply.github.com)
 - **Developed for:** AICOR Solutions
-- **Copyright:** Copyright (c) 2026, Vanessa Hassouna
+- **Copyright:** Copyright (c) 2026, Vanessa Hassouna; Copyright (c) 2026, Yannick Schröder, each for
+  the parts listed under their name below
 - **Licence:** BSD 3-Clause License, see [LICENSE.txt](LICENSE.txt) (SPDX: `BSD-3-Clause`), for the content
-  listed under "Covered"
+  listed under "Covered" and "Contribution by Yannick Schröder"
 
-## Covered
+## Covered: Copyright (c) 2026, Vanessa Hassouna
 
 - `environments/aicor_medical_lab/` and `objects/laboratory/` (including the centrifuge manuals): the AICOR laboratory
   assets and the manuals of the simulated centrifuge.
@@ -14,14 +15,19 @@
   them in `collection.json` and the catalogue READMEs.
 - The repository's top-level `README.md`, `NOTICE.md` and `rights.json`.
 
-## Licence pending: contribution by Yannick Schroeder
+## Contribution by Yannick Schröder: Copyright (c) 2026, Yannick Schröder
 
-Objects #001-#150 in `objects/articulated/`, together with `PROMPT.md`, `collection.json`,
-`objects/articulated/README.md` and the category `README.md` files in the form he added
-them, were contributed by Yannick Schroeder (commit c9cb1b3, pull request #1, 2026-10-19).
-Their licence is not settled yet: the BSD-3-Clause licence of this repository does not cover
-them until he agrees. Their `NOTICE.md` and `README.md` files keep the placeholders
-`<OWNER>` and `<AUTHOR>` until then.
+Licensed under the BSD 3-Clause License, see [LICENSE.txt](LICENSE.txt) (SPDX: `BSD-3-Clause`):
+
+- Objects #001-#150 in `objects/articulated/`, together with `PROMPT.md`, `collection.json`,
+  `objects/articulated/README.md` and the category `README.md` files in the form he added
+  them (commit c9cb1b3, pull request #1, 2026-10-19). Each of these object folders carries
+  its own `LICENSE.txt` and names him in its `NOTICE.md` and `README.md`.
+- The semantic annotations: `scripts/annotate_semantics.py`, `scripts/annotation_graph.html`,
+  `tests/test_annotate_semantics.py`, the `semantics.json` file in every object folder, the
+  `group` of each category in `collection.json` and the "Semantic annotations" section of
+  `objects/articulated/README.md`. A `semantics.json` describes the model in its folder;
+  the model itself stays with the copyright holder named in that folder's `NOTICE.md`.
 
 ## Not covered
 
@@ -36,3 +42,6 @@ Licence history: the laboratory assets were first described as GPL-3.0-only, the
 2026-09-25 as permission-only (`LicenseRef-AICOR-Laboratory-Assets`). On 2026-10-21 the
 copyright holder relicensed them under BSD-3-Clause. Permissions validly granted earlier are
 not withdrawn.
+
+Objects #001-#150 and the files contributed with them were unlicensed ("licence pending")
+from 2026-10-19 until 2026-10-22, when Yannick Schröder licensed them under BSD-3-Clause.

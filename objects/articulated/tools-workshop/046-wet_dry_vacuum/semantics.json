@@ -1,0 +1,101 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "046",
+  "name": "Wet/Dry Workshop Vacuum",
+  "type": "wet/dry vacuum",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "wet_dry_vacuum_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Wet/Dry Workshop Vacuum",
+   "type_description": "wet/dry vacuum",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_wheel_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "wheel 1",
+   "attached_to": "wet_dry_vacuum_body",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_wheel_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "wheel 2",
+   "attached_to": "wet_dry_vacuum_body",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_wheel_3",
+   "annotation": "NaturalLanguageDescription",
+   "description": "wheel 3",
+   "attached_to": "wet_dry_vacuum_body",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_wheel_4",
+   "annotation": "NaturalLanguageDescription",
+   "description": "wheel 4",
+   "attached_to": "wet_dry_vacuum_body",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_head",
+   "annotation": "NaturalLanguageDescription",
+   "description": "head",
+   "attached_to": "wet_dry_vacuum_body",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_power_knob",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power knob",
+   "attached_to": "wet_dry_vacuum_head",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_left_latch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "left latch",
+   "attached_to": "wet_dry_vacuum_body",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_right_latch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "right latch",
+   "attached_to": "wet_dry_vacuum_body",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_left_latch_grip",
+   "annotation": "Handle",
+   "attached_to": "wet_dry_vacuum_left_latch",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_right_latch_grip",
+   "annotation": "Handle",
+   "attached_to": "wet_dry_vacuum_right_latch",
+   "part_of": null
+  },
+  {
+   "link": "wet_dry_vacuum_carry_grip",
+   "annotation": "Handle",
+   "attached_to": "wet_dry_vacuum_head",
+   "part_of": null
+  }
+ ]
+}

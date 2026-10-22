@@ -2,13 +2,13 @@
 
 Wall-hung cabinet with two hinged doors and one adjustable inner shelf.
 
-Original Erebos concept model. Principal author and design direction: Erebos.
+Original concept model by Yannick Schröder.
 Typology drawn from a public furniture catalogue; not a replica of, or affiliated with, any manufacturer's product.
 
 `model.blend` is editable in Blender 4.0 or newer. Its timeline shows closed/rest at frame 1,
 an inspection pose at frame 60, and closed/rest again at frame 120.
 `model.urdf` loads independently using only local `assets/*.glb` files.
-Copy this entire folder, including its notices, for an authorized reuse.
+Licensed under BSD-3-Clause (see LICENSE.txt and NOTICE.md); keep both with every copy.
 
 Coordinates are metres, Z up, front toward negative Y. Origin at the back-bottom edge centre.
 Use a unique URDF parser prefix for each instance.

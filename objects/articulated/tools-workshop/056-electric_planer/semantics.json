@@ -1,0 +1,74 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "056",
+  "name": "Electric Planer",
+  "type": "electric planer",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "electric_planer_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Electric Planer",
+   "type_description": "electric planer",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "electric_planer_cutter_drum",
+   "annotation": "NaturalLanguageDescription",
+   "description": "cutter drum",
+   "attached_to": "electric_planer_body",
+   "part_of": null
+  },
+  {
+   "link": "electric_planer_depth_knob",
+   "annotation": "NaturalLanguageDescription",
+   "description": "depth knob",
+   "attached_to": "electric_planer_body",
+   "part_of": null
+  },
+  {
+   "link": "electric_planer_chip_chute",
+   "annotation": "NaturalLanguageDescription",
+   "description": "chip chute",
+   "attached_to": "electric_planer_body",
+   "part_of": null
+  },
+  {
+   "link": "electric_planer_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "electric_planer_body",
+   "part_of": null
+  },
+  {
+   "link": "electric_planer_lock_off_button",
+   "annotation": "NaturalLanguageDescription",
+   "description": "lock off button",
+   "attached_to": "electric_planer_body",
+   "part_of": null
+  },
+  {
+   "link": "electric_planer_rear_grip",
+   "annotation": "Handle",
+   "attached_to": "electric_planer_body",
+   "part_of": null
+  },
+  {
+   "link": "electric_planer_depth_knob_grip",
+   "annotation": "Handle",
+   "attached_to": "electric_planer_depth_knob",
+   "part_of": null
+  }
+ ]
+}

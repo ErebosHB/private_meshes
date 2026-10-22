@@ -1,0 +1,318 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "109",
+  "name": "L-Shaped Kitchen, Mid-Length",
+  "type": "l-shaped kitchen with appliances",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "l_kitchen_mid_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "l_kitchen_mid_b1_corner_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_b1_corner_basket",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_b2_top_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_b2_middle_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_b2_bottom_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_sink_left_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_sink_right_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_dishwasher_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_dishwasher_lower_rack",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_dishwasher_upper_rack",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_b5_pullout",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_w1_left_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_w1_right_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_w2_flap",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_w3_left_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_w3_right_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_w4_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_oven_storage_drawer",
+   "annotation": "Drawer",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_oven_knob_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "oven knob 1",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": null
+  },
+  {
+   "link": "l_kitchen_mid_oven_knob_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "oven knob 2",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": null
+  },
+  {
+   "link": "l_kitchen_mid_oven_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_fridge_door",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_hood_visor",
+   "annotation": "NaturalLanguageDescription",
+   "description": "hood visor",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": null
+  },
+  {
+   "link": "l_kitchen_mid_rw1_flap",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_rw2_flap",
+   "annotation": "Door",
+   "attached_to": "l_kitchen_mid_body",
+   "part_of": "l_kitchen_mid_body"
+  },
+  {
+   "link": "l_kitchen_mid_b1_corner_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_b1_corner_door",
+   "part_of": "l_kitchen_mid_b1_corner_door"
+  },
+  {
+   "link": "l_kitchen_mid_b1_corner_basket_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_b1_corner_basket",
+   "part_of": "l_kitchen_mid_b1_corner_basket"
+  },
+  {
+   "link": "l_kitchen_mid_b2_top_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_b2_top_drawer",
+   "part_of": "l_kitchen_mid_b2_top_drawer"
+  },
+  {
+   "link": "l_kitchen_mid_b2_middle_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_b2_middle_drawer",
+   "part_of": "l_kitchen_mid_b2_middle_drawer"
+  },
+  {
+   "link": "l_kitchen_mid_b2_bottom_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_b2_bottom_drawer",
+   "part_of": "l_kitchen_mid_b2_bottom_drawer"
+  },
+  {
+   "link": "l_kitchen_mid_sink_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_sink_left_door",
+   "part_of": "l_kitchen_mid_sink_left_door"
+  },
+  {
+   "link": "l_kitchen_mid_sink_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_sink_right_door",
+   "part_of": "l_kitchen_mid_sink_right_door"
+  },
+  {
+   "link": "l_kitchen_mid_dishwasher_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_dishwasher_door",
+   "part_of": "l_kitchen_mid_dishwasher_door"
+  },
+  {
+   "link": "l_kitchen_mid_dishwasher_lower_rack_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_dishwasher_lower_rack",
+   "part_of": "l_kitchen_mid_dishwasher_lower_rack"
+  },
+  {
+   "link": "l_kitchen_mid_dishwasher_upper_rack_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_dishwasher_upper_rack",
+   "part_of": "l_kitchen_mid_dishwasher_upper_rack"
+  },
+  {
+   "link": "l_kitchen_mid_b5_pullout_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_b5_pullout",
+   "part_of": "l_kitchen_mid_b5_pullout"
+  },
+  {
+   "link": "l_kitchen_mid_w1_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_w1_left_door",
+   "part_of": "l_kitchen_mid_w1_left_door"
+  },
+  {
+   "link": "l_kitchen_mid_w1_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_w1_right_door",
+   "part_of": "l_kitchen_mid_w1_right_door"
+  },
+  {
+   "link": "l_kitchen_mid_w2_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_w2_flap",
+   "part_of": "l_kitchen_mid_w2_flap"
+  },
+  {
+   "link": "l_kitchen_mid_w3_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_w3_left_door",
+   "part_of": "l_kitchen_mid_w3_left_door"
+  },
+  {
+   "link": "l_kitchen_mid_w3_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_w3_right_door",
+   "part_of": "l_kitchen_mid_w3_right_door"
+  },
+  {
+   "link": "l_kitchen_mid_w4_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_w4_door",
+   "part_of": "l_kitchen_mid_w4_door"
+  },
+  {
+   "link": "l_kitchen_mid_oven_storage_drawer_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_oven_storage_drawer",
+   "part_of": "l_kitchen_mid_oven_storage_drawer"
+  },
+  {
+   "link": "l_kitchen_mid_oven_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_oven_door",
+   "part_of": "l_kitchen_mid_oven_door"
+  },
+  {
+   "link": "l_kitchen_mid_fridge_door_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_fridge_door",
+   "part_of": "l_kitchen_mid_fridge_door"
+  },
+  {
+   "link": "l_kitchen_mid_hood_visor_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_hood_visor",
+   "part_of": null
+  },
+  {
+   "link": "l_kitchen_mid_rw1_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_rw1_flap",
+   "part_of": "l_kitchen_mid_rw1_flap"
+  },
+  {
+   "link": "l_kitchen_mid_rw2_flap_grip",
+   "annotation": "Handle",
+   "attached_to": "l_kitchen_mid_rw2_flap",
+   "part_of": "l_kitchen_mid_rw2_flap"
+  }
+ ]
+}

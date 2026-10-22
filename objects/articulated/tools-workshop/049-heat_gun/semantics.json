@@ -1,0 +1,60 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "049",
+  "name": "Heat Gun",
+  "type": "heat gun",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "heat_gun_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Heat Gun",
+   "type_description": "heat gun",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "heat_gun_rocker_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "rocker switch",
+   "attached_to": "heat_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "heat_gun_temperature_wheel",
+   "annotation": "NaturalLanguageDescription",
+   "description": "temperature wheel",
+   "attached_to": "heat_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "heat_gun_stand",
+   "annotation": "NaturalLanguageDescription",
+   "description": "stand",
+   "attached_to": "heat_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "heat_gun_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "heat_gun_body",
+   "part_of": null
+  },
+  {
+   "link": "heat_gun_stand_foot_grip",
+   "annotation": "Handle",
+   "attached_to": "heat_gun_stand",
+   "part_of": null
+  }
+ ]
+}

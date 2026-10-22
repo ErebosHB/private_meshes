@@ -1,0 +1,169 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "138",
+  "name": "Small-Parts Cabinet with Clear Drawers",
+  "type": "small-parts cabinet",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "small_parts_cabinet_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r4c1",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r4c2",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r4c3",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r3c1",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r3c2",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r3c3",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r2c1",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r2c2",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r2c3",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r1c1",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r1c2",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r1c3",
+   "annotation": "Drawer",
+   "attached_to": "small_parts_cabinet_body",
+   "part_of": "small_parts_cabinet_body"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r4c1_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r4c1",
+   "part_of": "small_parts_cabinet_drawer_r4c1"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r4c2_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r4c2",
+   "part_of": "small_parts_cabinet_drawer_r4c2"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r4c3_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r4c3",
+   "part_of": "small_parts_cabinet_drawer_r4c3"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r3c1_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r3c1",
+   "part_of": "small_parts_cabinet_drawer_r3c1"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r3c2_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r3c2",
+   "part_of": "small_parts_cabinet_drawer_r3c2"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r3c3_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r3c3",
+   "part_of": "small_parts_cabinet_drawer_r3c3"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r2c1_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r2c1",
+   "part_of": "small_parts_cabinet_drawer_r2c1"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r2c2_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r2c2",
+   "part_of": "small_parts_cabinet_drawer_r2c2"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r2c3_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r2c3",
+   "part_of": "small_parts_cabinet_drawer_r2c3"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r1c1_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r1c1",
+   "part_of": "small_parts_cabinet_drawer_r1c1"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r1c2_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r1c2",
+   "part_of": "small_parts_cabinet_drawer_r1c2"
+  },
+  {
+   "link": "small_parts_cabinet_drawer_r1c3_grip",
+   "annotation": "Handle",
+   "attached_to": "small_parts_cabinet_drawer_r1c3",
+   "part_of": "small_parts_cabinet_drawer_r1c3"
+  }
+ ]
+}

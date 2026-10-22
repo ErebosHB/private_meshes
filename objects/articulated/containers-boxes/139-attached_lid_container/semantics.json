@@ -1,0 +1,61 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "139",
+  "name": "Attached-Lid Container",
+  "type": "attached-lid container",
+  "category": "containers-boxes",
+  "category_title": "Containers & Boxes",
+  "group": "Material & Logistics"
+ },
+ "annotation_classes": {
+  "Container": "semantic_digital_twin.semantic_annotations.semantic_annotations.Container",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "attached_lid_container_body",
+   "annotation": "Container",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "attached_lid_container_front_lid",
+   "annotation": "Door",
+   "attached_to": "attached_lid_container_body",
+   "part_of": null
+  },
+  {
+   "link": "attached_lid_container_back_lid",
+   "annotation": "Door",
+   "attached_to": "attached_lid_container_body",
+   "part_of": null
+  },
+  {
+   "link": "attached_lid_container_left_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "attached_lid_container_body",
+   "part_of": null
+  },
+  {
+   "link": "attached_lid_container_right_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "attached_lid_container_body",
+   "part_of": null
+  },
+  {
+   "link": "attached_lid_container_front_lid_grip",
+   "annotation": "Handle",
+   "attached_to": "attached_lid_container_front_lid",
+   "part_of": "attached_lid_container_front_lid"
+  },
+  {
+   "link": "attached_lid_container_back_lid_grip",
+   "annotation": "Handle",
+   "attached_to": "attached_lid_container_back_lid",
+   "part_of": "attached_lid_container_back_lid"
+  }
+ ]
+}

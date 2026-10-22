@@ -1,0 +1,49 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "018",
+  "name": "Tall Office Cabinet, Two Doors",
+  "type": "tall cabinet",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "tall_office_cabinet_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "tall_office_cabinet_left_door",
+   "annotation": "Door",
+   "attached_to": "tall_office_cabinet_body",
+   "part_of": "tall_office_cabinet_body"
+  },
+  {
+   "link": "tall_office_cabinet_right_door",
+   "annotation": "Door",
+   "attached_to": "tall_office_cabinet_body",
+   "part_of": "tall_office_cabinet_body"
+  },
+  {
+   "link": "tall_office_cabinet_left_door_grip",
+   "annotation": "Handle",
+   "attached_to": "tall_office_cabinet_left_door",
+   "part_of": "tall_office_cabinet_left_door"
+  },
+  {
+   "link": "tall_office_cabinet_right_door_grip",
+   "annotation": "Handle",
+   "attached_to": "tall_office_cabinet_right_door",
+   "part_of": "tall_office_cabinet_right_door"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "096",
+  "name": "Desktop Dispensing Robot",
+  "type": "dispensing robot",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "desktop_dispensing_robot_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Desktop Dispensing Robot",
+   "type_description": "dispensing robot",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "desktop_dispensing_robot_y_table",
+   "annotation": "NaturalLanguageDescription",
+   "description": "y table",
+   "attached_to": "desktop_dispensing_robot_body",
+   "part_of": null
+  },
+  {
+   "link": "desktop_dispensing_robot_x_carriage",
+   "annotation": "NaturalLanguageDescription",
+   "description": "x carriage",
+   "attached_to": "desktop_dispensing_robot_body",
+   "part_of": null
+  },
+  {
+   "link": "desktop_dispensing_robot_z_head",
+   "annotation": "NaturalLanguageDescription",
+   "description": "z head",
+   "attached_to": "desktop_dispensing_robot_x_carriage",
+   "part_of": null
+  },
+  {
+   "link": "desktop_dispensing_robot_emergency_stop",
+   "annotation": "NaturalLanguageDescription",
+   "description": "emergency stop",
+   "attached_to": "desktop_dispensing_robot_body",
+   "part_of": null
+  }
+ ]
+}

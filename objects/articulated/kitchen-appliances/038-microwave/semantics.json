@@ -1,0 +1,59 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "038",
+  "name": "Countertop Microwave",
+  "type": "microwave",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "Microwave": "semantic_digital_twin.semantic_annotations.semantic_annotations.Microwave",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription"
+ },
+ "annotations": [
+  {
+   "link": "microwave_body",
+   "annotation": "Microwave",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "microwave_turntable",
+   "annotation": "NaturalLanguageDescription",
+   "description": "turntable",
+   "attached_to": "microwave_body",
+   "part_of": null
+  },
+  {
+   "link": "microwave_power_dial",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power dial",
+   "attached_to": "microwave_body",
+   "part_of": null
+  },
+  {
+   "link": "microwave_timer_dial",
+   "annotation": "NaturalLanguageDescription",
+   "description": "timer dial",
+   "attached_to": "microwave_body",
+   "part_of": null
+  },
+  {
+   "link": "microwave_door",
+   "annotation": "Door",
+   "attached_to": "microwave_body",
+   "part_of": "microwave_body"
+  },
+  {
+   "link": "microwave_door_grip",
+   "annotation": "Handle",
+   "attached_to": "microwave_door",
+   "part_of": "microwave_door"
+  }
+ ]
+}

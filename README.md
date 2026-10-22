@@ -3,8 +3,9 @@
 Reusable 3D objects and assembled environments, developed for AICOR Solutions.
 
 **Author and design direction:** Vanessa Hassouna (33067562+sunava@users.noreply.github.com).
+Objects #001–#150 and the semantic annotations: Yannick Schröder.
 Licensed under the [BSD 3-Clause License](LICENSE.txt) within the scope described
-in [NOTICE.md](NOTICE.md). Objects #001–#150 retain their pending licence status.
+in [NOTICE.md](NOTICE.md), which lists the copyright holder of each part.
 
 ## Asset layout
 

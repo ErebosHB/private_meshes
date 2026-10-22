@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Annotation Graph</title>
+<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<style>
+  /* Dark like cramera's knowledge-graph panel, which this view mirrors. */
+  :root {
+    --bg: #050608; --panel: rgba(10, 17, 32, .78); --line: #1d2a44; --text: #dfe8fb; --muted: #8796b8;
+    --accent: #39d5c8;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; overflow: hidden; }
+  body { color: var(--text); font: 13px/1.4 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+         background: radial-gradient(70% 70% at 50% 45%, #0b1020 0%, var(--bg) 100%) var(--bg); }
+  #net { position: absolute; inset: 0; }
+  .float { position: absolute; background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+           backdrop-filter: blur(6px); }
+  #bar { left: 12px; top: 12px; right: 232px; display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center;
+         padding: 8px 10px; }
+  #bar h1 { font-size: 13px; margin: 0 4px 0 2px; font-weight: 600; letter-spacing: .02em; white-space: nowrap; }
+  select, input[type=search], button { font: inherit; color: var(--text); background: rgba(5, 8, 14, .7);
+         border: 1px solid var(--line); border-radius: 4px; padding: 4px 8px; }
+  select { max-width: min(380px, 100%); }
+  button { cursor: pointer; min-width: 28px; }
+  button:hover, select:hover, input:hover { border-color: var(--muted); }
+  input[type=checkbox] { accent-color: var(--accent); }
+  .group { display: flex; gap: 4px; align-items: center; }
+  .toggles { display: flex; flex-wrap: wrap; gap: 4px 12px; color: var(--muted); }
+  .toggles label { display: inline-flex; gap: 5px; align-items: center; cursor: pointer; }
+  #legend { right: 12px; top: 12px; width: 208px; padding: 10px 12px; display: flex; flex-direction: column; gap: 6px; }
+  #legend .li { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--muted); }
+  #legend .dot { width: 11px; height: 11px; border-radius: 50%; flex: none; }
+  #legend .line { width: 18px; border-top: 2px solid; flex: none; }
+  #legend .n { margin-left: auto; font-variant-numeric: tabular-nums; }
+  #legend .sep { height: 1px; background: var(--line); margin: 3px 0; }
+  #meta { font-size: 12px; color: var(--text); margin-bottom: 2px; }
+  #meta small { display: block; color: var(--muted); }
+  #details { left: 12px; bottom: 12px; width: min(360px, calc(100% - 24px)); padding: 10px 12px; display: none; }
+  #details h2 { font-size: 13px; margin: 0 0 6px; word-break: break-all; }
+  #details dl { display: grid; grid-template-columns: auto 1fr; gap: 3px 10px; margin: 0; font-size: 12px; }
+  #details dt { color: var(--muted); } #details dd { margin: 0; word-break: break-word; }
+  #details .close { position: absolute; right: 6px; top: 6px; border: 0; background: none; color: var(--muted); }
+  #hint { right: 12px; bottom: 12px; padding: 6px 10px; color: var(--muted); font-size: 11px; }
+  #busy { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); color: var(--muted); display: none; }
+  @media (max-width: 760px) {
+    #bar { right: 12px; }
+    #legend { top: auto; bottom: 12px; width: 180px; }
+    #hint { display: none; }
+  }
+</style>
+</head>
+<body>
+<div id="net"></div>
+<div id="busy">Laying out…</div>
+<div id="bar" class="float">
+  <h1>Annotation Graph</h1>
+  <div class="group">
+    <button id="prev" title="Previous object (←)">‹</button>
+    <select id="view" aria-label="View"></select>
+    <button id="next" title="Next object (→)">›</button>
+  </div>
+  <input id="search" type="search" placeholder="Find link…" aria-label="Find link" list="links">
+  <datalist id="links"></datalist>
+  <div class="toggles">
+    <label><input type="checkbox" id="taxonomy" checked> taxonomy</label>
+    <label><input type="checkbox" id="inner" checked> object parts</label>
+    <label><input type="checkbox" id="frames"> unannotated frames</label>
+    <label><input type="checkbox" id="joints" checked> joints</label>
+    <label><input type="checkbox" id="parts" checked> part-whole</label>
+    <label><input type="checkbox" id="tree"> tree</label>
+  </div>
+</div>
+<div id="legend" class="float"></div>
+<div id="details" class="float"><button class="close" aria-label="Close">✕</button><div></div></div>
+<div id="hint" class="float">drag a node · scroll to zoom · double-click to fit</div>
+<script>
+const OBJECTS = /*DATA*/[];
+const $ = id => document.getElementById(id);
+
+// Colours and sizes follow cramera's GROUP_STYLE (panels/graph/graph.js).
+const GROUPS = {
+  collection: { color: "#ffffff", ring: "#ffffff", size: 32, label: "Collection" },
+  group:    { color: "#ff7a9c", ring: "#ffb3c6", size: 26, label: "Group" },
+  category: { color: "#8c9bbd", ring: "#c3ccdf", size: 21, label: "Category" },
+  whole:  { color: "#39d5c8", ring: "#8ff0e7", size: 18, label: "Object (whole)" },
+  Door:   { color: "#5b8cff", ring: "#a9c2ff", size: 16, label: "Door" },
+  Drawer: { color: "#4bd38a", ring: "#a6ecc6", size: 16, label: "Drawer" },
+  Handle: { color: "#ffb648", ring: "#ffd89a", size: 12, label: "Handle" },
+  other:  { color: "#b98cff", ring: "#d9c2ff", size: 13, label: "Other moving part" },
+  frame:  { color: "#1c2740", ring: "#3a4c6e", size: 9,  label: "Frame without annotation" },
+};
+const EDGES = {
+  taxonomy: { c: "#7f9cc9", o: 0.55, w: 1.8, label: "Belongs to (taxonomy)" },
+  movable: { c: "#ffb648", o: 0.6, w: 1.6, label: "Movable joint" },
+  fixed:   { c: "#3a4c6e", o: 0.55, w: 1.2, d: [3, 3], label: "Fixed joint" },
+  part:    { c: "#ff7a9c", o: 0.75, w: 1.6, d: [6, 4], label: "Part of (whole → part)" },
+};
+const groupOf = n => n.annotation == null ? "frame"
+  : n.annotation === "NaturalLanguageDescription" ? "other"
+  : ["Door", "Drawer", "Handle"].includes(n.annotation) ? n.annotation : "whole";
+
+// A view is everything, one group, one category, or one object.
+const VIEWS = [];
+function fillViews() {
+  const byGroup = {}, byCategory = {};
+  OBJECTS.forEach((o, i) => {
+    ((byGroup[o.group] ??= {})[o.category] ??= []).push(i);
+    (byCategory[o.category] ??= []).push(i);
+  });
+  const overview = document.createElement("optgroup"); overview.label = "Overview";
+  const add = (view, parent) => parent.append(new Option(view.label, VIEWS.push(view) - 1));
+  add({ key: "all", label: `All objects (${OBJECTS.length})`, objects: OBJECTS.map((_, i) => i) }, overview);
+  for (const [group, categories] of Object.entries(byGroup)) {
+    const items = Object.values(categories).flat();
+    add({ key: "group:" + group, label: `${group} (${items.length})`, objects: items }, overview);
+    for (const [category, catItems] of Object.entries(categories)) {
+      if (Object.keys(categories).length === 1 && OBJECTS[catItems[0]].category_title === group) continue;
+      add({ key: category, label: `  ${group} › ${OBJECTS[catItems[0]].category_title} (${catItems.length})`,
+            objects: catItems }, overview);
+    }
+  }
+  $("view").append(overview);
+  for (const [category, items] of Object.entries(byCategory)) {
+    const og = document.createElement("optgroup");
+    og.label = `${OBJECTS[items[0]].group} › ${OBJECTS[items[0]].category_title}`;
+    for (const i of items) {
+      const o = OBJECTS[i];
+      const v = VIEWS.push({ key: o.id, label: `#${o.id} ${o.name}`, objects: [i], single: true }) - 1;
+      og.append(new Option(VIEWS[v].label, v));
+    }
+    $("view").append(og);
+  }
+}
+
+const slugless = (id, o) => {
+  const root = o.graph.nodes.find(n => groupOf(n) === "whole") || o.graph.nodes[0];
+  const prefix = root.id.replace(/_body$|_base$|_frame$/, "") + "_";
+  return id.startsWith(prefix) && id !== root.id ? id.slice(prefix.length) : id;
+};
+
+let network = null, current = 0, freezeTimer = null, index = {};
+
+function build() {
+  const view = VIEWS[current], many = !view.single;
+  const showFrames = $("frames").checked, tree = $("tree").checked;
+  const showParts = $("inner").checked, showTaxonomy = $("taxonomy").checked;
+  const visNodes = [], visEdges = [], counts = {}, edgeCounts = {};
+  index = {};
+  // collection -> group -> category above the objects; objects start at TAXONOMY_DEPTH
+  const TAXONOMY_DEPTH = showTaxonomy ? 3 : 0;
+  const addTaxonomy = (id, label, g, level, parent, members) => {
+    if (index[id]) return;
+    counts[g] = (counts[g] || 0) + 1;
+    const node = { id, label, group: g, value: GROUPS[g].size, title: `${GROUPS[g].label}: ${label}` };
+    if (tree) node.level = level;
+    visNodes.push(node);
+    index[id] = { taxonomy: g, label, members };
+    if (parent) taxonomyEdge(parent, id);
+  };
+  const taxonomyEdge = (from, to) => {
+    const s = EDGES.taxonomy;
+    edgeCounts.taxonomy = (edgeCounts.taxonomy || 0) + 1;
+    visEdges.push({ from, to, title: "belongs to", color: { color: s.c, opacity: s.o }, width: s.w });
+  };
+  if (showTaxonomy) {
+    const members = key => view.objects.filter(i => key(OBJECTS[i]));
+    addTaxonomy("collection", "Articulated objects", "collection", 0, null, members(() => true));
+    for (const i of view.objects) {
+      const o = OBJECTS[i];
+      addTaxonomy("group:" + o.group, o.group, "group", 1, "collection", members(x => x.group === o.group));
+      addTaxonomy("category:" + o.category, o.category_title, "category", 2, "group:" + o.group,
+                  members(x => x.category === o.category));
+    }
+  }
+  for (const i of view.objects) {
+    const o = OBJECTS[i], key = id => `${o.id}/${id}`;
+    const kept = new Set();
+    // levels from the joints alone, so part-whole edges never reshape a tree
+    const children = {}, depth = {};
+    o.graph.edges.filter(e => !e.part).forEach(e => (children[e.from] ??= []).push(e.to));
+    const isChild = new Set(o.graph.edges.filter(e => !e.part).map(e => e.to));
+    const queue = o.graph.nodes.filter(n => !isChild.has(n.id)).map(n => [n.id, 0]);
+    while (queue.length) { const [id, d] = queue.shift(); depth[id] = d; (children[id] || []).forEach(c => queue.push([c, d + 1])); }
+    for (const n of o.graph.nodes) {
+      const g = groupOf(n);
+      if (g === "frame" && !showFrames) continue;
+      if (g !== "whole" && !showParts) continue;
+      if (g === "whole" && showTaxonomy) taxonomyEdge("category:" + o.category, key(n.id));
+      counts[g] = (counts[g] || 0) + 1;
+      kept.add(n.id);
+      const st = GROUPS[g];
+      let label = g === "whole" ? (many ? `#${o.id} ${o.name}` : o.name) : slugless(n.id, o);
+      const title = [n.id, n.annotation ? `«${n.annotation}»` : "no annotation", n.description,
+                     n.purpose && `frame: ${n.purpose}`].filter(Boolean).join("\n");
+      const node = { id: key(n.id), label, title, group: g, value: st.size };
+      if (tree) node.level = TAXONOMY_DEPTH + (depth[n.id] ?? 0);
+      visNodes.push(node);
+      index[key(n.id)] = { node: n, object: o };
+    }
+    for (const e of o.graph.edges) {
+      if (!kept.has(e.from) || !kept.has(e.to)) continue;
+      const kind = e.part ? "part" : e.kind === "Fixed" ? "fixed" : "movable";
+      if (e.part ? !$("parts").checked : !$("joints").checked) continue;
+      edgeCounts[kind] = (edgeCounts[kind] || 0) + 1;
+      const s = EDGES[kind];
+      visEdges.push({ from: key(e.from), to: key(e.to), title: e.part ? "part of" : `${e.kind} joint`,
+        color: { color: s.c, opacity: s.o }, width: s.w, dashes: s.d || false,
+        physics: !e.part || !tree });
+    }
+  }
+  const big = visNodes.length > 170;
+  const groups = {};
+  for (const [g, st] of Object.entries(GROUPS)) {
+    groups[g] = { shape: "dot",
+      color: { background: st.color, border: st.ring, highlight: { background: st.ring, border: "#ffffff" },
+               hover: { background: st.ring, border: "#ffffff" } },
+      font: { color: g === "frame" ? "#6f7fa3" : "#dfe8fb", size: g === "whole" ? 15 : 12, face: "Inter, system-ui",
+              strokeWidth: 3, strokeColor: "#0b1220" } };
+  }
+  const options = {
+    groups,
+    nodes: { borderWidth: 2, scaling: { min: 8, max: 30 } },
+    edges: { smooth: tree ? { type: "cubicBezier", forceDirection: "vertical", roundness: 0.5 } : false,
+             arrows: { to: { enabled: tree || !many, scaleFactor: 0.45 } }, selectionWidth: 1.2 },
+    layout: tree ? { hierarchical: { enabled: true, direction: "UD", sortMethod: "directed", levelSeparation: 110,
+                                     nodeSpacing: 130, treeSpacing: 160, shakeTowards: "roots" } }
+                 : { improvedLayout: !big },
+    physics: tree ? false : { stabilization: { iterations: big ? 150 : 250, updateInterval: 25 },
+      barnesHut: { gravitationalConstant: -7000, springLength: many ? 90 : 120, springConstant: 0.03,
+                   damping: 0.5, avoidOverlap: 0 } },
+    interaction: { hover: !big || visNodes.length < 900, tooltipDelay: 150, dragNodes: true, hideEdgesOnDrag: big },
+  };
+  $("busy").style.display = tree ? "none" : "block";
+  if (network) network.destroy();
+  network = new vis.Network($("net"), { nodes: new vis.DataSet(visNodes), edges: new vis.DataSet(visEdges) }, options);
+  // settle, freeze, then re-animate only while a node is dragged (as cramera does)
+  network.once("stabilizationIterationsDone", () => {
+    network.setOptions({ physics: false }); network.fit(); $("busy").style.display = "none";
+  });
+  if (tree) network.once("afterDrawing", () => network.fit());
+  network.on("dragStart", p => {
+    if (tree || !p.nodes.length) return;
+    clearTimeout(freezeTimer); network.setOptions({ physics: true });
+  });
+  network.on("dragEnd", p => {
+    if (tree || !p.nodes.length) return;
+    clearTimeout(freezeTimer); freezeTimer = setTimeout(() => network && network.setOptions({ physics: false }), 1000);
+  });
+  network.on("click", p => p.nodes.length ? showDetails(p.nodes[0]) : hideDetails());
+  network.on("doubleClick", p => { if (!p.nodes.length) network.fit({ animation: true }); });
+  renderLegend(view, counts, edgeCounts);
+  $("links").replaceChildren(...Object.keys(index).map(k =>
+    new Option(index[k].taxonomy ? index[k].label : view.single ? index[k].node.id : k)));
+  hideDetails();
+}
+
+function renderLegend(view, counts, edgeCounts) {
+  const L = $("legend"); L.replaceChildren();
+  const meta = document.createElement("div"); meta.id = "meta";
+  if (view.single) {
+    const o = OBJECTS[view.objects[0]], root = o.graph.nodes.find(n => groupOf(n) === "whole");
+    meta.textContent = `#${o.id} ${o.name}`;
+    const s = document.createElement("small"); s.textContent = `${o.type} → ${root ? root.annotation : "—"}`; meta.append(s);
+  } else {
+    meta.textContent = view.label;
+  }
+  L.append(meta, Object.assign(document.createElement("div"), { className: "sep" }));
+  const row = (mark, text, n) => {
+    const d = document.createElement("div"); d.className = "li";
+    const c = document.createElement("span"); c.className = "n"; c.textContent = n ?? "";
+    d.append(mark, text, c); L.append(d);
+  };
+  for (const [g, st] of Object.entries(GROUPS)) {
+    if (g === "frame" && !$("frames").checked) continue;
+    if (["collection", "group", "category"].includes(g) && !$("taxonomy").checked) continue;
+    if (!["collection", "group", "category", "whole"].includes(g) && !$("inner").checked) continue;
+    const dot = document.createElement("span"); dot.className = "dot";
+    dot.style.background = st.color; dot.style.boxShadow = `0 0 0 2px ${st.ring}55`;
+    row(dot, st.label, counts[g] || 0);
+  }
+  L.append(Object.assign(document.createElement("div"), { className: "sep" }));
+  for (const [k, s] of Object.entries(EDGES)) {
+    if (!edgeCounts[k] && !(k === "taxonomy" ? $("taxonomy").checked : $("inner").checked)) continue;
+    const line = document.createElement("span"); line.className = "line";
+    line.style.borderTopColor = s.c; line.style.borderTopStyle = s.d ? "dashed" : "solid";
+    row(line, s.label, edgeCounts[k] || 0);
+  }
+}
+
+function showDetails(key) {
+  const hit = index[key]; if (!hit) return;
+  if (hit.taxonomy) return showTaxonomyDetails(hit);
+  const { node: n, object: o } = hit;
+  const edgesTo = o.graph.edges.filter(e => e.to === n.id), edgesFrom = o.graph.edges.filter(e => e.from === n.id);
+  const joint = edgesTo.find(e => !e.part);
+  const rows = [["Object", `#${o.id} ${o.name}`], ["Annotation", n.annotation ?? "none"]];
+  if (n.description) rows.push(["Description", n.description]);
+  if (n.type_description) rows.push(["Type", n.type_description]);
+  if (n.purpose) rows.push(["Frame purpose", n.purpose]);
+  if (joint) rows.push(["Joint", `${n.joint} from ${joint.from}`]);
+  if (n.limits) rows.push(["Limits", `${n.limits[0]} … ${n.limits[1]}`]);
+  const wholes = edgesTo.filter(e => e.part).map(e => e.from), parts = edgesFrom.filter(e => e.part).map(e => e.to);
+  if (wholes.length) rows.push(["Part of", wholes.join(", ")]);
+  if (parts.length) rows.push(["Parts", parts.join(", ")]);
+  const h = document.createElement("h2"); h.textContent = n.id;
+  const dl = document.createElement("dl");
+  for (const [k, v] of rows) {
+    const dt = document.createElement("dt"), dd = document.createElement("dd");
+    dt.textContent = k; dd.textContent = v; dl.append(dt, dd);
+  }
+  $("details").lastElementChild.replaceChildren(h, dl);
+  $("details").style.display = "block";
+}
+function showTaxonomyDetails(hit) {
+  const objects = hit.members.map(i => OBJECTS[i]);
+  const rows = [["Kind", GROUPS[hit.taxonomy].label], ["Objects", String(objects.length)]];
+  if (hit.taxonomy !== "category") {
+    const categories = [...new Set(objects.map(o => o.category_title))];
+    rows.push(["Categories", categories.join(", ")]);
+  }
+  const annotations = {};
+  objects.forEach(o => o.graph.nodes.forEach(n => {
+    if (n.annotation) annotations[n.annotation] = (annotations[n.annotation] || 0) + 1;
+  }));
+  rows.push(["Annotations", Object.entries(annotations).sort((a, b) => b[1] - a[1])
+    .map(([k, v]) => `${v}× ${k}`).join(", ")]);
+  const h = document.createElement("h2"); h.textContent = hit.label;
+  const dl = document.createElement("dl");
+  for (const [k, v] of rows) {
+    const dt = document.createElement("dt"), dd = document.createElement("dd");
+    dt.textContent = k; dd.textContent = v; dl.append(dt, dd);
+  }
+  $("details").lastElementChild.replaceChildren(h, dl);
+  $("details").style.display = "block";
+}
+
+function hideDetails() { $("details").style.display = "none"; }
+
+function show(v) {
+  current = (v + VIEWS.length) % VIEWS.length;
+  $("view").value = String(current);
+  try { history.replaceState(null, "", "#" + VIEWS[current].key); } catch (e) {}
+  $("search").value = "";
+  build();
+}
+
+if (!OBJECTS.length) {
+  $("net").innerHTML = '<p style="padding:80px 16px;color:var(--muted)">No objects in this page.</p>';
+} else {
+  fillViews();
+  $("view").addEventListener("change", e => show(+e.target.value));
+  $("prev").addEventListener("click", () => show(current - 1));
+  $("next").addEventListener("click", () => show(current + 1));
+  for (const id of ["taxonomy", "inner", "frames", "joints", "parts", "tree"]) $(id).addEventListener("change", build);
+  $("details").querySelector(".close").addEventListener("click", hideDetails);
+  $("search").addEventListener("change", e => {
+    const q = e.target.value.trim(); if (!q || !network) return;
+    const keys = Object.keys(index);
+    const key = keys.find(k => k === q || k.endsWith("/" + q)) || keys.find(k => k.includes(q));
+    if (!key) return;
+    network.selectNodes([key]); network.focus(key, { scale: 1.3, animation: { duration: 500 } });
+    showDetails(key);
+  });
+  document.addEventListener("keydown", e => {
+    if (e.target.matches("input, select")) return;
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
+  });
+  const fromHash = VIEWS.findIndex(v => v.key === decodeURIComponent(location.hash.slice(1)));
+  show(fromHash >= 0 ? fromHash : VIEWS.findIndex(v => v.single));
+}
+</script>
+</body>
+</html>

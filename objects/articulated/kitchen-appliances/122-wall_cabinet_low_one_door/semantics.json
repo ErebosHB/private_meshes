@@ -1,0 +1,37 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "122",
+  "name": "Wall Cabinet, Low, One Door",
+  "type": "wall cabinet",
+  "category": "kitchen-appliances",
+  "category_title": "Kitchen & Appliances",
+  "group": "Kitchen & Appliances"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "wall_cabinet_low_one_door_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "wall_cabinet_low_one_door_door",
+   "annotation": "Door",
+   "attached_to": "wall_cabinet_low_one_door_body",
+   "part_of": "wall_cabinet_low_one_door_body"
+  },
+  {
+   "link": "wall_cabinet_low_one_door_door_grip",
+   "annotation": "Handle",
+   "attached_to": "wall_cabinet_low_one_door_door",
+   "part_of": "wall_cabinet_low_one_door_door"
+  }
+ ]
+}

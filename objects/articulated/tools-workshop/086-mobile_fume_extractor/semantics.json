@@ -1,0 +1,94 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "086",
+  "name": "Mobile Fume Extractor",
+  "type": "fume extractor",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "mobile_fume_extractor_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Mobile Fume Extractor",
+   "type_description": "fume extractor",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_filter_door",
+   "annotation": "Door",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_dust_tray",
+   "annotation": "Drawer",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_power_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power switch",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_castor_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 1",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_castor_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 2",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_castor_3",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 3",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_castor_4",
+   "annotation": "NaturalLanguageDescription",
+   "description": "castor 4",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_push_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_fume_extractor_body",
+   "part_of": null
+  },
+  {
+   "link": "mobile_fume_extractor_filter_door_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_fume_extractor_filter_door",
+   "part_of": "mobile_fume_extractor_filter_door"
+  },
+  {
+   "link": "mobile_fume_extractor_dust_tray_grip",
+   "annotation": "Handle",
+   "attached_to": "mobile_fume_extractor_dust_tray",
+   "part_of": "mobile_fume_extractor_dust_tray"
+  }
+ ]
+}

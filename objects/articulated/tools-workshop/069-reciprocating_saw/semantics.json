@@ -1,0 +1,60 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "069",
+  "name": "Reciprocating Saw",
+  "type": "reciprocating saw",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "reciprocating_saw_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Reciprocating Saw",
+   "type_description": "reciprocating saw",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "reciprocating_saw_plunger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "plunger",
+   "attached_to": "reciprocating_saw_body",
+   "part_of": null
+  },
+  {
+   "link": "reciprocating_saw_shoe",
+   "annotation": "NaturalLanguageDescription",
+   "description": "shoe",
+   "attached_to": "reciprocating_saw_body",
+   "part_of": null
+  },
+  {
+   "link": "reciprocating_saw_trigger",
+   "annotation": "NaturalLanguageDescription",
+   "description": "trigger",
+   "attached_to": "reciprocating_saw_body",
+   "part_of": null
+  },
+  {
+   "link": "reciprocating_saw_rear_grip",
+   "annotation": "Handle",
+   "attached_to": "reciprocating_saw_body",
+   "part_of": null
+  },
+  {
+   "link": "reciprocating_saw_front_boot_grip",
+   "annotation": "Handle",
+   "attached_to": "reciprocating_saw_body",
+   "part_of": null
+  }
+ ]
+}

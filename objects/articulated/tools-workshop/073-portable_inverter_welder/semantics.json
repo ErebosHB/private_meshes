@@ -1,0 +1,67 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "073",
+  "name": "Portable Inverter Welder",
+  "type": "inverter welder",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Door": "semantic_digital_twin.semantic_annotations.semantic_annotations.Door",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "portable_inverter_welder_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Portable Inverter Welder",
+   "type_description": "inverter welder",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "portable_inverter_welder_carry_handle",
+   "annotation": "NaturalLanguageDescription",
+   "description": "carry handle",
+   "attached_to": "portable_inverter_welder_body",
+   "part_of": null
+  },
+  {
+   "link": "portable_inverter_welder_panel_cover",
+   "annotation": "Door",
+   "attached_to": "portable_inverter_welder_body",
+   "part_of": null
+  },
+  {
+   "link": "portable_inverter_welder_current_knob",
+   "annotation": "NaturalLanguageDescription",
+   "description": "current knob",
+   "attached_to": "portable_inverter_welder_body",
+   "part_of": null
+  },
+  {
+   "link": "portable_inverter_welder_power_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power switch",
+   "attached_to": "portable_inverter_welder_body",
+   "part_of": null
+  },
+  {
+   "link": "portable_inverter_welder_carry_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "portable_inverter_welder_carry_handle",
+   "part_of": null
+  },
+  {
+   "link": "portable_inverter_welder_panel_cover_grip",
+   "annotation": "Handle",
+   "attached_to": "portable_inverter_welder_panel_cover",
+   "part_of": "portable_inverter_welder_panel_cover"
+  }
+ ]
+}

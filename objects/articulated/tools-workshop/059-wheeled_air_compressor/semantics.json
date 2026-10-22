@@ -1,0 +1,68 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "059",
+  "name": "Wheeled Air Compressor",
+  "type": "air compressor",
+  "category": "tools-workshop",
+  "category_title": "Tools & Workshop",
+  "group": "Tools & Workshop"
+ },
+ "annotation_classes": {
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "NaturalLanguageDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageDescription",
+  "NaturalLanguageWithTypeDescription": "semantic_digital_twin.semantic_annotations.natural_language.NaturalLanguageWithTypeDescription"
+ },
+ "annotations": [
+  {
+   "link": "wheeled_air_compressor_body",
+   "annotation": "NaturalLanguageWithTypeDescription",
+   "description": "Wheeled Air Compressor",
+   "type_description": "air compressor",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "wheeled_air_compressor_wheel_1",
+   "annotation": "NaturalLanguageDescription",
+   "description": "wheel 1",
+   "attached_to": "wheeled_air_compressor_body",
+   "part_of": null
+  },
+  {
+   "link": "wheeled_air_compressor_wheel_2",
+   "annotation": "NaturalLanguageDescription",
+   "description": "wheel 2",
+   "attached_to": "wheeled_air_compressor_body",
+   "part_of": null
+  },
+  {
+   "link": "wheeled_air_compressor_pull_handle",
+   "annotation": "NaturalLanguageDescription",
+   "description": "pull handle",
+   "attached_to": "wheeled_air_compressor_body",
+   "part_of": null
+  },
+  {
+   "link": "wheeled_air_compressor_regulator_knob",
+   "annotation": "NaturalLanguageDescription",
+   "description": "regulator knob",
+   "attached_to": "wheeled_air_compressor_body",
+   "part_of": null
+  },
+  {
+   "link": "wheeled_air_compressor_power_switch",
+   "annotation": "NaturalLanguageDescription",
+   "description": "power switch",
+   "attached_to": "wheeled_air_compressor_body",
+   "part_of": null
+  },
+  {
+   "link": "wheeled_air_compressor_pull_handle_grip",
+   "annotation": "Handle",
+   "attached_to": "wheeled_air_compressor_pull_handle",
+   "part_of": null
+  }
+ ]
+}

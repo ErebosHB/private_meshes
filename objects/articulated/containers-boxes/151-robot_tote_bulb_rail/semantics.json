@@ -1,0 +1,30 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "151",
+  "name": "Robot Tote with Bulb Rail",
+  "type": "robot tote",
+  "category": "containers-boxes",
+  "category_title": "Containers & Boxes",
+  "group": "Material & Logistics"
+ },
+ "annotation_classes": {
+  "Container": "semantic_digital_twin.semantic_annotations.semantic_annotations.Container",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "robot_tote_bulb_rail_body",
+   "annotation": "Container",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "robot_tote_bulb_rail_rail_grip",
+   "annotation": "Handle",
+   "attached_to": "robot_tote_bulb_rail_body",
+   "part_of": null
+  }
+ ]
+}

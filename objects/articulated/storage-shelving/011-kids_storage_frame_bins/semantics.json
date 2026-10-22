@@ -1,0 +1,97 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "011",
+  "name": "Kids' Storage Frame with Bins",
+  "type": "bin storage frame",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle",
+  "Shelf": "semantic_digital_twin.semantic_annotations.semantic_annotations.Shelf"
+ },
+ "annotations": [
+  {
+   "link": "kids_storage_frame_bins_body",
+   "annotation": "Shelf",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "kids_storage_frame_bins_left_bottom_bin",
+   "annotation": "Drawer",
+   "attached_to": "kids_storage_frame_bins_body",
+   "part_of": "kids_storage_frame_bins_body"
+  },
+  {
+   "link": "kids_storage_frame_bins_left_middle_bin",
+   "annotation": "Drawer",
+   "attached_to": "kids_storage_frame_bins_body",
+   "part_of": "kids_storage_frame_bins_body"
+  },
+  {
+   "link": "kids_storage_frame_bins_left_top_bin",
+   "annotation": "Drawer",
+   "attached_to": "kids_storage_frame_bins_body",
+   "part_of": "kids_storage_frame_bins_body"
+  },
+  {
+   "link": "kids_storage_frame_bins_right_bottom_bin",
+   "annotation": "Drawer",
+   "attached_to": "kids_storage_frame_bins_body",
+   "part_of": "kids_storage_frame_bins_body"
+  },
+  {
+   "link": "kids_storage_frame_bins_right_middle_bin",
+   "annotation": "Drawer",
+   "attached_to": "kids_storage_frame_bins_body",
+   "part_of": "kids_storage_frame_bins_body"
+  },
+  {
+   "link": "kids_storage_frame_bins_right_top_bin",
+   "annotation": "Drawer",
+   "attached_to": "kids_storage_frame_bins_body",
+   "part_of": "kids_storage_frame_bins_body"
+  },
+  {
+   "link": "kids_storage_frame_bins_left_bottom_bin_grip",
+   "annotation": "Handle",
+   "attached_to": "kids_storage_frame_bins_left_bottom_bin",
+   "part_of": "kids_storage_frame_bins_left_bottom_bin"
+  },
+  {
+   "link": "kids_storage_frame_bins_left_middle_bin_grip",
+   "annotation": "Handle",
+   "attached_to": "kids_storage_frame_bins_left_middle_bin",
+   "part_of": "kids_storage_frame_bins_left_middle_bin"
+  },
+  {
+   "link": "kids_storage_frame_bins_left_top_bin_grip",
+   "annotation": "Handle",
+   "attached_to": "kids_storage_frame_bins_left_top_bin",
+   "part_of": "kids_storage_frame_bins_left_top_bin"
+  },
+  {
+   "link": "kids_storage_frame_bins_right_bottom_bin_grip",
+   "annotation": "Handle",
+   "attached_to": "kids_storage_frame_bins_right_bottom_bin",
+   "part_of": "kids_storage_frame_bins_right_bottom_bin"
+  },
+  {
+   "link": "kids_storage_frame_bins_right_middle_bin_grip",
+   "annotation": "Handle",
+   "attached_to": "kids_storage_frame_bins_right_middle_bin",
+   "part_of": "kids_storage_frame_bins_right_middle_bin"
+  },
+  {
+   "link": "kids_storage_frame_bins_right_top_bin_grip",
+   "annotation": "Handle",
+   "attached_to": "kids_storage_frame_bins_right_top_bin",
+   "part_of": "kids_storage_frame_bins_right_top_bin"
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "generator": "scripts/annotate_semantics.py",
+ "urdf": "model.urdf",
+ "object": {
+  "id": "013",
+  "name": "Shoe Cabinet with Tip-out Compartments",
+  "type": "shoe cabinet",
+  "category": "storage-shelving",
+  "category_title": "Storage & Shelving",
+  "group": "Furniture"
+ },
+ "annotation_classes": {
+  "Cabinet": "semantic_digital_twin.semantic_annotations.semantic_annotations.Cabinet",
+  "Drawer": "semantic_digital_twin.semantic_annotations.semantic_annotations.Drawer",
+  "Handle": "semantic_digital_twin.semantic_annotations.semantic_annotations.Handle"
+ },
+ "annotations": [
+  {
+   "link": "shoe_cabinet_tipout_body",
+   "annotation": "Cabinet",
+   "attached_to": null,
+   "part_of": null
+  },
+  {
+   "link": "shoe_cabinet_tipout_lower_compartment",
+   "annotation": "Drawer",
+   "attached_to": "shoe_cabinet_tipout_body",
+   "part_of": "shoe_cabinet_tipout_body"
+  },
+  {
+   "link": "shoe_cabinet_tipout_upper_compartment",
+   "annotation": "Drawer",
+   "attached_to": "shoe_cabinet_tipout_body",
+   "part_of": "shoe_cabinet_tipout_body"
+  },
+  {
+   "link": "shoe_cabinet_tipout_lower_compartment_grip",
+   "annotation": "Handle",
+   "attached_to": "shoe_cabinet_tipout_lower_compartment",
+   "part_of": "shoe_cabinet_tipout_lower_compartment"
+  },
+  {
+   "link": "shoe_cabinet_tipout_upper_compartment_grip",
+   "annotation": "Handle",
+   "attached_to": "shoe_cabinet_tipout_upper_compartment",
+   "part_of": "shoe_cabinet_tipout_upper_compartment"
+  }
+ ]
+}
