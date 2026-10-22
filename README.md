@@ -6,6 +6,10 @@ Licensed under the [BSD 3-Clause License](LICENSE.txt), Copyright (c) 2026, Vane
 lists what the licence covers, the third-party exclusions, and the objects #001-#150
 whose licence is still pending.
 
+The independent object collection also has an automatically generated web
+catalogue. See [site/README.md](site/README.md) for the GitHub Pages setup, local
+preview commands and instructions for adding objects.
+
 This repository contains the assembled laboratory and its independent equipment:
 
 - [`aicor_medical_lab`](aicor_medical_lab/README.md): the room, workbench, articulated

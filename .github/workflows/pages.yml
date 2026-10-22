@@ -1,0 +1,66 @@
+name: Build and deploy object catalogue
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'objects_individually/**'
+      - 'site/**'
+      - 'scripts/build_site.py'
+      - 'tests/**'
+      - 'NOTICE.md'
+      - 'LICENSE.txt'
+      - '.github/workflows/pages.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'objects_individually/**'
+      - 'site/**'
+      - 'scripts/build_site.py'
+      - 'tests/**'
+      - 'NOTICE.md'
+      - 'LICENSE.txt'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catalogue-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Test the catalogue builder
+        run: python3 -m unittest discover -s tests -v
+      - name: Check browser JavaScript
+        run: node --check site/app.js
+      - name: Build and validate all objects
+        run: python3 scripts/build_site.py
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
