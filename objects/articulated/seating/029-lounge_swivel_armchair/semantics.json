@@ -20,6 +20,8 @@
    "annotation": "NaturalLanguageWithTypeDescription",
    "description": "Lounge Swivel Armchair",
    "type_description": "armchair",
+   "concept": "Armchair",
+   "concept_status": "unusable",
    "attached_to": null,
    "part_of": null
   },

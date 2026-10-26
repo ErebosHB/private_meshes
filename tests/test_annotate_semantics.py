@@ -7,8 +7,8 @@ from dataclasses import asdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from annotate_semantics import (SEMANTICS_FILE, SOURCE, moving_part_class, plan_object,
-                                read_categories, read_objects, write_html)
+from annotate_semantics import (CONCEPTS, SEMANTICS_FILE, SOURCE, moving_part_class, plan_object,
+                                read_categories, read_objects, root_class, write_html)
 
 
 class MovingPartTests(unittest.TestCase):
@@ -86,9 +86,13 @@ class SemanticsFileTests(unittest.TestCase):
                 self.assertEqual(document['object']['category'], obj['category'])
                 self.assertEqual(document['object']['group'], categories[obj['category']]['group'], regenerate)
                 planned = [{k: v for k, v in asdict(p).items() if v is not None} for p in plan_object(obj)]
-                stored = [{k: v for k, v in a.items() if k not in ('attached_to', 'part_of')}
+                stored = [{k: v for k, v in a.items() if k not in ('attached_to', 'part_of', 'concept_status')}
                           for a in document['annotations']]
                 self.assertEqual(stored, planned, regenerate)
+                for annotation in document['annotations']:
+                    if 'concept' in annotation:
+                        self.assertEqual(annotation['concept_status'],
+                                         CONCEPTS['concepts'][annotation['concept']]['cram'], regenerate)
                 self.assertEqual(set(document['annotation_classes']), {a['annotation'] for a in stored})
 
                 robot = ET.parse(folder / 'model.urdf').getroot()

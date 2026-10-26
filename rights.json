@@ -21,7 +21,7 @@
       "covers": [
         "objects/articulated #001-#150 (each folder has its own LICENSE.txt)",
         "objects/articulated/PROMPT.md, collection.json and the catalogue READMEs as contributed in commit c9cb1b3",
-        "the semantic annotations: scripts/annotate_semantics.py, scripts/annotation_graph.html, tests/test_annotate_semantics.py, every semantics.json, and the category groups in collection.json"
+        "the semantic annotations: scripts/annotate_semantics.py, scripts/annotation_graph.html, scripts/sync_semantics.py, tests/test_annotate_semantics.py, tests/test_sync_semantics.py, objects/articulated/semantic_concepts.json, every semantics.json, and the category groups in collection.json"
       ]
     }
   ]

@@ -14,7 +14,8 @@ Other code can call ``load_annotated_world(folder)`` to get an annotated World.
 ``--write-semantics`` stores the result as ``semantics.json`` in every object folder, so
 the annotations can be read without running anything; regenerate it after changing a
 model or the rules below. The groups above the categories come from ``group`` in
-``collection.json``.
+``collection.json``; the class for each object type comes from ``semantic_concepts.json``,
+which ``scripts/sync_semantics.py`` keeps in step with cram2.
 """
 from __future__ import annotations
 
@@ -30,46 +31,18 @@ from typing import Optional
 
 SOURCE = Path(__file__).resolve().parents[1] / "objects" / "articulated"
 
-# Object type (collection.json fingerprint) -> semantic_annotations class. Types not
-# listed fall back to NaturalLanguageWithTypeDescription, as the RoboCasa and ArtVIP
-# loaders do.
-ROOT_CLASSES = {
-    "Dishwasher": {"dishwasher"},
-    "Fridge": {"fridge-freezer", "freezer", "chest freezer"},
-    "Oven": {"oven", "cooker", "electrode oven", "reflow oven"},
-    "Microwave": {"microwave"},
-    "Hood": {"extractor hood"},
-    "Toaster": {"toaster"},
-    "Kettle": {"kettle"},
-    "Wardrobe": {"wardrobe"},
-    "Dresser": {"chest of drawers", "kitchen dresser"},
-    "Shelf": {
-        "cube shelf", "shelving unit", "utility shelving", "mobile shelving",
-        "sliding-door shelf", "shelving with base cabinet", "two-sided tote shelving",
-        "pallet racking", "cantilever rack", "bin storage frame", "tilt bin rack",
-        "mobile tray rack",
-    },
-    "Cabinet": {
-        "display cabinet", "filing cabinet", "hazardous substance cabinet",
-        "hazardous materials depot", "key cabinet", "kitchen base cabinet",
-        "low drawer cabinet", "mobile pedestal", "pantry cabinet", "shoe cabinet",
-        "sideboard", "small-parts cabinet", "tall cabinet", "wall cabinet",
-        "wall cabinet combination", "media bench", "warming drawer", "kitchen island",
-        "kitchen run with appliances", "kitchen run, cabinets only",
-        "l-shaped kitchen with appliances", "l-shaped kitchen, cabinets only",
-        "mini kitchen",
-    },
-    "Desk": {"desk"},
-    "Table": {"meeting table", "packing table", "standing table"},
-    # Chair, OfficeChair and Armchair have no root body yet, so chairs use the fallback.
-    "TrashCan": {"kitchen waste bin"},
-    "Container": {
-        "attached-lid container", "folding crate", "robot tote", "shipping carton",
-        "gift box with blister insert", "open-top drum",
-    },
-}
-ROOT_CLASS_BY_TYPE = {t: cls for cls, types in ROOT_CLASSES.items() for t in types}
-FALLBACK_ROOT_CLASS = "NaturalLanguageWithTypeDescription"
+CONCEPTS_FILE = SOURCE / "semantic_concepts.json"
+AVAILABLE = "available"
+
+
+def read_concepts(path: Path = CONCEPTS_FILE) -> dict:
+    """The concept registry: which class each object type should get, and whether cram2
+    has it. ``scripts/sync_semantics.py`` keeps it in step with cram2."""
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+CONCEPTS = read_concepts()
+FALLBACK_ROOT_CLASS = CONCEPTS["fallback"]
 
 # Words in a moving link's name that make it a door or a drawer. The last of these
 # words in the name decides, so ``right_door_handle`` and ``left_door_lever`` are
@@ -88,6 +61,22 @@ class PlannedAnnotation:
     annotation: str
     description: Optional[str] = None
     type_description: Optional[str] = None
+    concept: Optional[str] = None
+    """The class the link should have once cram2 provides it, when ``annotation`` is the
+    fallback in its place."""
+
+
+def root_class(object_type: str, concepts: dict = CONCEPTS) -> tuple[str, Optional[str]]:
+    """The class to annotate an object's root with, and the concept it stands in for.
+
+    :return: ``(concept, None)`` when cram2 has a usable class for the object's type,
+        otherwise ``(fallback, concept)``, with ``concept`` None for types no concept
+        is assigned to.
+    """
+    concept = concepts["object_types"].get(object_type)
+    if concept is not None and concepts["concepts"][concept]["cram"] == AVAILABLE:
+        return concept, None
+    return concepts["fallback"], concept
 
 
 def name_words(link: str, slug: str) -> list[str]:
@@ -117,11 +106,10 @@ def plan_object(obj: dict, source: Path = SOURCE) -> list[PlannedAnnotation]:
     if len(roots) != 1:
         raise ValueError(f"{obj['folder']}: expected one root link, found {roots}")
     object_type = obj["fingerprint"]["type"]
-    root_class = ROOT_CLASS_BY_TYPE.get(object_type, FALLBACK_ROOT_CLASS)
-    plan = [PlannedAnnotation(
-        roots[0], root_class,
-        obj["name"] if root_class == FALLBACK_ROOT_CLASS else None,
-        object_type if root_class == FALLBACK_ROOT_CLASS else None)]
+    cls, concept = root_class(object_type)
+    fallback = cls == FALLBACK_ROOT_CLASS
+    plan = [PlannedAnnotation(roots[0], cls, obj["name"] if fallback else None,
+                              object_type if fallback else None, concept)]
     grips = {f["name"] for f in obj["frames"] if f["purpose"] == "grasp"}
     for joint in robot.findall("joint"):
         link, joint_type = joint.find("child").get("link"), joint.get("type")
@@ -145,7 +133,8 @@ def read_objects(source: Path = SOURCE) -> list[dict]:
 
 def _annotation_classes() -> dict:
     from semantic_digital_twin.semantic_annotations import natural_language, semantic_annotations
-    names = set(ROOT_CLASSES) | {FALLBACK_ROOT_CLASS, "NaturalLanguageDescription", "Door", "Drawer", "Handle"}
+    names = {c for c, entry in CONCEPTS["concepts"].items() if entry["cram"] == AVAILABLE}
+    names |= {FALLBACK_ROOT_CLASS, "NaturalLanguageDescription", "Door", "Drawer", "Handle"}
     return {n: getattr(semantic_annotations, n, None) or getattr(natural_language, n)
             for n in names}
 
@@ -320,6 +309,10 @@ def semantics_document(obj: dict, plan: list[PlannedAnnotation],
             item["description"] = planned.description
         if planned.type_description is not None:
             item["type_description"] = planned.type_description
+        if planned.concept is not None:
+            # the class this link waits for; see semantic_concepts.json for its state in cram2
+            item["concept"] = planned.concept
+            item["concept_status"] = CONCEPTS["concepts"][planned.concept]["cram"]
         item["attached_to"] = parents.get(planned.link)
         item["part_of"] = part_of[planned.link]
         annotations.append(item)

@@ -24,7 +24,8 @@ Licensed under the BSD 3-Clause License, see [LICENSE.txt](LICENSE.txt) (SPDX: `
   them (commit c9cb1b3, pull request #1, 2026-10-19). Each of these object folders carries
   its own `LICENSE.txt` and names him in its `NOTICE.md` and `README.md`.
 - The semantic annotations: `scripts/annotate_semantics.py`, `scripts/annotation_graph.html`,
-  `tests/test_annotate_semantics.py`, the `semantics.json` file in every object folder, the
+  `scripts/sync_semantics.py`, `tests/test_annotate_semantics.py`, `tests/test_sync_semantics.py`,
+  `objects/articulated/semantic_concepts.json`, the `semantics.json` file in every object folder, the
   `group` of each category in `collection.json` and the "Semantic annotations" section of
   `objects/articulated/README.md`. A `semantics.json` describes the model in its folder;
   the model itself stays with the copyright holder named in that folder's `NOTICE.md`.

@@ -5,3 +5,5 @@ __pycache__/
 /laboratory_devices
 /aicor_medical_lab
 /centrifuge_manuals
+# Pull requests prepared by scripts/sync_semantics.py
+/semantic-sync/

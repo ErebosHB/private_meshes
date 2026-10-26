@@ -1,0 +1,180 @@
+{
+ "about": [
+  "Which semantic_digital_twin class each object type should be annotated with, and whether",
+  "cram2 has it. Objects whose concept is not 'available' are annotated with the fallback",
+  "class and record the concept in semantics.json. scripts/sync_semantics.py compares this",
+  "file with a cram2 checkout and prepares one small pull request per difference.",
+  "'checked' is the cram2 commit the registry was set up against; 'since' on a concept is the",
+  "commit from which cram2 provides it, recorded by the pull request that adopted it."
+ ],
+ "cram": {
+  "repository": "cram2/cognitive_robot_abstract_machine",
+  "branch": "main",
+  "module": "semantic_digital_twin.semantic_annotations.semantic_annotations",
+  "checked": "1bc4e5b7675446821e14b60416086344e1474385"
+ },
+ "fallback": "NaturalLanguageWithTypeDescription",
+ "concepts": {
+  "Armchair": {
+   "cram": "unusable"
+  },
+  "Cabinet": {
+   "cram": "available"
+  },
+  "Chair": {
+   "cram": "unusable",
+   "proposal": {
+    "add_bases": [
+     "HasRootBody"
+    ]
+   }
+  },
+  "Container": {
+   "cram": "available"
+  },
+  "Desk": {
+   "cram": "available"
+  },
+  "Dishwasher": {
+   "cram": "available"
+  },
+  "Dresser": {
+   "cram": "available"
+  },
+  "Fridge": {
+   "cram": "available"
+  },
+  "Hood": {
+   "cram": "available"
+  },
+  "Kettle": {
+   "cram": "available"
+  },
+  "Microwave": {
+   "cram": "available"
+  },
+  "OfficeChair": {
+   "cram": "unusable"
+  },
+  "Oven": {
+   "cram": "available"
+  },
+  "Shelf": {
+   "cram": "available"
+  },
+  "Table": {
+   "cram": "available"
+  },
+  "Toaster": {
+   "cram": "available"
+  },
+  "TrashCan": {
+   "cram": "available"
+  },
+  "TumbleDryer": {
+   "cram": "missing",
+   "proposal": {
+    "bases": [
+     "HasCaseAsRootBody",
+     "HasDoors",
+     "HasDrawers"
+    ],
+    "hole_direction": "NEGATIVE_X",
+    "doc": [
+     "A tumble dryer is a household appliance that dries laundry in a rotating drum.",
+     "",
+     "It typically has a front door to load the drum and a pull-out water tank."
+    ],
+    "after": "Fridge"
+   }
+  },
+  "Wardrobe": {
+   "cram": "available"
+  },
+  "WashingMachine": {
+   "cram": "missing",
+   "proposal": {
+    "bases": [
+     "HasCaseAsRootBody",
+     "HasDoors",
+     "HasDrawers"
+    ],
+    "hole_direction": "NEGATIVE_X",
+    "doc": [
+     "A washing machine is a household appliance that washes laundry in a drum.",
+     "",
+     "It typically has a front door to load the drum and a pull-out detergent drawer."
+    ],
+    "after": "Dishwasher"
+   }
+  }
+ },
+ "object_types": {
+  "armchair": "Armchair",
+  "attached-lid container": "Container",
+  "bar stool": "Chair",
+  "bin storage frame": "Shelf",
+  "cantilever rack": "Shelf",
+  "chest freezer": "Fridge",
+  "chest of drawers": "Dresser",
+  "cooker": "Oven",
+  "cube shelf": "Shelf",
+  "desk": "Desk",
+  "dishwasher": "Dishwasher",
+  "display cabinet": "Cabinet",
+  "electrode oven": "Oven",
+  "extractor hood": "Hood",
+  "filing cabinet": "Cabinet",
+  "folding crate": "Container",
+  "freezer": "Fridge",
+  "fridge-freezer": "Fridge",
+  "gift box with blister insert": "Container",
+  "hazardous materials depot": "Cabinet",
+  "hazardous substance cabinet": "Cabinet",
+  "kettle": "Kettle",
+  "key cabinet": "Cabinet",
+  "kitchen base cabinet": "Cabinet",
+  "kitchen dresser": "Dresser",
+  "kitchen island": "Cabinet",
+  "kitchen run with appliances": "Cabinet",
+  "kitchen run, cabinets only": "Cabinet",
+  "kitchen waste bin": "TrashCan",
+  "l-shaped kitchen with appliances": "Cabinet",
+  "l-shaped kitchen, cabinets only": "Cabinet",
+  "low drawer cabinet": "Cabinet",
+  "media bench": "Cabinet",
+  "meeting table": "Table",
+  "microwave": "Microwave",
+  "mini kitchen": "Cabinet",
+  "mobile pedestal": "Cabinet",
+  "mobile shelving": "Shelf",
+  "mobile tray rack": "Shelf",
+  "office chair": "OfficeChair",
+  "open-top drum": "Container",
+  "oven": "Oven",
+  "packing table": "Table",
+  "pallet racking": "Shelf",
+  "pantry cabinet": "Cabinet",
+  "reflow oven": "Oven",
+  "robot tote": "Container",
+  "shelving unit": "Shelf",
+  "shelving with base cabinet": "Shelf",
+  "shipping carton": "Container",
+  "shoe cabinet": "Cabinet",
+  "sideboard": "Cabinet",
+  "sliding-door shelf": "Shelf",
+  "small-parts cabinet": "Cabinet",
+  "standing table": "Table",
+  "tall cabinet": "Cabinet",
+  "tilt bin rack": "Shelf",
+  "toaster": "Toaster",
+  "tumble dryer": "TumbleDryer",
+  "two-sided tote shelving": "Shelf",
+  "utility shelving": "Shelf",
+  "wall cabinet": "Cabinet",
+  "wall cabinet combination": "Cabinet",
+  "wardrobe": "Wardrobe",
+  "warming drawer": "Cabinet",
+  "washing machine": "WashingMachine"
+ }
+}

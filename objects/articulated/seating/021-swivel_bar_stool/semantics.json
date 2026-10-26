@@ -20,6 +20,8 @@
    "annotation": "NaturalLanguageWithTypeDescription",
    "description": "Swivel Bar Stool",
    "type_description": "bar stool",
+   "concept": "Chair",
+   "concept_status": "unusable",
    "attached_to": null,
    "part_of": null
   },

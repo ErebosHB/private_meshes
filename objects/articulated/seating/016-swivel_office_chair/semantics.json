@@ -20,6 +20,8 @@
    "annotation": "NaturalLanguageWithTypeDescription",
    "description": "Swivel Office Chair",
    "type_description": "office chair",
+   "concept": "OfficeChair",
+   "concept_status": "unusable",
    "attached_to": null,
    "part_of": null
   },

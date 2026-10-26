@@ -21,6 +21,8 @@
    "annotation": "NaturalLanguageWithTypeDescription",
    "description": "Tumble Dryer",
    "type_description": "tumble dryer",
+   "concept": "TumbleDryer",
+   "concept_status": "missing",
    "attached_to": null,
    "part_of": null
   },

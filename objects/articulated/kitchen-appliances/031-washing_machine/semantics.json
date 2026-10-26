@@ -22,6 +22,8 @@
    "annotation": "NaturalLanguageWithTypeDescription",
    "description": "Front-Load Washing Machine",
    "type_description": "washing machine",
+   "concept": "WashingMachine",
+   "concept_status": "missing",
    "attached_to": null,
    "part_of": null
   },
