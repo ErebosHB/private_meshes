@@ -68,4 +68,10 @@ python3 scripts/sync_semantics.py prepare --cram <cram2 checkout>   # writes sem
 | `withdraw` | private_meshes | falls back from a class cram2 no longer provides |
 | `map-type` | private_meshes | assigns an existing cram2 class to an object type without a concept |
 
-Each folder holds a `PR.md` (description and the commands to apply, test, commit and open it) and a `change.patch`. Every pull request touches only its own concept, so they can be reviewed and merged in any order. The loop for a new concept: add it to the registry with `"cram": "missing"` and a `proposal`, run `prepare`, open the cram2 pull request; once it is merged, `prepare` offers the `adopt` pull request for this repository. The same script loads an annotated `World` (`load_annotated_world`) and draws an interactive graph of the whole collection (`--html`).
+Each folder holds a `PR.md` (description and the commands to apply, test, commit and open it) and a `change.patch`. Every pull request touches only its own concept, so they can be reviewed and merged in any order. `prepare` recomputes everything on each run and replaces the folders of its previous run, so a merged change disappears on its own.
+
+The loop for a new concept:
+
+1. Add the object type to `object_types` and the concept with `"cram": "missing"` and a `proposal`. `status` lists every object type the registry does not mention yet, with similar existing concepts as a hint; map a type to `null` to keep it on the fallback on purpose.
+2. Run `prepare` and open the cram2 pull request it describes. Record it on the concept as `"pull_request": "<URL>"`; later runs then list it as waiting instead of preparing it again.
+3. Once cram2 merges it, `prepare` offers the `adopt` pull request for this repository. If cram2 declines it, set `"cram": "declined"`: the objects keep the fallback and nothing is proposed again, unless cram2 gains the class later. The same script loads an annotated `World` (`load_annotated_world`) and draws an interactive graph of the whole collection (`--html`).

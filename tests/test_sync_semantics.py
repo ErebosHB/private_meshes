@@ -87,6 +87,38 @@ class FakeCramTests(unittest.TestCase):
         self.assertEqual(changes['adopt-dishwasher'].repository, 'private_meshes')
         self.assertEqual(changes['add-class-washing-machine'].repository, 'cram2')
 
+    def test_open_pull_requests_wait_and_declined_concepts_are_not_proposed_again(self):
+        url = 'https://github.com/cram2/x/pull/1'
+        self.registry['concepts']['WashingMachine']['pull_request'] = url
+        self.registry['concepts']['Chair']['cram'] = sync.DECLINED
+        changes = {c.slug: c for c in sync.compare(self.registry, self.cram, self.objects)}
+        self.assertEqual(changes['add-class-washing-machine'].pull_request, url)
+        self.assertNotIn('add-bases-chair', changes)
+        # merged after all: the open pull request no longer matters, the class is adopted
+        (self.root / sync.MODULE_FILE).write_text(MODULE + '\n\nclass WashingMachine(HasRootBody):\n    pass\n')
+        cram = sync.CramClasses.read(self.root)
+        changes = {c.slug: c for c in sync.compare(self.registry, cram, self.objects)}
+        self.assertIn('adopt-washing-machine', changes)
+        self.assertIsNone(changes['adopt-washing-machine'].pull_request)
+
+    def test_unassigned_types_are_listed_with_similar_concepts(self):
+        self.registry['object_types']['furniture'] = None  # decided: stays on the fallback
+        self.objects.append(obj('007', 'swivel chair'))
+        self.assertEqual(list(sync.unassigned_types(self.registry, self.objects)), ['sofa', 'swivel chair'])
+        self.assertEqual(sync.similar_concepts('swivel chair', self.registry, self.cram), ['Chair', 'OfficeChair'])
+
+    def test_prepare_replaces_its_earlier_folders_but_nothing_else(self):
+        out = self.root / 'out'
+        stale = out / '03-cram2-add-class-old-thing'
+        stale.mkdir(parents=True)
+        (stale / 'PR.md').write_text('old')
+        sync.clear_output(out)
+        self.assertEqual(list(out.iterdir()), [])
+        (out / 'notes.txt').write_text('mine')
+        with self.assertRaises(SystemExit):
+            sync.clear_output(out)
+        self.assertTrue((out / 'notes.txt').is_file())
+
     def test_cram_patches_apply_and_place_classes_after_their_anchor(self):
         subprocess.run(['git', 'init', '-q', str(self.root)], check=True)
         for change in sync.compare(self.registry, self.cram, self.objects):
@@ -122,14 +154,15 @@ class FakeCramTests(unittest.TestCase):
 class RegistryTests(unittest.TestCase):
     def test_registry_is_consistent(self):
         registry = json.loads(sync.REGISTRY.read_text(encoding='utf-8'))
-        statuses = {sync.AVAILABLE, sync.MISSING, sync.UNUSABLE}
+        statuses = {sync.AVAILABLE, sync.MISSING, sync.UNUSABLE, sync.DECLINED}
         for name, entry in registry['concepts'].items():
             self.assertIn(entry['cram'], statuses, name)
             proposal = entry.get('proposal', {})
             if 'bases' in proposal:
                 self.assertTrue(proposal['doc'], name)
         for object_type, concept in registry['object_types'].items():
-            self.assertIn(concept, registry['concepts'], object_type)
+            if concept is not None:  # null: kept on the fallback on purpose
+                self.assertIn(concept, registry['concepts'], object_type)
         types = {o['fingerprint']['type'] for o in json.loads(sync.COLLECTION.read_text())['objects']}
         self.assertLessEqual(set(registry['object_types']), types, 'object type no object has')
 

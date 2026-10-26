@@ -36,6 +36,10 @@ TEST_DIR = Path("test/semantic_digital_twin_test/test_semantic_annotations")
 # A class can annotate a body when it reaches this mixin, which declares ``root``.
 ROOT_MIXIN = "HasRootKinematicStructureEntity"
 AVAILABLE, MISSING, UNUSABLE = "available", "missing", "unusable"
+DECLINED = "declined"
+"""A concept cram2 turned down: kept on the fallback and not proposed again, unless cram2
+gains the class anyway."""
+FOLDER = re.compile(r"\d{2}-(cram2|private_meshes)-[a-z0-9-]+")
 GENERATE = "~/venvs/cram-env/bin/python scripts/annotate_semantics.py --write-semantics"
 
 
@@ -123,6 +127,8 @@ class Change:
     cram_status: str
     objects: list[dict]
     object_type: Optional[str] = None
+    pull_request: Optional[str] = None
+    """The pull request already opened for this change, as recorded in the registry."""
 
     @property
     def repository(self) -> str:
@@ -145,24 +151,50 @@ def compare(registry: dict, cram: CramClasses, objects: list[dict]) -> list[Chan
         expected, actual = entry["cram"], cram.status(concept)
         proposal = entry.get("proposal", {})
         users = by_concept.get(concept, [])
+        opened = entry.get("pull_request")
         if actual == AVAILABLE and expected != AVAILABLE:
             changes.append(Change("adopt", concept, actual, users))
         elif expected == AVAILABLE and actual != AVAILABLE:
             changes.append(Change("withdraw", concept, actual, users))
+        elif expected == DECLINED:
+            continue
         elif actual == MISSING and "bases" in proposal:
-            changes.append(Change("add-class", concept, actual, users))
+            changes.append(Change("add-class", concept, actual, users, pull_request=opened))
         elif actual == UNUSABLE and "add_bases" in proposal:
             # subclasses gain the root too, e.g. OfficeChair from Chair
             heirs = [o for c, objs in by_concept.items() if cram.inherits(c, concept) for o in objs]
-            changes.append(Change("add-bases", concept, actual, users + heirs))
+            changes.append(Change("add-bases", concept, actual, users + heirs, pull_request=opened))
     # cram2 may already have a class for a type no concept is assigned to yet
-    unassigned = {o["fingerprint"]["type"] for o in objects} - set(registry["object_types"])
-    for object_type in sorted(unassigned):
-        concept = "".join(w.capitalize() for w in re.split(r"[^a-z0-9]+", object_type.lower()) if w)
+    for object_type, users in unassigned_types(registry, objects).items():
+        concept = _camel(object_type)
         if concept not in registry["concepts"] and cram.status(concept) == AVAILABLE:
-            users = [o for o in objects if o["fingerprint"]["type"] == object_type]
             changes.append(Change("map-type", concept, AVAILABLE, users, object_type))
     return changes
+
+
+def _camel(object_type: str) -> str:
+    return "".join(w.capitalize() for w in re.split(r"[^a-z0-9]+", object_type.lower()) if w)
+
+
+def unassigned_types(registry: dict, objects: list[dict]) -> dict[str, list[dict]]:
+    """Object types the registry says nothing about, with their objects.
+
+    A type mapped to ``null`` is decided: it stays on the fallback on purpose."""
+    unassigned: dict[str, list[dict]] = {}
+    for obj in objects:
+        if obj["fingerprint"]["type"] not in registry["object_types"]:
+            unassigned.setdefault(obj["fingerprint"]["type"], []).append(obj)
+    return dict(sorted(unassigned.items()))
+
+
+def similar_concepts(object_type: str, registry: dict, cram: CramClasses) -> list[str]:
+    """Concepts and usable cram2 classes sharing a word with the type, as a hint:
+    ``dryer`` suggests TumbleDryer, ``sofa bed`` suggests Sofa and Bed."""
+    generic = {"machine", "unit", "station", "with"}  # name kinds of thing, not the thing
+    words = {w for w in re.split(r"[^a-z0-9]+", object_type.lower()) if len(w) > 2} - generic
+    candidates = set(registry["concepts"]) | {c for c in cram.annotations if cram.has_root(c)}
+    return sorted(c for c in candidates
+                  if words & {t.lower() for t in re.findall(r"[A-Z][a-z0-9]*", c)})
 
 
 # --- preparing pull requests --------------------------------------------------------------
@@ -300,8 +332,12 @@ def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str
                  f"git push -u <your fork> {branch}\n"
                  f"gh pr create --repo {registry['cram']['repository']} --base {registry['cram']['branch']} "
                  f"--title '{what}' --body-file <this folder>/PR.md")
-        after = ("Once merged, `sync_semantics.py` reports an `adopt` change for private_meshes, "
-                 "which switches these objects to the new class.")
+        after = (f"Once it is open, record it in `objects/articulated/semantic_concepts.json` as "
+                 f"`\"pull_request\": \"<its URL>\"` on `{change.concept}`, so that later runs list it "
+                 f"as waiting instead of preparing it again. Once merged, `sync_semantics.py` reports "
+                 f"an `adopt` change for private_meshes, which switches these objects to the new "
+                 f"class. If cram2 turns it down, set `\"cram\": \"{DECLINED}\"` instead: the objects "
+                 f"keep the fallback and the change is not proposed again.")
     else:
         patch, warnings = registry_patch(change, registry, cram), []
         if change.kind == "withdraw":
@@ -345,24 +381,56 @@ def main(argv: Optional[list[str]] = None) -> int:
     print(f"cram2 checkout {cram.root} at {commit[:9] if commit else 'unknown commit'}; "
           f"registry set up against {registry['cram']['checked'][:9]}")
     for concept, entry in registry["concepts"].items():
-        mark = "" if entry["cram"] == cram.status(concept) else "  ← differs"
+        mark = "" if entry["cram"] in (cram.status(concept), DECLINED) else "  ← differs"
         print(f"  {concept:22} registry {entry['cram']:9} cram2 {cram.status(concept):9}{mark}")
-    if not changes:
-        print("In step: no pull requests needed.")
-        return 0
-    print(f"{len(changes)} pull request(s):")
-    for number, change in enumerate(changes, 1):
-        print(f"  {number:02}. [{change.repository}] {change.slug} "
-              f"({len(change.objects)} object(s))")
+
+    unassigned = unassigned_types(registry, objects)
+    if unassigned:
+        print(f"{len(unassigned)} object type(s) without a concept (add them to object_types, "
+              "or map them to null to keep the fallback on purpose):")
+        for object_type, users in unassigned.items():
+            hints = similar_concepts(object_type, registry, cram)
+            ids = ", ".join(f"#{o['id']}" for o in users)
+            print(f"  {object_type:32} {ids}" + (f"   similar: {', '.join(hints)}" if hints else ""))
+
+    waiting = [c for c in changes if c.pull_request]
+    pending = [c for c in changes if not c.pull_request]
+    for change in waiting:
+        print(f"  waiting: [{change.repository}] {change.slug} is open as {change.pull_request}")
+    if not pending:
+        print("In step: no new pull requests needed.")
+    else:
+        print(f"{len(pending)} pull request(s) to open:")
+        for number, change in enumerate(pending, 1):
+            print(f"  {number:02}. [{change.repository}] {change.slug} "
+                  f"({len(change.objects)} object(s))")
     if args.command == "prepare":
-        for number, change in enumerate(changes, 1):
+        clear_output(args.out)
+        for number, change in enumerate(pending, 1):
             folder = args.out / f"{number:02}-{change.repository}-{change.slug}"
-            folder.mkdir(parents=True, exist_ok=True)
+            folder.mkdir(parents=True)
             text, patch = pull_request(change, registry, cram)
             (folder / "PR.md").write_text(text, encoding="utf-8")
             (folder / "change.patch").write_text(patch, encoding="utf-8")
-        print(f"Prepared in {args.out}; nothing was committed or pushed.")
+        print(f"Prepared in {args.out} (earlier folders removed); nothing was committed or pushed.")
     return 0
+
+
+def clear_output(out: Path) -> None:
+    """Empty ``out`` of earlier prepare runs, so merged or replaced pull requests do not
+    linger. Refuses when it holds anything prepare did not write."""
+    if not out.exists():
+        return
+    foreign = [p.name for p in out.iterdir()
+               if not (p.is_dir() and FOLDER.fullmatch(p.name)
+                       and {f.name for f in p.iterdir()} <= {"PR.md", "change.patch"})]
+    if foreign:
+        raise SystemExit(f"{out} holds files prepare did not write ({', '.join(sorted(foreign))}); "
+                         "choose another --out or move them away")
+    for folder in out.iterdir():
+        for file in folder.iterdir():
+            file.unlink()
+        folder.rmdir()
 
 
 if __name__ == "__main__":
