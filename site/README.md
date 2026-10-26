@@ -1,11 +1,16 @@
 # Object catalogue
 
-The static catalogue is generated from `objects/articulated/collection.json` and
-the object folders. It includes category filters, full-text search, sorting,
-rest/inspection previews, joint limits, interaction frames and complete ZIP
+The static catalogue combines `objects/articulated/collection.json` and
+`objects/laboratory/collection.json` with their object folders. It includes
+category and Articulated/Rigid filters, full-text search, sorting,
+available rest/inspection previews, joint limits, interaction frames and complete ZIP
 downloads. There is no server, package installation, external CDN or Blender
 rendering step. All URLs are relative, including downloads and object deep links,
 so the site works under the GitHub Pages repository path.
+
+The build adds a deterministic content version to script, stylesheet and
+catalogue requests so returning visitors do not mix a new page with cached
+catalogue data. Rebuilding unchanged sources keeps the same version.
 
 ## Enable automatic publication
 
@@ -48,6 +53,22 @@ category metadata to the same manifest when needed. Counts are computed from the
 object entries on every build. Regenerate and commit previews when a model changes;
 this workflow does not render Blender files.
 
+Laboratory entries live in `objects/laboratory/collection.json` and have globally
+unique numeric IDs. These exports need `model.urdf`, local meshes, `README.md`,
+`NOTICE.md` and `renders/rest.webp`. Models with moving joints also need
+`renders/open.webp`; rigid models show their rest preview in both global modes
+and have no inspection toggle in their details. Blender projects are optional
+for laboratory exports, and the download description lists the available formats.
+The builder determines mobility from non-fixed URDF joints and checks the
+laboratory manifest against those joints. Fixed attachment frames do not make
+a model articulated. Existing articulated model URLs and IDs remain stable.
+
+To regenerate the laboratory previews from the actual URDF and GLB assets, run
+Blender 5.2+ (native WebP output) with
+`blender --background --factory-startup --python scripts/render_laboratory.py`.
+Rendering is an authoring step; the standard-library site build uses committed
+previews and does not require Blender.
+
 The build rejects missing previews, missing meshes, unknown categories, duplicate
 IDs/folders, symlinks, paths escaping the collection, and model folders absent from
 the manifest. Failures stop deployment and leave the published site untouched.
@@ -59,5 +80,5 @@ The workflow uses GitHub-hosted Ubuntu runners and the standard Pages actions.
 Its build job has only read permission; only the deployment job can publish Pages.
 Changes in both `objects/` and `environments/` trigger validation. All URDF mesh
 references and scene JSON file references are checked before the site is built.
-The web catalogue itself continues to use `objects/articulated/`; the repository
-also contains portable laboratory devices under `objects/laboratory/`.
+The web catalogue includes the 157 existing collection entries and all five
+portable laboratory devices, for a total of 162 objects across 12 categories.

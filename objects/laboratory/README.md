@@ -20,6 +20,15 @@ The portable models retain the laboratory's link names, contact geometry and
 joint limits. `metadata.json` records each original placement in the assembled
 laboratory. The room, workbench and robot are not included.
 
+All five devices are in the web catalogue's
+[Laboratory category](https://sunava.github.io/private_meshes/#laboratory).
+Use the Articulated/Rigid filter to distinguish the centrifuge and refrigerator
+from the three rigid models. Catalogue IDs 158–162 and descriptions live in
+`collection.json`; their existing device paths and URDFs are unchanged.
+Each folder includes `renders/rest.webp`; the articulated devices also include
+`renders/open.webp`. Regenerate these previews with Blender using
+`scripts/render_laboratory.py` from the repository root.
+
 ```python
 from pathlib import Path
 
