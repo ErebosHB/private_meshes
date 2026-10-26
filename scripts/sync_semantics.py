@@ -115,6 +115,76 @@ def _name(node: ast.expr) -> str:
     return node.attr if isinstance(node, ast.Attribute) else getattr(node, "id", ast.unparse(node))
 
 
+# --- asking GitHub about pull requests already opened -------------------------------------
+
+PRIVATE_MESHES_REPOSITORY = "sunava/private_meshes"
+OPEN, MERGED, CLOSED = "open", "merged", "closed"
+
+
+@dataclass
+class PullRequest:
+    url: str
+    state: str
+    """open, merged, or closed (closed without merging)."""
+
+
+class GitHubUnavailable(Exception):
+    pass
+
+
+def fork_owner(checkout: Path) -> Optional[str]:
+    """The GitHub account of ``origin``, the fork pull requests are opened from."""
+    result = subprocess.run(["git", "-C", str(checkout), "remote", "get-url", "origin"],
+                            capture_output=True, text=True)
+    match = re.search(r"github\.com[:/]([^/]+)/", result.stdout)
+    return match.group(1) if match else None
+
+
+def find_pull_request(repository: str, owner: str, branch: str) -> Optional[PullRequest]:
+    """The newest pull request into ``repository`` from ``owner:branch``, if any.
+
+    Uses GitHub's public API; ``GITHUB_TOKEN`` or ``GH_TOKEN`` raise its rate limit."""
+    import os
+    import urllib.error
+    import urllib.parse
+    import urllib.request
+    query = urllib.parse.urlencode({"state": "all", "head": f"{owner}:{branch}", "per_page": 10})
+    request = urllib.request.Request(f"https://api.github.com/repos/{repository}/pulls?{query}",
+                                     headers={"Accept": "application/vnd.github+json"})
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        request.add_header("Authorization", f"Bearer {token}")
+    try:
+        with urllib.request.urlopen(request, timeout=15) as response:
+            pulls = json.load(response)
+    except (urllib.error.URLError, OSError, ValueError) as error:
+        raise GitHubUnavailable(str(error)) from error
+    if not pulls:
+        return None
+    newest = max(pulls, key=lambda p: p["created_at"])
+    state = MERGED if newest.get("merged_at") else OPEN if newest["state"] == "open" else CLOSED
+    return PullRequest(newest["html_url"], state)
+
+
+def look_up_pull_requests(changes: list[Change], registry: dict, owners: dict[str, Optional[str]],
+                          find=find_pull_request) -> Optional[str]:
+    """Attach to each change the pull request already opened for it.
+
+    :param owners: the fork owner per repository side (``cram2``, ``private_meshes``).
+    :return: why GitHub could not be asked, or None when it answered.
+    """
+    targets = {"cram2": registry["cram"]["repository"], "private_meshes": PRIVATE_MESHES_REPOSITORY}
+    for change in changes:
+        owner = owners.get(change.repository)
+        if owner is None:
+            return f"no GitHub fork found as origin for {change.repository}"
+        try:
+            change.pull_request = find(targets[change.repository], owner, change.branch)
+        except GitHubUnavailable as error:
+            return str(error)
+    return None
+
+
 # --- comparing ----------------------------------------------------------------------------
 
 @dataclass
@@ -127,8 +197,8 @@ class Change:
     cram_status: str
     objects: list[dict]
     object_type: Optional[str] = None
-    pull_request: Optional[str] = None
-    """The pull request already opened for this change, as recorded in the registry."""
+    pull_request: Optional[PullRequest] = None
+    """The pull request GitHub has for this change's branch, if one was opened."""
 
     @property
     def repository(self) -> str:
@@ -138,6 +208,11 @@ class Change:
     def slug(self) -> str:
         words = re.sub(r"(?<!^)(?=[A-Z])", "-", self.concept).lower()
         return f"{self.kind}-{words}"
+
+    @property
+    def branch(self) -> str:
+        """The branch the pull request is opened from; GitHub is asked about this name."""
+        return f"semantics/{self.slug}"
 
 
 def compare(registry: dict, cram: CramClasses, objects: list[dict]) -> list[Change]:
@@ -151,7 +226,6 @@ def compare(registry: dict, cram: CramClasses, objects: list[dict]) -> list[Chan
         expected, actual = entry["cram"], cram.status(concept)
         proposal = entry.get("proposal", {})
         users = by_concept.get(concept, [])
-        opened = entry.get("pull_request")
         if actual == AVAILABLE and expected != AVAILABLE:
             changes.append(Change("adopt", concept, actual, users))
         elif expected == AVAILABLE and actual != AVAILABLE:
@@ -159,11 +233,11 @@ def compare(registry: dict, cram: CramClasses, objects: list[dict]) -> list[Chan
         elif expected == DECLINED:
             continue
         elif actual == MISSING and "bases" in proposal:
-            changes.append(Change("add-class", concept, actual, users, pull_request=opened))
+            changes.append(Change("add-class", concept, actual, users))
         elif actual == UNUSABLE and "add_bases" in proposal:
             # subclasses gain the root too, e.g. OfficeChair from Chair
             heirs = [o for c, objs in by_concept.items() if cram.inherits(c, concept) for o in objs]
-            changes.append(Change("add-bases", concept, actual, users + heirs, pull_request=opened))
+            changes.append(Change("add-bases", concept, actual, users + heirs))
     # cram2 may already have a class for a type no concept is assigned to yet
     for object_type, users in unassigned_types(registry, objects).items():
         concept = _camel(object_type)
@@ -310,7 +384,7 @@ def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str
     ids = " ".join(o["id"] for o in change.objects)
     listed = "\n".join(f"- #{o['id']} {o['name']} (`{o['fingerprint']['type']}`)"
                        for o in change.objects) or "- none yet"
-    branch = f"semantics/{change.slug}"
+    branch = change.branch
     if change.repository == "cram2":
         entry = registry["concepts"][change.concept]
         patch, warnings = cram_patch(change, entry, cram)
@@ -332,12 +406,11 @@ def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str
                  f"git push -u <your fork> {branch}\n"
                  f"gh pr create --repo {registry['cram']['repository']} --base {registry['cram']['branch']} "
                  f"--title '{what}' --body-file <this folder>/PR.md")
-        after = (f"Once it is open, record it in `objects/articulated/semantic_concepts.json` as "
-                 f"`\"pull_request\": \"<its URL>\"` on `{change.concept}`, so that later runs list it "
-                 f"as waiting instead of preparing it again. Once merged, `sync_semantics.py` reports "
-                 f"an `adopt` change for private_meshes, which switches these objects to the new "
-                 f"class. If cram2 turns it down, set `\"cram\": \"{DECLINED}\"` instead: the objects "
-                 f"keep the fallback and the change is not proposed again.")
+        after = (f"Keep the branch name `{branch}`: later runs find the pull request by it on "
+                 f"GitHub and list it as waiting while it is open. Once merged, they report an "
+                 f"`adopt` change for private_meshes, which switches these objects to the new class. "
+                 f"If it is closed without merging, the concept counts as declined: the objects keep "
+                 f"the fallback and the change is not proposed again.")
     else:
         patch, warnings = registry_patch(change, registry, cram), []
         if change.kind == "withdraw":
@@ -354,7 +427,7 @@ def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str
                  f"python3 -m unittest discover -s tests\n"
                  f"git add -A objects/articulated && git commit -m '{what}'\n"
                  f"git push -u origin {branch}\n"
-                 f"gh pr create --repo sunava/private_meshes --base main "
+                 f"gh pr create --repo {PRIVATE_MESHES_REPOSITORY} --base main "
                  f"--title '{what}' --body-file <this folder>/PR.md")
         after = "Nothing follows: the objects use the cram2 class directly."
     notes = "".join(f"> **Check:** {w}\n\n" for w in warnings)
@@ -371,6 +444,8 @@ def main(argv: Optional[list[str]] = None) -> int:
     parser.add_argument("--cram", type=Path, required=True, help="a cram2 checkout")
     parser.add_argument("--out", type=Path, default=ROOT / "semantic-sync",
                         help="where prepare writes one folder per pull request")
+    parser.add_argument("--offline", action="store_true",
+                        help="do not ask GitHub which pull requests are already open")
     args = parser.parse_args(argv)
 
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
@@ -393,10 +468,28 @@ def main(argv: Optional[list[str]] = None) -> int:
             ids = ", ".join(f"#{o['id']}" for o in users)
             print(f"  {object_type:32} {ids}" + (f"   similar: {', '.join(hints)}" if hints else ""))
 
-    waiting = [c for c in changes if c.pull_request]
-    pending = [c for c in changes if not c.pull_request]
-    for change in waiting:
-        print(f"  waiting: [{change.repository}] {change.slug} is open as {change.pull_request}")
+    if args.offline:
+        print("Offline: pull requests already opened are not looked up.")
+    else:
+        owners = {"cram2": fork_owner(cram.root), "private_meshes": fork_owner(ROOT)}
+        problem = look_up_pull_requests(changes, registry, owners)
+        if problem:
+            print(f"Could not ask GitHub ({problem}); every change is prepared as if none were open.")
+    pending = []
+    for change in changes:
+        found = change.pull_request
+        if found is None:
+            pending.append(change)
+        elif found.state == OPEN:
+            print(f"  waiting: [{change.repository}] {change.slug} is open: {found.url}")
+        elif found.state == MERGED:
+            update = (f"update {cram.root} to cram2's latest main" if change.repository == "cram2"
+                      else "update this repository to the latest main")
+            print(f"  merged:  [{change.repository}] {change.slug} ({found.url}); {update} to move on")
+        else:
+            print(f"  declined: [{change.repository}] {change.slug} was closed without merging "
+                  f"({found.url}); {change.concept} keeps the fallback. Open a new pull request "
+                  f"from {change.branch} to propose it again.")
     if not pending:
         print("In step: no new pull requests needed.")
     else:

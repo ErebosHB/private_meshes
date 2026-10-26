@@ -87,19 +87,38 @@ class FakeCramTests(unittest.TestCase):
         self.assertEqual(changes['adopt-dishwasher'].repository, 'private_meshes')
         self.assertEqual(changes['add-class-washing-machine'].repository, 'cram2')
 
-    def test_open_pull_requests_wait_and_declined_concepts_are_not_proposed_again(self):
-        url = 'https://github.com/cram2/x/pull/1'
-        self.registry['concepts']['WashingMachine']['pull_request'] = url
+    def test_pull_requests_are_found_on_github_by_their_branch(self):
+        asked = []
+
+        def find(repository, owner, branch):
+            asked.append((repository, owner, branch))
+            return {'semantics/add-class-washing-machine': sync.PullRequest('u1', sync.OPEN),
+                    'semantics/add-bases-chair': sync.PullRequest('u2', sync.CLOSED)}.get(branch)
+
+        changes = sync.compare(self.registry, self.cram, self.objects)
+        problem = sync.look_up_pull_requests(changes, self.registry,
+                                             {'cram2': 'me', 'private_meshes': 'me'}, find)
+        self.assertIsNone(problem)
+        states = {c.slug: c.pull_request and c.pull_request.state for c in changes}
+        self.assertEqual(states, {'adopt-dishwasher': None, 'add-bases-chair': sync.CLOSED,
+                                  'add-class-washing-machine': sync.OPEN, 'map-type-sofa': None})
+        self.assertIn(('cram2/x', 'me', 'semantics/add-class-washing-machine'), asked)
+        self.assertIn((sync.PRIVATE_MESHES_REPOSITORY, 'me', 'semantics/adopt-dishwasher'), asked)
+
+    def test_unreachable_github_is_reported_not_fatal(self):
+        def find(repository, owner, branch):
+            raise sync.GitHubUnavailable('offline')
+        changes = sync.compare(self.registry, self.cram, self.objects)
+        self.assertEqual(sync.look_up_pull_requests(changes, self.registry, {'cram2': 'me', 'private_meshes': 'me'},
+                                                    find), 'offline')
+        self.assertTrue(all(c.pull_request is None for c in changes))
+
+    def test_declined_by_hand_is_not_proposed_again_until_cram2_has_it(self):
         self.registry['concepts']['Chair']['cram'] = sync.DECLINED
-        changes = {c.slug: c for c in sync.compare(self.registry, self.cram, self.objects)}
-        self.assertEqual(changes['add-class-washing-machine'].pull_request, url)
-        self.assertNotIn('add-bases-chair', changes)
-        # merged after all: the open pull request no longer matters, the class is adopted
-        (self.root / sync.MODULE_FILE).write_text(MODULE + '\n\nclass WashingMachine(HasRootBody):\n    pass\n')
+        self.assertNotIn('add-bases-chair', {c.slug for c in sync.compare(self.registry, self.cram, self.objects)})
+        (self.root / sync.MODULE_FILE).write_text(MODULE.replace('class Chair(Furniture)', 'class Chair(Furniture, HasRootBody)'))
         cram = sync.CramClasses.read(self.root)
-        changes = {c.slug: c for c in sync.compare(self.registry, cram, self.objects)}
-        self.assertIn('adopt-washing-machine', changes)
-        self.assertIsNone(changes['adopt-washing-machine'].pull_request)
+        self.assertIn('adopt-chair', {c.slug for c in sync.compare(self.registry, cram, self.objects)})
 
     def test_unassigned_types_are_listed_with_similar_concepts(self):
         self.registry['object_types']['furniture'] = None  # decided: stays on the fallback
