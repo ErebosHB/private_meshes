@@ -7,3 +7,4 @@ __pycache__/
 /centrifuge_manuals
 # Pull requests prepared by scripts/sync_semantics.py
 /semantic-sync/
+/graphs/
