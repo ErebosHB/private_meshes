@@ -68,7 +68,7 @@ python3 scripts/sync_semantics.py prepare --cram <cram2 checkout>   # writes sem
 | `withdraw` | private_meshes | falls back from a class cram2 no longer provides |
 | `map-type` | private_meshes | assigns an existing cram2 class to an object type without a concept |
 
-Each folder holds a `PR.md` (description and the commands to apply, test, commit and open it) and a `change.patch`. Every pull request touches only its own concept, so they can be reviewed and merged in any order. `prepare` recomputes everything on each run and replaces the folders of its previous run, so a merged change disappears on its own.
+Each folder holds a `description.md` (the pull request's description, to paste on GitHub as it is), a `steps.md` (its title, branch and the commands to apply, test, commit and open it) and a `change.patch`. Every pull request touches only its own concept, so they can be reviewed and merged in any order. `prepare` recomputes everything on each run and replaces the folders of its previous run, so a merged change disappears on its own.
 
 The loop for a new concept:
 

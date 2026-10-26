@@ -10,9 +10,9 @@ repository:
     python3 scripts/sync_semantics.py status  --cram ~/cram2
     python3 scripts/sync_semantics.py prepare --cram ~/cram2 --out semantic-sync
 
-``prepare`` only writes a ``PR.md`` and a ``change.patch`` per pull request into
-``--out``; it never creates branches, commits or pull requests. Each ``PR.md`` lists the
-commands that would.
+``prepare`` only writes, per pull request, a ``description.md`` (the text reviewers read
+on GitHub), a ``steps.md`` (the commands to apply, test, commit and open it) and a
+``change.patch`` into ``--out``; it never creates branches, commits or pull requests.
 """
 from __future__ import annotations
 
@@ -40,6 +40,8 @@ DECLINED = "declined"
 """A concept cram2 turned down: kept on the fallback and not proposed again, unless cram2
 gains the class anyway."""
 FOLDER = re.compile(r"\d{2}-(cram2|private_meshes)-[a-z0-9-]+")
+# PR.md is what earlier versions wrote, so their folders are cleared too
+PREPARED_FILES = {"description.md", "steps.md", "change.patch", "PR.md"}
 GENERATE = "~/venvs/cram-env/bin/python scripts/annotate_semantics.py --write-semantics"
 
 
@@ -379,8 +381,9 @@ def registry_patch(change: Change, registry: dict, cram: CramClasses) -> str:
     return _diff(REGISTRY.relative_to(ROOT), before, after)
 
 
-def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str, str]:
-    """``(PR.md, change.patch)`` for one change."""
+def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str, str, str]:
+    """``(description.md, steps.md, change.patch)`` for one change: the text reviewers read
+    on GitHub, the instructions for whoever opens it, and the change itself."""
     ids = " ".join(o["id"] for o in change.objects)
     listed = "\n".join(f"- #{o['id']} {o['name']} (`{o['fingerprint']['type']}`)"
                        for o in change.objects) or "- none yet"
@@ -398,14 +401,20 @@ def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str
                 f"`{registry['fallback']}` until it is available.\n\n{listed}\n\n"
                 f"The test in `{test_path(change.concept).as_posix()}` checks that the class "
                 "can annotate a body.")
-        steps = (f"cd <cram2 checkout>   # {registry['cram']['repository']}, branch {registry['cram']['branch']}\n"
-                 f"git switch -c {branch}\n"
+        test = test_path(change.concept).as_posix()
+        base = registry["cram"]["branch"]
+        steps = (f"cd <cram2 checkout>\n"
+                 f"git fetch <cram2 remote>     # the remote of {registry['cram']['repository']}\n"
+                 f"git switch -c {branch} <cram2 remote>/{base}\n"
                  f"git apply --index <this folder>/change.patch\n"
-                 f"python -m pytest {test_path(change.concept).as_posix()}\n"
+                 f"python scripts/format_docstrings.py {MODULE_FILE.as_posix()} {test}\n"
+                 f"git add -A && git diff --cached     # only the new lines and {Path(test).name}\n"
+                 f"python -m pytest {test}\n"
                  f"git commit -m '{what}'\n"
-                 f"git push -u <your fork> {branch}\n"
-                 f"gh pr create --repo {registry['cram']['repository']} --base {registry['cram']['branch']} "
-                 f"--title '{what}' --body-file <this folder>/PR.md")
+                 f"git remote get-url origin   # must be your fork, never cram2\n"
+                 f"git push -u origin {branch}\n"
+                 f"gh pr create --repo {registry['cram']['repository']} --base {base} "
+                 f"--title '{what}' --body-file <this folder>/description.md")
         after = (f"Keep the branch name `{branch}`: later runs find the pull request by it on "
                  f"GitHub and list it as waiting while it is open. Once merged, they report an "
                  f"`adopt` change for private_meshes, which switches these objects to the new class. "
@@ -428,12 +437,17 @@ def pull_request(change: Change, registry: dict, cram: CramClasses) -> tuple[str
                  f"git add -A objects/articulated && git commit -m '{what}'\n"
                  f"git push -u origin {branch}\n"
                  f"gh pr create --repo {PRIVATE_MESHES_REPOSITORY} --base main "
-                 f"--title '{what}' --body-file <this folder>/PR.md")
+                 f"--title '{what}' --body-file <this folder>/description.md")
         after = "Nothing follows: the objects use the cram2 class directly."
+    target = registry["cram"]["repository"] if change.repository == "cram2" else PRIVATE_MESHES_REPOSITORY
     notes = "".join(f"> **Check:** {w}\n\n" for w in warnings)
-    text = (f"# {what}\n\nFor: **{change.repository}** · branch `{branch}`\n\n{notes}{body}\n\n"
-            f"## Steps (not run by sync_semantics.py)\n\n```sh\n{steps}\n```\n\n{after}\n")
-    return text, patch
+    instructions = (f"# {what}\n\n"
+                    f"- **Pull request to:** `{target}`, branch `main`\n"
+                    f"- **From branch:** `{branch}` (keep this name)\n"
+                    f"- **Title:** `{what}`\n"
+                    f"- **Description:** the contents of `description.md`\n\n"
+                    f"{notes}## Steps (not run by sync_semantics.py)\n\n```sh\n{steps}\n```\n\n{after}\n")
+    return f"{body}\n", instructions, patch
 
 
 # --- command line -------------------------------------------------------------------------
@@ -502,8 +516,9 @@ def main(argv: Optional[list[str]] = None) -> int:
         for number, change in enumerate(pending, 1):
             folder = args.out / f"{number:02}-{change.repository}-{change.slug}"
             folder.mkdir(parents=True)
-            text, patch = pull_request(change, registry, cram)
-            (folder / "PR.md").write_text(text, encoding="utf-8")
+            description, steps, patch = pull_request(change, registry, cram)
+            (folder / "description.md").write_text(description, encoding="utf-8")
+            (folder / "steps.md").write_text(steps, encoding="utf-8")
             (folder / "change.patch").write_text(patch, encoding="utf-8")
         print(f"Prepared in {args.out} (earlier folders removed); nothing was committed or pushed.")
     return 0
@@ -516,7 +531,7 @@ def clear_output(out: Path) -> None:
         return
     foreign = [p.name for p in out.iterdir()
                if not (p.is_dir() and FOLDER.fullmatch(p.name)
-                       and {f.name for f in p.iterdir()} <= {"PR.md", "change.patch"})]
+                       and {f.name for f in p.iterdir()} <= PREPARED_FILES)]
     if foreign:
         raise SystemExit(f"{out} holds files prepare did not write ({', '.join(sorted(foreign))}); "
                          "choose another --out or move them away")
